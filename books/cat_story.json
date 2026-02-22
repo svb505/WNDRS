@@ -1,0 +1,370 @@
+{
+  "RU": {
+    "page1": {
+      "text": "Жил-был кот по имени Мур."
+    },
+    "page2": {
+      "text": "Он жил в маленьком доме возле леса."
+    },
+    "page3": {
+      "text": "Каждое утро он выходил на прогулку."
+    },
+    "page4": {
+      "text": "Однажды он увидел в небе странную птицу."
+    },
+    "page5": {
+      "text": "Птица блестела, как золото, и летела к горам."
+    },
+    "page6": {
+      "text": "Кот решил последовать за ней."
+    },
+    "page7": {
+      "text": "Он попрощался с домом и отправился в путь."
+    },
+    "page8": {
+      "text": "Сначала он шел через поля, полные цветов."
+    },
+    "page9": {
+      "text": "Затем он встретил лису, которая рассказала о далёком замке."
+    },
+    "page10": {
+      "text": "Замок был спрятан за высокими скалами."
+    },
+    "page11": {
+      "text": "Кот продолжил путь и добрался до реки."
+    },
+    "page12": {
+      "text": "Он построил плот и переправился на другой берег."
+    },
+    "page13": {
+      "text": "В лесу его окружили совы, но они оказались дружелюбными."
+    },
+    "page14": {
+      "text": "Они показали коту тропу к горам."
+    },
+    "page15": {
+      "text": "Кот устал, но не сдавался."
+    },
+    "page16": {
+      "text": "На вершине горы он нашёл ту самую птицу."
+    },
+    "page17": {
+      "text": "Птица оказалась магической и заговорила с ним."
+    },
+    "page18": {
+      "text": "Она искала того, кто поможет спасти её лес."
+    },
+    "page19": {
+      "text": "Кот согласился помочь."
+    },
+    "page20": {
+      "text": "Они вместе вернулись в зачарованный лес."
+    },
+    "page21": {
+      "text": "Лес был окутан тьмой и туманом."
+    },
+    "page22": {
+      "text": "Кот использовал своё мужество и хитрость."
+    },
+    "page23": {
+      "text": "Он нашёл источник зла — тёмное зеркало."
+    },
+    "page24": {
+      "text": "Разбив зеркало, он освободил лес от проклятия."
+    },
+    "page25": {
+      "text": "Все существа леса пришли поблагодарить его."
+    },
+    "page26": {
+      "text": "Птица подарила ему перо, исполняющее желания."
+    },
+    "page27": {
+      "text": "Кот пожелал, чтобы все были счастливы."
+    },
+    "page28": {
+      "text": "И с тех пор лес стал светлым и мирным."
+    },
+    "page29": {
+      "text": "Кот вернулся домой, где его ждали друзья."
+    },
+    "page30": {
+      "text": "С тех пор его звали Мур Храбрый."
+    }
+  },
+  "UA": {
+    "page1": {
+      "text": "Жил-был кіт по имени Мурко."
+    },
+    "page2": {
+      "text": "Он жил в маленьком діме возле ліса."
+    },
+    "page3": {
+      "text": "Каждое утро он выходил на прогулку."
+    },
+    "page4": {
+      "text": "Однажды он увидел в небе странную птицу."
+    },
+    "page5": {
+      "text": "Птица блістела, как золото, и летела к горам."
+    },
+    "page6": {
+      "text": "Кот решил последовать за ней."
+    },
+    "page7": {
+      "text": "Он попрощался с дімом и отправился в путь."
+    },
+    "page8": {
+      "text": "Сначала он шел через поля, полные цветов."
+    },
+    "page9": {
+      "text": "Затем он встретил лису, кіторая рассказала о далёком замке."
+    },
+    "page10": {
+      "text": "Замок был спрятан за высокими скалами."
+    },
+    "page11": {
+      "text": "Кот продолжил путь и добрался до річки."
+    },
+    "page12": {
+      "text": "Он построил плот и переправился на другой берег."
+    },
+    "page13": {
+      "text": "В лісу его окружили сови, но они оказались дружелюбными."
+    },
+    "page14": {
+      "text": "Они показали кіту тропу к горам."
+    },
+    "page15": {
+      "text": "Кот устал, но не сдавался."
+    },
+    "page16": {
+      "text": "На вершине горы он нашёл ту самую птицу."
+    },
+    "page17": {
+      "text": "Птица оказалась магической и заговорила с ним."
+    },
+    "page18": {
+      "text": "Она искала того, кто поможет спасти её ліс."
+    },
+    "page19": {
+      "text": "Кот согласился помочь."
+    },
+    "page20": {
+      "text": "Они вместе вернулись в зачарованный ліс."
+    },
+    "page21": {
+      "text": "Лес был окутан тьмой и туманом."
+    },
+    "page22": {
+      "text": "Кот использовал своё мужество и хитрость."
+    },
+    "page23": {
+      "text": "Он нашёл источник зла — тёмное дзеркало."
+    },
+    "page24": {
+      "text": "Разбив дзеркало, он освободил ліс от проклятия."
+    },
+    "page25": {
+      "text": "Все существа ліса пришли поблагодарить его."
+    },
+    "page26": {
+      "text": "Птица подарила ему перо, исполняющее желания."
+    },
+    "page27": {
+      "text": "Кот пожелал, чтобы все были счастливы."
+    },
+    "page28": {
+      "text": "И с тех пор ліс стал светлым и мирным."
+    },
+    "page29": {
+      "text": "Кот вернулся дімой, где его ждали друзі."
+    },
+    "page30": {
+      "text": "С тех пор его звали Мурко Храбрый."
+    }
+  },
+  "EN": {
+    "page1": {
+      "text": "There once was a cat named Mur."
+    },
+    "page2": {
+      "text": "He lived in a small house near the forest."
+    },
+    "page3": {
+      "text": "Every morning he went for a walk."
+    },
+    "page4": {
+      "text": "One day he saw a strange bird in the sky."
+    },
+    "page5": {
+      "text": "The bird sparkled like gold and flew toward the mountains."
+    },
+    "page6": {
+      "text": "The cat decided to follow it."
+    },
+    "page7": {
+      "text": "He said goodbye to his home and set off."
+    },
+    "page8": {
+      "text": "First, he walked through flower-filled fields."
+    },
+    "page9": {
+      "text": "Then he met a fox who told him of a distant castle."
+    },
+    "page10": {
+      "text": "The castle was hidden behind tall cliffs."
+    },
+    "page11": {
+      "text": "The cat continued and reached a river."
+    },
+    "page12": {
+      "text": "He built a raft and crossed to the other side."
+    },
+    "page13": {
+      "text": "In the forest, owls surrounded him, but they were friendly."
+    },
+    "page14": {
+      "text": "They showed the cat a path to the mountains."
+    },
+    "page15": {
+      "text": "The cat was tired but did not give up."
+    },
+    "page16": {
+      "text": "At the mountain peak, he found the very same bird."
+    },
+    "page17": {
+      "text": "The bird was magical and spoke to him."
+    },
+    "page18": {
+      "text": "She was looking for someone to help save her forest."
+    },
+    "page19": {
+      "text": "The cat agreed to help."
+    },
+    "page20": {
+      "text": "Together they returned to the enchanted forest."
+    },
+    "page21": {
+      "text": "The forest was covered in darkness and fog."
+    },
+    "page22": {
+      "text": "The cat used his courage and cleverness."
+    },
+    "page23": {
+      "text": "He found the source of evil — a dark mirror."
+    },
+    "page24": {
+      "text": "Breaking the mirror, he freed the forest from the curse."
+    },
+    "page25": {
+      "text": "All the creatures of the forest came to thank him."
+    },
+    "page26": {
+      "text": "The bird gave him a feather that granted wishes."
+    },
+    "page27": {
+      "text": "The cat wished for everyone's happiness."
+    },
+    "page28": {
+      "text": "Since then, the forest became bright and peaceful."
+    },
+    "page29": {
+      "text": "The cat returned home, where his friends awaited."
+    },
+    "page30": {
+      "text": "Since then, he was known as Mur the Brave."
+    }
+  },
+  "FR": {
+    "page1": {
+      "text": "Il était une fois un chat nommé Mur."
+    },
+    "page2": {
+      "text": "Il vivait dans une petite maison près de la forêt."
+    },
+    "page3": {
+      "text": "Chaque matin, il partait se promener."
+    },
+    "page4": {
+      "text": "Un jour, il vit un oiseau étrange dans le ciel."
+    },
+    "page5": {
+      "text": "L’oiseau brillait comme de l’or et volait vers les montagnes."
+    },
+    "page6": {
+      "text": "Le chat décida de le suivre."
+    },
+    "page7": {
+      "text": "Il dit au revoir à sa maison et partit."
+    },
+    "page8": {
+      "text": "D'abord, il traversa des champs remplis de fleurs."
+    },
+    "page9": {
+      "text": "Puis il rencontra un renard qui lui parla d’un château lointain."
+    },
+    "page10": {
+      "text": "Le château était caché derrière de hautes falaises."
+    },
+    "page11": {
+      "text": "Le chat continua et atteignit une rivière."
+    },
+    "page12": {
+      "text": "Il construisit un radeau et traversa de l'autre côté."
+    },
+    "page13": {
+      "text": "Dans la forêt, des hiboux l’entourèrent, mais ils étaient amicaux."
+    },
+    "page14": {
+      "text": "Ils montrèrent au chat un chemin vers les montagnes."
+    },
+    "page15": {
+      "text": "Le chat était fatigué mais ne renonça pas."
+    },
+    "page16": {
+      "text": "Au sommet de la montagne, il trouva le même oiseau."
+    },
+    "page17": {
+      "text": "L’oiseau était magique et lui parla."
+    },
+    "page18": {
+      "text": "Elle cherchait quelqu’un pour sauver sa forêt."
+    },
+    "page19": {
+      "text": "Le chat accepta d’aider."
+    },
+    "page20": {
+      "text": "Ensemble, ils retournèrent dans la forêt enchantée."
+    },
+    "page21": {
+      "text": "La forêt était couverte de ténèbres et de brouillard."
+    },
+    "page22": {
+      "text": "Le chat utilisa son courage et son intelligence."
+    },
+    "page23": {
+      "text": "Il trouva la source du mal — un miroir sombre."
+    },
+    "page24": {
+      "text": "En brisant le miroir, il libéra la forêt de la malédiction."
+    },
+    "page25": {
+      "text": "Toutes les créatures de la forêt vinrent le remercier."
+    },
+    "page26": {
+      "text": "L’oiseau lui offrit une plume magique."
+    },
+    "page27": {
+      "text": "Le chat souhaita le bonheur de tous."
+    },
+    "page28": {
+      "text": "Depuis, la forêt était lumineuse et paisible."
+    },
+    "page29": {
+      "text": "Le chat rentra chez lui, où ses amis l’attendaient."
+    },
+    "page30": {
+      "text": "Depuis, on l’appelait Mur le Brave."
+    }
+  }
+}

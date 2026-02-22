@@ -1,0 +1,1104 @@
+{
+    "RU": {
+        "title": "Список изменений KW2.0.700",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1)Добавлены IDE для SQL,SWIFT,KOTLIN,DART,TS,PHP,JAVA,RUBY,RUST,GO"
+            },
+            {
+                "type": "added",
+                "text": "2)Добавлена универсальная IDE"
+            },
+            {
+                "type": "added",
+                "text": "3)Добавлена доставка"
+            },
+            {
+                "type": "added",
+                "text": "4)Добавлено приложение для регистриции авто номера"
+            },
+            {
+                "type": "added",
+                "text": "5)Добавлено приложение покупки телефонного номера"
+            },
+            {
+                "type": "added",
+                "text": "6)Добавлен Исправлена ошибка не отображения центрального и нижнего фрейма на Windows 10"
+            },
+            {
+                "type": "changed",
+                "text": "7)Изменено окно привязки дочерних окон"
+            },
+            {
+                "type": "changed",
+                "text": "8)Громкость подвязана к звукам системы"
+            },
+            {
+                "type": "changed",
+                "text": "9)Обновлен вид отправки ключа лицензии"
+            },
+            {
+                "type": "changed",
+                "text": "10)Обновлена иконка ОС"
+            },
+            {
+                "type": "changed",
+                "text": "11)Изменен реестр хранения системынх файлов"
+            },
+            {
+                "type": "changed",
+                "text": "12)Утешительный приз в казино снижен с 5.000 до 1.000"
+            },
+            {
+                "type": "changed",
+                "text": "13)Все БД перемещены в одну"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW2.0.700",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added IDE for SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, GO"
+            },
+            {
+                "type": "Added",
+                "text": "2) added universal IDE"
+            },
+            {
+                "type": "Added",
+                "text": "3) Added delivery"
+            },
+            {
+                "type": "Added",
+                "text": "4) Added application for registration of auto numbers"
+            },
+            {
+                "type": "Added",
+                "text": "5) Added application of the phone number"
+            },
+            {
+                "type": "Added",
+                "text": "6) Added a fixed error of not displaying the central and lower frame on Windows 10"
+            },
+            {
+                "type": "Changed",
+                "text": "7) the binding window has been changed"
+            },
+            {
+                "type": "Changed",
+                "text": "8) the volume is tied to the sounds of the system"
+            },
+            {
+                "type": "Changed",
+                "text": "9) the type of sending a license key is updated"
+            },
+            {
+                "type": "Changed",
+                "text": "10) OS icon updated"
+            },
+            {
+                "type": "Changed",
+                "text": "11) a modified register of storage of a system of files"
+            },
+            {
+                "type": "Changed",
+                "text": "12) comforting prize in a casino reduced from 5,000 to 1.000"
+            },
+            {
+                "type": "Changed",
+                "text": "13) all the database moved to one"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW2.0.700",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) IDE ajouté pour SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout de l'IDE universelle"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Livraison ajoutée"
+            },
+            {
+                "type": "Ajouté",
+                "text": "4) Ajout de la demande d'enregistrement des numéros automobiles"
+            },
+            {
+                "type": "Ajouté",
+                "text": "5) Ajout de l'application du numéro de téléphone"
+            },
+            {
+                "type": "Ajouté",
+                "text": "6) Ajout d'une erreur fixe de ne pas afficher le cadre central et inférieur sur Windows 10"
+            },
+            {
+                "type": "Modifié",
+                "text": "7) La fenêtre de liaison a été modifiée"
+            },
+            {
+                "type": "Modifié",
+                "text": "8) Le volume est lié aux sons du système"
+            },
+            {
+                "type": "Modifié",
+                "text": "9) Le type d'envoi d'une clé de licence est mis à jour"
+            },
+            {
+                "type": "Modifié",
+                "text": "10) Icône du système d'exploitation mise à jour"
+            },
+            {
+                "type": "Modifié",
+                "text": "11) Un registre modifié du stockage d'un système de fichiers"
+            },
+            {
+                "type": "Modifié",
+                "text": "12) Le prix réconfortant dans un casino est réduit de 5 000 à 1 000"
+            },
+            {
+                "type": "Modifié",
+                "text": "13) Toute la base de données est passée à une"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW2.0.700",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Додано IDE для SQL, SWIFT, KOTLIN, DART, TS, PHP, JAVA, RUBY, RUST, GO"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Доданий універсальний IDE"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) Додана доставка"
+            },
+            {
+                "type": "Доданий",
+                "text": "4) Додана заява про реєстрацію автоматичних номерів"
+            },
+            {
+                "type": "Доданий",
+                "text": "5) Додано застосування номера телефону"
+            },
+            {
+                "type": "Доданий",
+                "text": "6) Додано фіксовану помилку не відображення центрального та нижнього кадру на Windows 10"
+            },
+            {
+                "type": "Змінювати",
+                "text": "7) Вікно прив'язування змінено"
+            },
+            {
+                "type": "Змінювати",
+                "text": "8) Об'єм прив’язаний до звуків системи"
+            },
+            {
+                "type": "Змінювати",
+                "text": "9) Тип надсилання ліцензійного ключа оновлюється"
+            },
+            {
+                "type": "Змінювати",
+                "text": "10) Оновлено значок ОС"
+            },
+            {
+                "type": "Змінювати",
+                "text": "11) Модифікований реєстр зберігання системи файлів"
+            },
+            {
+                "type": "Змінювати",
+                "text": "12) Комфортаційний приз у казино знизилося з 5000 до 1.000"
+            },
+            {
+                "type": "Змінювати",
+                "text": "13) Вся база даних перейшла до одного"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW2.0.700",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Aggiunto IDE per SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) Aggiunto IDE universale"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Aggiunta consegna"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "4) Aggiunta applicazione per la registrazione dei numeri automatici"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "5) Aggiunta applicazione del numero di telefono"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "6) Aggiunto un errore fisso di non visualizzare il frame centrale e inferiore su Windows 10"
+            },
+            {
+                "type": "Cambiato",
+                "text": "7) La finestra vincolante è stata modificata"
+            },
+            {
+                "type": "Cambiato",
+                "text": "8) Il volume è legato ai suoni del sistema"
+            },
+            {
+                "type": "Cambiato",
+                "text": "9) Il tipo di invio di una chiave di licenza viene aggiornato"
+            },
+            {
+                "type": "Cambiato",
+                "text": "10) Icona del sistema operativo aggiornato"
+            },
+            {
+                "type": "Cambiato",
+                "text": "11) Un registro modificato di archiviazione di un sistema di file"
+            },
+            {
+                "type": "Cambiato",
+                "text": "12) Premio confortante in un casinò ridotto da 5.000 a 1.000"
+            },
+            {
+                "type": "Cambiato",
+                "text": "13) Tutto il database si è spostato su uno"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios kw2.0.700",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) IDE agregado para SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) IDE universal agregado"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) Entrega agregada"
+            },
+            {
+                "type": "Agregado",
+                "text": "4) Solicitud agregada para el registro de números automáticos"
+            },
+            {
+                "type": "Agregado",
+                "text": "5) Aplicación agregada del número de teléfono"
+            },
+            {
+                "type": "Agregado",
+                "text": "6) Se agregó un error fijo de no mostrar el marco central e inferior en Windows 10"
+            },
+            {
+                "type": "Cambió",
+                "text": "7) La ventana de encuadernación se ha cambiado"
+            },
+            {
+                "type": "Cambió",
+                "text": "8) El volumen está vinculado a los sonidos del sistema"
+            },
+            {
+                "type": "Cambió",
+                "text": "9) Se actualiza el tipo de envío de una clave de licencia"
+            },
+            {
+                "type": "Cambió",
+                "text": "10) Icono del sistema operativo actualizado"
+            },
+            {
+                "type": "Cambió",
+                "text": "11) Un registro modificado de almacenamiento de un sistema de archivos"
+            },
+            {
+                "type": "Cambió",
+                "text": "12) Premio reconfortante en un casino reducido de 5,000 a 1.000"
+            },
+            {
+                "type": "Cambió",
+                "text": "13) Toda la base de datos se movió a una"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW2.0.700",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            {
+                "type": "Hinzugefügt",
+                "text": "1) IDE für SQL, Swift, Kotlin, Dart, TS, Php, Java, Ruby, Rost, Go hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "2) Universal IDE hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "3) Lieferung hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "4) Antrag auf Registrierung von Autonummern hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "5) Anwendung der Telefonnummer hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "6) Ein fester Fehler hinzugefügt, um den zentralen und unteren Rahmen unter Windows 10 nicht anzuzeigen"
+            },
+            {
+                "type": "Verändert",
+                "text": "7) Das Bindungsfenster wurde geändert"
+            },
+            {
+                "type": "Verändert",
+                "text": "8) Das Volumen ist an die Geräusche des Systems gebunden"
+            },
+            {
+                "type": "Verändert",
+                "text": "9) Die Art des Sendens eines Lizenzschlüssels wird aktualisiert"
+            },
+            {
+                "type": "Verändert",
+                "text": "10) Betriebssymbol aktualisiert"
+            },
+            {
+                "type": "Verändert",
+                "text": "11) Ein modifiziertes Register für das Speichern eines Dateiensystems"
+            },
+            {
+                "type": "Verändert",
+                "text": "12) tröstender Preis in einem Casino von 5.000 auf 1.000 reduziert"
+            },
+            {
+                "type": "Verändert",
+                "text": "13) Die gesamte Datenbank wurde auf einen verschoben"
+            }
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW2.0.700",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Adicionado IDE para SQL, Swift, Kotlin, Dart, TS, Php, Java, Ruby, Rust"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) IDE universal adicionado"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Entrega adicionada"
+            },
+            {
+                "type": "Adicionado",
+                "text": "4) Aplicação adicionada para o registro de números de automóveis"
+            },
+            {
+                "type": "Adicionado",
+                "text": "5) Aplicação adicionada do número de telefone"
+            },
+            {
+                "type": "Adicionado",
+                "text": "6) Adicionado um erro fixo de não exibir o quadro central e inferior no Windows 10"
+            },
+            {
+                "type": "Mudado",
+                "text": "7) A janela de ligação foi alterada"
+            },
+            {
+                "type": "Mudado",
+                "text": "8) O volume está ligado aos sons do sistema"
+            },
+            {
+                "type": "Mudado",
+                "text": "9) O tipo de envio de uma chave de licença é atualizado"
+            },
+            {
+                "type": "Mudado",
+                "text": "10) Ícone do sistema operacional atualizado"
+            },
+            {
+                "type": "Mudado",
+                "text": "11) Um registro modificado de armazenamento de um sistema de arquivos"
+            },
+            {
+                "type": "Mudado",
+                "text": "12) Prêmio reconfortante em um cassino reduzido de 5.000 para 1.000"
+            },
+            {
+                "type": "Mudado",
+                "text": "13) Todo o banco de dados mudou para um"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW2.0.700",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodano IDE dla SQL, Swift, Kotlin, Dart, TS, Php, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) Dodano uniwersalną IDE"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano dostawę"
+            },
+            {
+                "type": "W dodatku",
+                "text": "4) Dodano wniosek o rejestrację numerów automatycznych"
+            },
+            {
+                "type": "W dodatku",
+                "text": "5) Dodano zastosowanie numeru telefonu"
+            },
+            {
+                "type": "W dodatku",
+                "text": "6) Dodano stały błąd nie wyświetlania centralnej i dolnej ramki w systemie Windows 10"
+            },
+            {
+                "type": "Zmienione",
+                "text": "7) Okno wiązania zostało zmienione"
+            },
+            {
+                "type": "Zmienione",
+                "text": "8) Objętość jest powiązana z dźwiękami systemu"
+            },
+            {
+                "type": "Zmienione",
+                "text": "9) Typ wysyłania klucza licencji jest aktualizowany"
+            },
+            {
+                "type": "Zmienione",
+                "text": "10) Zaktualizowana ikona systemu operacyjnego"
+            },
+            {
+                "type": "Zmienione",
+                "text": "11) Zmodyfikowany rejestr przechowywania systemu plików"
+            },
+            {
+                "type": "Zmienione",
+                "text": "12) pocieszająca nagroda w kasynie zmniejszonym z 5000 do 1000"
+            },
+            {
+                "type": "Zmienione",
+                "text": "13) Cała baza danych przeniesiona do jednego"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW2.0.700",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Shtuar IDE për SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, GO"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) shtuar IDE universale"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Dorëzimi i shtuar"
+            },
+            {
+                "type": "I shtuar",
+                "text": "4) Aplikimi i shtuar për regjistrimin e numrave të automjeteve"
+            },
+            {
+                "type": "I shtuar",
+                "text": "5) Aplikimi i shtuar i numrit të telefonit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "6) Shtuar një gabim fiks për të mos shfaqur kornizën qendrore dhe të poshtme në Windows 10"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "7) Dritarja lidhëse është ndryshuar"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "8) Vëllimi është i lidhur me tingujt e sistemit"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "9) Lloji i dërgimit të një çelësi të licencës azhurnohet"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "10) Ikona OS azhurnohet"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "11) Një regjistër i modifikuar i ruajtjes së një sistemi skedarësh"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "12) çmimi ngushëllues në një kazino të zvogëluar nga 5,000 në 1.000"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "13) E gjithë baza e të dhënave u zhvendos në një"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Листа промена КВ2.0.700",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) Додана је ИДЕ за СКЛ, Свифт, Котлин, дарт, ТС, ПХП, Јава, Руби, Руст, Иди"
+            },
+            {
+                "type": "Додато",
+                "text": "2) додао је универзални ИДЕ"
+            },
+            {
+                "type": "Додато",
+                "text": "3) Додана испорука"
+            },
+            {
+                "type": "Додато",
+                "text": "4) Додана апликација за регистрацију аутоматског броја"
+            },
+            {
+                "type": "Додато",
+                "text": "5) Додана примена телефонског броја"
+            },
+            {
+                "type": "Додато",
+                "text": "6) је додала фиксну грешку да се не приказује централни и доњи оквир на Виндовс 10"
+            },
+            {
+                "type": "Промењен",
+                "text": "7) Прозор везивања је промењен"
+            },
+            {
+                "type": "Промењен",
+                "text": "8) Запремина је везана за звукове система"
+            },
+            {
+                "type": "Промењен",
+                "text": "9) Врста слања лиценцног кључа се ажурира"
+            },
+            {
+                "type": "Промењен",
+                "text": "10) ОС икона је ажурирана"
+            },
+            {
+                "type": "Промењен",
+                "text": "11) модификовани регистар складиштења система датотека"
+            },
+            {
+                "type": "Промењен",
+                "text": "12) утјешна награда у казину смањеном са 5.000 на 1.000"
+            },
+            {
+                "type": "Промењен",
+                "text": "13) Сва база података пребачена у једну"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW2.0.700",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзены IDE для SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Ruby, Go Go"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзены універсальны IDE"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзеная дастаўка"
+            },
+            {
+                "type": "Дададзена",
+                "text": "4) Дададзена прыкладанне для рэгістрацыі аўтамабільных нумароў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "5) Дададзена прымяненне нумара тэлефона"
+            },
+            {
+                "type": "Дададзена",
+                "text": "6) Дададзена фіксаваная памылка, калі не адлюстроўвае цэнтральны і ніжні кадр у Windows 10"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "7) Змянілася акно прывязкі"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "8) Аб'ём прывязаны да гукаў сістэмы"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "9) Тып адпраўкі ліцэнзійнага ключа абнаўляецца"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "10) абноўлены значок АС"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "11) Мадыфікаваны рэестр захоўвання сістэмы файлаў"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "12) Суцяшэнне прыза ў казіно знізілася з 5000 да 1.000"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "13) Уся база дадзеных перамясцілася ў адну"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişiklikler Listesi KW2.0.700",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust için IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) Evrensel IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) Eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "4) Otomatik numaraların kaydı için başvuru eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "5) Telefon numarasının eklenmesi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "6) Windows 10'da merkezi ve alt çerçeveyi görüntüleymemenin sabit bir hata eklendi"
+            },
+            {
+                "type": "Değişen",
+                "text": "7) Bağlanma penceresi değiştirildi"
+            },
+            {
+                "type": "Değişen",
+                "text": "8) Hacim, sistemin seslerine bağlıdır"
+            },
+            {
+                "type": "Değişen",
+                "text": "9) Bir lisans anahtarı göndermenin türü güncellenir"
+            },
+            {
+                "type": "Değişen",
+                "text": "10) OS simgesi güncellendi"
+            },
+            {
+                "type": "Değişen",
+                "text": "11) Bir dosya sisteminin depolanmasının değiştirilmiş bir kaydı"
+            },
+            {
+                "type": "Değişen",
+                "text": "12) Bir kumarhanede rahatlatıcı ödül 5.000'den 1.000'e düşürüldü"
+            },
+            {
+                "type": "Değişen",
+                "text": "13) Tüm veritabanı bire taşındı"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW2.0.700",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавен IDE за SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) Добавен универсален IDE"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) Добавена доставка"
+            },
+            {
+                "type": "Добавено",
+                "text": "4) Добавено заявление за регистрация на автомобилни номера"
+            },
+            {
+                "type": "Добавено",
+                "text": "5) Добавено приложение на телефонния номер"
+            },
+            {
+                "type": "Добавено",
+                "text": "6) Добавена е фиксирана грешка за не показване на централната и долната рамка на Windows 10"
+            },
+            {
+                "type": "Променен",
+                "text": "7) Прозорецът за свързване е променен"
+            },
+            {
+                "type": "Променен",
+                "text": "8) Обемът е обвързан със звуците на системата"
+            },
+            {
+                "type": "Променен",
+                "text": "9) Типът на изпращането на лицензен ключ се актуализира"
+            },
+            {
+                "type": "Променен",
+                "text": "10) Icon на OS Актуализирана"
+            },
+            {
+                "type": "Променен",
+                "text": "11) Модифициран регистър на съхранение на система от файлове"
+            },
+            {
+                "type": "Променен",
+                "text": "12) Утешителна награда в казино намалена от 5000 на 1.000"
+            },
+            {
+                "type": "Променен",
+                "text": "13) Цялата база данни се премести в една"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW2.0.700",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) hozzáadott IDE az SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go számára"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) hozzáadott univerzális ide"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) Hozzáadott kézbesítés"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "4) Hozzáadott kérelem az automatikus számok regisztrációjára"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "5) A telefonszám hozzáadott alkalmazása"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "6) rögzített hibát adott hozzá, hogy a Windows 10 -en nem jelenítse meg a központi és az alsó keretet"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "7) A kötési ablak megváltozott"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "8) A kötet a rendszer hangjaihoz van kötve"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "9) A licenckulcs küldésének típusa frissül"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "10) OS ikon frissítve"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "11) A fájlrendszer módosított tárolási nyilvántartása"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "12) Vigasztaló nyeremény egy kaszinóban 5000 -ről 1,000 -re csökkent"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "13) Az összes adatbázis egyre költözött"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW2.0.700",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) IDE adăugat pentru SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) Adăugat IDE universal"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) Livrare adăugată"
+            },
+            {
+                "type": "Adăugat",
+                "text": "4) Cerere adăugată pentru înregistrarea numerelor automate"
+            },
+            {
+                "type": "Adăugat",
+                "text": "5) Aplicația adăugată a numărului de telefon"
+            },
+            {
+                "type": "Adăugat",
+                "text": "6) a adăugat o eroare fixă ​​de a nu afișa cadrul central și inferior pe Windows 10"
+            },
+            {
+                "type": "Schimbat",
+                "text": "7) Fereastra de legare a fost schimbată"
+            },
+            {
+                "type": "Schimbat",
+                "text": "8) Volumul este legat de sunetele sistemului"
+            },
+            {
+                "type": "Schimbat",
+                "text": "9) Tipul de trimitere a unei chei de licență este actualizat"
+            },
+            {
+                "type": "Schimbat",
+                "text": "10) pictograma sistemului de operare actualizată"
+            },
+            {
+                "type": "Schimbat",
+                "text": "11) Un registru modificat de stocare a unui sistem de fișiere"
+            },
+            {
+                "type": "Schimbat",
+                "text": "12) Premiu reconfortant la un cazinou redus de la 5.000 la 1.000"
+            },
+            {
+                "type": "Schimbat",
+                "text": "13) Toate baza de date s -a mutat într -una"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW2.0.700",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）添加了SQL，Swift，Kotlin，Dart，TS，PHP，Java，Ruby，Rust，Rust，GO的IDE"
+            },
+            {
+                "type": "额外",
+                "text": "2）添加通用IDE"
+            },
+            {
+                "type": "额外",
+                "text": "3）增加交货"
+            },
+            {
+                "type": "额外",
+                "text": "4）添加了自动号码注册的申请"
+            },
+            {
+                "type": "额外",
+                "text": "5）添加了电话号码的申请"
+            },
+            {
+                "type": "额外",
+                "text": "6）添加了未在Windows 10上显示中央和下部帧的固定错误"
+            },
+            {
+                "type": "改变了",
+                "text": "7）绑定窗口已更改"
+            },
+            {
+                "type": "改变了",
+                "text": "8）卷与系统的声音绑定"
+            },
+            {
+                "type": "改变了",
+                "text": "9）发送许可密钥的类型已更新"
+            },
+            {
+                "type": "改变了",
+                "text": "10）OS图标更新了"
+            },
+            {
+                "type": "改变了",
+                "text": "11）修改的文件系统存储寄存器"
+            },
+            {
+                "type": "改变了",
+                "text": "12）赌场的安慰奖从5,000减少到1.000"
+            },
+            {
+                "type": "改变了",
+                "text": "13）所有数据库移至一个数据库"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW2.0.700",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidáno IDE pro SQL, Swift, Kotlin, Dart, TS, PHP, Java, Ruby, Rust, Go"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidáno univerzální IDE"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidáno doručení"
+            },
+            {
+                "type": "Přidáno",
+                "text": "4) Přidaná aplikace pro registraci čísel automobilů"
+            },
+            {
+                "type": "Přidáno",
+                "text": "5) Přidaná aplikace telefonního čísla"
+            },
+            {
+                "type": "Přidáno",
+                "text": "6) Přidána pevná chyba, která nezobrazuje centrální a dolní rámec v systému Windows 10"
+            },
+            {
+                "type": "Změněno",
+                "text": "7) Vazebné okno bylo změněno"
+            },
+            {
+                "type": "Změněno",
+                "text": "8) Svazek je vázán na zvuky systému"
+            },
+            {
+                "type": "Změněno",
+                "text": "9) Typ odesílání licenčního klíče je aktualizován"
+            },
+            {
+                "type": "Změněno",
+                "text": "10) Aktualizována ikona OS"
+            },
+            {
+                "type": "Změněno",
+                "text": "11) Modifikovaný registr úložiště systému souborů"
+            },
+            {
+                "type": "Změněno",
+                "text": "12) Uklidňující cena v kasinu snížila z 5 000 na 1 000"
+            },
+            {
+                "type": "Změněno",
+                "text": "13) Celá databáze se přesunula do jedné"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストKW2.0.700",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）SQL、Swift、Kotlin、Dart、TS、PHP、Java、Ruby、Rust、GoのIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）ユニバーサルIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）配達を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "4）自動番号の登録のための申請を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "5）電話番号の適用が追加されました"
+            },
+            {
+                "type": "追加した",
+                "text": "6）Windows10に中央のフレームと低いフレームを表示しないという固定エラーを追加しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "7）バインディングウィンドウが変更されました"
+            },
+            {
+                "type": "変更されました",
+                "text": "8）ボリュームはシステムの音に関連付けられています"
+            },
+            {
+                "type": "変更されました",
+                "text": "9）ライセンスキーを送信するタイプが更新されます"
+            },
+            {
+                "type": "変更されました",
+                "text": "10）OSアイコンが更新されました"
+            },
+            {
+                "type": "変更されました",
+                "text": "11）ファイルシステムのストレージの変更されたレジスタ"
+            },
+            {
+                "type": "変更されました",
+                "text": "12）5,000から1.000に削減されたカジノの快適な賞品"
+            },
+            {
+                "type": "変更されました",
+                "text": "13）すべてのデータベースが1つに移動しました"
+            }
+        ]
+    }
+}

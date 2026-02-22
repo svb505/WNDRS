@@ -1,0 +1,2092 @@
+{
+    "RU": {
+        "title": "Список изменений KW2.7.100",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1) Добавлен SVB Updater"
+            },
+            {
+                "type": "added",
+                "text": "2) Добавлены вопросы/ответы в FAQ"
+            },
+            {
+                "type": "added",
+                "text": "3) Добавлена копилка"
+            },
+            {
+                "type": "added",
+                "text": "4) Добавлены новые команды в СМД"
+            },
+            {
+                "type": "added",
+                "text": "5) Добавлен BSOD"
+            },
+            {
+                "type": "added",
+                "text": "6) Добавлен выбор архитектуры ОС при установке"
+            },
+            {
+                "type": "added",
+                "text": "7) Добавлены иконки для всех окон"
+            },
+            {
+                "type": "added",
+                "text": "8) Добавлена возможность получать зарплату"
+            },
+            {
+                "type": "added",
+                "text": "9) Добавлена игра «Кто хочет стать миллионером»"
+            },
+            {
+                "type": "added",
+                "text": "10) Добавлено подтверждение перед удалением пароля"
+            },
+            {
+                "type": "added",
+                "text": "11) Добавлена функция просмотра информации про Wi-Fi"
+            },
+            {
+                "type": "added",
+                "text": "12) Добавлен показ текущей раскладки"
+            },
+            {
+                "type": "added",
+                "text": "13) Добавлена биржа"
+            },
+            {
+                "type": "added",
+                "text": "14) Добавлен менеджер паролей"
+            },
+            {
+                "type": "added",
+                "text": "15) Добавлена возможность добавлять симулятор в автозагрузку"
+            },
+            {
+                "type": "added",
+                "text": "16) Добавлен game bar"
+            },
+            {
+                "type": "added",
+                "text": "17) Добавлены страницы для браузера"
+            },
+            {
+                "type": "added",
+                "text": "18) Добавлены новые позиции/категории в доставку"
+            },
+            {
+                "type": "changed",
+                "text": "19) Обновлены прогресс-бары"
+            },
+            {
+                "type": "changed",
+                "text": "20) Добавлены вопросы/ответы"
+            },
+            {
+                "type": "changed",
+                "text": "21) Банк сделан приложением по умолчанию"
+            },
+            {
+                "type": "changed",
+                "text": "22) Увеличено количество уровней в кликере"
+            },
+            {
+                "type": "changed",
+                "text": "23) Изменен внешний вид окна ввода пароля"
+            },
+            {
+                "type": "changed",
+                "text": "24) Обновлен список новостей для браузера"
+            },
+            {
+                "type": "fixed",
+                "text": "25) Исправлены проблемы с очисткой логов"
+            },
+            {
+                "type": "changed",
+                "text": "26) Тетрис и Сапер перенесены на рабочий стол"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW2.7.100",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added SVB Updater"
+            },
+            {
+                "type": "Added",
+                "text": "2) Added questions/answers to FAQ"
+            },
+            {
+                "type": "Added",
+                "text": "3) Added a piggy bank"
+            },
+            {
+                "type": "Added",
+                "text": "4) added new commands in SMD"
+            },
+            {
+                "type": "Added",
+                "text": "5) Added bsod"
+            },
+            {
+                "type": "Added",
+                "text": "6) Added selection of OS architecture when installing"
+            },
+            {
+                "type": "Added",
+                "text": "7) Added icons for all windows"
+            },
+            {
+                "type": "Added",
+                "text": "8) Added the ability to receive a salary"
+            },
+            {
+                "type": "Added",
+                "text": "9) Added the game \"Who wants to become a millionaire\""
+            },
+            {
+                "type": "Added",
+                "text": "10) Added confirmation before password removal"
+            },
+            {
+                "type": "Added",
+                "text": "11) Added the function of viewing information about wi-fi"
+            },
+            {
+                "type": "Added",
+                "text": "12) added the current layout"
+            },
+            {
+                "type": "Added",
+                "text": "13) Added an exchange"
+            },
+            {
+                "type": "Added",
+                "text": "14) Added password manager"
+            },
+            {
+                "type": "Added",
+                "text": "15) Added the ability to add a simulator to a bus load"
+            },
+            {
+                "type": "Added",
+                "text": "16) Added Game Bar"
+            },
+            {
+                "type": "Added",
+                "text": "17) Added pages for the browser"
+            },
+            {
+                "type": "Added",
+                "text": "18) Added new positions/categories to delivery"
+            },
+            {
+                "type": "Changed",
+                "text": "19) renewed progress-bar"
+            },
+            {
+                "type": "Changed",
+                "text": "20) Added questions/answers"
+            },
+            {
+                "type": "Changed",
+                "text": "21) the bank was made by default application"
+            },
+            {
+                "type": "Changed",
+                "text": "22) increased number of levels in the clker"
+            },
+            {
+                "type": "Changed",
+                "text": "23) The appearance of the password entry window has been changed"
+            },
+            {
+                "type": "Changed",
+                "text": "24) updated list of news for browser"
+            },
+            {
+                "type": "Fixed",
+                "text": "25) Fixed problems with the cleaning of logs"
+            },
+            {
+                "type": "Changed",
+                "text": "26) Tetris and sapper transferred to the desktop"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW2.7.100",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) Ajout de la mise à jour SVB"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout de questions / réponses à la FAQ"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Ajout d'une tirelire"
+            },
+            {
+                "type": "Ajouté",
+                "text": "4) Ajout de nouvelles commandes dans SMD"
+            },
+            {
+                "type": "Ajouté",
+                "text": "5) Ajout de BSOD"
+            },
+            {
+                "type": "Ajouté",
+                "text": "6) Ajout d'une sélection d'architecture du système d'exploitation lors de l'installation"
+            },
+            {
+                "type": "Ajouté",
+                "text": "7) Ajout d'icônes pour toutes les fenêtres"
+            },
+            {
+                "type": "Ajouté",
+                "text": "8) Ajout de la possibilité de recevoir un salaire"
+            },
+            {
+                "type": "Ajouté",
+                "text": "9) a ajouté le jeu \"qui veut devenir millionnaire\""
+            },
+            {
+                "type": "Ajouté",
+                "text": "10) Ajout de confirmation avant le retrait du mot de passe"
+            },
+            {
+                "type": "Ajouté",
+                "text": "11) Ajout de la fonction de visualisation des informations sur le Wi-Fi"
+            },
+            {
+                "type": "Ajouté",
+                "text": "12) Ajout de la disposition actuelle"
+            },
+            {
+                "type": "Ajouté",
+                "text": "13) Ajout d'un échange"
+            },
+            {
+                "type": "Ajouté",
+                "text": "14) Ajout du gestionnaire de mots de passe"
+            },
+            {
+                "type": "Ajouté",
+                "text": "15) Ajout de la possibilité d'ajouter un simulateur à une charge de bus"
+            },
+            {
+                "type": "Ajouté",
+                "text": "16) Ajout de la barre de jeu"
+            },
+            {
+                "type": "Ajouté",
+                "text": "17) Ajout de pages pour le navigateur"
+            },
+            {
+                "type": "Ajouté",
+                "text": "18) Ajout de nouveaux postes / catégories à la livraison"
+            },
+            {
+                "type": "Modifié",
+                "text": "19) Bar du progrès renouvelé"
+            },
+            {
+                "type": "Modifié",
+                "text": "20) Ajout de questions / réponses"
+            },
+            {
+                "type": "Modifié",
+                "text": "21) La banque a été faite par défaut"
+            },
+            {
+                "type": "Modifié",
+                "text": "22) Augmentation du nombre de niveaux dans le Clker"
+            },
+            {
+                "type": "Modifié",
+                "text": "23) L'apparence de la fenêtre d'entrée de mot de passe a été modifiée"
+            },
+            {
+                "type": "Modifié",
+                "text": "24) Liste mise à jour des nouvelles pour le navigateur"
+            },
+            {
+                "type": "Fixé",
+                "text": "25) Correction de problèmes avec le nettoyage des journaux"
+            },
+            {
+                "type": "Modifié",
+                "text": "26) Tetris et Sapeur transférés sur le bureau"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW2.7.100",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Додано оновлення SVB"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Додані запитання/відповіді на FAQ"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) Додано скарбничку"
+            },
+            {
+                "type": "Доданий",
+                "text": "4) Додано нові команди в SMD"
+            },
+            {
+                "type": "Доданий",
+                "text": "5) Додано BSOD"
+            },
+            {
+                "type": "Доданий",
+                "text": "6) Доданий вибір архітектури ОС при встановленні"
+            },
+            {
+                "type": "Доданий",
+                "text": "7) Додані піктограми для всіх вікон"
+            },
+            {
+                "type": "Доданий",
+                "text": "8) Додано здатність отримувати зарплату"
+            },
+            {
+                "type": "Доданий",
+                "text": "9) додав гру \"Хто хоче стати мільйонером\""
+            },
+            {
+                "type": "Доданий",
+                "text": "10) Додано підтвердження перед видаленням пароля"
+            },
+            {
+                "type": "Доданий",
+                "text": "11) Додано функцію перегляду інформації про Wi-Fi"
+            },
+            {
+                "type": "Доданий",
+                "text": "12) Додано поточний макет"
+            },
+            {
+                "type": "Доданий",
+                "text": "13) додав обмін"
+            },
+            {
+                "type": "Доданий",
+                "text": "14) Додано менеджер паролів"
+            },
+            {
+                "type": "Доданий",
+                "text": "15) Додано можливість додавання симулятора до навантаження на шину"
+            },
+            {
+                "type": "Доданий",
+                "text": "16) Додано ігровий бар"
+            },
+            {
+                "type": "Доданий",
+                "text": "17) Додані сторінки для браузера"
+            },
+            {
+                "type": "Доданий",
+                "text": "18) Додано нові позиції/категорії до доставки"
+            },
+            {
+                "type": "Змінювати",
+                "text": "19) Поновлений Brogse-Bar"
+            },
+            {
+                "type": "Змінювати",
+                "text": "20) Додані запитання/відповіді"
+            },
+            {
+                "type": "Змінювати",
+                "text": "21) Банк був зроблений за замовчуванням"
+            },
+            {
+                "type": "Змінювати",
+                "text": "22) збільшення кількості рівнів у Clker"
+            },
+            {
+                "type": "Змінювати",
+                "text": "23) Поява вікна введення пароля змінено"
+            },
+            {
+                "type": "Змінювати",
+                "text": "24) Оновлений список новин для браузера"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "25) Виправлені проблеми з очищенням журналів"
+            },
+            {
+                "type": "Змінювати",
+                "text": "26) Tetris та Sapper перенесені на робочий стіл"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW2.7.100",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Aggiunto aggiornamento SVB"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) Aggiunte domande/risposte alle FAQ"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Aggiunto un salvadanaio"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "4) Aggiunti nuovi comandi in SMD"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "5) Aggiunto BSOD"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "6) Aggiunta selezione dell'architettura del sistema operativo durante l'installazione"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "7) icone aggiunte per tutte le finestre"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "8) Aggiunta la possibilità di ricevere uno stipendio"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "9) ha aggiunto il gioco \"chi vuole diventare un milionario\""
+            },
+            {
+                "type": "Aggiunto",
+                "text": "10) Aggiunta conferma prima della rimozione della password"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "11) Aggiunta la funzione di visualizzazione delle informazioni sul Wi-Fi"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "12) Aggiunto il layout corrente"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "13) Aggiunto uno scambio"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "14) Aggiunto Password Manager"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "15) Aggiunta la possibilità di aggiungere un simulatore a un caricamento del bus"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "16) Aggiunta barra di gioco"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "17) Aggiunte pagine per il browser"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "18) Aggiunte nuove posizioni/categorie alla consegna"
+            },
+            {
+                "type": "Cambiato",
+                "text": "19) rinnovato barra di avanzamento"
+            },
+            {
+                "type": "Cambiato",
+                "text": "20) Aggiunte domande/risposte"
+            },
+            {
+                "type": "Cambiato",
+                "text": "21) La banca è stata fatta per applicazione predefinita"
+            },
+            {
+                "type": "Cambiato",
+                "text": "22) aumento del numero di livelli nel clker"
+            },
+            {
+                "type": "Cambiato",
+                "text": "23) L'aspetto della finestra della voce password è stata modificata"
+            },
+            {
+                "type": "Cambiato",
+                "text": "24) Elenco aggiornato di notizie per il browser"
+            },
+            {
+                "type": "Fisso",
+                "text": "25) Risolti problemi con la pulizia dei tronchi"
+            },
+            {
+                "type": "Cambiato",
+                "text": "26) Tetris e Sapper trasferiti sul desktop"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios KW2.7.100",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) Se agregó un actualizador SVB"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) Preguntas/respuestas agregadas a las preguntas frecuentes"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) Se agregó un banco de piggy"
+            },
+            {
+                "type": "Agregado",
+                "text": "4) Se agregaron nuevos comandos en SMD"
+            },
+            {
+                "type": "Agregado",
+                "text": "5) BSOD agregado"
+            },
+            {
+                "type": "Agregado",
+                "text": "6) Selección agregada de arquitectura del sistema operativo al instalar"
+            },
+            {
+                "type": "Agregado",
+                "text": "7) Se agregaron iconos para todas las ventanas"
+            },
+            {
+                "type": "Agregado",
+                "text": "8) Se agregó la capacidad de recibir un salario"
+            },
+            {
+                "type": "Agregado",
+                "text": "9) Agregó el juego \"quién quiere convertirse en millonario\""
+            },
+            {
+                "type": "Agregado",
+                "text": "10) Se agregó confirmación antes de la eliminación de contraseñas"
+            },
+            {
+                "type": "Agregado",
+                "text": "11) Se agregó la función de ver información sobre Wi-Fi"
+            },
+            {
+                "type": "Agregado",
+                "text": "12) Se agregó el diseño actual"
+            },
+            {
+                "type": "Agregado",
+                "text": "13) Se agregó un intercambio"
+            },
+            {
+                "type": "Agregado",
+                "text": "14) Se agregó Administrador de contraseñas"
+            },
+            {
+                "type": "Agregado",
+                "text": "15) Se agregó la capacidad de agregar un simulador a una carga de bus"
+            },
+            {
+                "type": "Agregado",
+                "text": "16) Barra de juego agregada"
+            },
+            {
+                "type": "Agregado",
+                "text": "17) Páginas agregadas para el navegador"
+            },
+            {
+                "type": "Agregado",
+                "text": "18) Se agregaron nuevas posiciones/categorías a la entrega"
+            },
+            {
+                "type": "Cambió",
+                "text": "19) BAR RENEVIDADO DE PROGRESO"
+            },
+            {
+                "type": "Cambió",
+                "text": "20) Preguntas/respuestas agregadas"
+            },
+            {
+                "type": "Cambió",
+                "text": "21) El banco se realizó por aplicación predeterminada"
+            },
+            {
+                "type": "Cambió",
+                "text": "22) Mayor número de niveles en el Clker"
+            },
+            {
+                "type": "Cambió",
+                "text": "23) Se ha cambiado la apariencia de la ventana de entrada de contraseña"
+            },
+            {
+                "type": "Cambió",
+                "text": "24) Lista actualizada de noticias para el navegador"
+            },
+            {
+                "type": "Fijado",
+                "text": "25) Problemas solucionados con la limpieza de registros"
+            },
+            {
+                "type": "Cambió",
+                "text": "26) Tetris y ssper transferidos al escritorio"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW2.7.100",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            {
+                "type": "Hinzugefügt",
+                "text": "1) SVB Updater hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "2) Fragen/Antworten zu FAQs hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "3) Ein Sparschwein hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "4) In SMD neue Befehle hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "5) BSOD hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "6) Bei der Installation eine Auswahl der Betriebssystemarchitektur hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "7) Symbole für alle Fenster hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "8) Die Fähigkeit, ein Gehalt zu erhalten"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "9) fügte das Spiel hinzu, \"wer will Millionär werden\""
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "10) Bestätigung vor dem Kennwortentfernung hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "11) Die Funktion des Anzeigens von Informationen zu Wi-Fi fügte hinzu"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "12) Das aktuelle Layout fügte hinzu"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "13) einen Austausch hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "14) Passwort Manager hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "15) fügte die Möglichkeit hinzu, eine Simulator zu einer Buslast hinzuzufügen"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "16) Game Bar hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "17) Seiten für den Browser hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "18) Die Lieferung neue Positionen/Kategorien hinzugefügt"
+            },
+            {
+                "type": "Verändert",
+                "text": "19) erneuerte Fortschrittsbar"
+            },
+            {
+                "type": "Verändert",
+                "text": "20) Fragen/Antworten hinzugefügt"
+            },
+            {
+                "type": "Verändert",
+                "text": "21) Die Bank wurde standardmäßig beantragt"
+            },
+            {
+                "type": "Verändert",
+                "text": "22) Erhöhte Anzahl der Niveaus im Clker"
+            },
+            {
+                "type": "Verändert",
+                "text": "23) Das Erscheinen des Passworteintragsfensters wurde geändert"
+            },
+            {
+                "type": "Verändert",
+                "text": "24) Aktualisierte Liste der Nachrichten für den Browser"
+            },
+            {
+                "type": "Behoben",
+                "text": "25) Fixierte Probleme mit der Reinigung von Protokollen"
+            },
+            {
+                "type": "Verändert",
+                "text": "26) Tetris und Sapper auf den Desktop übertragen"
+            }
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW2.7.100",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Adicionado atualizador SVB"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) Perguntas/respostas adicionadas às perguntas frequentes"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Adicionado um Piggy Bank"
+            },
+            {
+                "type": "Adicionado",
+                "text": "4) Adicionado novos comandos em SMD"
+            },
+            {
+                "type": "Adicionado",
+                "text": "5) Adicionado BSOD"
+            },
+            {
+                "type": "Adicionado",
+                "text": "6) Adicionada seleção da arquitetura do sistema operacional ao instalar"
+            },
+            {
+                "type": "Adicionado",
+                "text": "7) Adicionados ícones para todas as janelas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "8) Adicionado a capacidade de receber um salário"
+            },
+            {
+                "type": "Adicionado",
+                "text": "9) adicionou o jogo \"Quem quer se tornar um milionário\""
+            },
+            {
+                "type": "Adicionado",
+                "text": "10) Adicionada confirmação antes da remoção de senha"
+            },
+            {
+                "type": "Adicionado",
+                "text": "11) Adicionado a função de visualizar informações sobre Wi-Fi"
+            },
+            {
+                "type": "Adicionado",
+                "text": "12) Adicionado o layout atual"
+            },
+            {
+                "type": "Adicionado",
+                "text": "13) Adicionado uma troca"
+            },
+            {
+                "type": "Adicionado",
+                "text": "14) Adicionado gerenciador de senhas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "15) Adicionado a capacidade de adicionar um simulador a uma carga de ônibus"
+            },
+            {
+                "type": "Adicionado",
+                "text": "16) Barra de jogo adicionada"
+            },
+            {
+                "type": "Adicionado",
+                "text": "17) Adicionado páginas para o navegador"
+            },
+            {
+                "type": "Adicionado",
+                "text": "18) Adicionado novas posições/categorias à entrega"
+            },
+            {
+                "type": "Mudado",
+                "text": "19) Barra de progresso renovada"
+            },
+            {
+                "type": "Mudado",
+                "text": "20) Adicionado perguntas/respostas"
+            },
+            {
+                "type": "Mudado",
+                "text": "21) O banco foi feito por aplicação padrão"
+            },
+            {
+                "type": "Mudado",
+                "text": "22) aumento do número de níveis no clker"
+            },
+            {
+                "type": "Mudado",
+                "text": "23) A aparência da janela de entrada de senha foi alterada"
+            },
+            {
+                "type": "Mudado",
+                "text": "24) Lista atualizada de notícias para navegador"
+            },
+            {
+                "type": "Fixo",
+                "text": "25) Problemas fixos com a limpeza de toras"
+            },
+            {
+                "type": "Mudado",
+                "text": "26) Tetris e Sapper transferidos para a área de trabalho"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW2.7.100",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodano Updater SVB"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) Dodano pytania/odpowiedzi do FAQ"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano bank piggy"
+            },
+            {
+                "type": "W dodatku",
+                "text": "4) Dodano nowe polecenia w SMD"
+            },
+            {
+                "type": "W dodatku",
+                "text": "5) Dodano BSOD"
+            },
+            {
+                "type": "W dodatku",
+                "text": "6) Dodano wybór architektury systemu operacyjnego podczas instalacji"
+            },
+            {
+                "type": "W dodatku",
+                "text": "7) Dodano ikony dla wszystkich okien"
+            },
+            {
+                "type": "W dodatku",
+                "text": "8) Dodano zdolność do otrzymania wynagrodzenia"
+            },
+            {
+                "type": "W dodatku",
+                "text": "9) Dodano grę „kto chce zostać milionerem”"
+            },
+            {
+                "type": "W dodatku",
+                "text": "10) Dodano potwierdzenie przed usunięciem hasła"
+            },
+            {
+                "type": "W dodatku",
+                "text": "11) Dodano funkcję przeglądania informacji o Wi-Fi"
+            },
+            {
+                "type": "W dodatku",
+                "text": "12) Dodano bieżący układ"
+            },
+            {
+                "type": "W dodatku",
+                "text": "13) Dodano wymianę"
+            },
+            {
+                "type": "W dodatku",
+                "text": "14) Dodano menedżera haseł"
+            },
+            {
+                "type": "W dodatku",
+                "text": "15) Dodano możliwość dodania symulatora do obciążenia magistrali"
+            },
+            {
+                "type": "W dodatku",
+                "text": "16) Dodano pasek gier"
+            },
+            {
+                "type": "W dodatku",
+                "text": "17) Dodano strony dla przeglądarki"
+            },
+            {
+                "type": "W dodatku",
+                "text": "18) Dodano nowe pozycje/kategorie do dostawy"
+            },
+            {
+                "type": "Zmienione",
+                "text": "19) Odnowiony pasek postępu"
+            },
+            {
+                "type": "Zmienione",
+                "text": "20) Dodano pytania/odpowiedzi"
+            },
+            {
+                "type": "Zmienione",
+                "text": "21) Bank został złożony domyślnie"
+            },
+            {
+                "type": "Zmienione",
+                "text": "22) Zwiększona liczba poziomów w Clker"
+            },
+            {
+                "type": "Zmienione",
+                "text": "23) Pojawienie się okna wpisu hasła zostało zmienione"
+            },
+            {
+                "type": "Zmienione",
+                "text": "24) Zaktualizowana lista wiadomości dla przeglądarki"
+            },
+            {
+                "type": "Naprawił",
+                "text": "25) Naprawiono problemy z czyszczeniem dzienników"
+            },
+            {
+                "type": "Zmienione",
+                "text": "26) Tetris i saper przeniesione na pulpit"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW2.7.100",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Shtuar Updater SVB"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) Pyetje/përgjigje të shtuara në FAQ"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Shtuar një bankë derri"
+            },
+            {
+                "type": "I shtuar",
+                "text": "4) Shtuar komanda të reja në SMD"
+            },
+            {
+                "type": "I shtuar",
+                "text": "5) Shtuar BSOD"
+            },
+            {
+                "type": "I shtuar",
+                "text": "6) Përzgjedhja e shtuar e arkitekturës OS kur instaloni"
+            },
+            {
+                "type": "I shtuar",
+                "text": "7) Ikona të shtuara për të gjitha dritaret"
+            },
+            {
+                "type": "I shtuar",
+                "text": "8) Shtuar aftësinë për të marrë një pagë"
+            },
+            {
+                "type": "I shtuar",
+                "text": "9) Shtuar lojën \"Kush dëshiron të bëhet milioner\""
+            },
+            {
+                "type": "I shtuar",
+                "text": "10) Shtuar konfirmimin para heqjes së fjalëkalimit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "11) Shtuar funksionin e shikimit të informacionit në lidhje me Wi-Fi"
+            },
+            {
+                "type": "I shtuar",
+                "text": "12) Shtuar paraqitjen aktuale"
+            },
+            {
+                "type": "I shtuar",
+                "text": "13) Shtuar një shkëmbim"
+            },
+            {
+                "type": "I shtuar",
+                "text": "14) Menaxheri i shtuar i fjalëkalimit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "15) Shtuar aftësinë për të shtuar një imitues në një ngarkesë autobusi"
+            },
+            {
+                "type": "I shtuar",
+                "text": "16) Shtuar Bar Lojë"
+            },
+            {
+                "type": "I shtuar",
+                "text": "17) faqe të shtuara për shfletuesin"
+            },
+            {
+                "type": "I shtuar",
+                "text": "18) Shtuar pozicione/kategori të reja në shpërndarje"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "19) Progresi i përtërirë"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "20) Pyetje/përgjigje të shtuara"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "21) Banka është bërë nga aplikimi i paracaktuar"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "22) Rritja e numrit të niveleve në CLKER"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "23) Paraqitja e dritares së hyrjes së fjalëkalimit është ndryshuar"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "24) Lista e azhurnuar e lajmeve për shfletuesin"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "25) Probleme fikse me pastrimin e shkrimeve"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "26) Tetris dhe Sapper transferuar në desktop"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Списак промена кв2.7.100",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) Додато је СВБ Ажурирање"
+            },
+            {
+                "type": "Додато",
+                "text": "2) Додана питања / одговоре на ФАК"
+            },
+            {
+                "type": "Додато",
+                "text": "3) додала је свињац"
+            },
+            {
+                "type": "Додато",
+                "text": "4) Додате нове наредбе у СМД-у"
+            },
+            {
+                "type": "Додато",
+                "text": "5) Додато је БСОД"
+            },
+            {
+                "type": "Додато",
+                "text": "6) Додао је избор ОС архитектуре приликом инсталирања"
+            },
+            {
+                "type": "Додато",
+                "text": "7) Додате иконе за све Виндовс"
+            },
+            {
+                "type": "Додато",
+                "text": "8) додао је могућност примања плате"
+            },
+            {
+                "type": "Додато",
+                "text": "9) додао је игру \"Ко жели да постане милионер\""
+            },
+            {
+                "type": "Додато",
+                "text": "10) Додата потврда пре уклањања лозинке"
+            },
+            {
+                "type": "Додато",
+                "text": "11) Додато је функција прегледа информација о Ви-Фи-у"
+            },
+            {
+                "type": "Додато",
+                "text": "12) додао је тренутни изглед"
+            },
+            {
+                "type": "Додато",
+                "text": "13) додао је размену"
+            },
+            {
+                "type": "Додато",
+                "text": "14) Додан менаџер лозинке"
+            },
+            {
+                "type": "Додато",
+                "text": "15) Додата је могућност додавања симулатора у оптерећење аутобуса"
+            },
+            {
+                "type": "Додато",
+                "text": "16) Додата трака игара"
+            },
+            {
+                "type": "Додато",
+                "text": "17) Додате странице за прегледач"
+            },
+            {
+                "type": "Додато",
+                "text": "18) додао је нове позиције / категорије испоруке"
+            },
+            {
+                "type": "Промењен",
+                "text": "19) Обновљени напредак"
+            },
+            {
+                "type": "Промењен",
+                "text": "20) Додана питања / одговоре"
+            },
+            {
+                "type": "Промењен",
+                "text": "21) Банка је извршена подразумеваном апликацијом"
+            },
+            {
+                "type": "Промењен",
+                "text": "22) Повећани број нивоа у ЦЛКЕР-у"
+            },
+            {
+                "type": "Промењен",
+                "text": "23) Измена прозора за унос лозинке је промењена"
+            },
+            {
+                "type": "Промењен",
+                "text": "24) Ажурирана листа вести за прегледач"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "25) Фиксни проблеми са чишћењем трупаца"
+            },
+            {
+                "type": "Промењен",
+                "text": "26) Тетрис и Саппер пребачен на радну површину"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW2.7.100",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзена SVB Updater"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзеныя пытанні/адказы ў FAQ"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзены скарбонку"
+            },
+            {
+                "type": "Дададзена",
+                "text": "4) Дададзены новыя каманды ў SMD"
+            },
+            {
+                "type": "Дададзена",
+                "text": "5) Дададзены BSOD"
+            },
+            {
+                "type": "Дададзена",
+                "text": "6) Дададзены выбар архітэктуры АС пры ўсталёўцы"
+            },
+            {
+                "type": "Дададзена",
+                "text": "7) Дададзеныя абразкі для ўсіх вокнаў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "8) дадаў магчымасць атрымліваць зарплату"
+            },
+            {
+                "type": "Дададзена",
+                "text": "9) дадаў гульню \"Хто хоча стаць мільянерам\""
+            },
+            {
+                "type": "Дададзена",
+                "text": "10) Дададзена пацверджанне перад выдаленнем пароля"
+            },
+            {
+                "type": "Дададзена",
+                "text": "11) дадаў функцыю прагляду інфармацыі пра Wi-Fi"
+            },
+            {
+                "type": "Дададзена",
+                "text": "12) Дададзены бягучы макет"
+            },
+            {
+                "type": "Дададзена",
+                "text": "13) дадаў абмен"
+            },
+            {
+                "type": "Дададзена",
+                "text": "14) Дададзены менеджэр пароляў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "15) дадаў магчымасць дадаць сімулятар у аўтобусную нагрузку"
+            },
+            {
+                "type": "Дададзена",
+                "text": "16) Дададзены гульнявы ​​бар"
+            },
+            {
+                "type": "Дададзена",
+                "text": "17) Дададзеныя старонкі для браўзэра"
+            },
+            {
+                "type": "Дададзена",
+                "text": "18) Дададзены новыя пазіцыі/катэгорыі да дастаўкі"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "19) Абноўлены бар прагрэсу"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "20) Дададзеныя пытанні/адказы"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "21) Банк быў зроблены па змаўчанні"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "22) Павелічэнне колькасці ўзроўню ў CLKER"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "23) Знешні выгляд акна ўводу пароля быў зменены"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "24) Абноўлены спіс навін для браўзэра"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "25) Выпраўленыя праблемы з ачысткай часопісаў"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "26) Тэтрыс і Саппер пераносяцца на працоўны стол"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişiklikler Listesi KW2.7.100",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) SVB güncelleyici eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) SSS'ye eklenen sorular/cevaplar"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) Bir Piggy Bankası eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "4) SMD'ye yeni komutlar eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "5) BSOD eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "6) Kurulurken işletim sistemi mimarisinin seçimi eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "7) Tüm pencereler için eklenen simgeler"
+            },
+            {
+                "type": "Eklemek",
+                "text": "8) Maaş alma yeteneği eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "9) \"Milyoner olmak isteyen\" oyunu ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "10) Parola kaldırmadan önce onay eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "11) Wi-Fi hakkında bilgileri görüntüleme işlevini ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "12) Mevcut düzeni ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "13) Bir değişim ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "14) Parola Yöneticisi Eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "15) Bir otobüs yüküne bir simülatör ekleme yeteneği eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "16) Oyun çubuğu eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "17) Tarayıcı için eklenen sayfalar"
+            },
+            {
+                "type": "Eklemek",
+                "text": "18) Teslimat için yeni pozisyonlar/kategoriler ekledi"
+            },
+            {
+                "type": "Değişen",
+                "text": "19) Yenilenen İlerleme-Bar"
+            },
+            {
+                "type": "Değişen",
+                "text": "20) Sorular/cevaplar eklendi"
+            },
+            {
+                "type": "Değişen",
+                "text": "21) Banka varsayılan başvuru ile yapılmıştır"
+            },
+            {
+                "type": "Değişen",
+                "text": "22) Clker'de artan seviye sayısı"
+            },
+            {
+                "type": "Değişen",
+                "text": "23) Parola giriş penceresinin görünümü değiştirildi"
+            },
+            {
+                "type": "Değişen",
+                "text": "24) Tarayıcı için güncellenmiş haberler listesi"
+            },
+            {
+                "type": "Sabit",
+                "text": "25) Günlüklerin temizlenmesi ile ilgili sabit sorunlar"
+            },
+            {
+                "type": "Değişen",
+                "text": "26) Tetris ve Sapper masaüstüne aktarıldı"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW2.7.100",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавен SVB Updater"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) Добавени въпроси/отговори на често задавани въпроси"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) Добавена е прасенце банка"
+            },
+            {
+                "type": "Добавено",
+                "text": "4) Добавени нови команди в SMD"
+            },
+            {
+                "type": "Добавено",
+                "text": "5) Добавен BSOD"
+            },
+            {
+                "type": "Добавено",
+                "text": "6) Добавена селекция от архитектура на ОС при инсталиране"
+            },
+            {
+                "type": "Добавено",
+                "text": "7) Добавени икони за всички прозорци"
+            },
+            {
+                "type": "Добавено",
+                "text": "8) Добавена е възможността за получаване на заплата"
+            },
+            {
+                "type": "Добавено",
+                "text": "9) добави играта „Кой иска да стане милионер“"
+            },
+            {
+                "type": "Добавено",
+                "text": "10) Добавено потвърждение преди премахване на парола"
+            },
+            {
+                "type": "Добавено",
+                "text": "11) Добавена е функцията на преглед на информация за Wi-Fi"
+            },
+            {
+                "type": "Добавено",
+                "text": "12) Добавено текущото оформление"
+            },
+            {
+                "type": "Добавено",
+                "text": "13) Добавена е размяна"
+            },
+            {
+                "type": "Добавено",
+                "text": "14) Добавен мениджър на пароли"
+            },
+            {
+                "type": "Добавено",
+                "text": "15) Добавена е възможността за добавяне на симулатор към натоварване на шината"
+            },
+            {
+                "type": "Добавено",
+                "text": "16) Добавена е лента за игри"
+            },
+            {
+                "type": "Добавено",
+                "text": "17) Добавени страници за браузъра"
+            },
+            {
+                "type": "Добавено",
+                "text": "18) Добавени нови позиции/категории за доставка"
+            },
+            {
+                "type": "Променен",
+                "text": "19) Подновен прогрес-бар"
+            },
+            {
+                "type": "Променен",
+                "text": "20) Добавени въпроси/отговори"
+            },
+            {
+                "type": "Променен",
+                "text": "21) Банката е направена по подразбиране заявление"
+            },
+            {
+                "type": "Променен",
+                "text": "22) увеличен брой нива в Clker"
+            },
+            {
+                "type": "Променен",
+                "text": "23) Появата на прозореца за въвеждане на парола е променена"
+            },
+            {
+                "type": "Променен",
+                "text": "24) Актуализиран списък с новини за браузъра"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "25) Фиксирани проблеми с почистването на трупите"
+            },
+            {
+                "type": "Променен",
+                "text": "26) Tetris и Sapper, прехвърлени на работния плот"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW2.7.100",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) hozzáadott SVB -frissítő"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) Kérdések/válaszok hozzáadása/válaszai a GYIK -ra"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) hozzáadott egy malacka bankot"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "4) Új parancsokat adott hozzá az SMD -be"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "5) hozzáadott BSOD"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "6) A telepítéskor hozzáadott operációs rendszer -architektúra kiválasztása"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "7) Hozzáadott ikonok az összes ablakhoz"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "8) hozzáadta a fizetés megszerzésének képességét"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "9) hozzáadta a játékot: \"Ki akar milliomosnak lenni\""
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "10) A jelszó eltávolítása előtt hozzáadott megerősítés"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "11) hozzáadta a Wi-Fi-vel kapcsolatos információk megtekintésének funkcióját"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "12) hozzáadta az aktuális elrendezést"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "13) Tőzsdét adott hozzá"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "14) Hozzáadott Jelszókezelő hozzáadása"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "15) hozzáadta a szimulátor hozzáadásának képességét a buszterheléshez"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "16) Hozzáadott játékbár"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "17) hozzáadott oldalak a böngészőhöz"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "18) új pozíciókat/kategóriákat adott hozzá a kézbesítéshez"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "19) megújult előrehaladási sáv"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "20) Kérdések/válaszok hozzáadása"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "21) A bankot alapértelmezés szerint nyújtották be"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "22) megnövekedett számú szint a clkerben"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "23) A jelszóbejegyzés ablak megjelenése megváltozott"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "24) A böngésző hírek frissített listája"
+            },
+            {
+                "type": "Rögzített",
+                "text": "25) Rögzített problémák a naplók tisztításával"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "26) Tetris és SaPper az asztalra szállították"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW2.7.100",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) Adăugat SVB Updater"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) Întrebări/răspunsuri adăugate la întrebări frecvente"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) a adăugat o bancă de piggy"
+            },
+            {
+                "type": "Adăugat",
+                "text": "4) S -au adăugat noi comenzi în SMD"
+            },
+            {
+                "type": "Adăugat",
+                "text": "5) Adăugat BSOD"
+            },
+            {
+                "type": "Adăugat",
+                "text": "6) Selecția adăugată a arhitecturii OS la instalare"
+            },
+            {
+                "type": "Adăugat",
+                "text": "7) Pictograme adăugate pentru toate ferestrele"
+            },
+            {
+                "type": "Adăugat",
+                "text": "8) a adăugat capacitatea de a primi un salariu"
+            },
+            {
+                "type": "Adăugat",
+                "text": "9) a adăugat jocul „care vrea să devină milionar”"
+            },
+            {
+                "type": "Adăugat",
+                "text": "10) S -a adăugat confirmare înainte de eliminarea parolei"
+            },
+            {
+                "type": "Adăugat",
+                "text": "11) a adăugat funcția de vizualizare a informațiilor despre Wi-Fi"
+            },
+            {
+                "type": "Adăugat",
+                "text": "12) a adăugat aspectul curent"
+            },
+            {
+                "type": "Adăugat",
+                "text": "13) a adăugat un schimb"
+            },
+            {
+                "type": "Adăugat",
+                "text": "14) Adăugat de parole Manager"
+            },
+            {
+                "type": "Adăugat",
+                "text": "15) a adăugat posibilitatea de a adăuga un simulator la o încărcare a autobuzului"
+            },
+            {
+                "type": "Adăugat",
+                "text": "16) Adăugat bara de joc"
+            },
+            {
+                "type": "Adăugat",
+                "text": "17) Pagini adăugate pentru browser"
+            },
+            {
+                "type": "Adăugat",
+                "text": "18) a adăugat noi poziții/categorii la livrare"
+            },
+            {
+                "type": "Schimbat",
+                "text": "19) Bara de progres reînnoită"
+            },
+            {
+                "type": "Schimbat",
+                "text": "20) S -au adăugat întrebări/răspunsuri"
+            },
+            {
+                "type": "Schimbat",
+                "text": "21) Banca a fost făcută în mod implicit pentru aplicație"
+            },
+            {
+                "type": "Schimbat",
+                "text": "22) număr crescut de niveluri în clker"
+            },
+            {
+                "type": "Schimbat",
+                "text": "23) Apariția ferestrei de introducere a parolei a fost schimbată"
+            },
+            {
+                "type": "Schimbat",
+                "text": "24) Lista actualizată de știri pentru browser"
+            },
+            {
+                "type": "Fix",
+                "text": "25) Probleme rezolvate cu curățarea jurnalelor"
+            },
+            {
+                "type": "Schimbat",
+                "text": "26) Tetris și Sapper s -au transferat pe desktop"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW2.7.100",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）添加了SVB更新机"
+            },
+            {
+                "type": "额外",
+                "text": "2）添加了FAQ的问题/答案"
+            },
+            {
+                "type": "额外",
+                "text": "3）添加了一个小猪银行"
+            },
+            {
+                "type": "额外",
+                "text": "4）在SMD中添加了新命令"
+            },
+            {
+                "type": "额外",
+                "text": "5）添加了BSOD"
+            },
+            {
+                "type": "额外",
+                "text": "6）安装时添加了OS体系结构的选择"
+            },
+            {
+                "type": "额外",
+                "text": "7）为所有窗口添加了图标"
+            },
+            {
+                "type": "额外",
+                "text": "8）增加了获得薪水的能力"
+            },
+            {
+                "type": "额外",
+                "text": "9）添加了游戏“谁想要成为百万富翁”"
+            },
+            {
+                "type": "额外",
+                "text": "10）在删除密码之前添加确认"
+            },
+            {
+                "type": "额外",
+                "text": "11）添加了查看有关Wi-Fi信息的功能"
+            },
+            {
+                "type": "额外",
+                "text": "12）添加了当前布局"
+            },
+            {
+                "type": "额外",
+                "text": "13）添加了一个交换"
+            },
+            {
+                "type": "额外",
+                "text": "14）添加了密码管理器"
+            },
+            {
+                "type": "额外",
+                "text": "15）添加了将模拟器添加到总线负载的能力"
+            },
+            {
+                "type": "额外",
+                "text": "16）添加了游戏栏"
+            },
+            {
+                "type": "额外",
+                "text": "17）添加了浏览器的页面"
+            },
+            {
+                "type": "额外",
+                "text": "18）在交付中添加了新的职位/类别"
+            },
+            {
+                "type": "改变了",
+                "text": "19）更新进度栏"
+            },
+            {
+                "type": "改变了",
+                "text": "20）添加了问题/答案"
+            },
+            {
+                "type": "改变了",
+                "text": "21）银行是默认情况下进行的"
+            },
+            {
+                "type": "改变了",
+                "text": "22）clker中的水平增加"
+            },
+            {
+                "type": "改变了",
+                "text": "23）密码输入窗口的外观已更改"
+            },
+            {
+                "type": "改变了",
+                "text": "24）更新浏览器的新闻列表"
+            },
+            {
+                "type": "固定的",
+                "text": "25）清洁日志解决问题"
+            },
+            {
+                "type": "改变了",
+                "text": "26）俄罗斯方块和助推器转移到桌面"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW2.7.100",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidán Updater SVB"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidané otázky/odpovědi na FAQ"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidána prasátko"
+            },
+            {
+                "type": "Přidáno",
+                "text": "4) Přidáno nové příkazy v SMD"
+            },
+            {
+                "type": "Přidáno",
+                "text": "5) Přidán BSOD"
+            },
+            {
+                "type": "Přidáno",
+                "text": "6) Přidán výběr architektury OS při instalaci"
+            },
+            {
+                "type": "Přidáno",
+                "text": "7) Přidány ikony pro všechny Windows"
+            },
+            {
+                "type": "Přidáno",
+                "text": "8) přidal schopnost získat plat"
+            },
+            {
+                "type": "Přidáno",
+                "text": "9) Přidal hru „kdo se chce stát milionářem“"
+            },
+            {
+                "type": "Přidáno",
+                "text": "10) Přidáno potvrzení před odstraněním hesla"
+            },
+            {
+                "type": "Přidáno",
+                "text": "11) Přidal funkci prohlížení informací o Wi-Fi"
+            },
+            {
+                "type": "Přidáno",
+                "text": "12) Přidáno aktuální rozložení"
+            },
+            {
+                "type": "Přidáno",
+                "text": "13) Přidal výměnu"
+            },
+            {
+                "type": "Přidáno",
+                "text": "14) Přidán správce hesel"
+            },
+            {
+                "type": "Přidáno",
+                "text": "15) Přidal možnost přidat simulátor do zatížení sběrnice"
+            },
+            {
+                "type": "Přidáno",
+                "text": "16) Přidán herní bar"
+            },
+            {
+                "type": "Přidáno",
+                "text": "17) Přidány stránky pro prohlížeč"
+            },
+            {
+                "type": "Přidáno",
+                "text": "18) Přidáno nové pozice/kategorie k dodání"
+            },
+            {
+                "type": "Změněno",
+                "text": "19) obnovený progresivní bar"
+            },
+            {
+                "type": "Změněno",
+                "text": "20) Přidány otázky/odpovědi"
+            },
+            {
+                "type": "Změněno",
+                "text": "21) Banka byla provedena ve výchozím nastavení"
+            },
+            {
+                "type": "Změněno",
+                "text": "22) Zvýšený počet úrovní v CLKER"
+            },
+            {
+                "type": "Změněno",
+                "text": "23) Vzhled okna zadávání hesla byl změněn"
+            },
+            {
+                "type": "Změněno",
+                "text": "24) Aktualizovaný seznam zpráv pro prohlížeč"
+            },
+            {
+                "type": "Opravené",
+                "text": "25) Opravené problémy s čištěním protokolů"
+            },
+            {
+                "type": "Změněno",
+                "text": "26) Tetris a Sapper přenesené na plochu"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストKW2.7.100",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）SVB Updaterを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）質問/回答をFAQに追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）ピギーバンクを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "4）SMDに新しいコマンドを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "5）BSODを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "6）インストール時にOSアーキテクチャの選択を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "7）すべてのウィンドウに追加されたアイコン"
+            },
+            {
+                "type": "追加した",
+                "text": "8）給与を受け取る機能を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "9）ゲームを追加しました「誰が億万長者になりたい」"
+            },
+            {
+                "type": "追加した",
+                "text": "10）パスワード削除前に確認を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "11）Wi-Fiに関する情報を表示する機能を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "12）現在のレイアウトを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "13）交換を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "14）パスワードマネージャーを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "15）バスの負荷にシミュレータを追加する機能を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "16）ゲームバーを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "17）ブラウザのページを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "18）配信に新しいポジション/カテゴリを追加しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "19）更新された進行状況"
+            },
+            {
+                "type": "変更されました",
+                "text": "20）質問/回答を追加しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "21）銀行はデフォルトで申請しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "22）Clkerのレベル数の増加"
+            },
+            {
+                "type": "変更されました",
+                "text": "23）パスワードエントリウィンドウの外観が変更されました"
+            },
+            {
+                "type": "変更されました",
+                "text": "24）ブラウザのニュースの更新リスト"
+            },
+            {
+                "type": "修理済み",
+                "text": "25）ログのクリーニングに関する問題を修正しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "26）テトリスとサッパーはデスクトップに転送されました"
+            }
+        ]
+    }
+}

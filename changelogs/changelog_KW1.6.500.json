@@ -1,0 +1,474 @@
+{
+    "RU": {
+        "title": "Список изменений KW1.6.500",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1)Добавлены новые комманды в CMD"
+            },
+            {
+                "type": "added",
+                "text": "2)Добавлены описания команд в cmd"
+            },
+            {
+                "type": "added",
+                "text": "3)Добавлены звуки"
+            },
+            {
+                "type": "added",
+                "text": "4)Добавлен новый код ошибки"
+            },
+            {
+                "type": "changed",
+                "text": "5)Обновлены ЛОГи"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW1.6.500",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added new commander in CMD"
+            },
+            {
+                "type": "Added",
+                "text": "2) Added descriptions of commands in CMD"
+            },
+            {
+                "type": "Added",
+                "text": "3) Added sounds"
+            },
+            {
+                "type": "Added",
+                "text": "4) Added new error code"
+            },
+            {
+                "type": "Changed",
+                "text": "5) Updated logs"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW1.6.500",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) Ajout d'un nouveau commandant en CMD"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout des descriptions des commandes dans CMD"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Ajout des sons"
+            },
+            {
+                "type": "Ajouté",
+                "text": "4) Ajout d'un nouveau code d'erreur"
+            },
+            {
+                "type": "Modifié",
+                "text": "5) Journaux mis à jour"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW1.6.500",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Додано нового командира в CMD"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Додані описи команд у CMD"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) Додані звуки"
+            },
+            {
+                "type": "Доданий",
+                "text": "4) Додано новий код помилки"
+            },
+            {
+                "type": "Змінювати",
+                "text": "5) Оновлені журнали"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW1.6.500",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Aggiunto nuovo comandante in CMD"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) Descrizioni aggiunte dei comandi in CMD"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Suoni aggiunti"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "4) Aggiunto nuovo codice di errore"
+            },
+            {
+                "type": "Cambiato",
+                "text": "5) registri aggiornati"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios KW1.6.500",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) Se agregó un nuevo comandante en CMD"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) Descripciones agregadas de comandos en CMD"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) sonidos agregados"
+            },
+            {
+                "type": "Agregado",
+                "text": "4) Se agregó un nuevo código de error"
+            },
+            {
+                "type": "Cambió",
+                "text": "5) Registros actualizados"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW1.6.500",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!"
+    },
+    "PT": {
+        "title": "Lista de alterações KW1.6.500",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Adicionado novo comandante em CMD"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) Descrições adicionadas de comandos em CMD"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Sons adicionados"
+            },
+            {
+                "type": "Adicionado",
+                "text": "4) Adicionado novo código de erro"
+            },
+            {
+                "type": "Mudado",
+                "text": "5) logs atualizados"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW1.6.500",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodano nowego dowódcę w CMD"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) Dodane opisy poleceń w CMD"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano dźwięki"
+            },
+            {
+                "type": "W dodatku",
+                "text": "4) Dodano nowy kod błędu"
+            },
+            {
+                "type": "Zmienione",
+                "text": "5) Zaktualizowane dzienniki"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW1.6.500",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Shtuar Komandant i Ri në CMD"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) Përshkrimet e shtuara të komandave në CMD"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Tinguj të shtuar"
+            },
+            {
+                "type": "I shtuar",
+                "text": "4) Shtuar kodin e ri të gabimit"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "5) Shkrimet e azhurnuara"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Списак промена кв1.6.500",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) додао је нови командант у ЦМД-у"
+            },
+            {
+                "type": "Додато",
+                "text": "2) додани описи наредби у ЦМД-у"
+            },
+            {
+                "type": "Додато",
+                "text": "3) Додани звукови"
+            },
+            {
+                "type": "Додато",
+                "text": "4) Додао је нови код грешке"
+            },
+            {
+                "type": "Промењен",
+                "text": "5) Ажуриране трупце"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW1.6.500",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзены новага камандзіра ў CMD"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзеныя апісанні каманд у CMD"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзеныя гукі"
+            },
+            {
+                "type": "Дададзена",
+                "text": "4) Дададзены новы код памылкі"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "5) Абноўленыя часопісы"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişikliklerin listesi kw1.6.500",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) CMD'de yeni komutan eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) CMD'deki komutların eklenmesi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) Eklenen sesler"
+            },
+            {
+                "type": "Eklemek",
+                "text": "4) Yeni hata kodu eklendi"
+            },
+            {
+                "type": "Değişen",
+                "text": "5) Güncellenmiş günlükler"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW1.6.500",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавен нов командир в CMD"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) Добавени описания на команди в CMD"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) Добавени звуци"
+            },
+            {
+                "type": "Добавено",
+                "text": "4) Добавен нов код за грешка"
+            },
+            {
+                "type": "Променен",
+                "text": "5) Актуализирани дневници"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW1.6.500",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) új parancsnokot adott hozzá a CMD -be"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) A parancsok hozzáadott leírása a CMD -ben"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) Hozzáadott hangok"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "4) Új hibakód hozzáadása"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "5) Frissített naplók"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW1.6.500",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) A adăugat un nou comandant în CMD"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) Descrieri adăugate ale comenzilor în CMD"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) sunete adăugate"
+            },
+            {
+                "type": "Adăugat",
+                "text": "4) a adăugat un nou cod de eroare"
+            },
+            {
+                "type": "Schimbat",
+                "text": "5) Jurnalele actualizate"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW1.6.500",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）在CMD中添加了新指挥官"
+            },
+            {
+                "type": "额外",
+                "text": "2）在CMD中添加了命令的描述"
+            },
+            {
+                "type": "额外",
+                "text": "3）添加声音"
+            },
+            {
+                "type": "额外",
+                "text": "4）添加了新的错误代码"
+            },
+            {
+                "type": "改变了",
+                "text": "5）更新日志"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW1.6.500",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidán nový velitel v CMD"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidané popisy příkazů v CMD"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidané zvuky"
+            },
+            {
+                "type": "Přidáno",
+                "text": "4) Přidán nový kód chyby"
+            },
+            {
+                "type": "Změněno",
+                "text": "5) Aktualizované protokoly"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストKW1.6.500",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）CMDに新しい司令官を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）CMDのコマンドの説明を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）サウンドが追加されました"
+            },
+            {
+                "type": "追加した",
+                "text": "4）新しいエラーコードが追加されました"
+            },
+            {
+                "type": "変更されました",
+                "text": "5）更新されたログ"
+            }
+        ]
+    }
+}

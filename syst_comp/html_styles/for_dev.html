@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+                <html lang="ru">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Информация о юзере/программе</title>
+                </head>
+                <body style="font-family: Arial, sans-serif; background: #f4f4f9; padding: 20px;">
+                    <div style="max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 25px;">
+                        <h2 style="text-align:center; color:#333; margin-bottom: 20px;">Информация о юзере/программе</h2>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                            <strong>От:</strong> {n} {ln} (<a href="mailto:{e}" style="color:#0066cc; text-decoration:none;">{e}</a>)
+                        </div>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                            <strong>Никнейм:</strong> {name}
+                        </div>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                            <strong>Email:</strong> <a href="mailto:{email}" style="color:#0066cc; text-decoration:none;">{email}</a>
+                        </div>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                            <strong>Дополнительные контакты:</strong> {others}
+                        </div>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                            <strong>Короткое описание:</strong> {sh_d}
+                        </div>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0; color:green; font-weight:bold;">
+                            {yesno}
+                        </div>
+                        <div style="padding: 10px 0;">
+                            <strong>Полное описание:</strong><br>
+                            <p style="margin-top:5px; line-height:1.5; color:#444;">{long_discr}</p>
+                        </div>
+                    </div>
+
+                </body>
+                </html>

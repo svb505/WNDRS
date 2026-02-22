@@ -1,0 +1,1332 @@
+{
+    "RU": {
+        "title": "Список изменений KW3.1.700",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1) Добавлены предосмотр шрифтов и курсора в параметрах"
+            },
+            {
+                "type": "added",
+                "text": "2) Добавлено 28 новых шрифтов"
+            },
+            {
+                "type": "added",
+                "text": "3) Добавлено 11 новых программ"
+            },
+            {
+                "type": "added",
+                "text": "4) Добавлено окно с показом времени и GMT"
+            },
+            {
+                "type": "added",
+                "text": "5) Добавлены новые команды в СМД"
+            },
+            {
+                "type": "added",
+                "text": "6) Добавлены логи сессии"
+            },
+            {
+                "type": "added",
+                "text": "7) Добавлены изображения для заднего фона"
+            },
+            {
+                "type": "added",
+                "text": "8) Добавлена тёмная тема для всех приложений"
+            },
+            {
+                "type": "added",
+                "text": "9) Добавлено автообновление и обновление через сервер"
+            },
+            {
+                "type": "added",
+                "text": "10) Добавлена возможность добавлять приложения в таскбар"
+            },
+            {
+                "type": "added",
+                "text": "11) Добавлена индикация активных приложений в таскбар"
+            },
+            {
+                "type": "changed",
+                "text": "12) Изменён вид таскбара"
+            },
+            {
+                "type": "changed",
+                "text": "13) Изменён вид настроек"
+            },
+            {
+                "type": "changed",
+                "text": "14) Изменён сервер и убрана задержка при отправке SMS на email"
+            },
+            {
+                "type": "fixed",
+                "text": "15) Исправлен баг с неправильным отображением иконки звука в таскбаре"
+            },
+            {
+                "type": "changed",
+                "text": "16) Откорректированы некоторые названия приложений и слов в JSON"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW3.1.700",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added fonts and cursor in parameters"
+            },
+            {
+                "type": "Added",
+                "text": "2) added 28 new fonts"
+            },
+            {
+                "type": "Added",
+                "text": "3) Added 11 new programs"
+            },
+            {
+                "type": "Added",
+                "text": "4) Added a window with time and GMT"
+            },
+            {
+                "type": "Added",
+                "text": "5) added new commands in SMD"
+            },
+            {
+                "type": "Added",
+                "text": "6) Added session logs"
+            },
+            {
+                "type": "Added",
+                "text": "7) Added images for the background"
+            },
+            {
+                "type": "Added",
+                "text": "8) added a dark theme for all applications"
+            },
+            {
+                "type": "Added",
+                "text": "9) Added auto updating and updating through the server"
+            },
+            {
+                "type": "Added",
+                "text": "10) Added the ability to add applications to Taskbar"
+            },
+            {
+                "type": "Added",
+                "text": "11) Added indication of active applications to Taskbar"
+            },
+            {
+                "type": "Changed",
+                "text": "12) The type of taskbara is changed"
+            },
+            {
+                "type": "Changed",
+                "text": "13) The type of settings is changed"
+            },
+            {
+                "type": "Changed",
+                "text": "14) The server has been changed and the delay was removed when sending SMS to email"
+            },
+            {
+                "type": "Fixed",
+                "text": "15) Fixed a bug with improper display of the sound icon in Taskbar"
+            },
+            {
+                "type": "Changed",
+                "text": "16) some names of applications and words in json are adjusted"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW3.1.700",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) Ajout de polices et de curseur dans les paramètres"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout de 28 nouvelles polices"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Ajout de 11 nouveaux programmes"
+            },
+            {
+                "type": "Ajouté",
+                "text": "4) Ajout d'une fenêtre avec du temps et GMT"
+            },
+            {
+                "type": "Ajouté",
+                "text": "5) Ajout de nouvelles commandes dans SMD"
+            },
+            {
+                "type": "Ajouté",
+                "text": "6) Ajout de journaux de session"
+            },
+            {
+                "type": "Ajouté",
+                "text": "7) Ajout d'images pour l'arrière-plan"
+            },
+            {
+                "type": "Ajouté",
+                "text": "8) Ajout d'un thème sombre pour toutes les applications"
+            },
+            {
+                "type": "Ajouté",
+                "text": "9) Ajout de la mise à jour automatique et de la mise à jour via le serveur"
+            },
+            {
+                "type": "Ajouté",
+                "text": "10) Ajout de la possibilité d'ajouter des applications à la barre des tâches"
+            },
+            {
+                "type": "Ajouté",
+                "text": "11) Indication supplémentaire des applications actives à la barre des tâches"
+            },
+            {
+                "type": "Modifié",
+                "text": "12) Le type de tâche est modifié"
+            },
+            {
+                "type": "Modifié",
+                "text": "13) Le type de paramètres est modifié"
+            },
+            {
+                "type": "Modifié",
+                "text": "14) Le serveur a été modifié et le retard a été supprimé lors de l'envoi de SMS en e-mail"
+            },
+            {
+                "type": "Fixé",
+                "text": "15) Correction d'un bug avec un affichage inapproprié de l'icône du son dans la barre des tâches"
+            },
+            {
+                "type": "Modifié",
+                "text": "16) Certains noms d'applications et de mots en JSON sont ajustés"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW3.1.700",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Додані шрифти та курсор у параметрах"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Додано 28 нових шрифтів"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) Додано 11 нових програм"
+            },
+            {
+                "type": "Доданий",
+                "text": "4) Додано вікно з часом та GMT"
+            },
+            {
+                "type": "Доданий",
+                "text": "5) Додано нові команди в SMD"
+            },
+            {
+                "type": "Доданий",
+                "text": "6) Додані журнали сеансу"
+            },
+            {
+                "type": "Доданий",
+                "text": "7) Додано зображення для фону"
+            },
+            {
+                "type": "Доданий",
+                "text": "8) Додано темну тему для всіх програм"
+            },
+            {
+                "type": "Доданий",
+                "text": "9) Додано автоматичне оновлення та оновлення через сервер"
+            },
+            {
+                "type": "Доданий",
+                "text": "10) Додано можливість додавати програми до панелі завдань"
+            },
+            {
+                "type": "Доданий",
+                "text": "11) Додано вказівку активних додатків до панелі завдань"
+            },
+            {
+                "type": "Змінювати",
+                "text": "12) Тип TaskBara змінюється"
+            },
+            {
+                "type": "Змінювати",
+                "text": "13) Тип налаштувань змінюється"
+            },
+            {
+                "type": "Змінювати",
+                "text": "14) Сервер змінено, і затримка була видалена при надсиланні SMS на електронну пошту"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "15) Виправлена ​​помилка з неправильним відображенням значка звуку на панелі завдань"
+            },
+            {
+                "type": "Змінювати",
+                "text": "16) Деякі назви додатків та слів у JSON коригуються"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW3.1.700",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Aggiunti caratteri e cursore nei parametri"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) Aggiunti 28 nuovi caratteri"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Aggiunti 11 nuovi programmi"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "4) Aggiunta una finestra con il tempo e GMT"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "5) Aggiunti nuovi comandi in SMD"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "6) Aggiunti registri di sessione"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "7) Aggiunte immagini per lo sfondo"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "8) Aggiunto un tema oscuro per tutte le applicazioni"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "9) Aggiunta l'aggiornamento e l'aggiornamento automatico tramite il server"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "10) Aggiunta la possibilità di aggiungere applicazioni alla barra delle applicazioni"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "11) Aggiunta indicazione di applicazioni attive alla barra delle applicazioni"
+            },
+            {
+                "type": "Cambiato",
+                "text": "12) Il tipo di taskbara viene modificato"
+            },
+            {
+                "type": "Cambiato",
+                "text": "13) Il tipo di impostazioni viene modificato"
+            },
+            {
+                "type": "Cambiato",
+                "text": "14) Il server è stato modificato e il ritardo è stato rimosso quando si invia SMS all'e -mail"
+            },
+            {
+                "type": "Fisso",
+                "text": "15) Risolto un bug con display improprio dell'icona del suono nella barra delle applicazioni"
+            },
+            {
+                "type": "Cambiato",
+                "text": "16) Alcuni nomi di applicazioni e parole in JSON sono regolati"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios KW3.1.700",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) Fuentes y cursor agregados en parámetros"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) Se agregaron 28 nuevas fuentes"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) Se agregaron 11 nuevos programas"
+            },
+            {
+                "type": "Agregado",
+                "text": "4) Se agregó una ventana con tiempo y GMT"
+            },
+            {
+                "type": "Agregado",
+                "text": "5) Se agregaron nuevos comandos en SMD"
+            },
+            {
+                "type": "Agregado",
+                "text": "6) Registros de sesión agregados"
+            },
+            {
+                "type": "Agregado",
+                "text": "7) Se agregaron imágenes para el fondo"
+            },
+            {
+                "type": "Agregado",
+                "text": "8) Se agregó un tema oscuro para todas las aplicaciones"
+            },
+            {
+                "type": "Agregado",
+                "text": "9) Se agregaron actualización y actualización automática a través del servidor"
+            },
+            {
+                "type": "Agregado",
+                "text": "10) Se agregó la capacidad de agregar aplicaciones a la barra de tareas"
+            },
+            {
+                "type": "Agregado",
+                "text": "11) Se agregó una indicación de aplicaciones activas a la barra de tareas"
+            },
+            {
+                "type": "Cambió",
+                "text": "12) El tipo de tarea se cambia"
+            },
+            {
+                "type": "Cambió",
+                "text": "13) El tipo de configuración se cambia"
+            },
+            {
+                "type": "Cambió",
+                "text": "14) El servidor ha sido cambiado y el retraso se eliminó al enviar SMS al correo electrónico"
+            },
+            {
+                "type": "Fijado",
+                "text": "15) Se corrigió un error con una visualización incorrecta del icono de sonido en la barra de tareas"
+            },
+            {
+                "type": "Cambió",
+                "text": "16) Se ajustan algunos nombres de aplicaciones y palabras en JSON"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW3.1.700",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            {
+                "type": "Hinzugefügt",
+                "text": "1) Schriftarten und Cursor in Parametern hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "2) 28 neue Schriftarten hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "3) 11 neue Programme hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "4) Ein Fenster mit Zeit und GMT hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "5) Neue Befehle in SMD hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "6) Sitzungsprotokolle hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "7) Bilder für den Hintergrund hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "8) Ein dunkler Thema für alle Anwendungen hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "9) Automatische Aktualisierung und Aktualisierung über den Server hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "10) Die Möglichkeit, Anwendungen zur Taskleiste hinzuzufügen, fügte hinzu"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "11) Angabe aktiver Anwendungen zur Taskleiste hinzugefügt"
+            },
+            {
+                "type": "Verändert",
+                "text": "12) Die Art der Taskbara wird geändert"
+            },
+            {
+                "type": "Verändert",
+                "text": "13) Die Art der Einstellungen wird geändert"
+            },
+            {
+                "type": "Verändert",
+                "text": "14) Der Server wurde geändert und die Verzögerung wurde beim Senden von SMS an E -Mail entfernt"
+            },
+            {
+                "type": "Behoben",
+                "text": "15) Ein Fehler mit unsachgemäßer Anzeige des Tonsymbols in der Taskleiste behoben"
+            },
+            {
+                "type": "Verändert",
+                "text": "16) Einige Namen von Anwendungen und Wörtern in JSON werden angepasst"
+            }
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW3.1.700",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Adicionado fontes e cursor em parâmetros"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) Adicionado 28 novas fontes"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Adicionado 11 novos programas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "4) Adicionado uma janela com tempo e GMT"
+            },
+            {
+                "type": "Adicionado",
+                "text": "5) Adicionado novos comandos em SMD"
+            },
+            {
+                "type": "Adicionado",
+                "text": "6) Logs de sessão adicionados"
+            },
+            {
+                "type": "Adicionado",
+                "text": "7) Imagens adicionadas para o fundo"
+            },
+            {
+                "type": "Adicionado",
+                "text": "8) Adicionado um tema sombrio para todos os aplicativos"
+            },
+            {
+                "type": "Adicionado",
+                "text": "9) Adicionado atualização automática e atualização através do servidor"
+            },
+            {
+                "type": "Adicionado",
+                "text": "10) Adicionado a capacidade de adicionar aplicativos à barra de tarefas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "11) Adicionado indicação de aplicações ativas na barra de tarefas"
+            },
+            {
+                "type": "Mudado",
+                "text": "12) O tipo de Taskbara é alterado"
+            },
+            {
+                "type": "Mudado",
+                "text": "13) O tipo de configuração é alterado"
+            },
+            {
+                "type": "Mudado",
+                "text": "14) O servidor foi alterado e o atraso foi removido ao enviar SMS para e -mail"
+            },
+            {
+                "type": "Fixo",
+                "text": "15) Corrigido um bug com exibição inadequada do ícone de som na barra de tarefas"
+            },
+            {
+                "type": "Mudado",
+                "text": "16) Alguns nomes de aplicações e palavras em JSON são ajustados"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW3.1.700",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodano czcionki i kursor w parametrach"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) Dodano 28 nowych czcionek"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano 11 nowych programów"
+            },
+            {
+                "type": "W dodatku",
+                "text": "4) Dodano okno z czasem i GMT"
+            },
+            {
+                "type": "W dodatku",
+                "text": "5) Dodano nowe polecenia w SMD"
+            },
+            {
+                "type": "W dodatku",
+                "text": "6) Dodano dzienniki sesji"
+            },
+            {
+                "type": "W dodatku",
+                "text": "7) Dodano obrazy dla tła"
+            },
+            {
+                "type": "W dodatku",
+                "text": "8) Dodano mroczny motyw dla wszystkich aplikacji"
+            },
+            {
+                "type": "W dodatku",
+                "text": "9) Dodano automatyczną aktualizację i aktualizację za pośrednictwem serwera"
+            },
+            {
+                "type": "W dodatku",
+                "text": "10) Dodano możliwość dodawania aplikacji do paska zadań"
+            },
+            {
+                "type": "W dodatku",
+                "text": "11) Dodano wskazanie aktywnych aplikacji do paska zadań"
+            },
+            {
+                "type": "Zmienione",
+                "text": "12) Rodzaj TaskBara jest zmieniany"
+            },
+            {
+                "type": "Zmienione",
+                "text": "13) Rodzaj ustawień jest zmieniany"
+            },
+            {
+                "type": "Zmienione",
+                "text": "14) Serwer został zmieniony, a opóźnienie zostało usunięte przy wysyłaniu SMS -a na e -mail"
+            },
+            {
+                "type": "Naprawił",
+                "text": "15) Naprawiono błąd z niewłaściwym wyświetlaniem ikony dźwięku na pasku zadań"
+            },
+            {
+                "type": "Zmienione",
+                "text": "16) Niektóre nazwy aplikacji i słów w JSON są dostosowywane"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW3.1.700",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Shtuar shkronja dhe kursor në parametra"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) shtuar 28 shkronja të reja"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Shtuar 11 programe të reja"
+            },
+            {
+                "type": "I shtuar",
+                "text": "4) Shtuar një dritare me kohën dhe GMT"
+            },
+            {
+                "type": "I shtuar",
+                "text": "5) Shtuar komanda të reja në SMD"
+            },
+            {
+                "type": "I shtuar",
+                "text": "6) Shtuar regjistrat e seancave"
+            },
+            {
+                "type": "I shtuar",
+                "text": "7) Imazhe të shtuara për sfondin"
+            },
+            {
+                "type": "I shtuar",
+                "text": "8) Shtuar një temë të errët për të gjitha aplikacionet"
+            },
+            {
+                "type": "I shtuar",
+                "text": "9) Shtuar azhurnimin dhe azhurnimin automatik përmes serverit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "10) Shtuar aftësinë për të shtuar aplikacione në shiritin e detyrave"
+            },
+            {
+                "type": "I shtuar",
+                "text": "11) Tregimi i shtuar i aplikacioneve aktive në shiritin e detyrave"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "12) Lloji i shiritit të detyrave është ndryshuar"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "13) Lloji i cilësimeve është ndryshuar"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "14) Serveri është ndryshuar dhe vonesa është hequr kur dërgon SMS në email"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "15) Fiksoi një gabim me shfaqje të pahijshme të ikonës së tingullit në shiritin e detyrave"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "16) Disa emra të aplikacioneve dhe fjalëve në JSON janë rregulluar"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Списак промена КВ3.1.700",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) Додате фонтове и курсор у параметрима"
+            },
+            {
+                "type": "Додато",
+                "text": "2) Додато 28 нових фонтова"
+            },
+            {
+                "type": "Додато",
+                "text": "3) Додато 11 нових програма"
+            },
+            {
+                "type": "Додато",
+                "text": "4) додао је прозор с временом и на ГМТ"
+            },
+            {
+                "type": "Додато",
+                "text": "5) Додане нове наредбе у СМД-у"
+            },
+            {
+                "type": "Додато",
+                "text": "6) Додана је дневник сесија"
+            },
+            {
+                "type": "Додато",
+                "text": "7) Додате слике за позадину"
+            },
+            {
+                "type": "Додато",
+                "text": "8) додала је тамну тему за све апликације"
+            },
+            {
+                "type": "Додато",
+                "text": "9) Додато аутоматско ажурирање и ажурирање путем сервера"
+            },
+            {
+                "type": "Додато",
+                "text": "10) Додата је могућност додавања апликација на траку задатака"
+            },
+            {
+                "type": "Додато",
+                "text": "11) додато индикација активних апликација на траку задатака"
+            },
+            {
+                "type": "Промењен",
+                "text": "12) Врста траке задатака се мења"
+            },
+            {
+                "type": "Промењен",
+                "text": "13) Врста подешавања се мења"
+            },
+            {
+                "type": "Промењен",
+                "text": "14) сервер је промењен и кашњење је уклоњено приликом слања СМС-а на е-пошту"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "15) Исправљена је грешка са неправилним приказом иконе звука у траци задатака"
+            },
+            {
+                "type": "Промењен",
+                "text": "16) Подешавају се нека имена апликација и речи у ЈСОН-у"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW3.1.700",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзены шрыфты і курсор у параметры"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзена 28 новых шрыфтоў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзена 11 новых праграм"
+            },
+            {
+                "type": "Дададзена",
+                "text": "4) Дададзена акно з часам і GMT"
+            },
+            {
+                "type": "Дададзена",
+                "text": "5) Дададзены новыя каманды ў SMD"
+            },
+            {
+                "type": "Дададзена",
+                "text": "6) Дададзеныя часопісы сесіі"
+            },
+            {
+                "type": "Дададзена",
+                "text": "7) Дададзеныя выявы для фону"
+            },
+            {
+                "type": "Дададзена",
+                "text": "8) Дададзены цёмную тэму для ўсіх прыкладанняў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "9) Дададзена аўтаматычнае абнаўленне і абнаўленне праз сервер"
+            },
+            {
+                "type": "Дададзена",
+                "text": "10) дадаў магчымасць дадаваць прыкладанні ў панэль задач"
+            },
+            {
+                "type": "Дададзена",
+                "text": "11) Дададзена ўказанне актыўных прыкладанняў на панэль задач"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "12) Тып бабіны задач мяняецца"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "13) Тып налад мяняецца"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "14) Сервер быў зменены, і затрымка была выдалена пры адпраўцы SMS на электронную пошту"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "15) Выпраўлена памылка з няправільным адлюстраваннем значка гуку на панэлі задач"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "16) Некаторыя імёны прыкладанняў і слоў у JSON карэктуюцца"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişiklikler Listesi KW3.1.700",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) Parametrelerde yazı tipleri ve imleç eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) 28 yeni yazı tipi eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) 11 yeni program eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "4) Zaman ve GMT ile bir pencere ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "5) SMD'ye yeni komutlar eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "6) Eklenen oturum günlükleri"
+            },
+            {
+                "type": "Eklemek",
+                "text": "7) Arka plan için eklenen görüntüler"
+            },
+            {
+                "type": "Eklemek",
+                "text": "8) Tüm uygulamalar için karanlık bir tema ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "9) Sunucu aracılığıyla otomatik güncelleme ve güncelleme eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "10) Görev çubuğuna uygulama ekleme yeteneği eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "11) Görev çubuğuna aktif uygulamaların eklenmesi"
+            },
+            {
+                "type": "Değişen",
+                "text": "12) TaskBara türü değiştirildi"
+            },
+            {
+                "type": "Değişen",
+                "text": "13) Ayarların türü değiştirildi"
+            },
+            {
+                "type": "Değişen",
+                "text": "14) Sunucu değiştirildi ve e -postaya SMS gönderilirken gecikme kaldırıldı"
+            },
+            {
+                "type": "Sabit",
+                "text": "15) Görev çubuğundaki ses simgesinin yanlış görüntülenmesine sahip bir hata düzeltildi"
+            },
+            {
+                "type": "Değişen",
+                "text": "16) JSON'daki bazı uygulama ve kelimeler adları ayarlandı"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW3.1.700",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавени шрифтове и курсор в параметри"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) Добавени 28 нови шрифта"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) Добавени 11 нови програми"
+            },
+            {
+                "type": "Добавено",
+                "text": "4) Добавено е прозорец с времето и GMT"
+            },
+            {
+                "type": "Добавено",
+                "text": "5) Добавени нови команди в SMD"
+            },
+            {
+                "type": "Добавено",
+                "text": "6) Добавени дневници на сесията"
+            },
+            {
+                "type": "Добавено",
+                "text": "7) Добавени изображения за фона"
+            },
+            {
+                "type": "Добавено",
+                "text": "8) Добавена е тъмна тема за всички приложения"
+            },
+            {
+                "type": "Добавено",
+                "text": "9) Добавено автоматично актуализиране и актуализиране през сървъра"
+            },
+            {
+                "type": "Добавено",
+                "text": "10) Добавена е възможността за добавяне на приложения към лентата на задачите"
+            },
+            {
+                "type": "Добавено",
+                "text": "11) Добавена е индикация за активни приложения към лентата на задачите"
+            },
+            {
+                "type": "Променен",
+                "text": "12) Типът на задачите се променя"
+            },
+            {
+                "type": "Променен",
+                "text": "13) Типът на настройките се променя"
+            },
+            {
+                "type": "Променен",
+                "text": "14) Сървърът е променен и забавянето е премахнато при изпращане на SMS на имейл"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "15) Фиксирана грешка с неправилно показване на звуковата икона в лентата на задачите"
+            },
+            {
+                "type": "Променен",
+                "text": "16) Някои имена на приложения и думи в JSON се коригират"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW3.1.700",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) Betűkészleteket és kurzort adtak hozzá a paraméterekben"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) 28 új betűtípust adott hozzá"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) 11 új programot adott hozzá"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "4) hozzáadott egy ablakot idővel és GMT -vel"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "5) Új parancsokat adott hozzá az SMD -be"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "6) Hozzáadott munkamenet -naplók"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "7) Hozzáadott képek a háttérhez"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "8) hozzáadott egy sötét témát minden alkalmazáshoz"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "9) hozzáadott automatikus frissítés és frissítés a szerveren keresztül"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "10) hozzáadta annak a képességét, hogy alkalmazásokat adjon a tálcához"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "11) hozzáadta az aktív alkalmazások jelölését a tálcához"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "12) A tálcar típusú megváltoztatása megváltozik"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "13) A beállítások típusa megváltozik"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "14."
+            },
+            {
+                "type": "Rögzített",
+                "text": "15) Javítson egy hibát a hang ikonjának helytelen megjelenítésével a tálcán"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "16) A JSON -ban alkalmazott alkalmazások és szavak néhány nevét beállítják"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW3.1.700",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) Fonturi și cursor adăugate în parametri"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) Adăugat 28 de fonturi noi"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) a adăugat 11 programe noi"
+            },
+            {
+                "type": "Adăugat",
+                "text": "4) a adăugat o fereastră cu timp și GMT"
+            },
+            {
+                "type": "Adăugat",
+                "text": "5) a adăugat noi comenzi în SMD"
+            },
+            {
+                "type": "Adăugat",
+                "text": "6) Jurnalele de sesiune adăugate"
+            },
+            {
+                "type": "Adăugat",
+                "text": "7) Imagini adăugate pentru fundal"
+            },
+            {
+                "type": "Adăugat",
+                "text": "8) a adăugat o temă întunecată pentru toate aplicațiile"
+            },
+            {
+                "type": "Adăugat",
+                "text": "9) Adăugat actualizarea și actualizarea automată prin server"
+            },
+            {
+                "type": "Adăugat",
+                "text": "10) a adăugat posibilitatea de a adăuga aplicații la bara de activități"
+            },
+            {
+                "type": "Adăugat",
+                "text": "11) Indicația adăugată a aplicațiilor active la bara de activități"
+            },
+            {
+                "type": "Schimbat",
+                "text": "12) Tipul de tampon este schimbat"
+            },
+            {
+                "type": "Schimbat",
+                "text": "13) tipul de setări este schimbat"
+            },
+            {
+                "type": "Schimbat",
+                "text": "14) Serverul a fost schimbat și întârzierea a fost eliminată la trimiterea SMS la e -mail"
+            },
+            {
+                "type": "Fix",
+                "text": "15) S -a rezolvat o eroare cu afișarea necorespunzătoare a pictogramei sonore în bara de activități"
+            },
+            {
+                "type": "Schimbat",
+                "text": "16) Unele nume de aplicații și cuvinte în JSON sunt ajustate"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW3.1.700",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）在参数中添加字体和光标"
+            },
+            {
+                "type": "额外",
+                "text": "2）添加了28个新字体"
+            },
+            {
+                "type": "额外",
+                "text": "3）添加了11个新程序"
+            },
+            {
+                "type": "额外",
+                "text": "4）随着时间和GMT添加了一个窗口"
+            },
+            {
+                "type": "额外",
+                "text": "5）在SMD中添加了新命令"
+            },
+            {
+                "type": "额外",
+                "text": "6）添加了会话日志"
+            },
+            {
+                "type": "额外",
+                "text": "7）添加了背景的图像"
+            },
+            {
+                "type": "额外",
+                "text": "8）为所有应用程序添加了一个深色主题"
+            },
+            {
+                "type": "额外",
+                "text": "9）通过服务器添加了自动更新和更新"
+            },
+            {
+                "type": "额外",
+                "text": "10）添加了将应用程序添加到任务栏的功能"
+            },
+            {
+                "type": "额外",
+                "text": "11）在任务栏中添加了活动应用的指示"
+            },
+            {
+                "type": "改变了",
+                "text": "12）Taskbara的类型已更改"
+            },
+            {
+                "type": "改变了",
+                "text": "13）设置的类型已更改"
+            },
+            {
+                "type": "改变了",
+                "text": "14）服务器已更改，将SMS发送到电子邮件时删除了延迟"
+            },
+            {
+                "type": "固定的",
+                "text": "15）修复了任务栏中声音图标不正确显示的错误"
+            },
+            {
+                "type": "改变了",
+                "text": "16）调整了JSON中的某些应用程序和单词的名称"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW3.1.700",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidána písma a kurzor v parametrech"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidáno 28 nových písem"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidáno 11 nových programů"
+            },
+            {
+                "type": "Přidáno",
+                "text": "4) Přidáno okno s časem a GMT"
+            },
+            {
+                "type": "Přidáno",
+                "text": "5) Přidáno nové příkazy v SMD"
+            },
+            {
+                "type": "Přidáno",
+                "text": "6) Přidány protokoly relací"
+            },
+            {
+                "type": "Přidáno",
+                "text": "7) Přidány obrázky na pozadí"
+            },
+            {
+                "type": "Přidáno",
+                "text": "8) Přidáno tmavé téma pro všechny aplikace"
+            },
+            {
+                "type": "Přidáno",
+                "text": "9) Přidáno automatické aktualizace a aktualizace prostřednictvím serveru"
+            },
+            {
+                "type": "Přidáno",
+                "text": "10) Přidána schopnost přidat aplikace na hlavní panel"
+            },
+            {
+                "type": "Přidáno",
+                "text": "11) Přidaná indikace aktivních aplikací na hlavním panelu"
+            },
+            {
+                "type": "Změněno",
+                "text": "12) Typ hlavního úřadu se mění"
+            },
+            {
+                "type": "Změněno",
+                "text": "13) Typ nastavení se mění"
+            },
+            {
+                "type": "Změněno",
+                "text": "14) Server byl změněn a zpoždění bylo odstraněno při odesílání SMS do e -mailu"
+            },
+            {
+                "type": "Opravené",
+                "text": "15) Opravena chyba s nesprávným zobrazením ikony zvuku na hlavním panelu"
+            },
+            {
+                "type": "Změněno",
+                "text": "16) Některá jména aplikací a slov v JSON jsou upravena"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストkw3.1.700",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）パラメーターにフォントとカーソルを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）28個の新しいフォントを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）11の新しいプログラムを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "4）時間とGMTのウィンドウを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "5）SMDに新しいコマンドを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "6）セッションログを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "7）背景に画像を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "8）すべてのアプリケーションに暗いテーマを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "9）サーバーを介して自動更新と更新を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "10）タスクバーにアプリケーションを追加する機能を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "11）タスクバーへのアクティブなアプリケーションの兆候を追加しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "12）タスクバラのタイプが変更されます"
+            },
+            {
+                "type": "変更されました",
+                "text": "13）設定のタイプが変更されます"
+            },
+            {
+                "type": "変更されました",
+                "text": "14）サーバーが変更され、SMSを電子メールに送信すると遅延が削除されました"
+            },
+            {
+                "type": "修理済み",
+                "text": "15）タスクバーのサウンドアイコンの不適切な表示でバグを修正しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "16）JSONのアプリケーションと単語のいくつかの名前が調整されます"
+            }
+        ]
+    }
+}

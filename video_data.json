@@ -1,0 +1,11 @@
+{
+  "likes": {
+    "videos/video1.mp4": 0
+  },
+  "dislikes": {
+    "videos/video2.mp4": 0
+  },
+  "comments": {
+    "videos/video2.mp4": 0
+  }
+}

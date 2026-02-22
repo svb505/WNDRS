@@ -1,0 +1,1028 @@
+{
+    "RU": {
+        "title": "Список изменений KW1.7.800",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1)Добавлены описания недостающих функция в cmd"
+            },
+            {
+                "type": "added",
+                "text": "2)Добавлены IDE для C++"
+            },
+            {
+                "type": "added",
+                "text": "3)Добавлена техническая поддержка"
+            },
+            {
+                "type": "changed",
+                "text": "4)Переименована IDE для Python"
+            },
+            {
+                "type": "changed",
+                "text": "5)Изменен интерфейс IDE для Python"
+            },
+            {
+                "type": "changed",
+                "text": "6)Обновлены ЛОГи"
+            },
+            {
+                "type": "changed",
+                "text": "7)Переработан интерфейс загрузчика"
+            },
+            {
+                "type": "fixed",
+                "text": "8)Исправлено название ОС в cmd"
+            },
+            {
+                "type": "fixed",
+                "text": "9)Исправлено недобавление программ в список активных программ"
+            },
+            {
+                "type": "fixed",
+                "text": "10)Исправлена ошибка НЕ обнуления кликера"
+            },
+            {
+                "type": "fixed",
+                "text": "11)Исправлена ошибка языков в блокноте и антивирусе"
+            },
+            {
+                "type": "fixed",
+                "text": "12)Исправлены пробелы в сообщении"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW1.7.800",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added descriptions of the missing function in CMD"
+            },
+            {
+                "type": "Added",
+                "text": "2) Added IDE for C ++"
+            },
+            {
+                "type": "Added",
+                "text": "3) Added technical support"
+            },
+            {
+                "type": "Changed",
+                "text": "4) IDE is renamed for Python"
+            },
+            {
+                "type": "Changed",
+                "text": "5) changed the IDE interface for Python"
+            },
+            {
+                "type": "Changed",
+                "text": "6) Updated logs"
+            },
+            {
+                "type": "Changed",
+                "text": "7) the bootloader interface is redesigned"
+            },
+            {
+                "type": "Fixed",
+                "text": "8) fixed the name of the OS in CMD"
+            },
+            {
+                "type": "Fixed",
+                "text": "9) Fixed output programs in the list of active programs"
+            },
+            {
+                "type": "Fixed",
+                "text": "10) Fixed error not closing clique"
+            },
+            {
+                "type": "Fixed",
+                "text": "11) Fixed the error of languages ​​in the notebook and antivirus"
+            },
+            {
+                "type": "Fixed",
+                "text": "12) spaces are fixed in the message"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW1.7.800",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) Ajout des descriptions de la fonction manquante dans CMD"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout de l'IDE pour C ++"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Ajout d'un support technique"
+            },
+            {
+                "type": "Modifié",
+                "text": "4) IDE est renommé pour Python"
+            },
+            {
+                "type": "Modifié",
+                "text": "5) a changé l'interface IDE pour Python"
+            },
+            {
+                "type": "Modifié",
+                "text": "6) Journaux mis à jour"
+            },
+            {
+                "type": "Modifié",
+                "text": "7) L'interface de chargeur de démarrage est redessinée"
+            },
+            {
+                "type": "Fixé",
+                "text": "8) Correction du nom du système d'exploitation dans CMD"
+            },
+            {
+                "type": "Fixé",
+                "text": "9) Programmes de sortie fixe dans la liste des programmes actifs"
+            },
+            {
+                "type": "Fixé",
+                "text": "10) Erreur fixe ne ferme pas la clique"
+            },
+            {
+                "type": "Fixé",
+                "text": "11) Correction de l'erreur des langues dans le cahier et l'antivirus"
+            },
+            {
+                "type": "Fixé",
+                "text": "12) Les espaces sont fixés dans le message"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW1.7.800",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Додані описи відсутньої функції в CMD"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Додано IDE для C ++"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) Додана технічна підтримка"
+            },
+            {
+                "type": "Змінювати",
+                "text": "4) IDE перейменований на Python"
+            },
+            {
+                "type": "Змінювати",
+                "text": "5) Змінив інтерфейс IDE для Python"
+            },
+            {
+                "type": "Змінювати",
+                "text": "6) Оновлені журнали"
+            },
+            {
+                "type": "Змінювати",
+                "text": "7) Інтерфейс завантажувача переробляється"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "8) Виправлено назву ОС у CMD"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "9) Фіксовані програми виводу у списку активних програм"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "10) Виправлена ​​помилка, що не закриває кліку"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "11) Виправлена ​​помилка мов у зошиті та антивірус"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "12) Пробіли виправляються у повідомленні"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW1.7.800",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Descrizioni aggiunte della funzione mancante in CMD"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) Aggiunto IDE per C ++"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Aggiunto supporto tecnico"
+            },
+            {
+                "type": "Cambiato",
+                "text": "4) IDE viene rinominato per Python"
+            },
+            {
+                "type": "Cambiato",
+                "text": "5) Modificato l'interfaccia IDE per Python"
+            },
+            {
+                "type": "Cambiato",
+                "text": "6) registri aggiornati"
+            },
+            {
+                "type": "Cambiato",
+                "text": "7) L'interfaccia bootloader viene riprogettata"
+            },
+            {
+                "type": "Fisso",
+                "text": "8) Risolto il nome del sistema operativo in CMD"
+            },
+            {
+                "type": "Fisso",
+                "text": "9) Risolti programmi di output nell'elenco dei programmi attivi"
+            },
+            {
+                "type": "Fisso",
+                "text": "10) Errore risolto non chiudendo la cricca"
+            },
+            {
+                "type": "Fisso",
+                "text": "11) Risolto l'errore delle lingue nel taccuino e nell'antivirus"
+            },
+            {
+                "type": "Fisso",
+                "text": "12) Gli spazi sono fissati nel messaggio"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios KW1.7.800",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) Descripciones agregadas de la función faltante en CMD"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) IDE agregado para C ++"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) Soporte técnico agregado"
+            },
+            {
+                "type": "Cambió",
+                "text": "4) IDE se renombra para Python"
+            },
+            {
+                "type": "Cambió",
+                "text": "5) Cambió la interfaz IDE para Python"
+            },
+            {
+                "type": "Cambió",
+                "text": "6) registros actualizados"
+            },
+            {
+                "type": "Cambió",
+                "text": "7) La interfaz del gestor de arranque está rediseñada"
+            },
+            {
+                "type": "Fijado",
+                "text": "8) Se corrigió el nombre del sistema operativo en CMD"
+            },
+            {
+                "type": "Fijado",
+                "text": "9) Programas de salida fijos en la lista de programas activos"
+            },
+            {
+                "type": "Fijado",
+                "text": "10) Error fijo no cerrando la camarilla"
+            },
+            {
+                "type": "Fijado",
+                "text": "11) Se corrigió el error de los idiomas en el cuaderno y el antivirus"
+            },
+            {
+                "type": "Fijado",
+                "text": "12) Los espacios se fijan en el mensaje"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW1.7.800",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            {
+                "type": "Hinzugefügt",
+                "text": "1) Beschreibungen der fehlenden Funktion in CMD hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "2) IDE für C ++ hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "3) technischen Support hinzugefügt"
+            },
+            {
+                "type": "Verändert",
+                "text": "4) IDE wird in Python umbenannt"
+            },
+            {
+                "type": "Verändert",
+                "text": "5) Die IDE -Schnittstelle für Python veränderte"
+            },
+            {
+                "type": "Verändert",
+                "text": "6) Aktualisierte Protokolle"
+            },
+            {
+                "type": "Verändert",
+                "text": "7) Die Bootloader -Schnittstelle wird neu gestaltet"
+            },
+            {
+                "type": "Behoben",
+                "text": "8) Der Name des Betriebssystems in CMD wurde behoben"
+            },
+            {
+                "type": "Behoben",
+                "text": "9) Ausgabeprogramme in der Liste der aktiven Programme festgelegt"
+            },
+            {
+                "type": "Behoben",
+                "text": "10) Fehler behoben, das Clique nicht schließt"
+            },
+            {
+                "type": "Behoben",
+                "text": "11) Der Fehler der Sprachen im Notizbuch und im Antivirus fixierte"
+            },
+            {
+                "type": "Behoben",
+                "text": "12) In der Nachricht sind Leerzeichen festgelegt"
+            }
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW1.7.800",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Descrições adicionadas da função que falta no CMD"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) IDE adicionado para C ++"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Adicionado suporte técnico"
+            },
+            {
+                "type": "Mudado",
+                "text": "4) IDE é renomeado para Python"
+            },
+            {
+                "type": "Mudado",
+                "text": "5) Alterou a interface IDE para Python"
+            },
+            {
+                "type": "Mudado",
+                "text": "6) logs atualizados"
+            },
+            {
+                "type": "Mudado",
+                "text": "7) A interface do bootloader é redesenhada"
+            },
+            {
+                "type": "Fixo",
+                "text": "8) Corrigido o nome do sistema operacional em CMD"
+            },
+            {
+                "type": "Fixo",
+                "text": "9) Programas de saída fixos na lista de programas ativos"
+            },
+            {
+                "type": "Fixo",
+                "text": "10) Erro corrigido não fechando clique"
+            },
+            {
+                "type": "Fixo",
+                "text": "11) Corrigido o erro dos idiomas no caderno e antivírus"
+            },
+            {
+                "type": "Fixo",
+                "text": "12) Os espaços são fixos na mensagem"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW1.7.800",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodane opisy brakującej funkcji w CMD"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) Dodano IDE dla C ++"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano wsparcie techniczne"
+            },
+            {
+                "type": "Zmienione",
+                "text": "4) IDE jest przemianowany na Python"
+            },
+            {
+                "type": "Zmienione",
+                "text": "5) Zmieniono interfejs IDE dla Pythona"
+            },
+            {
+                "type": "Zmienione",
+                "text": "6) Zaktualizowane dzienniki"
+            },
+            {
+                "type": "Zmienione",
+                "text": "7) Interfejs bootloader jest przeprojektowany"
+            },
+            {
+                "type": "Naprawił",
+                "text": "8) Naprawiono nazwę systemu operacyjnego w CMD"
+            },
+            {
+                "type": "Naprawił",
+                "text": "9) Stałe programy wyjściowe na liście aktywnych programów"
+            },
+            {
+                "type": "Naprawił",
+                "text": "10) Naprawiono błąd, a nie zamykanie kliki"
+            },
+            {
+                "type": "Naprawił",
+                "text": "11) Naprawiono błąd języków w notatniku i antywirusach"
+            },
+            {
+                "type": "Naprawił",
+                "text": "12) Sprzenie są ustalone w wiadomości"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW1.7.800",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Përshkrimet e shtuara të funksionit që mungon në CMD"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) shtuar IDE për c ++"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Mbështetje teknike e shtuar"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "4) IDE është riemëruar për Python"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "5) Ndryshuar ndërfaqen IDE për Python"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "6) Shkrimet e azhurnuara"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "7) Ndërfaqja Bootloader është ridizajnuar"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "8) Fiksoi emrin e OS në CMD"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "9) Programet e Prodhimit Fikse në Listën e Programeve Aktive"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "10) Gabim i rregulluar Jo Klique i Mbylljes"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "11) Fiksoi gabimin e gjuhëve në fletore dhe antivirus"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "12) Hapësirat janë të fiksuara në mesazh"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Листа промена кв1.7.800",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) Додани описи недостаје функције у ЦМД-у"
+            },
+            {
+                "type": "Додато",
+                "text": "2) Додана је ИДЕ за Ц ++"
+            },
+            {
+                "type": "Додато",
+                "text": "3) Додана техничка подршка"
+            },
+            {
+                "type": "Промењен",
+                "text": "4) ИДЕ је преименован на Питхон"
+            },
+            {
+                "type": "Промењен",
+                "text": "5) Променио ИДЕ интерфејс за Питхон"
+            },
+            {
+                "type": "Промењен",
+                "text": "6) Ажуриране записнике"
+            },
+            {
+                "type": "Промењен",
+                "text": "7) Интерфејс за покретање боотлоадер је редизајниран"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "8) Поправљено име ОС-а у ЦМД-у"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "9) Фиксне излазне програме на листи активних програма"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "10) Фиксна грешка није блиска кликача"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "11) Поправљена је грешка језика у бележници и антивирус"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "12) размаци су фиксирани у поруци"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW1.7.800",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзеныя апісанні адсутнай функцыі ў CMD"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзены IDE для C ++"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзеная тэхнічная падтрымка"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "4) IDE перайменаваны ў Python"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "5) Зменены інтэрфейс IDE для Python"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "6) Абноўленыя часопісы"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "7) Інтэрфейс загрузніка перарабляецца"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "8) Выпраўлена імя АС у CMD"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "9) Праграмы з фіксаваным вывадам у спісе актыўных праграм"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "10) Выпраўленая памылка не закрывае клік"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "11) Выпраўлена памылка моў у сшытку і антывірусе"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "12) Прабелы зафіксаваны ў паведамленні"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişikliklerin listesi kw1.7.800",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) CMD'de eksik fonksiyonun eklenmesi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) C ++ için IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) Teknik Destek Eklendi"
+            },
+            {
+                "type": "Değişen",
+                "text": "4) Python için IDE yeniden adlandırıldı"
+            },
+            {
+                "type": "Değişen",
+                "text": "5) Python için IDE arayüzünü değiştirdi"
+            },
+            {
+                "type": "Değişen",
+                "text": "6) Güncellenmiş günlükler"
+            },
+            {
+                "type": "Değişen",
+                "text": "7) Bootloader arayüzü yeniden tasarlandı"
+            },
+            {
+                "type": "Sabit",
+                "text": "8) CMD'deki işletim sisteminin adını düzeltti"
+            },
+            {
+                "type": "Sabit",
+                "text": "9) Aktif programlar listesindeki sabit çıktı programları"
+            },
+            {
+                "type": "Sabit",
+                "text": "10) Sabit hata klipsi kapatmıyor"
+            },
+            {
+                "type": "Sabit",
+                "text": "11) Defter ve antivirüsdeki dillerin hatasını düzeltti"
+            },
+            {
+                "type": "Sabit",
+                "text": "12) Mesajda boşluklar sabitlenmiştir"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW1.7.800",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавени описания на липсващата функция в CMD"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) Добавен IDE за C ++"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) Добавена техническа поддръжка"
+            },
+            {
+                "type": "Променен",
+                "text": "4) IDE е преименуван на Python"
+            },
+            {
+                "type": "Променен",
+                "text": "5) Промени IDE интерфейса за Python"
+            },
+            {
+                "type": "Променен",
+                "text": "6) Актуализирани дневници"
+            },
+            {
+                "type": "Променен",
+                "text": "7) Интерфейсът на bootloader е преработен"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "8) Фиксирано името на ОС в CMD"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "9) Програми за фиксирана изхода в списъка с активни програми"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "10) Фиксирана грешка, която не затваря кликата"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "11) Фиксирана грешката на езиците в бележника и антивируса"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "12) Пространствата са фиксирани в съобщението"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW1.7.800",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) A hiányzó funkció hozzáadott leírása a CMD -ben"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) Hozzáadott IDE a C ++ -hoz"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) hozzáadott műszaki támogatás"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "4) Az IDE -t Pythonnak nevezik"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "5) megváltoztatta a python IDE interfészét"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "6) Frissített naplók"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "7) A bootloader felületet átalakítják"
+            },
+            {
+                "type": "Rögzített",
+                "text": "8) Javította az operációs rendszer nevét a CMD -ben"
+            },
+            {
+                "type": "Rögzített",
+                "text": "9) Rögzített kimeneti programok az aktív programok listájában"
+            },
+            {
+                "type": "Rögzített",
+                "text": "10) Rögzített hiba nem zárja be a klikkot"
+            },
+            {
+                "type": "Rögzített",
+                "text": "11) Javította a nyelvek hibáját a notebookban és az antivírusban"
+            },
+            {
+                "type": "Rögzített",
+                "text": "12) A terek rögzítve vannak az üzenetben"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW1.7.800",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) Descrieri adăugate ale funcției lipsă în CMD"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) IDE adăugat pentru C ++"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) Suport tehnic adăugat"
+            },
+            {
+                "type": "Schimbat",
+                "text": "4) IDE este redenumit pentru Python"
+            },
+            {
+                "type": "Schimbat",
+                "text": "5) a schimbat interfața IDE pentru Python"
+            },
+            {
+                "type": "Schimbat",
+                "text": "6) Jurnalele actualizate"
+            },
+            {
+                "type": "Schimbat",
+                "text": "7) Interfața bootloader este reproiectată"
+            },
+            {
+                "type": "Fix",
+                "text": "8) a fixat numele sistemului de operare în CMD"
+            },
+            {
+                "type": "Fix",
+                "text": "9) Programe de ieșire fixă ​​în lista de programe active"
+            },
+            {
+                "type": "Fix",
+                "text": "10) Eroare fixă ​​nu închide clica"
+            },
+            {
+                "type": "Fix",
+                "text": "11) S -a rezolvat eroarea limbilor în caiet și antivirus"
+            },
+            {
+                "type": "Fix",
+                "text": "12) Spațiile sunt fixate în mesaj"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW1.7.800",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）添加了CMD中缺少函数的描述"
+            },
+            {
+                "type": "额外",
+                "text": "2）为C ++添加了IDE"
+            },
+            {
+                "type": "额外",
+                "text": "3）增加技术支持"
+            },
+            {
+                "type": "改变了",
+                "text": "4）IDE被更名为Python"
+            },
+            {
+                "type": "改变了",
+                "text": "5）更改了Python的IDE接口"
+            },
+            {
+                "type": "改变了",
+                "text": "6）更新日志"
+            },
+            {
+                "type": "改变了",
+                "text": "7）重新设计引导加载程序接口"
+            },
+            {
+                "type": "固定的",
+                "text": "8）修复了CMD中的操作系统名称"
+            },
+            {
+                "type": "固定的",
+                "text": "9）固定的活动程序列表中的固定输出程序"
+            },
+            {
+                "type": "固定的",
+                "text": "10）固定错误不关闭集团"
+            },
+            {
+                "type": "固定的",
+                "text": "11）修复了笔记本和防病毒软件中语言的错误"
+            },
+            {
+                "type": "固定的",
+                "text": "12）邮件固定在消息中"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW1.7.800",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidány popisy chybějící funkce v CMD"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidáno IDE pro C ++"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidána technická podpora"
+            },
+            {
+                "type": "Změněno",
+                "text": "4) IDE je přejmenováno na Python"
+            },
+            {
+                "type": "Změněno",
+                "text": "5) Změnil rozhraní IDE pro Python"
+            },
+            {
+                "type": "Změněno",
+                "text": "6) Aktualizované protokoly"
+            },
+            {
+                "type": "Změněno",
+                "text": "7) Rozhraní bootloader je přepracováno"
+            },
+            {
+                "type": "Opravené",
+                "text": "8) Opraven název OS v CMD"
+            },
+            {
+                "type": "Opravené",
+                "text": "9) Programy s pevným výstupem v seznamu aktivních programů"
+            },
+            {
+                "type": "Opravené",
+                "text": "10) Opravená chyba nezavírá klika"
+            },
+            {
+                "type": "Opravené",
+                "text": "11) Opravena chyba jazyků v notebooku a antiviru"
+            },
+            {
+                "type": "Opravené",
+                "text": "12) Ve zprávě jsou stanoveny mezery"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストKW1.7.800",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）CMDの欠落関数の説明を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）C ++のIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）技術サポートを追加しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "4）IDEはPythonの名前が変更されています"
+            },
+            {
+                "type": "変更されました",
+                "text": "5）PythonのIDEインターフェイスを変更しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "6）更新されたログ"
+            },
+            {
+                "type": "変更されました",
+                "text": "7）ブートローダーインターフェイスが再設計されています"
+            },
+            {
+                "type": "修理済み",
+                "text": "8）CMDのOSの名前を修正しました"
+            },
+            {
+                "type": "修理済み",
+                "text": "9）アクティブプログラムのリストに出力プログラムを修正しました"
+            },
+            {
+                "type": "修理済み",
+                "text": "10）クリークを閉じないでエラーを修正しました"
+            },
+            {
+                "type": "修理済み",
+                "text": "11）ノートブックとアンチウイルスの言語のエラーを修正しました"
+            },
+            {
+                "type": "修理済み",
+                "text": "12）スペースはメッセージに固定されています"
+            }
+        ]
+    }
+}

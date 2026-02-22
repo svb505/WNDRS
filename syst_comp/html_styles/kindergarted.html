@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{lang["detsad_message"]}</title>
+  <style>
+    body{font-family: Inter, Arial, sans-serif;background:#fef3f8;margin:0;display:flex;align-items:center;justify-content:center;height:100vh;padding:20px}
+    .sms{width:100%;max-width:420px;background:#fff;border-radius:12px;box-shadow:0 6px 22px rgba(236,72,153,0.06);padding:20px}
+    .from{font-size:13px;color:#db2777;margin-bottom:8px}
+    .title{font-size:18px;font-weight:700;margin-bottom:6px;color:#be185d}
+    .text{font-size:15px;color:#111827;line-height:1.45;margin-bottom:12px}
+    .meta{font-size:13px;color:#6b7280;background:#fff0f6;padding:10px;border-radius:8px}
+    .ok{display:inline-block;margin-top:14px;padding:8px 12px;border-radius:8px;background:#fff0f6;color:#be185d;font-weight:600;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="sms" role="article" aria-label={lang["DSMS1"]}>
+    <div class="from">{lang["DSMS2"]}</div>
+    <div class="title">{lang["DSMS3"]}</div>
+    <div class="text">
+      {lang["kid"]}: <strong>{name}</strong><br>
+      {lang["group"]}: <strong>{group}</strong><br>
+      {lang["NumBid"]}: <strong>{num}</strong>
+    </div>
+    <div class="meta">
+      {lang["date_"]}: {date} • {lang['prof_d']}: {prof}
+    </div>
+    <div class="ok">{lang["pls_takeit_docs"]}</div>
+  </div>
+</body>
+</html>

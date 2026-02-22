@@ -1,0 +1,2358 @@
+{
+    "RU": {
+        "title": "Список изменений KW2.2.600",
+        "changes": 
+            [
+                {
+                    "type": "added",
+                    "text": "1) Улучшение кликера"
+                },
+                {
+                    "type": "added",
+                    "text": "2) Новый размер ярлыка"
+                },
+                {
+                    "type": "added",
+                    "text": "3) Возможность добавлять банковские карты"
+                },
+                {
+                    "type": "added",
+                    "text": "4) Шифрование файлов"
+                },
+                {
+                    "type": "added",
+                    "text": "5) Toogle Switch"
+                },
+                {
+                    "type": "added",
+                    "text": "6) Приложение госуслуг"
+                },
+                {
+                    "type": "added",
+                    "text": "7) Новый код ошибки"
+                },
+                {
+                    "type": "added",
+                    "text": "8) Динамическое изменение статуса кнопок 'wifi' и 'звук'"
+                },
+                {
+                    "type": "added",
+                    "text": "9) Возможность изменять шрифт часов"
+                },
+                {
+                    "type": "added",
+                    "text": "10) Цветовой индикатор батареи"
+                },
+                {
+                    "type": "added",
+                    "text": "11) Zip архивы с установщиками шрифтов"
+                },
+                {
+                    "type": "added",
+                    "text": "12) Просмотр драйверов"
+                },
+                {
+                    "type": "added",
+                    "text": "13) Утилита для анализа файлов"
+                },
+                {
+                    "type": "added",
+                    "text": "14) Возможность создавать файлы в проводнике"
+                },
+                {
+                    "type": "added",
+                    "text": "15) Возможность просматривать и редактировать файлы"
+                },
+                {
+                    "type": "added",
+                    "text": "16) Отладка создания центрального и нижнего фрейма в пуске"
+                },
+                {
+                    "type": "added",
+                    "text": "17) Иконки в проводник"
+                },
+                {
+                    "type": "fixed",
+                    "text": "18) Окно загрузки ОС"
+                },
+                {
+                    "type": "fixed",
+                    "text": "19) Обновление языка"
+                },
+                {
+                    "type": "fixed",
+                    "text": "20) Email отправки системных сообщений"
+                },
+                {
+                    "type": "fixed",
+                    "text": "21) Система отправки email писем"
+                },
+                {
+                    "type": "fixed",
+                    "text": "22) Вид кнопок"
+                },
+                {
+                    "type": "fixed",
+                    "text": "23) Логи"
+                },
+                {
+                    "type": "fixed",
+                    "text": "24) Неточности в языковом пакете"
+                },
+                {
+                    "type": "fixed",
+                    "text": "25) Код отправки email сообщений"
+                },
+                {
+                    "type": "fixed",
+                    "text": "26) Интерфейс таскбара"
+                },
+                {
+                    "type": "fixed",
+                    "text": "27) Интерфейс параметров"
+                },
+                {
+                    "type": "fixed",
+                    "text": "28) Интерфейс соунд бара"
+                },
+                {
+                    "type": "fixed",
+                    "text": "29) Расширения некоторых .cfg файлов изменено на .wndrs"
+                }
+            ]
+        ,
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW2.2.600",
+        "footer": "Thanks for using our application!",
+        "changes": 
+            [
+                {
+                    "type": "Added",
+                    "text": "1) Improving the clicker"
+                },
+                {
+                    "type": "Added",
+                    "text": "2) new label size"
+                },
+                {
+                    "type": "Added",
+                    "text": "3) the ability to add bank cards"
+                },
+                {
+                    "type": "Added",
+                    "text": "4) encryption of files"
+                },
+                {
+                    "type": "Added",
+                    "text": "5) Tooogle switch"
+                },
+                {
+                    "type": "Added",
+                    "text": "6) the application of public services"
+                },
+                {
+                    "type": "Added",
+                    "text": "7) new error code"
+                },
+                {
+                    "type": "Added",
+                    "text": "8) Dynamic change in the status of buttons 'wifi' and 'sound'"
+                },
+                {
+                    "type": "Added",
+                    "text": "9) the ability to change the watch font"
+                },
+                {
+                    "type": "Added",
+                    "text": "10) Battery color indicator"
+                },
+                {
+                    "type": "Added",
+                    "text": "11) zip archives with font installers"
+                },
+                {
+                    "type": "Added",
+                    "text": "12) View drivers"
+                },
+                {
+                    "type": "Added",
+                    "text": "13) Utility for file analysis"
+                },
+                {
+                    "type": "Added",
+                    "text": "14) the ability to create files in the conductor"
+                },
+                {
+                    "type": "Added",
+                    "text": "15) the ability to view and edit files"
+                },
+                {
+                    "type": "Added",
+                    "text": "16) debugging the creation of the central and lower frame in the start"
+                },
+                {
+                    "type": "Added",
+                    "text": "17) icons in the conductor"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "18) OS loading window"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "19) Language update"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "20) email sending system messages"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "21) Sending email letters"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "22) type of buttons"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "23) Log"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "24) inaccuracies in the language package"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "25) email sending code"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "26) Taskbara interface"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "27) The parameter interface"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "28) BARA Sound Interface"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "29) Expansion of some .cfg files changed to .wndrs"
+                }
+            ]
+        
+    },
+    "FR": {
+        "title": "Liste des modifications KW2.2.600",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": 
+            [
+                {
+                    "type": "Ajouté",
+                    "text": "1) Amélioration du clicker"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "2) Nouvelle taille d'étiquette"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "3) la possibilité d'ajouter des cartes bancaires"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "4) Encryption de fichiers"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "5) Interrupteur Tooogle"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "6) l'application des services publics"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "7) Nouveau code d'erreur"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "8) Changement dynamique de l'état des boutons «wifi» et «son»"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "9) La capacité de changer la police de montre"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "10) Indicateur de couleur de la batterie"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "11) Archives zippées avec des installateurs de police"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "12) Afficher les conducteurs"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "13) Utilité pour l'analyse des fichiers"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "14) La possibilité de créer des fichiers dans le conducteur"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "15) la possibilité d'afficher et de modifier les fichiers"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "16) déboguer la création du cadre central et inférieur au début"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "17) Icônes du chef d'orchestre"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "18) Fenêtre de chargement du système d'exploitation"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "19) Mise à jour de la langue"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "20) Email envoie des messages système"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "21) Envoi de lettres e-mail"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "22) Type de boutons"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "23) Journal"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "24) Des inexactitudes dans le package de langue"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "25) Code d'envoi e-mail"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "26) Interface TaskBara"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "27) L'interface du paramètre"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "28) Bara Sound Interface"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "29) L'expansion de certains fichiers .cfg a changé en .wnds"
+                }
+            ]
+        
+    },
+    "UA": {
+        "title": "Список змін KW2.2.600",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": 
+            [
+                {
+                    "type": "Доданий",
+                    "text": "1) Поліпшення клікера"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "2) Новий розмір етикетки"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "3) Можливість додавати банківські картки"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "4) Шифрування файлів"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "5) Toogle Switch"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "6) Застосування державних послуг"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "7) Новий код помилки"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "8) Динамічна зміна стану кнопок \"wifi\" та \"звук\""
+                },
+                {
+                    "type": "Доданий",
+                    "text": "9) Можливість змінити шрифт годинника"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "10) Індикатор кольору акумулятора"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "11) Пошти з шрифтними інсталяторами"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "12) Переглянути драйвери"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "13) Утиліта для аналізу файлів"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "14) Можливість створювати файли в провіднику"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "15) Можливість перегляду та редагування файлів"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "16) Налагодження створення центрального та нижнього кадру на початку"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "17) Піктограми в провіднику"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "18) Вікно завантаження ОС"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "19) Оновлення мови"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "20) Системні повідомлення надсилання електронної пошти"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "21) Надсилання листів електронної пошти"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "22) Тип кнопок"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "23) Журнал"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "24) Неточності в мовному пакеті"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "25) Код надсилання електронної пошти"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "26) Інтерфейс TaskBara"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "27) Інтерфейс параметрів"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "28) Звуковий інтерфейс BARA"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "29) Розширення деяких .cfg файлів змінилося на .wndrs"
+                }
+            ]
+        
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW2.2.600",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            
+                {
+                    "type": "Aggiunto",
+                    "text": "1) Migliorare il clicker"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "2) Nuova dimensione dell'etichetta"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "3) La possibilità di aggiungere carte bancarie"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "4) Crittografia dei file"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "5) Switch troppoogle"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "6) L'applicazione dei servizi pubblici"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "7) Nuovo codice di errore"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "8) Modifica dinamica nello stato dei pulsanti \"Wifi\" e \"Sound\""
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "9) La capacità di cambiare il carattere dell'orologio"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "10) Indicatore del colore della batteria"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "11) Archivi zip con installatori di carattere"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "12) Visualizza i driver"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "13) Utilità per l'analisi dei file"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "14) La possibilità di creare file nel conduttore"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "15) La possibilità di visualizzare e modificare i file"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "16) Debug della creazione del telaio centrale e inferiore all'inizio"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "17) Icone nel conduttore"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "18) Finestra di caricamento del sistema operativo"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "19) Aggiornamento della lingua"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "20) E -mail Invio di messaggi di sistema"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "21) Invio di lettere e -mail"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "22) Tipo di pulsanti"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "23) log"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "24) inesattezze nel pacchetto linguistico"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "25) Email di invio del codice"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "26) Interfaccia Taskbara"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "27) L'interfaccia dei parametri"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "28) Interfaccia audio Bara"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "29) Espansione di alcuni file .cfg modificati in .wndrs"
+                }
+            ]
+        
+    },
+    "ES": {
+        "title": "Lista de cambios KW2.2.600",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": 
+            [
+                {
+                    "type": "Agregado",
+                    "text": "1) Mejorar el clicker"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "2) Nuevo tamaño de la etiqueta"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "3) La capacidad de agregar tarjetas bancarias"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "4) Cifrado de archivos"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "5) Switch TooOgle"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "6) La aplicación de servicios públicos"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "7) Nuevo código de error"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "8) Cambio dinámico en el estado de los botones 'wifi' y 'sonido'"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "9) La capacidad de cambiar la fuente de reloj"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "10) Indicador de color de la batería"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "11) Archivos ZIP con instaladores de fuentes"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "12) Ver conductores"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "13) Utilidad para el análisis de archivos"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "14) La capacidad de crear archivos en el conductor"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "15) la capacidad de ver y editar archivos"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "16) Depuración de la creación del marco central e inferior al principio"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "17) Iconos en el conductor"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "18) Ventana de carga del sistema operativo"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "19) Actualización del idioma"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "20) Mensajes del sistema de envío por correo electrónico"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "21) Enviar cartas de correo electrónico"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "22) Tipo de botones"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "23) Registro"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "24) inexactitudes en el paquete de idiomas"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "25) Código de envío de correo electrónico"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "26) interfaz Taskbara"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "27) la interfaz de parámetros"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "28) Interfaz de sonido Bara"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "29) Expansión de algunos archivos .cfg cambiados a .WNDRS"
+                }
+            ]
+        
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW2.2.600",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            [
+                {
+                    "type": "Hinzugefügt",
+                    "text": "1) Verbesserung des Clickers"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "2) Neue Etikettengröße"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "3) Die Möglichkeit, Bankkarten hinzuzufügen"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "4) Verschlüsselung von Dateien"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "5) Toogle Switch"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "6) Die Anwendung öffentlicher Dienstleistungen"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "7) neuer Fehlercode"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "8) Dynamische Änderung des Status von Schaltflächen 'WiFi' und 'Sound'"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "9) Die Fähigkeit, die Uhr -Schriftart zu ändern"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "10) Batteriefarbanzeige"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "11) ZIP -Archive mit Schriftstellern Installateur"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "12) Treiber anzeigen"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "13) Dienstprogramm für die Dateianalyse"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "14) Die Möglichkeit, Dateien im Leiter zu erstellen"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "15) Die Möglichkeit, Dateien anzuzeigen und zu bearbeiten"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "16) Debugging der Schaffung des zentralen und unteren Rahmens im Start"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "17) Symbole im Leiter"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "18) OS -Ladefenster"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "19) Sprachaktualisierung"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "20) E -Mail -Senden von Systemmeldungen"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "21) Senden von E -Mail -Briefen"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "22) Art der Tasten"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "23) Protokoll"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "24) Ungenauigkeiten im Sprachpaket"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "25) E -Mail -Sendencode"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "26) Taskbara -Schnittstelle"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "27) die Parameterschnittstelle"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "28) Bara Sound -Schnittstelle"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "29) Erweiterung einiger .cfg -Dateien wurden in .Wndrs geändert"
+                }
+            ]
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW2.2.600",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": 
+            [
+                {
+                    "type": "Adicionado",
+                    "text": "1) Melhorando o clicker"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "2) Novo tamanho da etiqueta"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "3) A capacidade de adicionar cartões bancários"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "4) Criptografia de arquivos"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "5) Switch Tooogle"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "6) A aplicação de serviços públicos"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "7) Novo código de erro"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "8) Mudança dinâmica no status dos botões 'wifi' e 'som'"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "9) A capacidade de mudar a fonte do relógio"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "10) Indicador de cor da bateria"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "11) Arquivos Zip com instaladores de fontes"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "12) Veja os motoristas"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "13) Utilidade para análise de arquivos"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "14) A capacidade de criar arquivos no condutor"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "15) A capacidade de visualizar e editar arquivos"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "16) Depuração da criação do quadro central e inferior no início"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "17) ícones no condutor"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "18) Janela de carregamento do sistema operacional"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "19) Atualização do idioma"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "20) Mensagens do sistema de envio de e -mail"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "21) enviando cartas de e -mail"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "22) Tipo de botões"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "23) log"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "24) imprecisões no pacote de idiomas"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "25) Código de envio por e -mail"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "26) Interface Taskbara"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "27) a interface do parâmetro"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "28) Interface de som bara"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "29) Expansão de alguns arquivos .cfg alterados para .WNDRS"
+                }
+            ]
+        
+    },
+    "PL": {
+        "title": "Lista zmian KW2.2.600",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": 
+            [
+                {
+                    "type": "W dodatku",
+                    "text": "1) Ulepszenie kliknięcia"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "2) Nowy rozmiar etykiety"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "3) Możliwość dodawania kart bankowych"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "4) Szyfrowanie plików"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "5) Tooogle Switch"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "6) Zastosowanie usług publicznych"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "7) Nowy kod błędu"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "8) Dynamiczna zmiana statusu przycisków „wifi” i „dźwięk”"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "9) Możliwość zmiany czcionki zegarka"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "10) Wskaźnik koloru akumulatora"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "11) Archiwa zip z instalatorami czcionek"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "12) Zobacz sterowniki"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "13) Narzędzie do analizy plików"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "14) Możliwość tworzenia plików w przewodzie"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "15) Możliwość przeglądania i edytowania plików"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "16) debugowanie tworzenia centralnej i dolnej ramki na początku"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "17) Ikony w przewodzie"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "18) Okno ładowania systemu operacyjnego"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "19) Aktualizacja języka"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "20) Wysyłanie e -maili wiadomości systemowych"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "21) Wysyłanie listów e -mail"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "22) Rodzaj przycisków"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "23) Log"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "24) Niedokładność w pakiecie językowym"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "25) Kod wysyłania e -maila"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "26) Interfejs TaskBara"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "27) Interfejs parametrów"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "28) interfejs dźwiękowy BARA"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "29) Rozszerzenie niektórych plików .cfg zmieniło się na .wndrs"
+                }
+            ]
+        
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW2.2.600",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": 
+            [
+                {
+                    "type": "I shtuar",
+                    "text": "1) Përmirësimi i klikuesit"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "2) Madhësia e re e etiketës"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "3) Aftësia për të shtuar kartat bankare"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "4) Kriptimi i skedarëve"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "5) Switch tooogle"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "6) Zbatimi i shërbimeve publike"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "7) Kodi i ri i gabimit"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "8) Ndryshimi dinamik në statusin e butonave 'WiFi' dhe 'Sound'"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "9) Aftësia për të ndryshuar fontin e orës"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "10) Treguesi i ngjyrës së baterisë"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "11) Arkivat Zip me instaluesit e shkronjave"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "12) Shikoni shoferët"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "13) Shërbimi për analizën e skedarëve"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "14) Aftësia për të krijuar skedarë në dirigjent"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "15) Aftësia për të parë dhe modifikuar skedarët"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "16) Debugimi i krijimit të kornizës qendrore dhe të poshtme në fillim"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "17) ikona në dirigjent"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "18) Dritarja e ngarkimit OS"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "19) azhurnimi i gjuhës"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "20) Mesazhe me email të dërgimit të postës elektronike"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "21) Dërgimi i letrave me email"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "22) Lloji i butonave"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "23) Regjistrohuni"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "24) pasaktësi në paketën e gjuhës"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "25) Kodi i dërgimit të postës elektronike"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "26) Ndërfaqja e Taskës së Taskës"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "27) Ndërfaqja e parametrave"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "28) Ndërfaqja e tingullit bara"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "29) Zgjerimi i disa skedarëve .cfg u ndryshua në .wndrs"
+                }
+            ]
+        
+    },
+    "SRB": {
+        "title": "Листа промена КВ2.2.600",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": 
+            [
+                {
+                    "type": "Додато",
+                    "text": "1) Побољшање кликера"
+                },
+                {
+                    "type": "Додато",
+                    "text": "2) Нова величина налепнице"
+                },
+                {
+                    "type": "Додато",
+                    "text": "3) могућност додавања банковних картица"
+                },
+                {
+                    "type": "Додато",
+                    "text": "4) Шифрирање датотека"
+                },
+                {
+                    "type": "Додато",
+                    "text": "5) Прекидач Сувишег"
+                },
+                {
+                    "type": "Додато",
+                    "text": "6) примена јавних услуга"
+                },
+                {
+                    "type": "Додато",
+                    "text": "7) Нови код грешке"
+                },
+                {
+                    "type": "Додато",
+                    "text": "8) Динамична промена статуса дугмета \"ВиФи\" и \"Звук\""
+                },
+                {
+                    "type": "Додато",
+                    "text": "9) способност промене фонта за сат"
+                },
+                {
+                    "type": "Додато",
+                    "text": "10) Индикатор боја батерије"
+                },
+                {
+                    "type": "Додато",
+                    "text": "11) ЗИП архиве са инсталатерима Фонт"
+                },
+                {
+                    "type": "Додато",
+                    "text": "12) Погледајте управљачке програме"
+                },
+                {
+                    "type": "Додато",
+                    "text": "13) Услужни програм за анализу датотека"
+                },
+                {
+                    "type": "Додато",
+                    "text": "14) способност креирања датотека у проводнику"
+                },
+                {
+                    "type": "Додато",
+                    "text": "15) могућност прегледа и уређивања датотека"
+                },
+                {
+                    "type": "Додато",
+                    "text": "16) уклањање отклањања стварања централног и доњег оквира у почетку"
+                },
+                {
+                    "type": "Додато",
+                    "text": "17) иконе у проводнику"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "18) ОС Учитавање прозора"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "19) Ажурирање језика"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "20) Поруке о слањем порука е-поште"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "21) Слање писма е-поште"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "22) Врста дугмета"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "23) дневник"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "24) нетачности у језичком паковању"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "25) Код слања е-поште"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "26) Интерфејс задатака"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "27) интерфејс параметра"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "28) БАРА звучни интерфејс"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "29) Проширење неких .ЦФГ датотека се променило у .ВНДРС"
+                }
+            
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW2.2.600",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": 
+            [
+                {
+                    "type": "Дададзена",
+                    "text": "1) Паляпшэнне клікера"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "2) новы памер этыкеткі"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "3) Магчымасць дадаваць банкаўскія карты"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "4) Шыфраванне файлаў"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "5) Перамыкач Toogle"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "6) Прымяненне дзяржаўных паслуг"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "7) Новы код памылкі"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "8) Дынамічнае змяненне стану кнопак \"Wi -Fi\" і \"гук\""
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "9) Магчымасць змяніць шрыфт гадзінніка"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "10) Індыкатар колеру батарэі"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "11) Зашпільныя архівы з усталёўвальнікамі шрыфта"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "12) Прагляд драйвераў"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "13) Утыліта для аналізу файлаў"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "14) Магчымасць стварэння файлаў у правадніку"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "15) Магчымасць прагляду і рэдагавання файлаў"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "16) Адладка стварэння цэнтральнага і ніжняга кадра ў пачатку"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "17) абразкі ў правадніку"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "18) акно загрузкі АС"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "19) Абнаўленне мовы"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "20) Адпраўка паведамленняў адпраўкі электроннай пошты"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "21) Адпраўка лістоў па электроннай пошце"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "22) Тып кнопак"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "23) часопіс"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "24) недакладнасці ў моўным пакеце"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "25) Код адпраўкі электроннай пошты"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "26) Інтэрфейс бабіны Taskbara"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "27) інтэрфейс параметраў"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "28) інтэрфейс гуку бары"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "29) Пашырэнне некаторых файлаў .CFG змянілася на .wndrs"
+                }
+            ]
+        
+    },
+    "TUR": {
+        "title": "Değişiklikler Listesi KW2.2.600",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            
+                {
+                    "type": "Eklemek",
+                    "text": "1) tıkrayı geliştirmek"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "2) Yeni etiket boyutu"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "3) Banka kartı ekleme yeteneği"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "4) Dosyaların şifrelemesi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "5) Tooogle Switch"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "6) Kamu Hizmetlerinin Uygulanması"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "7) Yeni hata kodu"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "8) 'WiFi' ve 'Ses' düğmelerinin durumunda dinamik değişiklik"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "9) İzleme yazı tipini değiştirme yeteneği"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "10) Pil rengi göstergesi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "11) Yazı tipi yükleyicileri ile zip arşivleri"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "12) Sürücüleri Görüntüle"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "13) Dosya analizi için yardımcı program"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "14) İletkende dosya oluşturma yeteneği"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "15) Dosyaları görüntüleme ve düzenleme yeteneği"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "16) Başlangıçta merkezi ve alt çerçevenin oluşturulmasında hata ayıklama"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "17) İletkendeki simgeler"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "18) OS yükleme penceresi"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "19) Dil Güncellemesi"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "20) E -posta Sistem Mesajları Gönderme"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "21) E -posta Mektupları Gönderme"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "22) Düğme türü"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "23) Günlük"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "24) Dil paketindeki yanlışlıklar"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "25) E -posta Gönderme Kodu"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "26) GörevBara Arayüzü"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "27) Parametre arayüzü"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "28) Bara Ses Arabirimi"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "29) Bazı .cfg dosyalarının genişlemesi .wndrs olarak değiştirildi"
+                }
+            ]
+        
+    },
+    "BG": {
+        "title": "Списък на промените KW2.2.600",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": 
+            [
+                {
+                    "type": "Добавено",
+                    "text": "1) Подобряване на кликера"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "2) Нов размер на етикета"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "3) Възможността за добавяне на банкови карти"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "4) Шифроване на файлове"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "5) Toogle Switch"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "6) Прилагане на публични услуги"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "7) Нов код за грешка"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "8) Динамична промяна в състоянието на бутоните „wifi“ и „звук“"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "9) Способността за промяна на шрифта на часовника"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "10) Индикатор за цветен батерия"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "11) ZIP архиви с инсталатори на шрифтове"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "12) Преглед на драйвери"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "13) Помощ за анализ на файлове"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "14) Възможността за създаване на файлове в диригента"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "15) Възможността за преглед и редактиране на файлове"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "16) Отстраняване на грешки в създаването на централната и долната рамка в началото"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "17) Икони в проводника"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "18) прозорец за зареждане на ОС"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "19) Актуализация на езика"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "20) съобщения за изпращане на имейл"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "21) Изпращане на имейл писма"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "22) Тип бутони"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "23) дневник"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "24) Неточности в езиковия пакет"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "25) Изпращащ код за изпращане по имейл"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "26) Интерфейс на TaskBara"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "27) Интерфейсът на параметрите"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "28) Интерфейс на бара звук"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "29) Разширяване на някои .cfg файлове, променени на .wndrs"
+                }
+            ]
+        
+    },
+    "HU": {
+        "title": "A változások listája KW2.2.600",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": 
+            [
+                {
+                    "type": "Hozzáadott",
+                    "text": "1) A kattintó javítása"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "2) Új címke mérete"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "3) A bankkártyák hozzáadásának képessége"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "4) A fájlok titkosítása"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "5) Tooogle kapcsoló"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "6) A közszolgáltatások alkalmazása"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "7) Új hibakód"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "8) A „WiFi” és a „Sound” gombok állapotának dinamikus változása"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "9) Az a képesség, hogy megváltoztassa az órát"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "10) akkumulátor színjelzője"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "11) ZIP archívumok betűtípus -szerelőkkel"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "12) A járművezetők megtekintése"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "13) A fájlelemzés segédprogramja"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "14) Az a képesség, hogy fájlokat hozzon létre a vezetőben"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "15) A fájlok megtekintésének és szerkesztésének képessége"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "16) A központi és az alsó keret létrehozásának hibakeresése az elején"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "17) A karmester ikonjai"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "18) OS betöltési ablak"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "19) Nyelv -frissítés"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "20) E -mail küldési rendszerüzenetek"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "21) E -mail levelek küldése"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "22) A gombok típusa"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "23) Napló"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "24) pontatlanság a nyelvi csomagban"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "25) E -mail küldési kód"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "26) Taskocsi felület"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "27) A paraméter -felület"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "28) Bara Sound interfész"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "29) Néhány .cfg fájl bővítése .wndrs -re változott"
+                }
+            ]
+        
+    },
+    "RO": {
+        "title": "Lista modificărilor KW2.2.600",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": 
+            [
+                {
+                    "type": "Adăugat",
+                    "text": "1) Îmbunătățirea clickerului"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "2) Dimensiunea nouă a etichetei"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "3) Posibilitatea de a adăuga carduri bancare"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "4) criptarea fișierelor"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "5) comutator preaogle"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "6) Aplicarea serviciilor publice"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "7) Cod de eroare nou"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "8) Schimbare dinamică a stării butoanelor „wifi” și „sunet”"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "9) Capacitatea de a schimba fontul de ceas"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "10) Indicatorul culorii bateriei"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "11) Arhivele ZIP cu instalatori de fonturi"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "12) Vizualizați driverele"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "13) Utilitate pentru analiza fișierelor"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "14) Capacitatea de a crea fișiere în conductor"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "15) Capacitatea de a vizualiza și edita fișiere"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "16) Debugarea creării cadrului central și inferior în start"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "17) Icoane în dirijor"
+                },
+                {
+                    "type": "Fix",
+                    "text": "18) Fereastră de încărcare a sistemului de operare"
+                },
+                {
+                    "type": "Fix",
+                    "text": "19) Actualizare lingvistică"
+                },
+                {
+                    "type": "Fix",
+                    "text": "20) Mesaje de sistem de trimitere prin e -mail"
+                },
+                {
+                    "type": "Fix",
+                    "text": "21) Trimiterea de scrisori de e -mail"
+                },
+                {
+                    "type": "Fix",
+                    "text": "22) tip de butoane"
+                },
+                {
+                    "type": "Fix",
+                    "text": "23) jurnal"
+                },
+                {
+                    "type": "Fix",
+                    "text": "24) inexactități în pachetul de limbă"
+                },
+                {
+                    "type": "Fix",
+                    "text": "25) Cod de trimitere prin e -mail"
+                },
+                {
+                    "type": "Fix",
+                    "text": "26) Interfață de lucru"
+                },
+                {
+                    "type": "Fix",
+                    "text": "27) Interfața parametrilor"
+                },
+                {
+                    "type": "Fix",
+                    "text": "28) Interfață de sunet Bara"
+                },
+                {
+                    "type": "Fix",
+                    "text": "29) Extinderea unor fișiere .cfg modificate în .wndrs"
+                }
+            ]
+        
+    },
+    "CN": {
+        "title": "更改列表KW2.2.600",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": 
+            [
+                {
+                    "type": "额外",
+                    "text": "1）改进点击器"
+                },
+                {
+                    "type": "额外",
+                    "text": "2）新标签尺寸"
+                },
+                {
+                    "type": "额外",
+                    "text": "3）添加银行卡的能力"
+                },
+                {
+                    "type": "额外",
+                    "text": "4）文件加密"
+                },
+                {
+                    "type": "额外",
+                    "text": "5）Toogle Switch"
+                },
+                {
+                    "type": "额外",
+                    "text": "6）公共服务的应用"
+                },
+                {
+                    "type": "额外",
+                    "text": "7）新错误代码"
+                },
+                {
+                    "type": "额外",
+                    "text": "8）按钮“ wifi”和“声音”状态的动态变化"
+                },
+                {
+                    "type": "额外",
+                    "text": "9）更改手表字体的能力"
+                },
+                {
+                    "type": "额外",
+                    "text": "10）电池颜色指示器"
+                },
+                {
+                    "type": "额外",
+                    "text": "11）带字体安装程序的拉链档案"
+                },
+                {
+                    "type": "额外",
+                    "text": "12）查看驱动程序"
+                },
+                {
+                    "type": "额外",
+                    "text": "13）文件分析的实用程序"
+                },
+                {
+                    "type": "额外",
+                    "text": "14）在导体中创建文件的能力"
+                },
+                {
+                    "type": "额外",
+                    "text": "15）查看和编辑文件的能力"
+                },
+                {
+                    "type": "额外",
+                    "text": "16）从一开始就调试中央和下部框架的创建"
+                },
+                {
+                    "type": "额外",
+                    "text": "17）导体中的图标"
+                },
+                {
+                    "type": "固定的",
+                    "text": "18）操作系统加载窗口"
+                },
+                {
+                    "type": "固定的",
+                    "text": "19）语言更新"
+                },
+                {
+                    "type": "固定的",
+                    "text": "20）电子邮件发送系统消息"
+                },
+                {
+                    "type": "固定的",
+                    "text": "21）发送电子邮件信件"
+                },
+                {
+                    "type": "固定的",
+                    "text": "22）按钮的类型"
+                },
+                {
+                    "type": "固定的",
+                    "text": "23）日志"
+                },
+                {
+                    "type": "固定的",
+                    "text": "24）语言包中的不准确性"
+                },
+                {
+                    "type": "固定的",
+                    "text": "25）电子邮件发送代码"
+                },
+                {
+                    "type": "固定的",
+                    "text": "26）任务巴拉接口"
+                },
+                {
+                    "type": "固定的",
+                    "text": "27）参数接口"
+                },
+                {
+                    "type": "固定的",
+                    "text": "28）巴拉声音界面"
+                },
+                {
+                    "type": "固定的",
+                    "text": "29）一些.cfg文件的扩展更改为.wndrs"
+                }
+            ]
+        
+    },
+    "CS": {
+        "title": "Seznam změn KW2.2.600",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": 
+            [
+                {
+                    "type": "Přidáno",
+                    "text": "1) Vylepšení klikáře"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "2) Nová velikost štítku"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "3) Schopnost přidávat bankovní karty"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "4) Šifrování souborů"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "5) Přepínač Toogle"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "6) Aplikace veřejných služeb"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "7) Nový chybový kód"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "8) Dynamická změna stavu tlačítek „wifi“ a „zvuk“"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "9) Schopnost změnit písmo hodinky"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "10) Indikátor barvy baterie"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "11) Archivy zip s instalačními zařízeními"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "12) Zobrazit řidiče"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "13) Nástroj pro analýzu souborů"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "14) Schopnost vytvářet soubory ve vodiči"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "15) Schopnost prohlížet a upravovat soubory"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "16) Ladění vytvoření centrálního a dolního snímku na začátku"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "17) Ikony ve vodiči"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "18) Okno načítání OS"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "19) Aktualizace jazyka"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "20) E -mailové odesílání systémových zpráv"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "21) Odesílání e -mailových dopisů"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "22) Typ tlačítek"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "23) Log"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "24) nepřesnosti v jazykovém balíčku"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "25) E -mail Odesílání kódu"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "26) Rozhraní Haskbara"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "27) Rozhraní parametrů"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "28) Zvukové rozhraní Bara"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "29) Rozšíření některých souborů .CFG se změnilo na."
+                }
+            ]
+        
+    },
+    "JP": {
+        "title": "変更のリストKW2.2.600",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": 
+            [
+                {
+                    "type": "追加した",
+                    "text": "1）クリッカーの改善"
+                },
+                {
+                    "type": "追加した",
+                    "text": "2）新しいラベルサイズ"
+                },
+                {
+                    "type": "追加した",
+                    "text": "3）銀行カードを追加する機能"
+                },
+                {
+                    "type": "追加した",
+                    "text": "4）ファイルの暗号化"
+                },
+                {
+                    "type": "追加した",
+                    "text": "5）トゥーグルスイッチ"
+                },
+                {
+                    "type": "追加した",
+                    "text": "6）公共サービスの適用"
+                },
+                {
+                    "type": "追加した",
+                    "text": "7）新しいエラーコード"
+                },
+                {
+                    "type": "追加した",
+                    "text": "8）ボタン「wifi」と「サウンド」のステータスの動的な変化"
+                },
+                {
+                    "type": "追加した",
+                    "text": "9）ウォッチフォントを変更する機能"
+                },
+                {
+                    "type": "追加した",
+                    "text": "10）バッテリーカラーインジケーター"
+                },
+                {
+                    "type": "追加した",
+                    "text": "11）フォントインストーラーを備えたzipアーカイブ"
+                },
+                {
+                    "type": "追加した",
+                    "text": "12）ドライバーを表示します"
+                },
+                {
+                    "type": "追加した",
+                    "text": "13）ファイル分析のユーティリティ"
+                },
+                {
+                    "type": "追加した",
+                    "text": "14）導体にファイルを作成する機能"
+                },
+                {
+                    "type": "追加した",
+                    "text": "15）ファイルを表示および編集する機能"
+                },
+                {
+                    "type": "追加した",
+                    "text": "16）開始時に中央フレームと低いフレームの作成をデバッグする"
+                },
+                {
+                    "type": "追加した",
+                    "text": "17）導体のアイコン"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "18）OSの読み込みウィンドウ"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "19）言語の更新"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "20）電子メールシステムメッセージを送信します"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "21）電子メールレターの送信"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "22）ボタンの種類"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "23）ログ"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "24）言語パッケージの不正確さ"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "25）電子メール送信コード"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "26）タスクバラインターフェイス"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "27）パラメーターインターフェイス"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "28）バラサウンドインターフェイス"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "29）いくつかの.cfgファイルの拡張は.wndrsに変更されました"
+                }
+            
+        ]
+    }
+}

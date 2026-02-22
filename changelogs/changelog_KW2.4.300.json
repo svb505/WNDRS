@@ -1,0 +1,2052 @@
+{
+    "RU": {
+        "title": "Список изменений KW2.4.300",
+        "changes": [
+                {
+                    "type": "added",
+                    "text": "1) Добавлена возможность изменять шрифт системных приложений"
+                },
+                {
+                    "type": "added",
+                    "text": "2) Добавлены новые функции в госуслуги"
+                },
+                {
+                    "type": "added",
+                    "text": "3) Добавлена история транзакций"
+                },
+                {
+                    "type": "added",
+                    "text": "4) Добавлено логирование в госуслуги"
+                },
+                {
+                    "type": "added",
+                    "text": "5) Добавлены недостающие резервные копирования"
+                },
+                {
+                    "type": "added",
+                    "text": "6) Добавлены уведомление при низком заряде"
+                },
+                {
+                    "type": "added",
+                    "text": "7) Добавлен SVB Storage Manager"
+                },
+                {
+                    "type": "added",
+                    "text": "8) Добавлен SVB Log Viewer"
+                },
+                {
+                    "type": "added",
+                    "text": "9) Добавлен SVB Log Search Tool"
+                },
+                {
+                    "type": "added",
+                    "text": "10) Добавлена возможность отключать звук"
+                },
+                {
+                    "type": "added",
+                    "text": "11) Добавлены промокоды"
+                },
+                {
+                    "type": "added",
+                    "text": "12) Добавлен календарь"
+                },
+                {
+                    "type": "added",
+                    "text": "13) Добавлена анимация прокрутки в казино"
+                },
+                {
+                    "type": "added",
+                    "text": "14) Добавлены новые функции в СМД"
+                },
+                {
+                    "type": "added",
+                    "text": "15) Добавлена возможность удалять файлы с диска D"
+                },
+                {
+                    "type": "added",
+                    "text": "16) Добавлена таблица в проводник"
+                },
+                {
+                    "type": "added",
+                    "text": "17) Добавлена иконка окна в SVB file viewer"
+                },
+                {
+                    "type": "added",
+                    "text": "18) Добавлена возможность устанавливать темную тему"
+                },
+                {
+                    "type": "added",
+                    "text": "19) Добавлена информация про разработчика и приложение"
+                },
+                {
+                    "type": "added",
+                    "text": "20) Добавлена Лотерея"
+                },
+                {
+                    "type": "added",
+                    "text": "21) Добавлен FAQ"
+                },
+                {
+                    "type": "added",
+                    "text": "22) Добавлены Tooltypes"
+                },
+                {
+                    "type": "fixed",
+                    "text": "23) Исправлены ошибки с чтением файлов"
+                },
+                {
+                    "type": "fixed",
+                    "text": "24) Убран просмотр установленных драйверов"
+                },
+                {
+                    "type": "fixed",
+                    "text": "25) Обновлен SVB file viewer"
+                }
+            ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW2.4.300",
+        "footer": "Thanks for using our application!",
+        "changes": 
+            [
+                {
+                    "type": "Added",
+                    "text": "1) Added the ability to change the font of system applications"
+                },
+                {
+                    "type": "Added",
+                    "text": "2) added new functions to public services"
+                },
+                {
+                    "type": "Added",
+                    "text": "3) added the history of transactions"
+                },
+                {
+                    "type": "Added",
+                    "text": "4) Added logistics in public services"
+                },
+                {
+                    "type": "Added",
+                    "text": "5) Added missing backups"
+                },
+                {
+                    "type": "Added",
+                    "text": "6) Added notification in low charge"
+                },
+                {
+                    "type": "Added",
+                    "text": "7) Added SVB Storage Manager"
+                },
+                {
+                    "type": "Added",
+                    "text": "8) Added SVB log Viewer"
+                },
+                {
+                    "type": "Added",
+                    "text": "9) Added SVB log search tool"
+                },
+                {
+                    "type": "Added",
+                    "text": "10) Added the ability to turn off the sound"
+                },
+                {
+                    "type": "Added",
+                    "text": "11) Promo codes are added"
+                },
+                {
+                    "type": "Added",
+                    "text": "12) Added a calendar"
+                },
+                {
+                    "type": "Added",
+                    "text": "13) Added scroll animation in the casino"
+                },
+                {
+                    "type": "Added",
+                    "text": "14) Added new functions in SMD"
+                },
+                {
+                    "type": "Added",
+                    "text": "15) Added the ability to delete files from disk D"
+                },
+                {
+                    "type": "Added",
+                    "text": "16) Added table to the conductor"
+                },
+                {
+                    "type": "Added",
+                    "text": "17) Added a window icon to SVB File Viewer"
+                },
+                {
+                    "type": "Added",
+                    "text": "18) Added the ability to install a dark theme"
+                },
+                {
+                    "type": "Added",
+                    "text": "19) added information about the developer and the application"
+                },
+                {
+                    "type": "Added",
+                    "text": "20) added a lottery"
+                },
+                {
+                    "type": "Added",
+                    "text": "21) Added FAQ"
+                },
+                {
+                    "type": "Added",
+                    "text": "22) Added TOOLTYPES"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "23) Fixed errors with file reading"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "24) removed viewing the installed drivers"
+                },
+                {
+                    "type": "Fixed",
+                    "text": "25) updated SVB File Viewer"
+                }
+            ]
+        
+    },
+    "FR": {
+        "title": "Liste des modifications KW2.4.300",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": 
+            [
+                {
+                    "type": "Ajouté",
+                    "text": "1) Ajout de la capacité de modifier la police des applications système"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "2) Ajout de nouvelles fonctions aux services publics"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "3) Ajout de l'historique des transactions"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "4) Ajout de la logistique des services publics"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "5) Ajout de sauvegardes manquantes"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "6) Ajout de notification à faible charge"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "7) Ajout du gestionnaire de stockage SVB"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "8) Ajout de la visionneuse de journaux SVB"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "9) Ajout de l'outil de recherche de journal SVB"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "10) Ajout de la possibilité d'éteindre le son"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "11) des codes promotionnels sont ajoutés"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "12) Ajout d'un calendrier"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "13) Ajout d'une animation de défilement dans le casino"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "14) Ajout de nouvelles fonctions dans SMD"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "15) Ajout de la possibilité de supprimer les fichiers du disque D"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "16) Ajout de table au conducteur"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "17) Ajout d'une icône de fenêtre à la visionneuse de fichiers SVB"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "18) Ajout de la possibilité d'installer un thème sombre"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "19) Ajout d'informations sur le développeur et l'application"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "20) Ajout d'une loterie"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "21) Ajout de la FAQ"
+                },
+                {
+                    "type": "Ajouté",
+                    "text": "22) Ajout de types d'outils"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "23) Correction d'erreurs avec la lecture du fichier"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "24) Retirer la visualisation des pilotes installés"
+                },
+                {
+                    "type": "Fixé",
+                    "text": "25) Visionneuse de fichiers SVB mise à jour"
+                }
+            ]
+        
+    },
+    "UA": {
+        "title": "Список змін KW2.4.300",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": 
+            [
+                {
+                    "type": "Доданий",
+                    "text": "1) Додано здатність змінити шрифт системних додатків"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "2) Додано нові функції до державних послуг"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "3) Додано історію транзакцій"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "4) Додана логістика в державних послугах"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "5) Додано відсутнє резервне копіювання"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "6) Додано повідомлення про низький заряд"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "7) Додано менеджер зберігання SVB"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "8) Додано переглядач журналів SVB"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "9) Додано інструмент пошуку журналу SVB"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "10) додав можливість вимкнути звук"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "11) Додано промо -коди"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "12) Додано календар"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "13) Додана анімація прокрутки в казино"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "14) Додано нові функції в SMD"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "15) додав можливість видалити файли з диска D"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "16) Додано таблицю до провідника"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "17) Додано значок вікна до перегляду файлів SVB"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "18) додав можливість встановити темну тему"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "19) Додана інформація про розробника та додаток"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "20) додав лотерею"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "21) Додано FAQ"
+                },
+                {
+                    "type": "Доданий",
+                    "text": "22) Додані типи інструментів"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "23) Виправлені помилки з читанням файлів"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "24) Видалено перегляд встановлених драйверів"
+                },
+                {
+                    "type": "Нерухомий",
+                    "text": "25) Оновлений переглядач файлів SVB"
+                }
+            ]
+        
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW2.4.300",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": 
+            [
+                {
+                    "type": "Aggiunto",
+                    "text": "1) Aggiunta la possibilità di modificare il carattere delle applicazioni di sistema"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "2) Aggiunte nuove funzioni ai servizi pubblici"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "3) Aggiunta la cronologia delle transazioni"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "4) Aggiunta logistica nei servizi pubblici"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "5) Aggiunti backup mancanti"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "6) Aggiunta notifica a bassa carica"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "7) Aggiunto SVB Storage Manager"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "8) Aggiunto Visualizzatore di registro SVB"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "9) Aggiunto strumento di ricerca del registro SVB"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "10) ha aggiunto la possibilità di disattivare il suono"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "11) Vengono aggiunti i codici promozionali"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "12) Aggiunto un calendario"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "13) Aggiunta l'animazione a scorrimento nel casinò"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "14) Aggiunte nuove funzioni in SMD"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "15) Aggiunta la possibilità di eliminare i file dal disco D"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "16) Tabella aggiunta al conduttore"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "17) Aggiunta un'icona della finestra al visualizzatore di file SVB"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "18) ha aggiunto la possibilità di installare un tema oscuro"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "19) Aggiunte informazioni sullo sviluppatore e sull'applicazione"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "20) ha aggiunto una lotteria"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "21) Aggiunte FAQ"
+                },
+                {
+                    "type": "Aggiunto",
+                    "text": "22) Aggiunti titoli di utensili"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "23) Risolti errori con la lettura dei file"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "24) rimosso visualizzando i driver installati"
+                },
+                {
+                    "type": "Fisso",
+                    "text": "25) Visualizzatore del file SVB aggiornato"
+                }
+            ]
+        
+    },
+    "ES": {
+        "title": "Lista de cambios KW2.4.300",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": 
+            [
+                {
+                    "type": "Agregado",
+                    "text": "1) Se agregó la capacidad de cambiar la fuente de las aplicaciones del sistema"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "2) Se agregaron nuevas funciones a los servicios públicos"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "3) Se agregó el historial de transacciones"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "4) Logística agregada en servicios públicos"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "5) Se agregaron copias de seguridad faltantes"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "6) Notificación agregada a baja carga"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "7) Se agregó SVB Storage Manager"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "8) Visor de registro SVB agregado"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "9) Herramienta de búsqueda de registro SVB agregada"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "10) Se agregó la capacidad de apagar el sonido"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "11) Se agregan códigos de promoción"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "12) Se agregó un calendario"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "13) Animación de desplazamiento agregado en el casino"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "14) Se agregaron nuevas funciones en SMD"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "15) Se agregó la capacidad de eliminar archivos del disco D"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "16) Tabla agregada al conductor"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "17) Se agregó un icono de ventana al visor de archivos SVB"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "18) agregó la capacidad de instalar un tema oscuro"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "19) Se agregó información sobre el desarrollador y la aplicación"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "20) Se agregó una lotería"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "21) Preguntas frecuentes agregadas"
+                },
+                {
+                    "type": "Agregado",
+                    "text": "22) Types de herramientas agregados"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "23) Se corrigieron errores con la lectura de archivos"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "24) eliminó la visualización de los controladores instalados"
+                },
+                {
+                    "type": "Fijado",
+                    "text": "25) Visor de archivos SVB actualizado"
+                }
+            ]
+        
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW2.4.300",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": 
+            [
+                {
+                    "type": "Hinzugefügt",
+                    "text": "1) Die Fähigkeit, die Schrift der Systemanwendungen zu ändern, fügte hinzu"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "2) Zu öffentlichen Dienstleistungen neue Funktionen hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "3) Die Transaktionsgeschichte fügte hinzu"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "4) Logistik in öffentlichen Diensten hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "5) Fehlende Backups hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "6) Benachrichtigung bei niedriger Ladung hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "7) SVB Storage Manager hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "8) SVB -Protokoll -Viewer hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "9) SVB -Protokollsuche Tool hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "10) Die Möglichkeit, den Sound auszuschalten, fügte hinzu"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "11) Promo -Codes werden hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "12) einen Kalender hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "13) Die Scrollanimation im Casino fügte hinzu"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "14) Neue Funktionen in SMD hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "15) fügte die Möglichkeit hinzu, Dateien von der Festplatte D zu löschen"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "16) dem Leiter Tabelle hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "17) Ein Fenstersymbol zum SVB -Datei -Viewer hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "18) fügte die Möglichkeit hinzu, ein dunkles Thema zu installieren"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "19) Informationen über den Entwickler und die Anwendung hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "20) eine Lotterie hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "21) FAQ hinzugefügt"
+                },
+                {
+                    "type": "Hinzugefügt",
+                    "text": "22) Tooltype hinzugefügt"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "23) Fehler beim Lesen von Dateien behoben"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "24) Die Anzeige der installierten Treiber entfernt"
+                },
+                {
+                    "type": "Behoben",
+                    "text": "25) Aktualisierte SVB -Datei -Viewer"
+                }
+            ]
+        
+    },
+    "PT": {
+        "title": "Lista de alterações KW2.4.300",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": 
+            [
+                {
+                    "type": "Adicionado",
+                    "text": "1) Adicionado a capacidade de alterar a fonte dos aplicativos do sistema"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "2) Adicionado novas funções aos serviços públicos"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "3) Adicionado o histórico das transações"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "4) Adicionado logística em serviços públicos"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "5) Adicionado backups ausentes"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "6) Notificação adicionada em baixa carga"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "7) Adicionado gerente de armazenamento SVB"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "8) Adicionado Visualizador de log SVB"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "9) Adicionada ferramenta de pesquisa de log SVB"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "10) adicionou a capacidade de desligar o som"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "11) Códigos promocionais são adicionados"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "12) Adicionado um calendário"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "13) Adicionada animação de rolagem no cassino"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "14) Adicionado novas funções em SMD"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "15) Adicionado a capacidade de excluir arquivos do disco d"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "16) Tabela adicionada ao condutor"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "17) Adicionado um ícone de janela ao Viewer de arquivo SVB"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "18) adicionou a capacidade de instalar um tema sombrio"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "19) adicionou informações sobre o desenvolvedor e o aplicativo"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "20) Adicionado uma loteria"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "21) Adicionado perguntas frequentes"
+                },
+                {
+                    "type": "Adicionado",
+                    "text": "22) Adicionado types de ferramentas"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "23) Corrigido erros com a leitura de arquivos"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "24) Removido visualizando os drivers instalados"
+                },
+                {
+                    "type": "Fixo",
+                    "text": "25) Visualizador de arquivo SVB atualizado"
+                }
+            ]
+        
+    },
+    "PL": {
+        "title": "Lista zmian KW2.4.300",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": 
+            [
+                {
+                    "type": "W dodatku",
+                    "text": "1) Dodano możliwość zmiany czcionki aplikacji systemowych"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "2) Dodano nowe funkcje do usług publicznych"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "3) Dodano historię transakcji"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "4) Dodano logistykę w usługach publicznych"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "5) Dodano brakujące kopie zapasowe"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "6) Dodano powiadomienie z niską ładunkiem"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "7) Dodano SVB Storage Manager"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "8) Dodano przeglądarkę dziennika SVB"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "9) Dodano narzędzie wyszukiwania dziennika SVB"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "10) Dodano możliwość wyłączenia dźwięku"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "11) Dodano kody promocyjne"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "12) dodał kalendarz"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "13) Dodano animację przewijania w kasynie"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "14) Dodano nowe funkcje w SMD"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "15) Dodano możliwość usuwania plików z dysku D"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "16) Dodano tabelę do przewodnika"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "17) Dodano ikonę okna do przeglądarki plików SVB"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "18) Dodano możliwość zainstalowania ciemnego motywu"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "19) Dodano informacje o programie i aplikacji"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "20) Dodano loterię"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "21) Dodano FAQ"
+                },
+                {
+                    "type": "W dodatku",
+                    "text": "22) Dodano typy narzędzi"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "23) Naprawiono błędy z odczytem plików"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "24) Usunięte przeglądanie zainstalowanych sterowników"
+                },
+                {
+                    "type": "Naprawił",
+                    "text": "25) Zaktualizowany przeglądarka plików SVB"
+                }
+            ]
+    
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW2.4.300",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": 
+            [
+                {
+                    "type": "I shtuar",
+                    "text": "1) Shtuar aftësinë për të ndryshuar fontin e aplikacioneve të sistemit"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "2) Shtuar funksione të reja në shërbimet publike"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "3) Shtuar historinë e transaksioneve"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "4) Logjistika e shtuar në shërbimet publike"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "5) Shtuar kopjime të humbura"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "6) Njoftim i shtuar me ngarkesë të ulët"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "7) Shtuar menaxher i ruajtjes SVB"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "8) Shtuar shikuesin e log SVB"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "9) Shtuar mjetin e kërkimit të log SVB"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "10) Shtuar aftësinë për të fikur tingullin"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "11) Shtuar kodet promovuese"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "12) shtoi një kalendar"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "13) Shtuar animacion lëvizës në kazino"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "14) Shtuar funksione të reja në SMD"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "15) Shtuar aftësinë për të fshirë skedarët nga disku d"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "16) Tabela e shtuar në dirigjent"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "17) Shtuar një ikonë të dritares në shikuesin e skedarit SVB"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "18) Shtuar aftësinë për të instaluar një temë të errët"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "19) Informacion i shtuar në lidhje me zhvilluesin dhe aplikacionin"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "20) shtoi një llotari"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "21) FAQ të shtuar"
+                },
+                {
+                    "type": "I shtuar",
+                    "text": "22) Tooltypes të shtuara"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "23) Gabimet fikse me leximin e skedarit"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "24) Heqja e shikimit të drejtuesve të instaluar"
+                },
+                {
+                    "type": "I fiksuar",
+                    "text": "25) Shikuesi i azhurnuar i skedarit SVB"
+                }
+            ]
+        
+    },
+    "SRB": {
+        "title": "Списак промена кв2.4.300",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": 
+            [
+                {
+                    "type": "Додато",
+                    "text": "1) Додата је могућност промене фонта системских апликација"
+                },
+                {
+                    "type": "Додато",
+                    "text": "2) Додане нове функције на јавне услуге"
+                },
+                {
+                    "type": "Додато",
+                    "text": "3) Додао је историју трансакција"
+                },
+                {
+                    "type": "Додато",
+                    "text": "4) Додана логистика у јавним услугама"
+                },
+                {
+                    "type": "Додато",
+                    "text": "5) додате недостајуће резервне копије"
+                },
+                {
+                    "type": "Додато",
+                    "text": "6) додавање обавештења у ниској накнади"
+                },
+                {
+                    "type": "Додато",
+                    "text": "7) Додато је СВБ менаџера за складиштење"
+                },
+                {
+                    "type": "Додато",
+                    "text": "8) Додато је СВБ Дневник Виевер"
+                },
+                {
+                    "type": "Додато",
+                    "text": "9) Додато је Свб Флору Тражи алат"
+                },
+                {
+                    "type": "Додато",
+                    "text": "10) додала је могућност искључивања звука"
+                },
+                {
+                    "type": "Додато",
+                    "text": "11) додају се промо кодови"
+                },
+                {
+                    "type": "Додато",
+                    "text": "12) додао је календар"
+                },
+                {
+                    "type": "Додато",
+                    "text": "13) Додана је анимација померања у казину"
+                },
+                {
+                    "type": "Додато",
+                    "text": "14) Додане нове функције у СМД-у"
+                },
+                {
+                    "type": "Додато",
+                    "text": "15) Додата је могућност брисања датотека са диска Д"
+                },
+                {
+                    "type": "Додато",
+                    "text": "16) Додана је сто до диригента"
+                },
+                {
+                    "type": "Додато",
+                    "text": "17) Додао је икону прозора на СВБ датотеку Виевер"
+                },
+                {
+                    "type": "Додато",
+                    "text": "18) Додато је могућност да се инсталира мрачна тема"
+                },
+                {
+                    "type": "Додато",
+                    "text": "19) Додане информације о програмеру и апликацији"
+                },
+                {
+                    "type": "Додато",
+                    "text": "20) додала је лутрију"
+                },
+                {
+                    "type": "Додато",
+                    "text": "21) Додато ФАК"
+                },
+                {
+                    "type": "Додато",
+                    "text": "22) Додате алате"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "23) Фиксне грешке са читањем датотека"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "24) Уклоњено гледање инсталираних управљачких програма"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "25) Ажурирана СВБ датотека Виевер"
+                }
+            ]
+        
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW2.4.300",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": 
+            [
+                {
+                    "type": "Дададзена",
+                    "text": "1) Дададзена магчымасць змяніць шрыфт сістэмных прыкладанняў"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "2) Дададзены новыя функцыі ў дзяржаўныя паслугі"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "3) Дададзена гісторыя здзелак"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "4) Дададзена лагістыка ў дзяржаўныя паслугі"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "5) Дададзена адсутнічае рэзервовыя копіі"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "6) Дададзена апавяшчэнне ў нізкай зарадцы"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "7) Дададзены дыспетчар захоўвання SVB"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "8) Дададзены праглядальнік часопіса SVB"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "9) Дададзены інструмент пошуку часопіса SVB"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "10) дадаў магчымасць адключыць гук"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "11) Дададзены прома -коды"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "12) дадаў каляндар"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "13) Дададзена анімацыя пракруткі ў казіно"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "14) Дададзены новыя функцыі ў SMD"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "15) дадаў магчымасць выдаляць файлы з дыска D"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "16) Дададзена табліца ў праваднік"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "17) Дададзены значок акна да прагляду файла SVB"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "18) дадаў магчымасць усталяваць цёмную тэму"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "19) Дададзеная інфармацыя пра распрацоўшчыка і прыкладанне"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "20) дадаў латарэю"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "21) Дададзена FAQ"
+                },
+                {
+                    "type": "Дададзена",
+                    "text": "22) Дададзеныя інструменты"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "23) Выпраўленыя памылкі пры чытанні файлаў"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "24) выдалены прагляд усталяваных драйвераў"
+                },
+                {
+                    "type": "Фіксаваны",
+                    "text": "25) Абноўлены прагляд файла SVB"
+                }
+            ]
+        
+    },
+    "TUR": {
+        "title": "Değişiklikler Listesi KW2.4.300",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": 
+            [
+                {
+                    "type": "Eklemek",
+                    "text": "1) Sistem uygulamalarının yazı tipini değiştirme yeteneği eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "2) Kamu Hizmetlerine yeni işlevler eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "3) İşlemlerin geçmişini ekledi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "4) Kamu Hizmetlerinde Lojistik Eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "5) Eksik yedekler eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "6) Düşük şarjla bildirim eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "7) SVB depolama yöneticisi eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "8) SVB Günlük Görüntüleyicisi eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "9) SVB günlük arama aracı eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "10) Sesi kapatma yeteneği eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "11) Promosyon kodları eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "12) Bir takvim ekledi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "13) Casino'ya kaydırma animasyonu eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "14) SMD'ye yeni işlevler eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "15) Diskten dosyaları silme yeteneği eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "16) İletkene tablo eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "17) SVB dosya görüntüleyicisine bir pencere simgesi ekledi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "18) Karanlık bir tema yükleme yeteneği ekledi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "19) Geliştirici ve uygulama hakkında ek bilgi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "20) Bir piyango ekledi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "21) SSS eklendi"
+                },
+                {
+                    "type": "Eklemek",
+                    "text": "22) Araç tipi eklendi"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "23) Dosya okuma ile sabit hatalar"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "24) Yüklü sürücülerin görüntülemesini kaldırdı"
+                },
+                {
+                    "type": "Sabit",
+                    "text": "25) Güncellenmiş SVB Dosya Görüntüleyicisi"
+                }
+            ]
+        
+    },
+    "BG": {
+        "title": "Списък на промените KW2.4.300",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": 
+            [
+                {
+                    "type": "Добавено",
+                    "text": "1) Добавена е възможността за промяна на шрифта на системните приложения"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "2) Добавени нови функции към публичните услуги"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "3) Добавена е историята на транзакциите"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "4) Добавена логистика в публичните услуги"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "5) Добавени липсващи резервни копия"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "6) Добавено уведомление при ниско зареждане"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "7) Добавен SVB мениджър за съхранение"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "8) Добавен SVB Log Viewer"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "9) Добавен инструмент за търсене на SVB Log"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "10) Добавена е възможността за изключване на звука"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "11) се добавят промо кодове"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "12) Добавен календар"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "13) Добавена е анимация за превъртане в казиното"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "14) Добавени нови функции в SMD"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "15) Добавена е възможността за изтриване на файлове от диск D"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "16) Добавена таблица към проводника"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "17) Добавена е икона на прозореца към SVB файлови зрител"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "18) Добавена е възможността за инсталиране на тъмна тема"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "19) Добавена е информация за разработчика и приложението"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "20) добави лотария"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "21) Добавени често задавани въпроси"
+                },
+                {
+                    "type": "Добавено",
+                    "text": "22) Добавени инструменти"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "23) Фиксирани грешки с четене на файл"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "24) Премахване на разглеждането на инсталираните драйвери"
+                },
+                {
+                    "type": "Фиксиран",
+                    "text": "25) Актуализиран зрител на SVB файлове"
+                }
+            ]
+        
+    },
+    "HU": {
+        "title": "A változások listája KW2.4.300",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": 
+            [
+                {
+                    "type": "Hozzáadott",
+                    "text": "1) hozzáadta a rendszer alkalmazások betűkészletének megváltoztatásának képességét"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "2) Új funkciókat adott hozzá a közszolgáltatásokhoz"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "3) hozzáadta a tranzakciók történetét"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "4) Hozzáadott logisztika a közszolgáltatásokban"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "5) Hozzáadta a hiányzó biztonsági mentéseket"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "6) hozzáadott értesítést alacsony töltéssel"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "7) Hozzáadott SVB Storage Manager"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "8) Hozzáadott SVB naplónéző"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "9) Hozzáadott SVB naplókeresési eszköz"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "10) hozzáadta a hang kikapcsolásának képességét"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "11) A promóciós kódok hozzáadódnak"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "12) hozzáadott egy naptárat"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "13) hozzáadott görgetési animációt a kaszinóban"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "14) új funkciókat adott hozzá az SMD -ben"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "15) hozzáadta a fájlok törlésének képességét a lemezről"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "16) Hozzáadott táblázat a karmesterhez"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "17) hozzáadott egy ablak ikont az SVB fájlmegjelenítőhöz"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "18) hozzáadta a sötét téma telepítésének képességét"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "19) hozzáadott információkat a fejlesztőről és az alkalmazásról"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "20) hozzáadott egy lottót"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "21) hozzáadott GYIK"
+                },
+                {
+                    "type": "Hozzáadott",
+                    "text": "22) Hozzáadott szerszámtípus"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "23) Rögzített hibák fájlolvasással"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "24) Távolítsa el a telepített járművezetők megtekintését"
+                },
+                {
+                    "type": "Rögzített",
+                    "text": "25) Frissített SVB fájlmegjelenítő"
+                }
+            ]
+        
+    },
+    "RO": {
+        "title": "Lista modificărilor KW2.4.300",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": 
+            [
+                {
+                    "type": "Adăugat",
+                    "text": "1) a adăugat capacitatea de a schimba fontul aplicațiilor de sistem"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "2) a adăugat noi funcții la serviciile publice"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "3) a adăugat istoricul tranzacțiilor"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "4) Logistică adăugată în serviciile publice"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "5) Backup -uri care lipsesc"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "6) Notificare adăugată în sarcină scăzută"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "7) Adăugat SVB Storage Manager"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "8) Adăugat vizualizator de jurnal SVB"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "9) Adăugat instrumentul de căutare a jurnalului SVB"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "10) a adăugat capacitatea de a opri sunetul"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "11) Se adaugă coduri promoționale"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "12) a adăugat un calendar"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "13) a adăugat animație de defilare în cazinou"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "14) a adăugat noi funcții în SMD"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "15) a adăugat posibilitatea de a șterge fișierele de pe discul D"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "16) Adăugat tabel la conductor"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "17) a adăugat o pictogramă a ferestrei la vizualizatorul de fișiere SVB"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "18) a adăugat posibilitatea de a instala o temă întunecată"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "19) a adăugat informații despre dezvoltator și aplicație"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "20) a adăugat o loterie"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "21) Întrebări frecvente adăugate"
+                },
+                {
+                    "type": "Adăugat",
+                    "text": "22) Adăugat tipuri de instrumente"
+                },
+                {
+                    "type": "Fix",
+                    "text": "23) Erori fixe cu citirea fișierelor"
+                },
+                {
+                    "type": "Fix",
+                    "text": "24) Scoaterea vizualizării driverelor instalate"
+                },
+                {
+                    "type": "Fix",
+                    "text": "25) Vizualizator de fișiere SVB actualizat"
+                }
+            ]
+        
+    },
+    "CN": {
+        "title": "更改列表KW2.4.300",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": 
+            [
+                {
+                    "type": "额外",
+                    "text": "1）添加了更改系统应用程序字体的功能"
+                },
+                {
+                    "type": "额外",
+                    "text": "2）向公共服务添加了新功能"
+                },
+                {
+                    "type": "额外",
+                    "text": "3）添加了交易的历史"
+                },
+                {
+                    "type": "额外",
+                    "text": "4）在公共服务中增加了物流"
+                },
+                {
+                    "type": "额外",
+                    "text": "5）添加了缺少备份"
+                },
+                {
+                    "type": "额外",
+                    "text": "6）低电荷添加通知"
+                },
+                {
+                    "type": "额外",
+                    "text": "7）添加了SVB存储管理器"
+                },
+                {
+                    "type": "额外",
+                    "text": "8）添加了SVB日志查看器"
+                },
+                {
+                    "type": "额外",
+                    "text": "9）添加了SVB日志搜索工具"
+                },
+                {
+                    "type": "额外",
+                    "text": "10）添加了关闭声音的能力"
+                },
+                {
+                    "type": "额外",
+                    "text": "11）添加促销代码"
+                },
+                {
+                    "type": "额外",
+                    "text": "12）添加了一个日历"
+                },
+                {
+                    "type": "额外",
+                    "text": "13）在赌场中添加卷轴动画"
+                },
+                {
+                    "type": "额外",
+                    "text": "14）在SMD中添加了新功能"
+                },
+                {
+                    "type": "额外",
+                    "text": "15）添加了从磁盘D删除文件的功能"
+                },
+                {
+                    "type": "额外",
+                    "text": "16）在导体中添加了表格"
+                },
+                {
+                    "type": "额外",
+                    "text": "17）在SVB文件查看器中添加了一个窗口图标"
+                },
+                {
+                    "type": "额外",
+                    "text": "18）添加了安装黑暗主题的功能"
+                },
+                {
+                    "type": "额外",
+                    "text": "19）添加了有关开发人员和应用程序的信息"
+                },
+                {
+                    "type": "额外",
+                    "text": "20）添加了彩票"
+                },
+                {
+                    "type": "额外",
+                    "text": "21）添加了常见问题解答"
+                },
+                {
+                    "type": "额外",
+                    "text": "22）添加了工具类型"
+                },
+                {
+                    "type": "固定的",
+                    "text": "23）通过文件阅读修复了错误"
+                },
+                {
+                    "type": "固定的",
+                    "text": "24）删除查看安装的驱动程序"
+                },
+                {
+                    "type": "固定的",
+                    "text": "25）更新了SVB文件查看器"
+                }
+            ]
+        
+    },
+    "CS": {
+        "title": "Seznam změn KW2.300",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": 
+            [
+                {
+                    "type": "Přidáno",
+                    "text": "1) Přidaná schopnost změnit písmo systémových aplikací"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "2) Přidáním nových funkcí do veřejných služeb"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "3) Přidal historii transakcí"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "4) Přidána logistika ve veřejných službách"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "5) Přidáno chybějící zálohy"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "6) Přidáno oznámení při nízkém náboji"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "7) Přidán správce úložiště SVB"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "8) Přidán prohlížeč protokolu SVB"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "9) Přidán nástroj pro vyhledávání protokolu SVB"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "10) Přidal schopnost vypnout zvuk"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "11) Promo kódy jsou přidány"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "12) Přidán kalendář"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "13) Přidána animace posouvání v kasinu"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "14) Přidáno nové funkce v SMD"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "15) Přidána schopnost odstranit soubory z disku D"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "16) Přidána tabulka k dirigentovi"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "17) Přidal ikonu okna do prohlížeče souborů SVB"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "18) přidal možnost nainstalovat tmavé téma"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "19) Přidané informace o vývojáři a aplikaci"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "20) Přidána loterie"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "21) Přidáno FAQ"
+                },
+                {
+                    "type": "Přidáno",
+                    "text": "22) Přidané nástroje"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "23) Opravené chyby při čtení souborů"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "24) Odstraněné prohlížení nainstalovaných ovladačů"
+                },
+                {
+                    "type": "Opravené",
+                    "text": "25) Aktualizovaný prohlížeč souborů SVB"
+                }
+            ]
+        
+    },
+    "JP": {
+        "title": "変更のリストKW2.4.300",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": 
+            [
+                {
+                    "type": "追加した",
+                    "text": "1）システムアプリケーションのフォントを変更する機能を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "2）公共サービスに新しい機能を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "3）トランザクションの履歴を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "4）公共サービスにロジスティクスを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "5）欠落しているバックアップを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "6）低充電で通知を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "7）SVBストレージマネージャーを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "8）SVBログビューアを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "9）SVBログ検索ツールを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "10）音をオフにする機能を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "11）プロモーションコードが追加されます"
+                },
+                {
+                    "type": "追加した",
+                    "text": "12）カレンダーを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "13）カジノにスクロールアニメーションを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "14）SMDに新しい機能を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "15）ディスクDからファイルを削除する機能を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "16）導体にテーブルを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "17）SVBファイルビューアーにウィンドウアイコンを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "18）暗いテーマをインストールする機能を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "19）開発者とアプリケーションに関する情報を追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "20）宝くじを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "21）FAQを追加しました"
+                },
+                {
+                    "type": "追加した",
+                    "text": "22）ツールタイプが追加されました"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "23）ファイルの読み取りでエラーを修正しました"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "24）インストールされているドライバーの表示を削除しました"
+                },
+                {
+                    "type": "修理済み",
+                    "text": "25）SVBファイルビューアを更新しました"
+                }
+            ]
+        
+    }
+}

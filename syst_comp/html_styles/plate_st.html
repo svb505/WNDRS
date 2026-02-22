@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+                        <html lang="uk">
+                        <head>
+                            <meta charset="UTF-8">
+                            <style>
+                                .plate {
+                                    display: inline-block;
+                                    padding: 10px 20px;
+                                    margin: 10px;
+                                    font-size: 24px;
+                                    font-family: 'Arial Black', sans-serif;
+                                    border: 2px solid #000;
+                                    border-radius: 8px;
+                                    background: #fff;
+                                }
+                                .ukraine {
+                                    background: linear-gradient(to right, #0057b7 0 10%, #ffd700 10% 20%, #fff 20% 100%);
+                                    color: #000;
+                                }
+                                .uk {
+                                    background-color: #fff;
+                                    color: #000;
+                                    border-left: 10px solid #00247d;
+                                }
+                                .russia {
+                                    background-color: #fff;
+                                    color: #000;
+                                    position: relative;
+                                }
+                                .russia::after {
+                                    content: "RUS";
+                                    position: absolute;
+                                    right: 10px;
+                                    bottom: 2px;
+                                    font-size: 12px;
+                                }
+                                .france {
+                                    background-color: #fff;
+                                    color: #000;
+                                    border-left: 10px solid #0055A4;
+                                    border-right: 10px solid #EF4135;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <h2>Your plate ({var}):</h2>
+                            <div class="plate {plate_class}">{numer}</div>
+                            <p>
+                                <strong>Brand:</strong> {brand}<br>
+                                <strong>Model:</strong> {model}<br>
+                                <strong>Year:</strong> {year}<br>
+                                <strong>VIN:</strong> {vin}
+                            </p>
+                        </body>
+                        </html>

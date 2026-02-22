@@ -1,0 +1,1104 @@
+{
+    "RU": {
+        "title": "Список изменений KW1.8.700",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1)Добавлен ярлык техподдержки"
+            },
+            {
+                "type": "added",
+                "text": "2)Добавлен ярлык муз проигрователя"
+            },
+            {
+                "type": "added",
+                "text": "3)Добавлен ярлык диспетчера задач"
+            },
+            {
+                "type": "added",
+                "text": "4)Добавлена кнопка завершения работы в таскбар"
+            },
+            {
+                "type": "added",
+                "text": "5)Добавлена IDE для С"
+            },
+            {
+                "type": "added",
+                "text": "6)Добавлена IDE для С#"
+            },
+            {
+                "type": "added",
+                "text": "7)Добавлена IDE для HTML/CSS"
+            },
+            {
+                "type": "added",
+                "text": "8)Добавлена IDE для JS"
+            },
+            {
+                "type": "added",
+                "text": "9)Добавлен BIOS"
+            },
+            {
+                "type": "added",
+                "text": "10)Добавлена возможность менять размер ярлыков"
+            },
+            {
+                "type": "fixed",
+                "text": "11)Исправлены названия системных программ"
+            },
+            {
+                "type": "changed",
+                "text": "12)Изменено название и иконка мессенжера"
+            },
+            {
+                "type": "changed",
+                "text": "13)Окно завершения работы теперь полноэкранное"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW1.8.700",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added shortcut shortcut"
+            },
+            {
+                "type": "Added",
+                "text": "2) added the label of the muses of the player"
+            },
+            {
+                "type": "Added",
+                "text": "3) added the shortcut of the task dispatcher"
+            },
+            {
+                "type": "Added",
+                "text": "4) Added button completion of work in Taskbar"
+            },
+            {
+                "type": "Added",
+                "text": "5) Added IDE for C"
+            },
+            {
+                "type": "Added",
+                "text": "6) Added IDE for C#"
+            },
+            {
+                "type": "Added",
+                "text": "7) Added IDE for html/css"
+            },
+            {
+                "type": "Added",
+                "text": "8) Added IDE for js"
+            },
+            {
+                "type": "Added",
+                "text": "9) Added BIOS"
+            },
+            {
+                "type": "Added",
+                "text": "10) Added the ability to change the size of the labels"
+            },
+            {
+                "type": "Fixed",
+                "text": "11) Fixed the names of system programs"
+            },
+            {
+                "type": "Changed",
+                "text": "12) The name and icon of Messenger changed"
+            },
+            {
+                "type": "Changed",
+                "text": "13) the work window is now full -screen"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW1.8.700",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) Ajout de raccourci de raccourci"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout de l'étiquette des muses du joueur"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Ajout du raccourci du répartiteur des tâches"
+            },
+            {
+                "type": "Ajouté",
+                "text": "4) Ajout de l'achèvement du travail du travail dans la barre des tâches"
+            },
+            {
+                "type": "Ajouté",
+                "text": "5) IDE ajouté pour C"
+            },
+            {
+                "type": "Ajouté",
+                "text": "6) Ajout de l'IDE pour C #"
+            },
+            {
+                "type": "Ajouté",
+                "text": "7) Ajout de l'IDE pour HTML / CSS"
+            },
+            {
+                "type": "Ajouté",
+                "text": "8) Ajout de l'IDE pour JS"
+            },
+            {
+                "type": "Ajouté",
+                "text": "9) Ajout du BIOS"
+            },
+            {
+                "type": "Ajouté",
+                "text": "10) Ajout de la possibilité de modifier la taille des étiquettes"
+            },
+            {
+                "type": "Fixé",
+                "text": "11) Correction des noms des programmes système"
+            },
+            {
+                "type": "Modifié",
+                "text": "12) Le nom et l'icône de Messenger ont changé"
+            },
+            {
+                "type": "Modifié",
+                "text": "13) La fenêtre de travail est désormais complète"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW1.8.700",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Доданий ярлик ярлика"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Додано етикетку муз гравця"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) додав ярлик диспетчера завдань"
+            },
+            {
+                "type": "Доданий",
+                "text": "4) Додана кнопка завершення роботи на панелі завдань"
+            },
+            {
+                "type": "Доданий",
+                "text": "5) Додано IDE для c"
+            },
+            {
+                "type": "Доданий",
+                "text": "6) Додано IDE для C#"
+            },
+            {
+                "type": "Доданий",
+                "text": "7) Додано IDE для HTML/CSS"
+            },
+            {
+                "type": "Доданий",
+                "text": "8) Додано IDE для JS"
+            },
+            {
+                "type": "Доданий",
+                "text": "9) Додано BIOS"
+            },
+            {
+                "type": "Доданий",
+                "text": "10) Додано здатність змінити розмір мітків"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "11) Виправлено назви системних програм"
+            },
+            {
+                "type": "Змінювати",
+                "text": "12) Назва та значок месенджера змінилися"
+            },
+            {
+                "type": "Змінювати",
+                "text": "13) Робоче вікно тепер повне -екран"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW1.8.700",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Aggiunto scorciatoia di scelta rapida"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) ha aggiunto l'etichetta delle muse del giocatore"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Aggiunto il collegamento del dispatcher dell'attività"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "4) Aggiunto il completamento del pulsante del lavoro nella barra delle applicazioni"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "5) Aggiunto IDE per C"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "6) Aggiunto IDE per C#"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "7) IDE aggiunto per HTML/CSS"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "8) Aggiunto IDE per JS"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "9) Aggiunto BIOS"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "10) Aggiunta la possibilità di cambiare le dimensioni delle etichette"
+            },
+            {
+                "type": "Fisso",
+                "text": "11) Risolto i nomi dei programmi di sistema"
+            },
+            {
+                "type": "Cambiato",
+                "text": "12) Il nome e l'icona di Messenger sono cambiati"
+            },
+            {
+                "type": "Cambiato",
+                "text": "13) La finestra di lavoro è ora completa"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios KW1.8.700",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) Se agregaron atajo atajo"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) Se agregó la etiqueta de las musas del jugador"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) Se agregó el atajo del despachador de tareas"
+            },
+            {
+                "type": "Agregado",
+                "text": "4) Se agregó el botón para completar el trabajo en la barra de tareas"
+            },
+            {
+                "type": "Agregado",
+                "text": "5) IDE agregado para C"
+            },
+            {
+                "type": "Agregado",
+                "text": "6) IDE agregado para C#"
+            },
+            {
+                "type": "Agregado",
+                "text": "7) IDE agregado para HTML/CSS"
+            },
+            {
+                "type": "Agregado",
+                "text": "8) IDE agregado para JS"
+            },
+            {
+                "type": "Agregado",
+                "text": "9) BIOS agregado"
+            },
+            {
+                "type": "Agregado",
+                "text": "10) Se agregó la capacidad de cambiar el tamaño de las etiquetas"
+            },
+            {
+                "type": "Fijado",
+                "text": "11) Se corrigieron los nombres de los programas del sistema"
+            },
+            {
+                "type": "Cambió",
+                "text": "12) El nombre e icono de Messenger cambió"
+            },
+            {
+                "type": "Cambió",
+                "text": "13) La ventana de trabajo ahora está completa"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW1.8.700",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            {
+                "type": "Hinzugefügt",
+                "text": "1) Verknüpfungsverknüpfung hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "2) Das Etikett der Musen des Spielers fügte hinzu"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "3) Die Abkürzung des Task Dispatcher hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "4) Die Schaltfläche Fertigstellung der Arbeit in der Taskleiste hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "5) IDE für C hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "6) IDE für C# hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "7) IDE für HTML/CSS hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "8) IDE für JS hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "9) BIOS hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "10) Die Fähigkeit, die Größe der Etiketten zu ändern"
+            },
+            {
+                "type": "Behoben",
+                "text": "11) Die Namen von Systemprogrammen behoben"
+            },
+            {
+                "type": "Verändert",
+                "text": "12) Der Name und die Symbol von Messenger geändert"
+            },
+            {
+                "type": "Verändert",
+                "text": "13) Das Arbeitsfenster ist jetzt voller Bildschirm"
+            }
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW1.8.700",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Adicionado atalho de atalho"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) adicionou o rótulo das musas do jogador"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Adicionado o atalho do despachante de tarefas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "4) Conclusão do botão adicionada no trabalho na barra de tarefas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "5) Adicionado IDE para C"
+            },
+            {
+                "type": "Adicionado",
+                "text": "6) Adicionado IDE para C#"
+            },
+            {
+                "type": "Adicionado",
+                "text": "7) Adicionado IDE para HTML/CSS"
+            },
+            {
+                "type": "Adicionado",
+                "text": "8) Adicionado IDE para JS"
+            },
+            {
+                "type": "Adicionado",
+                "text": "9) Adicionado BIOS"
+            },
+            {
+                "type": "Adicionado",
+                "text": "10) Adicionado a capacidade de alterar o tamanho dos rótulos"
+            },
+            {
+                "type": "Fixo",
+                "text": "11) Corrigido os nomes dos programas do sistema"
+            },
+            {
+                "type": "Mudado",
+                "text": "12) O nome e o ícone do mensageiro alterados"
+            },
+            {
+                "type": "Mudado",
+                "text": "13) A janela de trabalho agora está em tela cheia"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW1.8.700",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodano skrót od skrótu"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) dodał etykietę muz gracza"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano skrót dyspozytora zadań"
+            },
+            {
+                "type": "W dodatku",
+                "text": "4) Dodano ukończenie przycisku pracy na pasku zadań"
+            },
+            {
+                "type": "W dodatku",
+                "text": "5) Dodano IDE dla C"
+            },
+            {
+                "type": "W dodatku",
+                "text": "6) Dodano IDE dla C#"
+            },
+            {
+                "type": "W dodatku",
+                "text": "7) Dodano IDE dla HTML/CSS"
+            },
+            {
+                "type": "W dodatku",
+                "text": "8) Dodano IDE dla JS"
+            },
+            {
+                "type": "W dodatku",
+                "text": "9) Dodano BIOS"
+            },
+            {
+                "type": "W dodatku",
+                "text": "10) Dodano możliwość zmiany wielkości etykiet"
+            },
+            {
+                "type": "Naprawił",
+                "text": "11) Naprawiono nazwy programów systemowych"
+            },
+            {
+                "type": "Zmienione",
+                "text": "12) Zmieniona nazwa i ikona komunikatora"
+            },
+            {
+                "type": "Zmienione",
+                "text": "13) Okno pracy jest teraz pełne -ekran"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW1.8.700",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Shkurtore e Shkurtër e Shtuar"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) Shtuar etiketën e muzeve të lojtarit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Shtoi shkurtoren e Detyrës Dispeçer"
+            },
+            {
+                "type": "I shtuar",
+                "text": "4) Përfundimi i shtuar i butonit të punës në shiritin e detyrave"
+            },
+            {
+                "type": "I shtuar",
+                "text": "5) shtuar IDE për c"
+            },
+            {
+                "type": "I shtuar",
+                "text": "6) shtuar IDE për c#"
+            },
+            {
+                "type": "I shtuar",
+                "text": "7) Shtuar IDE për HTML/CSS"
+            },
+            {
+                "type": "I shtuar",
+                "text": "8) shtuar IDE për js"
+            },
+            {
+                "type": "I shtuar",
+                "text": "9) BIOS i shtuar"
+            },
+            {
+                "type": "I shtuar",
+                "text": "10) Shtuar aftësinë për të ndryshuar madhësinë e etiketave"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "11) Fiksoi emrat e programeve të sistemit"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "12) Emri dhe ikona e të dërguarit ndryshuan"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "13) Dritarja e punës tani është e plotë me ekran"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Списак промена кв1.8.700",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) Додана пречица пречица"
+            },
+            {
+                "type": "Додато",
+                "text": "2) додао је налепницу муса играча"
+            },
+            {
+                "type": "Додато",
+                "text": "3) додао је пречицу диспечера задатка"
+            },
+            {
+                "type": "Додато",
+                "text": "4) Додато дугме за завршетак рада на траци задатака"
+            },
+            {
+                "type": "Додато",
+                "text": "5) Дода се ИДЕ за Ц"
+            },
+            {
+                "type": "Додато",
+                "text": "6) Додато је ИДЕ за Ц #"
+            },
+            {
+                "type": "Додато",
+                "text": "7) Додато је ИДЕ за ХТМЛ / ЦСС"
+            },
+            {
+                "type": "Додато",
+                "text": "8) Додана је ИДЕ за ЈС"
+            },
+            {
+                "type": "Додато",
+                "text": "9) додао је БИОС"
+            },
+            {
+                "type": "Додато",
+                "text": "10) Додата је могућност промене величине налепница"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "11) Поправљен је имена системских програма"
+            },
+            {
+                "type": "Промењен",
+                "text": "12) Име и икона Мессенгер промењена је"
+            },
+            {
+                "type": "Промењен",
+                "text": "13) радни прозор је сада пун-еСцреен"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW1.8.700",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзены хуткага доступу"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзена этыкетка Mues of Player"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзены ярлык дыспетчара задач"
+            },
+            {
+                "type": "Дададзена",
+                "text": "4) Дададзена кнопка завяршэнне працы ў панэлі задач"
+            },
+            {
+                "type": "Дададзена",
+                "text": "5) Дададзены IDE для C"
+            },
+            {
+                "type": "Дададзена",
+                "text": "6) Дададзены IDE для C#"
+            },
+            {
+                "type": "Дададзена",
+                "text": "7) Дададзены IDE для HTML/CSS"
+            },
+            {
+                "type": "Дададзена",
+                "text": "8) Дададзены IDE для JS"
+            },
+            {
+                "type": "Дададзена",
+                "text": "9) Дададзена BIOS"
+            },
+            {
+                "type": "Дададзена",
+                "text": "10) дадаў магчымасць змяніць памер надпісаў"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "11) Выпраўлены імёны сістэмных праграм"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "12) Назва і абраз пасланца змяніліся"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "13) Працоўнае акно зараз поўнае экран"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişikliklerin listesi kw1.8.700",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) Kısayol kısayolu eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) Oyuncunun Muses etiketini ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) Görev Dağıtımcının kısayolunu ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "4) Görev çubuğunda çalışmanın eklenmesi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "5) C için IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "6) C# için IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "7) HTML/CSS için IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "8) JS için IDE eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "9) BIOS eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "10) Etiketlerin boyutunu değiştirme yeteneği eklendi"
+            },
+            {
+                "type": "Sabit",
+                "text": "11) Sistem programlarının adlarını düzeltti"
+            },
+            {
+                "type": "Değişen",
+                "text": "12) Messenger'ın adı ve simgesi değişti"
+            },
+            {
+                "type": "Değişen",
+                "text": "13) Çalışma penceresi artık dolu -ekran"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW1.8.700",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавен пряк път"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) добави етикета на музите на играча"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) добави пряк път на диспечера на задачата"
+            },
+            {
+                "type": "Добавено",
+                "text": "4) Добавено завършване на бутона на работата в лентата на задачите"
+            },
+            {
+                "type": "Добавено",
+                "text": "5) Добавен IDE за C"
+            },
+            {
+                "type": "Добавено",
+                "text": "6) Добавен IDE за C#"
+            },
+            {
+                "type": "Добавено",
+                "text": "7) Добавен IDE за HTML/CSS"
+            },
+            {
+                "type": "Добавено",
+                "text": "8) Добавен IDE за JS"
+            },
+            {
+                "type": "Добавено",
+                "text": "9) Добавени BIOS"
+            },
+            {
+                "type": "Добавено",
+                "text": "10) Добавена е възможността за промяна на размера на етикетите"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "11) Фиксирани имената на системните програми"
+            },
+            {
+                "type": "Променен",
+                "text": "12) Името и иконата на Messenger се промениха"
+            },
+            {
+                "type": "Променен",
+                "text": "13) Работният прозорец вече е пълен -екрани"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW1.8.700",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) Hozzáadott parancsikon"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) hozzáadta a lejátszó múzeumának címkéjét"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) hozzáadta a feladat diszpécserének parancsikonját"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "4) Hozzáadott gomb befejezése a tálcán"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "5) hozzáadta az IDE -t a C -hez"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "6) hozzáadta az IDE -t a C# -hoz"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "7) Hozzáadott IDE HTML/CSS -hez"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "8) hozzáadta az IDE -t a JS -hez"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "9) hozzáadott BIOS"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "10) hozzáadta a címkék méretének megváltoztatásának képességét"
+            },
+            {
+                "type": "Rögzített",
+                "text": "11) Javította a rendszerprogramok nevét"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "12) A Messenger neve és ikonja megváltozott"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "13) A munkablak most már teljes -képernyő"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW1.8.700",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) Adăugare scurtătură de scurtătură"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) a adăugat eticheta mușelor jucătorului"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) a adăugat comanda rapidă a dispeceratului de sarcini"
+            },
+            {
+                "type": "Adăugat",
+                "text": "4) completarea butonului adăugat în bara de activități"
+            },
+            {
+                "type": "Adăugat",
+                "text": "5) IDE adăugat pentru C"
+            },
+            {
+                "type": "Adăugat",
+                "text": "6) IDE adăugat pentru C#"
+            },
+            {
+                "type": "Adăugat",
+                "text": "7) IDE adăugat pentru HTML/CSS"
+            },
+            {
+                "type": "Adăugat",
+                "text": "8) IDE adăugat pentru JS"
+            },
+            {
+                "type": "Adăugat",
+                "text": "9) BIOS adăugat"
+            },
+            {
+                "type": "Adăugat",
+                "text": "10) a adăugat capacitatea de a schimba dimensiunea etichetelor"
+            },
+            {
+                "type": "Fix",
+                "text": "11) S -a rezolvat numele programelor de sistem"
+            },
+            {
+                "type": "Schimbat",
+                "text": "12) Numele și pictograma Messenger s -au schimbat"
+            },
+            {
+                "type": "Schimbat",
+                "text": "13) Fereastra de lucru este acum pe ecran complet"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW1.8.700",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）添加快捷方式"
+            },
+            {
+                "type": "额外",
+                "text": "2）添加了玩家缪斯女神的标签"
+            },
+            {
+                "type": "额外",
+                "text": "3）添加了任务调度员的快捷方式"
+            },
+            {
+                "type": "额外",
+                "text": "4）在任务栏中添加了按钮完成的按钮完成"
+            },
+            {
+                "type": "额外",
+                "text": "5）添加了C的IDE"
+            },
+            {
+                "type": "额外",
+                "text": "6）添加了C＃的IDE"
+            },
+            {
+                "type": "额外",
+                "text": "7）添加了HTML/CSS的IDE"
+            },
+            {
+                "type": "额外",
+                "text": "8）添加了JS的IDE"
+            },
+            {
+                "type": "额外",
+                "text": "9）添加了BIOS"
+            },
+            {
+                "type": "额外",
+                "text": "10）添加了更改标签大小的能力"
+            },
+            {
+                "type": "固定的",
+                "text": "11）修复了系统程序的名称"
+            },
+            {
+                "type": "改变了",
+                "text": "12）Messenger的名称和图标更改"
+            },
+            {
+                "type": "改变了",
+                "text": "13）现在的工作窗口已完整 - 屏幕"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW1.8.700",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidána zkratka zkratky"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidal štítek Muses of the Player"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidán zkratka dispečera úlohy"
+            },
+            {
+                "type": "Přidáno",
+                "text": "4) Přidáno dokončení tlačítka práce na hlavním panelu"
+            },
+            {
+                "type": "Přidáno",
+                "text": "5) Přidáno IDE pro C"
+            },
+            {
+                "type": "Přidáno",
+                "text": "6) Přidáno IDE pro C#"
+            },
+            {
+                "type": "Přidáno",
+                "text": "7) Přidáno IDE pro HTML/CSS"
+            },
+            {
+                "type": "Přidáno",
+                "text": "8) Přidáno IDE pro JS"
+            },
+            {
+                "type": "Přidáno",
+                "text": "9) Přidán BIOS"
+            },
+            {
+                "type": "Přidáno",
+                "text": "10) Přidána schopnost změnit velikost štítků"
+            },
+            {
+                "type": "Opravené",
+                "text": "11) Opraveno názvy systémových programů"
+            },
+            {
+                "type": "Změněno",
+                "text": "12) Jméno a ikona Messenger se změnila"
+            },
+            {
+                "type": "Změněno",
+                "text": "13) Pracovní okno je nyní plné obrazovky"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストKW1.8.700",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）ショートカットショートカットを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）プレーヤーのミューズのラベルを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）タスクディスパッチャーのショートカットを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "4）タスクバーでの作業の完了を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "5）cのIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "6）C＃のIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "7）HTML/CSSのIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "8）JSのIDEを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "9）BIOSを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "10）ラベルのサイズを変更する機能を追加しました"
+            },
+            {
+                "type": "修理済み",
+                "text": "11）システムプログラムの名前を修正しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "12）メッセンジャーの名前とアイコンが変更されました"
+            },
+            {
+                "type": "変更されました",
+                "text": "13）作業ウィンドウが完全に画面になりました"
+            }
+        ]
+    }
+}

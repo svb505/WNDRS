@@ -1,0 +1,20 @@
+[
+    {
+        "id": "file_manager"
+    },
+    {
+        "id": "store"
+    },
+    {
+        "id": "photov"
+    },
+    {
+        "id": "video_player"
+    },
+    {
+        "id": "calculator"
+    },
+    {
+        "id": "task_manager"
+    }
+]

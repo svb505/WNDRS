@@ -1,0 +1,29 @@
+<html>
+                              <body style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+                                <div style="background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 600px; margin: auto;">
+                                  <h2 style="color: #2c3e50;">{lang["bron_podt"]}</h2>
+                                  <p style="font-size: 16px; color: #555;">
+                                    {lang["thanks_h"]}
+                                  </p>
+
+                                  <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;"/>
+
+                                  <p><strong>{lang['--hotel']}</strong> {name}</p>
+                                  <p><strong>{lang['--city']}</strong> {city}</p>
+                                  <p><strong>{lang['--date']}</strong> {date}</p>
+                                  <p><strong>{lang['--end_date']}</strong> {end_date}</p>
+                                  <p><strong>{lang["--per"]}</strong> {kolvo}</p>
+
+                                  <h3 style="color: #34495e; margin-top: 30px;">{lang["selected_opts2"]}</h3>
+                                  <ul style="color: #555; font-size: 15px;">
+                                    {''.join(f"<li>{opt['name']} — +{opt['price']} ₽</li>" for opt in selected_options)}
+                                  </ul>
+
+                                  <p style="margin-top: 20px; font-size: 16px;"><strong>{lang["total_price_h"]}</strong> <span style="color: #e74c3c;">{total_price} ₽</span></p>
+
+                                  <p style="font-size: 14px; color: #888; margin-top: 30px;">
+                                    {lang["bron2"]}
+                                  </p>
+                                </div>
+                              </body>
+                            </html>

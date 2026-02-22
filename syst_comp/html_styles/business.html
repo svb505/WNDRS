@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{lang["business_opened"]}</title>
+  <style>
+    body{font-family: Inter, Arial, sans-serif;background:#fff7ed;margin:0;display:flex;align-items:center;justify-content:center;height:100vh;padding:20px}
+    .sms{width:100%;max-width:420px;background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(16,24,40,0.06);padding:20px}
+    .from{font-size:13px;color:#92400e;margin-bottom:8px}
+    .title{font-size:18px;font-weight:700;margin-bottom:6px;color:#7c2d12}
+    .text{font-size:15px;color:#111827;line-height:1.45;margin-bottom:12px}
+    .meta{font-size:13px;color:#6b7280;background:#fff3e0;padding:10px;border-radius:8px}
+    .ok{display:inline-block;margin-top:14px;padding:8px 12px;border-radius:8px;background:#fff4e6;color:#92400e;font-weight:600;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="sms" role="article" aria-label={lang['message_about_business']}>
+    <div class="from">{lang["BSMS1"]}</div>
+    <div class="title">{lang["BSMS2"]}</div>
+    <div class="text">
+      {lang["BSMS3"]}<br>
+      {lang['title']}: <strong>{title}</strong><br>
+      {lang["regID"]}: <strong>{ID}</strong>
+    </div>
+    <div class="meta">
+      {lang['open_date']}: {date} • {lang['manager_contact']}: ---
+    </div>
+    <div class="ok">{lang['doc_send_in_email']}</div>
+  </div>
+</body>
+</html>

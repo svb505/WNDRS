@@ -1,0 +1,1484 @@
+{
+    "RU": {
+        "title": "Список изменений KW2.9.000",
+        "changes": [
+            {
+                "type": "added",
+                "text": "1) Добавлены новые позиции/продукты в доставку"
+            },
+            {
+                "type": "added",
+                "text": "2) Добавлены новые функции в менеджер паролей"
+            },
+            {
+                "type": "added",
+                "text": "3) Добавлен прогресс-бар при применении настроек в настройках"
+            },
+            {
+                "type": "added",
+                "text": "4) Добавлено приложение для чтения книг"
+            },
+            {
+                "type": "added",
+                "text": "5) Добавлен выбор темы в геймбаре"
+            },
+            {
+                "type": "added",
+                "text": "6) Добавлены изображения флага страны в параметрах"
+            },
+            {
+                "type": "added",
+                "text": "7) Добавлен новый код ошибки"
+            },
+            {
+                "type": "added",
+                "text": "8) Добавлен редактор текста"
+            },
+            {
+                "type": "added",
+                "text": "9) Добавлены новые и обновлены старые иконки в интерфейсе"
+            },
+            {
+                "type": "added",
+                "text": "10) Добавлены ачивки"
+            },
+            {
+                "type": "added",
+                "text": "11) Добавлена возможность изменять формат времени на taskbar"
+            },
+            {
+                "type": "added",
+                "text": "12) Добавлено 22 новых шрифта"
+            },
+            {
+                "type": "fixed",
+                "text": "13) Геймбар моментально меняет прозрачность"
+            },
+            {
+                "type": "fixed",
+                "text": "14) Исправлена ошибка с иконкой аккаунта"
+            },
+            {
+                "type": "changed",
+                "text": "15) Обновлены иконки звука"
+            },
+            {
+                "type": "added",
+                "text": "16) Добавлены иконки батареи"
+            },
+            {
+                "type": "changed",
+                "text": "17) Обновлены иконки Wi-Fi"
+            },
+            {
+                "type": "changed",
+                "text": "18) Обновлен toggle switch"
+            }
+        ],
+        "footer": "Спасибо за использование нашего приложения!"
+    },
+    "EN": {
+        "title": "List of changes KW2.9.000",
+        "footer": "Thanks for using our application!",
+        "changes": [
+            {
+                "type": "Added",
+                "text": "1) Added new positions/products to delivery"
+            },
+            {
+                "type": "Added",
+                "text": "2) Added new functions to a password manager"
+            },
+            {
+                "type": "Added",
+                "text": "3) Added progress bar when using settings in the settings"
+            },
+            {
+                "type": "Added",
+                "text": "4) Added an application for reading books"
+            },
+            {
+                "type": "Added",
+                "text": "5) added the choice of the topic in the gambara"
+            },
+            {
+                "type": "Added",
+                "text": "6) added images of the country's flag in parameters"
+            },
+            {
+                "type": "Added",
+                "text": "7) Added new error code"
+            },
+            {
+                "type": "Added",
+                "text": "8) added text editor"
+            },
+            {
+                "type": "Added",
+                "text": "9) added new ones and updated old icons in the interface"
+            },
+            {
+                "type": "Added",
+                "text": "10) Achivka added"
+            },
+            {
+                "type": "Added",
+                "text": "11) Added the ability to change the time format on Taskbar"
+            },
+            {
+                "type": "Added",
+                "text": "12) added 22 new fonts"
+            },
+            {
+                "type": "Fixed",
+                "text": "13) Gambar instantly changes transparency"
+            },
+            {
+                "type": "Fixed",
+                "text": "14) Fixed an error with an account icon"
+            },
+            {
+                "type": "Changed",
+                "text": "15) updated sound icon"
+            },
+            {
+                "type": "Added",
+                "text": "16) Added batteries"
+            },
+            {
+                "type": "Changed",
+                "text": "17) updated wi-fi icons"
+            },
+            {
+                "type": "Changed",
+                "text": "18) updated Toggle Switch"
+            }
+        ]
+    },
+    "FR": {
+        "title": "Liste des modifications KW2.9.000",
+        "footer": "Merci d'utiliser notre application!",
+        "changes": [
+            {
+                "type": "Ajouté",
+                "text": "1) Ajout de nouveaux postes / produits à la livraison"
+            },
+            {
+                "type": "Ajouté",
+                "text": "2) Ajout de nouvelles fonctions à un gestionnaire de mots de passe"
+            },
+            {
+                "type": "Ajouté",
+                "text": "3) Ajout d'une barre de progression lors de l'utilisation des paramètres dans les paramètres"
+            },
+            {
+                "type": "Ajouté",
+                "text": "4) Ajout d'une application pour la lecture de livres"
+            },
+            {
+                "type": "Ajouté",
+                "text": "5) Ajout du choix du sujet dans le gambara"
+            },
+            {
+                "type": "Ajouté",
+                "text": "6) Ajout d'images du drapeau du pays dans les paramètres"
+            },
+            {
+                "type": "Ajouté",
+                "text": "7) Ajout d'un nouveau code d'erreur"
+            },
+            {
+                "type": "Ajouté",
+                "text": "8) Ajout d'éditeur de texte"
+            },
+            {
+                "type": "Ajouté",
+                "text": "9) ajouté de nouveaux et les anciennes icônes mises à jour dans l'interface"
+            },
+            {
+                "type": "Ajouté",
+                "text": "10) Achivka ajouté"
+            },
+            {
+                "type": "Ajouté",
+                "text": "11) Ajout de la possibilité de modifier le format de temps sur la barre des tâches"
+            },
+            {
+                "type": "Ajouté",
+                "text": "12) Ajout de 22 nouvelles polices"
+            },
+            {
+                "type": "Fixé",
+                "text": "13) Gambar modifie instantanément la transparence"
+            },
+            {
+                "type": "Fixé",
+                "text": "14) Correction d'une erreur avec une icône de compte"
+            },
+            {
+                "type": "Modifié",
+                "text": "15) Icône sonore mise à jour"
+            },
+            {
+                "type": "Ajouté",
+                "text": "16) Ajout de batteries"
+            },
+            {
+                "type": "Modifié",
+                "text": "17) Icônes Wi-Fi mises à jour"
+            },
+            {
+                "type": "Modifié",
+                "text": "18) Interrupteur à bascule mis à jour"
+            }
+        ]
+    },
+    "UA": {
+        "title": "Список змін KW2.9.000",
+        "footer": "Дякуємо за використання нашої програми!",
+        "changes": [
+            {
+                "type": "Доданий",
+                "text": "1) Додано нові позиції/продукти до доставки"
+            },
+            {
+                "type": "Доданий",
+                "text": "2) Додано нові функції до менеджера паролів"
+            },
+            {
+                "type": "Доданий",
+                "text": "3) Додано панель прогресу при використанні налаштувань у налаштуваннях"
+            },
+            {
+                "type": "Доданий",
+                "text": "4) Додано програму для читання книг"
+            },
+            {
+                "type": "Доданий",
+                "text": "5) Додано вибір теми в Гамбарі"
+            },
+            {
+                "type": "Доданий",
+                "text": "6) Додано зображення прапора країни в параметрах"
+            },
+            {
+                "type": "Доданий",
+                "text": "7) Додано новий код помилки"
+            },
+            {
+                "type": "Доданий",
+                "text": "8) Доданий текстовий редактор"
+            },
+            {
+                "type": "Доданий",
+                "text": "9) Додано нові та оновлені старі піктограми в інтерфейсі"
+            },
+            {
+                "type": "Доданий",
+                "text": "10) Додав Ахівка"
+            },
+            {
+                "type": "Доданий",
+                "text": "11) Додано здатність змінити формат часу на панелі завдань"
+            },
+            {
+                "type": "Доданий",
+                "text": "12) Додано 22 нові шрифти"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "13) Гамбар миттєво змінює прозорість"
+            },
+            {
+                "type": "Нерухомий",
+                "text": "14) Виправлена ​​помилка з значком облікового запису"
+            },
+            {
+                "type": "Змінювати",
+                "text": "15) Оновлений значок звуку"
+            },
+            {
+                "type": "Доданий",
+                "text": "16) Додані акумулятори"
+            },
+            {
+                "type": "Змінювати",
+                "text": "17) Оновлені піктограми Wi-Fi"
+            },
+            {
+                "type": "Змінювати",
+                "text": "18) Оновлений перемикач перемикання"
+            }
+        ]
+    },
+    "IT": {
+        "title": "Elenco delle modifiche KW2.9.000",
+        "footer": "Grazie per aver usato la nostra applicazione!",
+        "changes": [
+            {
+                "type": "Aggiunto",
+                "text": "1) Aggiunte nuove posizioni/prodotti alla consegna"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "2) Aggiunte nuove funzioni a un gestore di password"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "3) Aggiunta della barra di avanzamento quando si utilizza le impostazioni nelle impostazioni"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "4) Aggiunta un'applicazione per la lettura di libri"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "5) Aggiunta la scelta dell'argomento in Gambra"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "6) Aggiunte immagini della bandiera del paese nei parametri"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "7) Aggiunto nuovo codice di errore"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "8) Aggiunto editor di testo"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "9) Aggiunto di nuovi e aggiornate vecchie icone nell'interfaccia"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "10) Achivka aggiunto"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "11) Aggiunta la possibilità di modificare il formato di tempo sulla barra delle applicazioni"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "12) Aggiunti 22 nuovi caratteri"
+            },
+            {
+                "type": "Fisso",
+                "text": "13) Gambar cambia istantaneamente la trasparenza"
+            },
+            {
+                "type": "Fisso",
+                "text": "14) Risolto un errore con un'icona dell'account"
+            },
+            {
+                "type": "Cambiato",
+                "text": "15) Icona del suono aggiornato"
+            },
+            {
+                "type": "Aggiunto",
+                "text": "16) batterie aggiunte"
+            },
+            {
+                "type": "Cambiato",
+                "text": "17) Icone Wi-Fi aggiornate"
+            },
+            {
+                "type": "Cambiato",
+                "text": "18) Interruttore a levetta aggiornato"
+            }
+        ]
+    },
+    "ES": {
+        "title": "Lista de cambios kw2.9.000",
+        "footer": "¡Gracias por usar nuestra aplicación!",
+        "changes": [
+            {
+                "type": "Agregado",
+                "text": "1) Se agregaron nuevas posiciones/productos a la entrega"
+            },
+            {
+                "type": "Agregado",
+                "text": "2) Se agregaron nuevas funciones a un administrador de contraseñas"
+            },
+            {
+                "type": "Agregado",
+                "text": "3) Barra de progreso agregada al usar Configuración en la configuración"
+            },
+            {
+                "type": "Agregado",
+                "text": "4) Se agregó una aplicación para leer libros"
+            },
+            {
+                "type": "Agregado",
+                "text": "5) Se agregó la elección del tema en el Gambara"
+            },
+            {
+                "type": "Agregado",
+                "text": "6) Imágenes agregadas de la bandera del país en parámetros"
+            },
+            {
+                "type": "Agregado",
+                "text": "7) Se agregó un nuevo código de error"
+            },
+            {
+                "type": "Agregado",
+                "text": "8) Editor de texto agregado"
+            },
+            {
+                "type": "Agregado",
+                "text": "9) Se agregaron nuevos e iconos antiguos actualizados en la interfaz"
+            },
+            {
+                "type": "Agregado",
+                "text": "10) Achivka agregado"
+            },
+            {
+                "type": "Agregado",
+                "text": "11) Se agregó la capacidad de cambiar el formato de tiempo en la barra de tareas"
+            },
+            {
+                "type": "Agregado",
+                "text": "12) Se agregaron 22 nuevas fuentes"
+            },
+            {
+                "type": "Fijado",
+                "text": "13) Gambar cambia instantáneamente la transparencia"
+            },
+            {
+                "type": "Fijado",
+                "text": "14) Se corrigió un error con un icono de cuenta"
+            },
+            {
+                "type": "Cambió",
+                "text": "15) Icono de sonido actualizado"
+            },
+            {
+                "type": "Agregado",
+                "text": "16) Batterías agregadas"
+            },
+            {
+                "type": "Cambió",
+                "text": "17) Iconos Wi-Fi actualizados"
+            },
+            {
+                "type": "Cambió",
+                "text": "18) Interruptor de palanca actualizado"
+            }
+        ]
+    },
+    "DE": {
+        "title": "Liste der Änderungen KW2.9.000",
+        "footer": "Vielen Dank für die Verwendung unserer Bewerbung!",
+        "changes": [
+            {
+                "type": "Hinzugefügt",
+                "text": "1) Zu der Lieferung neue Positionen/Produkte hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "2) einem Passwort -Manager neue Funktionen hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "3) Die Fortschrittsleiste hinzugefügt, wenn die Einstellungen in den Einstellungen verwendet werden"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "4) Eine Bewerbung zum Lesen von Büchern hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "5) Die Auswahl des Themas in der Gambara fügte hinzu"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "6) Bilder der Flagge des Landes in Parametern hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "7) Neuen Fehlercode hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "8) Texteditor hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "9) neue und aktualisierte alte Symbole in der Schnittstelle hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "10) Achivka hinzugefügt"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "11) Die Möglichkeit, das Zeitformat in der Taskleiste zu ändern"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "12) 22 neue Schriftarten hinzugefügt"
+            },
+            {
+                "type": "Behoben",
+                "text": "13) Gambar ändert sofort die Transparenz"
+            },
+            {
+                "type": "Behoben",
+                "text": "14) Ein Fehler mit einem Kontosymbol behoben"
+            },
+            {
+                "type": "Verändert",
+                "text": "15) Aktualisiertes Tonsymbol"
+            },
+            {
+                "type": "Hinzugefügt",
+                "text": "16) Batterien hinzugefügt"
+            },
+            {
+                "type": "Verändert",
+                "text": "17) Aktualisierte Wi-Fi-Symbole"
+            },
+            {
+                "type": "Verändert",
+                "text": "18) Aktualisierter Kippschalter"
+            }
+        ]
+    },
+    "PT": {
+        "title": "Lista de alterações KW2.9.000",
+        "footer": "Obrigado por usar nosso aplicativo!",
+        "changes": [
+            {
+                "type": "Adicionado",
+                "text": "1) Adicionado novas posições/produtos à entrega"
+            },
+            {
+                "type": "Adicionado",
+                "text": "2) Adicionado novas funções a um gerenciador de senhas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "3) Adicionada barra de progresso ao usar configurações nas configurações"
+            },
+            {
+                "type": "Adicionado",
+                "text": "4) Adicionado um aplicativo para ler livros"
+            },
+            {
+                "type": "Adicionado",
+                "text": "5) Adicionado a escolha do tópico no Gambara"
+            },
+            {
+                "type": "Adicionado",
+                "text": "6) Imagens adicionadas da bandeira do país em parâmetros"
+            },
+            {
+                "type": "Adicionado",
+                "text": "7) Adicionado novo código de erro"
+            },
+            {
+                "type": "Adicionado",
+                "text": "8) Editor de texto adicionado"
+            },
+            {
+                "type": "Adicionado",
+                "text": "9) Adicionados novos e os ícones antigos atualizados na interface"
+            },
+            {
+                "type": "Adicionado",
+                "text": "10) Achivka adicionou"
+            },
+            {
+                "type": "Adicionado",
+                "text": "11) Adicionado a capacidade de alterar o formato de tempo na barra de tarefas"
+            },
+            {
+                "type": "Adicionado",
+                "text": "12) Adicionado 22 novas fontes"
+            },
+            {
+                "type": "Fixo",
+                "text": "13) Gambar muda instantaneamente a transparência"
+            },
+            {
+                "type": "Fixo",
+                "text": "14) Corrigido um erro com um ícone de conta"
+            },
+            {
+                "type": "Mudado",
+                "text": "15) Ícone de som atualizado"
+            },
+            {
+                "type": "Adicionado",
+                "text": "16) Adicionadas baterias"
+            },
+            {
+                "type": "Mudado",
+                "text": "17) ícones Wi-Fi atualizados"
+            },
+            {
+                "type": "Mudado",
+                "text": "18) interruptor de alternância atualizado"
+            }
+        ]
+    },
+    "PL": {
+        "title": "Lista zmian KW2.9.000",
+        "footer": "Dzięki za korzystanie z naszej aplikacji!",
+        "changes": [
+            {
+                "type": "W dodatku",
+                "text": "1) Dodano nowe pozycje/produkty do dostawy"
+            },
+            {
+                "type": "W dodatku",
+                "text": "2) Dodano nowe funkcje do menedżera haseł"
+            },
+            {
+                "type": "W dodatku",
+                "text": "3) Dodano pasek postępu podczas korzystania z ustawień w ustawieniach"
+            },
+            {
+                "type": "W dodatku",
+                "text": "4) Dodano aplikację do czytania książek"
+            },
+            {
+                "type": "W dodatku",
+                "text": "5) Dodał wybór tematu w Gambara"
+            },
+            {
+                "type": "W dodatku",
+                "text": "6) Dodano obrazy flagi kraju w parametrach"
+            },
+            {
+                "type": "W dodatku",
+                "text": "7) Dodano nowy kod błędu"
+            },
+            {
+                "type": "W dodatku",
+                "text": "8) Dodano edytor tekstu"
+            },
+            {
+                "type": "W dodatku",
+                "text": "9) Dodano nowe i zaktualizowane stare ikony w interfejsie"
+            },
+            {
+                "type": "W dodatku",
+                "text": "10) Achivka dodała"
+            },
+            {
+                "type": "W dodatku",
+                "text": "11) Dodano możliwość zmiany formatu czasu na pasku zadań"
+            },
+            {
+                "type": "W dodatku",
+                "text": "12) Dodano 22 nowe czcionki"
+            },
+            {
+                "type": "Naprawił",
+                "text": "13) Gambar natychmiast zmienia przejrzystość"
+            },
+            {
+                "type": "Naprawił",
+                "text": "14) Naprawiono błąd za pomocą ikony konta"
+            },
+            {
+                "type": "Zmienione",
+                "text": "15) Zaktualizowana ikona dźwięku"
+            },
+            {
+                "type": "W dodatku",
+                "text": "16) Dodano baterie"
+            },
+            {
+                "type": "Zmienione",
+                "text": "17) Zaktualizowano ikony Wi-Fi"
+            },
+            {
+                "type": "Zmienione",
+                "text": "18) Zaktualizowany przełącznik przełączający"
+            }
+        ]
+    },
+    "ALB": {
+        "title": "Lista e ndryshimeve KW2.9.000",
+        "footer": "Faleminderit për përdorimin e aplikacionit tonë!",
+        "changes": [
+            {
+                "type": "I shtuar",
+                "text": "1) Shtuar pozicione/produkte të reja në shpërndarje"
+            },
+            {
+                "type": "I shtuar",
+                "text": "2) Shtuar funksione të reja te një menaxher i fjalëkalimit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "3) Shtimi i shiritit të përparimit kur përdorni cilësimet në cilësimet"
+            },
+            {
+                "type": "I shtuar",
+                "text": "4) Shtuar një aplikim për leximin e librave"
+            },
+            {
+                "type": "I shtuar",
+                "text": "5) Shtuar zgjedhjen e temës në Gambara"
+            },
+            {
+                "type": "I shtuar",
+                "text": "6) Imazhet e shtuara të flamurit të vendit në parametrat"
+            },
+            {
+                "type": "I shtuar",
+                "text": "7) Shtuar kodin e ri të gabimit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "8) Redaktori i shtuar i tekstit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "9) Shtuar të reja dhe ikona të vjetra të azhurnuara në ndërfaqe"
+            },
+            {
+                "type": "I shtuar",
+                "text": "10) Shtuar Achivka"
+            },
+            {
+                "type": "I shtuar",
+                "text": "11) Shtuar aftësinë për të ndryshuar formatin e kohës në shiritin e detyrave"
+            },
+            {
+                "type": "I shtuar",
+                "text": "12) shtuar 22 shkronja të reja"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "13) Gambar menjëherë ndryshon transparencën"
+            },
+            {
+                "type": "I fiksuar",
+                "text": "14) Fiksoi një gabim me një ikonë të llogarisë"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "15) Ikona e azhurnuar e tingullit"
+            },
+            {
+                "type": "I shtuar",
+                "text": "16) Bateritë e shtuara"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "17) ikona të azhurnuara Wi-Fi"
+            },
+            {
+                "type": "I ndryshuar",
+                "text": "18) Ndërprerësi i azhurnuar i toggle"
+            }
+        ]
+    },
+    "SRB": {
+        "title": "Листа промена кв2.9.000",
+        "footer": "Хвала што користите нашу пријаву!",
+        "changes": [
+            {
+                "type": "Додато",
+                "text": "1) додали су нове позиције / производе до испоруке"
+            },
+            {
+                "type": "Додато",
+                "text": "2) Додате нове функције менаџеру лозинке"
+            },
+            {
+                "type": "Додато",
+                "text": "3) Додао је траку за напредак када се користи подешавања у подешавањима"
+            },
+            {
+                "type": "Додато",
+                "text": "4) Додао је апликацију за читање књига"
+            },
+            {
+                "type": "Додато",
+                "text": "5) Додао је избор теме у Гамбари"
+            },
+            {
+                "type": "Додато",
+                "text": "6) додате слике заставе земље у параметрима"
+            },
+            {
+                "type": "Додато",
+                "text": "7) Додао је нови код грешке"
+            },
+            {
+                "type": "Додато",
+                "text": "8) Додани уредник текста"
+            },
+            {
+                "type": "Додато",
+                "text": "9) додао је нове и ажурирало старе иконе у интерфејсу"
+            },
+            {
+                "type": "Додато",
+                "text": "10) Ахивка је додата"
+            },
+            {
+                "type": "Додато",
+                "text": "11) Додата је могућност промене формата времена на траци задатака"
+            },
+            {
+                "type": "Додато",
+                "text": "12) Додато 22 нова фонтова"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "13) Гамбар тренутно мења транспарентност"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "14) Поправљена је грешка са иконом налога"
+            },
+            {
+                "type": "Промењен",
+                "text": "15) Ажурирана икона звука"
+            },
+            {
+                "type": "Додато",
+                "text": "16) Додате батерије"
+            },
+            {
+                "type": "Промењен",
+                "text": "17) Ажурирано Ви-Фи иконе"
+            },
+            {
+                "type": "Промењен",
+                "text": "18) Ажурирани прекидач за пребацивање"
+            }
+        ]
+    },
+    "BY": {
+        "title": "Спіс змяненняў KW2.9.000",
+        "footer": "Дзякуй за выкарыстанне нашай заяўкі!",
+        "changes": [
+            {
+                "type": "Дададзена",
+                "text": "1) Дададзены новыя пазіцыі/прадукты да дастаўкі"
+            },
+            {
+                "type": "Дададзена",
+                "text": "2) Дададзены новыя функцыі ў менеджэр пароляў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "3) Дададзены панэль прагрэсу пры выкарыстанні налад у наладах"
+            },
+            {
+                "type": "Дададзена",
+                "text": "4) Дададзена заяўка на чытанне кніг"
+            },
+            {
+                "type": "Дададзена",
+                "text": "5) Дадаў выбар тэмы ў Гамбары"
+            },
+            {
+                "type": "Дададзена",
+                "text": "6) Дададзеныя выявы сцяга краіны ў параметры"
+            },
+            {
+                "type": "Дададзена",
+                "text": "7) Дададзены новы код памылкі"
+            },
+            {
+                "type": "Дададзена",
+                "text": "8) Дададзены тэкставы рэдактар"
+            },
+            {
+                "type": "Дададзена",
+                "text": "9) Дададзены новыя і абноўленыя старыя абразкі ў інтэрфейсе"
+            },
+            {
+                "type": "Дададзена",
+                "text": "10) ACHIVKA дадаў"
+            },
+            {
+                "type": "Дададзена",
+                "text": "11) дадаў магчымасць змяніць фармат часу на панэлі задач"
+            },
+            {
+                "type": "Дададзена",
+                "text": "12) дадаў 22 новыя шрыфты"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "13) Гамбар імгненна змяняе празрыстасць"
+            },
+            {
+                "type": "Фіксаваны",
+                "text": "14) Выпраўлена памылка значком уліковага запісу"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "15) Абноўлены значок гуку"
+            },
+            {
+                "type": "Дададзена",
+                "text": "16) Дададзеныя батарэі"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "17) Абноўленыя значкі Wi-Fi"
+            },
+            {
+                "type": "Змяніўся",
+                "text": "18) Абноўлены перамыкач для пераключэння"
+            }
+        ]
+    },
+    "TUR": {
+        "title": "Değişikliklerin listesi kw2.9.000",
+        "footer": "Başvurumuzu kullandığınız için teşekkürler!",
+        "changes": [
+            {
+                "type": "Eklemek",
+                "text": "1) Teslimat için yeni pozisyonlar/ürünler eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "2) Bir şifre yöneticisine yeni işlevler eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "3) Ayarlardaki ayarları kullanırken ilerleme çubuğu eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "4) Kitap okumak için bir başvuru ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "5) Gambara'daki konunun seçimini ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "6) Ülkenin bayrağının parametrelerde eklenmesi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "7) Yeni hata kodu eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "8) Metin Düzenleyicisi Eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "9) Arayüzde yenilerini ekledi ve eski simgeleri güncelledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "10) Achivka ekledi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "11) Görev çubuğundaki zaman biçimini değiştirme yeteneği eklendi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "12) 22 yeni yazı tipi ekledi"
+            },
+            {
+                "type": "Sabit",
+                "text": "13) Gambar, şeffaflığı anında değiştirir"
+            },
+            {
+                "type": "Sabit",
+                "text": "14) Bir hesap simgesiyle bir hata düzeltildi"
+            },
+            {
+                "type": "Değişen",
+                "text": "15) Güncellenmiş ses simgesi"
+            },
+            {
+                "type": "Eklemek",
+                "text": "16) Piller eklendi"
+            },
+            {
+                "type": "Değişen",
+                "text": "17) Güncellenmiş Wi-Fi simgeleri"
+            },
+            {
+                "type": "Değişen",
+                "text": "18) Güncellenen geçiş anahtarı"
+            }
+        ]
+    },
+    "BG": {
+        "title": "Списък на промените KW2.9.000",
+        "footer": "Благодаря, че използвахте нашето приложение!",
+        "changes": [
+            {
+                "type": "Добавено",
+                "text": "1) Добавени нови позиции/продукти към доставката"
+            },
+            {
+                "type": "Добавено",
+                "text": "2) Добавени нови функции към мениджър на пароли"
+            },
+            {
+                "type": "Добавено",
+                "text": "3) Добавена е лентата за напредък при използване на настройки в настройките"
+            },
+            {
+                "type": "Добавено",
+                "text": "4) Добавено приложение за четене на книги"
+            },
+            {
+                "type": "Добавено",
+                "text": "5) Добавено е избора на темата в гамбара"
+            },
+            {
+                "type": "Добавено",
+                "text": "6) Добавени изображения на знамето на страната в параметри"
+            },
+            {
+                "type": "Добавено",
+                "text": "7) Добавен нов код за грешка"
+            },
+            {
+                "type": "Добавено",
+                "text": "8) Добавен текстов редактор"
+            },
+            {
+                "type": "Добавено",
+                "text": "9) Добавени нови и актуализирани стари икони в интерфейса"
+            },
+            {
+                "type": "Добавено",
+                "text": "10) добавена Ачивка"
+            },
+            {
+                "type": "Добавено",
+                "text": "11) Добавена е възможността за промяна на формата на времето в лентата на задачите"
+            },
+            {
+                "type": "Добавено",
+                "text": "12) Добавени 22 нови шрифта"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "13) Гамбар незабавно променя прозрачността"
+            },
+            {
+                "type": "Фиксиран",
+                "text": "14) Фиксирана грешка с икона на акаунта"
+            },
+            {
+                "type": "Променен",
+                "text": "15) Актуализирана звукова икона"
+            },
+            {
+                "type": "Добавено",
+                "text": "16) Добавени батерии"
+            },
+            {
+                "type": "Променен",
+                "text": "17) Актуализирани Wi-Fi икони"
+            },
+            {
+                "type": "Променен",
+                "text": "18) Актуализиран превключвател за превключване"
+            }
+        ]
+    },
+    "HU": {
+        "title": "A változások listája KW2.9.000",
+        "footer": "Köszönjük, hogy használta a jelentkezést!",
+        "changes": [
+            {
+                "type": "Hozzáadott",
+                "text": "1) Új pozíciókat/termékeket adott hozzá a kézbesítéshez"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "2) Új funkciókat adott hozzá a jelszókezelőhöz"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "3) Hozzáadva az előrehaladási sávot, amikor a beállításokban a beállításokat használja"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "4) A könyvek olvasására szolgáló kérelmet adott hozzá"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "5) hozzáadta a téma megválasztását a gambarában"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "6) A paraméterekben hozzáadott képek az ország zászlójáról"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "7) új hibakód hozzáadása"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "8) Hozzáadott szövegszerkesztő"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "9) újakat adtak hozzá, és frissítették a régi ikonokat a felületen"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "10) Achivka hozzáadta"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "11) hozzáadta az időformátum megváltoztatásának képességét a tálcán"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "12) 22 új betűtípust adott hozzá"
+            },
+            {
+                "type": "Rögzített",
+                "text": "13) Gambar azonnal megváltoztatja az átláthatóságot"
+            },
+            {
+                "type": "Rögzített",
+                "text": "14) Javítva egy hibát egy fiók ikonnal"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "15) Frissített hang ikon"
+            },
+            {
+                "type": "Hozzáadott",
+                "text": "16) hozzáadott akkumulátorok"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "17) Frissített Wi-Fi ikonok"
+            },
+            {
+                "type": "Megváltozott",
+                "text": "18) Frissítve a kapcsoló kapcsolóját"
+            }
+        ]
+    },
+    "RO": {
+        "title": "Lista modificărilor KW2.9.000",
+        "footer": "Vă mulțumim pentru utilizarea aplicației noastre!",
+        "changes": [
+            {
+                "type": "Adăugat",
+                "text": "1) S -au adăugat noi poziții/produse la livrare"
+            },
+            {
+                "type": "Adăugat",
+                "text": "2) a adăugat noi funcții la un manager de parole"
+            },
+            {
+                "type": "Adăugat",
+                "text": "3) Adăugat bara de progres la utilizarea setărilor în setări"
+            },
+            {
+                "type": "Adăugat",
+                "text": "4) a adăugat o aplicație pentru citirea cărților"
+            },
+            {
+                "type": "Adăugat",
+                "text": "5) a adăugat alegerea subiectului în Gambara"
+            },
+            {
+                "type": "Adăugat",
+                "text": "6) Imagini adăugate ale steagului țării în parametri"
+            },
+            {
+                "type": "Adăugat",
+                "text": "7) a adăugat un nou cod de eroare"
+            },
+            {
+                "type": "Adăugat",
+                "text": "8) Adăugat editor de text"
+            },
+            {
+                "type": "Adăugat",
+                "text": "9) Adăugat altele noi și pictogramele vechi actualizate în interfață"
+            },
+            {
+                "type": "Adăugat",
+                "text": "10) a adăugat Achivka"
+            },
+            {
+                "type": "Adăugat",
+                "text": "11) a adăugat capacitatea de a schimba formatul de timp pe bara de activități"
+            },
+            {
+                "type": "Adăugat",
+                "text": "12) a adăugat 22 de fonturi noi"
+            },
+            {
+                "type": "Fix",
+                "text": "13) Gambar schimbă instantaneu transparența"
+            },
+            {
+                "type": "Fix",
+                "text": "14) S -a rezolvat o eroare cu o pictogramă a contului"
+            },
+            {
+                "type": "Schimbat",
+                "text": "15) pictogramă sonoră actualizată"
+            },
+            {
+                "type": "Adăugat",
+                "text": "16) Baterii adăugate"
+            },
+            {
+                "type": "Schimbat",
+                "text": "17) pictograme Wi-Fi actualizate"
+            },
+            {
+                "type": "Schimbat",
+                "text": "18) Comutator de comutare actualizat"
+            }
+        ]
+    },
+    "CN": {
+        "title": "更改列表KW2.9.000",
+        "footer": "感谢您使用我们的应用程序！",
+        "changes": [
+            {
+                "type": "额外",
+                "text": "1）在交货中添加了新的职位/产品"
+            },
+            {
+                "type": "额外",
+                "text": "2）向密码管理器添加了新功能"
+            },
+            {
+                "type": "额外",
+                "text": "3）在设置中使用设置时添加了进度条"
+            },
+            {
+                "type": "额外",
+                "text": "4）添加了阅读书籍的申请"
+            },
+            {
+                "type": "额外",
+                "text": "5）在Gambara中添加了该主题的选择"
+            },
+            {
+                "type": "额外",
+                "text": "6）在参数中添加了该国标志的图像"
+            },
+            {
+                "type": "额外",
+                "text": "7）添加了新的错误代码"
+            },
+            {
+                "type": "额外",
+                "text": "8）添加了文本编辑器"
+            },
+            {
+                "type": "额外",
+                "text": "9）在接口中添加了新的图标并更新了旧图标"
+            },
+            {
+                "type": "额外",
+                "text": "10）添加了Achivka"
+            },
+            {
+                "type": "额外",
+                "text": "11）添加了更改任务栏上时间格式的功能"
+            },
+            {
+                "type": "额外",
+                "text": "12）添加了22个新字体"
+            },
+            {
+                "type": "固定的",
+                "text": "13）甘巴立即改变透明度"
+            },
+            {
+                "type": "固定的",
+                "text": "14）修复了使用帐户图标的错误"
+            },
+            {
+                "type": "改变了",
+                "text": "15）更新的声音图标"
+            },
+            {
+                "type": "额外",
+                "text": "16）添加电池"
+            },
+            {
+                "type": "改变了",
+                "text": "17）更新Wi-Fi图标"
+            },
+            {
+                "type": "改变了",
+                "text": "18）更新的切换开关"
+            }
+        ]
+    },
+    "CS": {
+        "title": "Seznam změn KW2.9.000",
+        "footer": "Děkujeme za použití naší aplikace!",
+        "changes": [
+            {
+                "type": "Přidáno",
+                "text": "1) Přidáním nových pozic/produktů k dodání"
+            },
+            {
+                "type": "Přidáno",
+                "text": "2) Přidáním nových funkcí do správce hesel"
+            },
+            {
+                "type": "Přidáno",
+                "text": "3) Přidán k pokroku při použití nastavení v nastavení"
+            },
+            {
+                "type": "Přidáno",
+                "text": "4) Přidána žádost o čtení knih"
+            },
+            {
+                "type": "Přidáno",
+                "text": "5) Přidal výběr tématu v Gambara"
+            },
+            {
+                "type": "Přidáno",
+                "text": "6) Přidané obrázky vlajky země v parametrech"
+            },
+            {
+                "type": "Přidáno",
+                "text": "7) Přidán nový chybový kód"
+            },
+            {
+                "type": "Přidáno",
+                "text": "8) Přidán textový editor"
+            },
+            {
+                "type": "Přidáno",
+                "text": "9) Přidány nové a aktualizované staré ikony v rozhraní"
+            },
+            {
+                "type": "Přidáno",
+                "text": "10) Achivka dodal"
+            },
+            {
+                "type": "Přidáno",
+                "text": "11) Přidaná schopnost změnit formát času na hlavním panelu"
+            },
+            {
+                "type": "Přidáno",
+                "text": "12) Přidáno 22 nových písem"
+            },
+            {
+                "type": "Opravené",
+                "text": "13) Gambar okamžitě mění průhlednost"
+            },
+            {
+                "type": "Opravené",
+                "text": "14) Opravena chyba s ikonou účtu"
+            },
+            {
+                "type": "Změněno",
+                "text": "15) Aktualizovaná ikona zvuku"
+            },
+            {
+                "type": "Přidáno",
+                "text": "16) Přidané baterie"
+            },
+            {
+                "type": "Změněno",
+                "text": "17) Aktualizované ikony Wi-Fi"
+            },
+            {
+                "type": "Změněno",
+                "text": "18) Aktualizovaný přepínač přepínače"
+            }
+        ]
+    },
+    "JP": {
+        "title": "変更のリストKW2.9.000",
+        "footer": "アプリケーションを使用してくれてありがとう！",
+        "changes": [
+            {
+                "type": "追加した",
+                "text": "1）新しいポジション/製品を配達に追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "2）パスワードマネージャーに新しい機能を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "3）設定で設定を使用するときに進行状況バーを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "4）本を読むためのアプリケーションを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "5）ガンバラにトピックの選択を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "6）パラメーターに国の旗の画像を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "7）新しいエラーコードを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "8）テキストエディターを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "9）インターフェイスに新しいものと更新された古いアイコンを追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "10）Achivkaが追加されました"
+            },
+            {
+                "type": "追加した",
+                "text": "11）タスクバーで時間形式を変更する機能を追加しました"
+            },
+            {
+                "type": "追加した",
+                "text": "12）22個の新しいフォントを追加しました"
+            },
+            {
+                "type": "修理済み",
+                "text": "13）ガンバルは即座に透明性を変えます"
+            },
+            {
+                "type": "修理済み",
+                "text": "14）アカウントアイコンでエラーを修正しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "15）更新されたサウンドアイコン"
+            },
+            {
+                "type": "追加した",
+                "text": "16）バッテリーを追加しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "17）Wi-Fiアイコンを更新しました"
+            },
+            {
+                "type": "変更されました",
+                "text": "18）更新されたトグルスイッチ"
+            }
+        ]
+    }
+}
