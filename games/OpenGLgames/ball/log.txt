@@ -1,0 +1,252 @@
+13_09_2025_13:21:39 - [info] Selected 1 level
+13_09_2025_13:21:39 - [info] game launch
+13_09_2025_13:21:41 - [info] Change direction. Current direction: Right
+13_09_2025_13:21:41 - [info] Change direction. Current direction: Down
+13_09_2025_13:21:42 - [info] ИChange direction. Current direction: Left
+13_09_2025_13:21:42 - [info] Change direction. Current direction: Up
+13_09_2025_13:21:43 - [info] Change direction. Current direction: Down
+13_09_2025_13:21:43 - [info] Change direction. Current direction: Up
+13_09_2025_13:21:44 - [info] Change direction. Current direction: Down
+13_09_2025_13:21:44 - [info] ИChange direction. Current direction: Left
+13_09_2025_13:21:45 - [info] Change direction. Current direction: Down
+13_09_2025_13:21:45 - [info] Score: 2
+13_09_2025_13:21:45 - [info] Game over
+05_10_2025_17:57:01 - [info] Selected 1 level
+05_10_2025_17:57:01 - [info] game launch
+05_10_2025_17:57:03 - [info] Change direction. Current direction: Down
+05_10_2025_17:57:04 - [info] ИChange direction. Current direction: Left
+05_10_2025_17:57:05 - [info] ИChange direction. Current direction: Left
+05_10_2025_17:57:05 - [info] Change direction. Current direction: Down - Left
+05_10_2025_17:57:08 - [info] Change direction. Current direction: Right
+05_10_2025_17:57:08 - [info] Change direction. Current direction: Down - Right
+05_10_2025_17:57:08 - [info] ИChange direction. Current direction: Left
+05_10_2025_17:57:09 - [info] Change direction. Current direction: Down
+05_10_2025_17:57:10 - [info] ИChange direction. Current direction: Left
+05_10_2025_17:57:10 - [info] Score: 5
+05_10_2025_17:57:10 - [info] Game over
+05_10_2025_17:58:34 - [info] Selected 1 level
+05_10_2025_17:58:34 - [info] game launch
+05_10_2025_17:58:35 - [info] ИChange direction. Current direction: Left
+05_10_2025_17:58:35 - [info] Change direction. Current direction: Down - Left
+05_10_2025_17:58:37 - [info] Change direction. Current direction: Down - Left
+05_10_2025_17:58:37 - [info] Change direction. Current direction: Down - Left
+05_10_2025_17:58:38 - [info] Change direction. Current direction: Up
+05_10_2025_17:58:38 - [info] Score: 3
+05_10_2025_17:58:38 - [info] Game over
+05_10_2025_18:00:18 - [info] Selected 1 level
+05_10_2025_18:00:18 - [info] game launch
+05_10_2025_18:00:21 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:00:21 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:00:23 - [info] Change direction. Current direction: Right
+05_10_2025_18:00:23 - [info] Score: 3
+05_10_2025_18:00:23 - [info] Game over
+05_10_2025_18:07:26 - [info] Selected 1 level
+05_10_2025_18:07:26 - [info] game launch
+05_10_2025_18:07:28 - [info] Change direction. Current direction: Up
+05_10_2025_18:07:28 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:07:30 - [info] Change direction. Current direction: Down
+05_10_2025_18:07:31 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:07:31 - [info] Change direction. Current direction: Right
+05_10_2025_18:07:32 - [info] Change direction. Current direction: Down
+05_10_2025_18:07:32 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:07:33 - [info] Change direction. Current direction: Up
+05_10_2025_18:07:33 - [info] Change direction. Current direction: Right
+05_10_2025_18:07:34 - [info] Change direction. Current direction: Down
+05_10_2025_18:07:34 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:07:34 - [info] Change direction. Current direction: Up
+05_10_2025_18:07:35 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:07:35 - [info] Change direction. Current direction: Down
+05_10_2025_18:07:35 - [info] Change direction. Current direction: Right
+05_10_2025_18:07:36 - [info] Change direction. Current direction: Up
+05_10_2025_18:07:36 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:07:37 - [info] Change direction. Current direction: Down
+05_10_2025_18:07:37 - [info] Score: 3
+05_10_2025_18:07:37 - [info] Game over
+05_10_2025_18:09:20 - [info] Selected 1 level
+05_10_2025_18:09:21 - [info] game launch
+05_10_2025_18:09:22 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:09:22 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:09:24 - [info] Change direction. Current direction: Down - Right
+05_10_2025_18:09:24 - [info] Change direction. Current direction: Down - Right
+05_10_2025_18:09:24 - [info] Score: 1
+05_10_2025_18:09:24 - [info] Game over
+05_10_2025_18:11:48 - [info] Selected 1 level
+05_10_2025_18:11:48 - [info] game launch
+05_10_2025_18:11:49 - [info] Change direction. Current direction: Down
+05_10_2025_18:11:49 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:11:50 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:11:50 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:11:51 - [info] Change direction. Current direction: Right
+05_10_2025_18:11:51 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:11:51 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:11:52 - [info] Change direction. Current direction: Up
+05_10_2025_18:11:52 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:11:53 - [info] Change direction. Current direction: Down
+05_10_2025_18:11:53 - [info] Change direction. Current direction: Right
+05_10_2025_18:11:53 - [info] Change direction. Current direction: Up
+05_10_2025_18:11:53 - [info] Score: 5
+05_10_2025_18:11:53 - [info] Game over
+05_10_2025_18:14:05 - [info] Selected 1 level
+05_10_2025_18:14:05 - [info] game launch
+05_10_2025_18:14:07 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:14:07 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:14:09 - [info] Change direction. Current direction: Up
+05_10_2025_18:14:09 - [info] Change direction. Current direction: Down
+05_10_2025_18:14:10 - [info] Change direction. Current direction: Right
+05_10_2025_18:14:11 - [info] Change direction. Current direction: Up
+05_10_2025_18:14:11 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:14:11 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:14:11 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:14:13 - [info] Change direction. Current direction: Up
+05_10_2025_18:14:13 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:14:14 - [info] Change direction. Current direction: Down
+05_10_2025_18:14:14 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:14:15 - [info] Change direction. Current direction: Down
+05_10_2025_18:14:15 - [info] Change direction. Current direction: Right
+05_10_2025_18:14:15 - [info] Update target position
+05_10_2025_18:14:15 - [info] Change direction. Current direction: Up
+05_10_2025_18:14:16 - [info] Change direction. Current direction: Right
+05_10_2025_18:14:16 - [info] Change direction. Current direction: Down
+05_10_2025_18:14:17 - [info] Change direction. Current direction: Right
+05_10_2025_18:14:17 - [info] Score: 5
+05_10_2025_18:14:17 - [info] Game over
+05_10_2025_18:16:19 - [info] Selected 1 level
+05_10_2025_18:16:19 - [info] game launch
+05_10_2025_18:16:21 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:16:21 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:16:22 - [info] Change direction. Current direction: Up
+05_10_2025_18:16:22 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:16:23 - [info] Change direction. Current direction: Right
+05_10_2025_18:16:23 - [info] Change direction. Current direction: Down
+05_10_2025_18:16:23 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:16:24 - [info] Change direction. Current direction: Up
+05_10_2025_18:16:24 - [info] Change direction. Current direction: Right
+05_10_2025_18:16:24 - [info] Change direction. Current direction: Down
+05_10_2025_18:16:25 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:16:25 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:16:25 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:16:26 - [info] Change direction. Current direction: Right
+05_10_2025_18:16:26 - [info] Change direction. Current direction: Down - Right
+05_10_2025_18:16:27 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:16:27 - [info] Change direction. Current direction: Down
+05_10_2025_18:16:27 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:16:28 - [info] Score: 5
+05_10_2025_18:16:28 - [info] Game over
+05_10_2025_18:18:09 - [info] Selected 1 level
+05_10_2025_18:18:09 - [info] game launch
+05_10_2025_18:18:10 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:18:10 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:18:11 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:12 - [info] Change direction. Current direction: Down
+05_10_2025_18:18:13 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:13 - [info] Change direction. Current direction: Down
+05_10_2025_18:18:14 - [info] Change direction. Current direction: Right
+05_10_2025_18:18:14 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:15 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:15 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:18:15 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:18:16 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:16 - [info] Change direction. Current direction: Right
+05_10_2025_18:18:17 - [info] Score: 6
+05_10_2025_18:18:17 - [info] Game over
+05_10_2025_18:18:17 - [info] Update target position
+05_10_2025_18:18:19 - [info] Exit from game
+05_10_2025_18:18:48 - [info] Selected 1 level
+05_10_2025_18:18:48 - [info] game launch
+05_10_2025_18:18:49 - [info] Change direction. Current direction: Down
+05_10_2025_18:18:49 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:18:50 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:50 - [info] Change direction. Current direction: Right
+05_10_2025_18:18:51 - [info] Change direction. Current direction: Down
+05_10_2025_18:18:51 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:51 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:52 - [info] Change direction. Current direction: Right
+05_10_2025_18:18:53 - [info] Change direction. Current direction: Down
+05_10_2025_18:18:54 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:54 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:56 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:56 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:56 - [info] Update target position
+05_10_2025_18:18:56 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:57 - [info] Change direction. Current direction: Right
+05_10_2025_18:18:57 - [info] Change direction. Current direction: Down
+05_10_2025_18:18:58 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:58 - [info] Change direction. Current direction: Right
+05_10_2025_18:18:58 - [info] Change direction. Current direction: Up
+05_10_2025_18:18:58 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:18:59 - [info] Change direction. Current direction: Up
+05_10_2025_18:19:00 - [info] Change direction. Current direction: Right
+05_10_2025_18:19:00 - [info] Change direction. Current direction: Down
+05_10_2025_18:19:00 - [info] Change direction. Current direction: Down - Right
+05_10_2025_18:19:01 - [info] Score: 5
+05_10_2025_18:19:01 - [info] Game over
+05_10_2025_18:19:02 - [info] Exit from game
+05_10_2025_18:37:00 - [info] Selected 1 level
+05_10_2025_18:37:00 - [info] game launch
+05_10_2025_18:37:02 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:37:02 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:37:03 - [info] Change direction. Current direction: Up
+05_10_2025_18:37:04 - [info] Change direction. Current direction: Right
+05_10_2025_18:37:04 - [info] Change direction. Current direction: Down
+05_10_2025_18:37:04 - [info] Change direction. Current direction: Down - Right
+05_10_2025_18:37:04 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:37:05 - [info] Change direction. Current direction: Right
+05_10_2025_18:37:06 - [info] Change direction. Current direction: Down
+05_10_2025_18:37:06 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:37:06 - [info] Change direction. Current direction: Up
+05_10_2025_18:37:07 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:37:07 - [info] Change direction. Current direction: Down
+05_10_2025_18:37:08 - [info] Change direction. Current direction: Up
+05_10_2025_18:37:08 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:37:08 - [info] Change direction. Current direction: Down
+05_10_2025_18:37:08 - [info] Change direction. Current direction: Right
+05_10_2025_18:37:09 - [info] Change direction. Current direction: Down
+05_10_2025_18:37:09 - [info] Update target position
+05_10_2025_18:37:09 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:37:09 - [info] Change direction. Current direction: Up
+05_10_2025_18:37:10 - [info] Change direction. Current direction: Up
+05_10_2025_18:37:10 - [info] Change direction. Current direction: Right
+05_10_2025_18:37:11 - [info] Change direction. Current direction: Up
+05_10_2025_18:37:11 - [info] Change direction. Current direction: Up - Right
+05_10_2025_18:37:11 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:37:12 - [info] Change direction. Current direction: Right
+05_10_2025_18:37:12 - [info] Change direction. Current direction: Up - Right
+05_10_2025_18:37:12 - [info] Score: 3
+05_10_2025_18:37:12 - [info] Game over
+05_10_2025_18:37:14 - [info] Change direction. Current direction: Right
+05_10_2025_18:37:16 - [info] Exit from game
+05_10_2025_18:40:58 - [info] Selected 1 level
+05_10_2025_18:40:58 - [info] game launch
+05_10_2025_18:40:58 - [info] Exit from game
+05_10_2025_18:40:58 - [info] Exit from game
+05_10_2025_18:41:09 - [info] Selected 1 level
+05_10_2025_18:41:10 - [info] game launch
+05_10_2025_18:41:14 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:41:14 - [info] Change direction. Current direction: Down - Left
+05_10_2025_18:41:15 - [info] Change direction. Current direction: Up
+05_10_2025_18:41:15 - [info] Change direction. Current direction: Up - Right
+05_10_2025_18:41:15 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:41:16 - [info] Change direction. Current direction: Right
+05_10_2025_18:41:16 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:41:17 - [info] Score: 4
+05_10_2025_18:41:17 - [info] Game over
+05_10_2025_18:41:19 - [info] Exit from game
+05_10_2025_18:48:38 - [info] Selected 1 level
+05_10_2025_18:48:38 - [info] game launch
+05_10_2025_18:48:40 - [info] Change direction. Current direction: Down
+05_10_2025_18:48:41 - [info] Change direction. Current direction: Up
+05_10_2025_18:48:41 - [info] Change direction. Current direction: Up - Left
+05_10_2025_18:48:42 - [info] Change direction. Current direction: Down
+05_10_2025_18:48:42 - [info] Change direction. Current direction: Right
+05_10_2025_18:48:43 - [info] Change direction. Current direction: Up
+05_10_2025_18:48:43 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:48:43 - [info] Change direction. Current direction: Down
+05_10_2025_18:48:44 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:48:44 - [info] Change direction. Current direction: Up
+05_10_2025_18:48:45 - [info] Change direction. Current direction: Right
+05_10_2025_18:48:45 - [info] Change direction. Current direction: Down
+05_10_2025_18:48:46 - [info] ИChange direction. Current direction: Left
+05_10_2025_18:48:46 - [info] Score: 2
+05_10_2025_18:48:46 - [info] Game over
+05_10_2025_18:48:47 - [info] Change direction. Current direction: Right
+05_10_2025_18:48:51 - [info] Exit from game

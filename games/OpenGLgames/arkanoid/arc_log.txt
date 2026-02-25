@@ -1,0 +1,53 @@
+13_09_2025_13:18:50 - [info] Selected 2 level
+13_09_2025_13:18:50 - [info] Game launch
+13_09_2025_13:21:11 - [info] Selected 1 level
+13_09_2025_13:21:11 - [info] Game launch
+13_09_2025_13:21:18 - [info] Exit from game
+18_09_2025_17:04:30 - [info] Selected 1 level
+18_09_2025_17:04:31 - [info] Game launch
+18_09_2025_17:04:36 - [info] Exit from game
+18_09_2025_18:20:39 - [info] Selected 1 level
+18_09_2025_18:20:39 - [info] Game launch
+18_09_2025_18:20:45 - [info] Hit to asteroid
+18_09_2025_18:20:45 - [info] Astorid destroyed
+18_09_2025_18:20:46 - [info] Hit to asteroid
+18_09_2025_18:20:46 - [info] Astorid destroyed
+18_09_2025_18:21:03 - [info] Hit to asteroid
+18_09_2025_18:21:03 - [info] Astorid destroyed
+18_09_2025_18:21:05 - [info] Hit to asteroid
+18_09_2025_18:21:05 - [info] Astorid destroyed
+18_09_2025_18:21:11 - [info] Collision with a ship!
+18_09_2025_18:21:11 - [info] Score: 6
+18_09_2025_18:21:11 - [info] Game over
+05_10_2025_18:38:17 - [info] Selected 1 level
+05_10_2025_18:38:17 - [info] Game launch
+05_10_2025_18:38:17 - [info] Exit from game
+05_10_2025_18:38:17 - [info] Exit from game
+05_10_2025_18:38:17 - [info] Exit from game
+05_10_2025_18:38:31 - [info] Selected 1 level
+05_10_2025_18:38:31 - [info] Game launch
+05_10_2025_18:38:36 - [info] Hit to asteroid
+05_10_2025_18:38:36 - [info] Astorid destroyed
+05_10_2025_18:38:41 - [info] Hit to asteroid
+05_10_2025_18:38:41 - [info] Astorid destroyed
+05_10_2025_18:38:57 - [info] Hit to asteroid
+05_10_2025_18:38:57 - [info] Astorid destroyed
+05_10_2025_18:38:59 - [info] Hit to asteroid
+05_10_2025_18:38:59 - [info] Astorid destroyed
+05_10_2025_18:39:01 - [info] Collision with a ship!
+05_10_2025_18:39:01 - [info] Score: 6
+05_10_2025_18:39:01 - [info] Game over
+05_10_2025_18:40:00 - [info] Selected 1 level
+05_10_2025_18:40:00 - [info] Game launch
+05_10_2025_18:40:06 - [info] Hit to asteroid
+05_10_2025_18:40:06 - [info] Astorid destroyed
+05_10_2025_18:40:27 - [info] Hit to asteroid
+05_10_2025_18:40:27 - [info] Astorid destroyed
+05_10_2025_18:40:35 - [info] Collision with a ship!
+05_10_2025_18:40:35 - [info] Score: 3
+05_10_2025_18:40:35 - [info] Game over
+15_10_2025_17:52:02 - [info] Selected 1 level
+15_10_2025_17:52:02 - [info] Game launch
+15_10_2025_17:52:15 - [info] Hit to asteroid
+15_10_2025_17:52:15 - [info] Astorid destroyed
+15_10_2025_17:52:33 - [info] Collision with a ship!

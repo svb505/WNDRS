@@ -1,0 +1,26 @@
+13_09_2025_13:21:25 - [info] Selected 1 level
+13_09_2025_13:21:25 - [info] Game launch
+13_09_2025_13:21:33 - [info] 1 apple eaten
+13_09_2025_13:21:35 - [info] Exit from game
+05_10_2025_18:37:47 - [info] Selected 1 level
+05_10_2025_18:37:47 - [info] Game launch
+05_10_2025_18:37:52 - [info] 1 apple eaten
+05_10_2025_18:37:54 - [info] Collision with a wall or with oneself
+05_10_2025_18:37:54 - [info] Game over
+05_10_2025_18:41:38 - [info] Selected 1 level
+05_10_2025_18:41:39 - [info] Game launch
+05_10_2025_18:41:44 - [info] 1 apple eaten
+05_10_2025_18:41:51 - [info] 1 apple eaten
+05_10_2025_18:41:52 - [info] Collision with a wall or with oneself
+05_10_2025_18:41:52 - [info] Game over
+05_10_2025_18:49:14 - [info] Selected 3 level
+05_10_2025_18:49:14 - [info] Game launch
+05_10_2025_18:49:15 - [info] Collision with a wall or with oneself
+05_10_2025_18:49:15 - [info] Game over
+05_10_2025_18:49:30 - [info] Selected 1 level
+05_10_2025_18:49:30 - [info] Game launch
+05_10_2025_18:49:31 - [info] Exit from game
+05_10_2025_18:50:36 - [info] Selected 3 level
+05_10_2025_18:50:36 - [info] Game launch
+05_10_2025_18:50:38 - [info] Collision with a wall or with oneself
+05_10_2025_18:50:38 - [info] Game over
