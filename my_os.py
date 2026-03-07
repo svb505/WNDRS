@@ -105,6 +105,7 @@ if False:
     from utilits import os_diagnost
     from utilits import trade
     from utilits import svbred
+    from utilits import utilit_hashe
 
 load_env()
 
@@ -218,12 +219,12 @@ nebo = False
 ban_time = 0
 totalAttemps = 3
 currentAttemp = 0
-all_programs_list = ["Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
-                         "Book reader","SVB TxT Redactor","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
-                         "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
-                         "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
-                         "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
-                         "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]
+all_programs_list = ["Hashe Calculator","Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
+                    "Book reader","SVB TxT Redactor","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
+                    "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
+                    "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
+                    "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
+                    "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]
 ban_timer = False
 shortcut_frame = None
 timer_running = False
@@ -3570,6 +3571,7 @@ def main():
 
     program_functions = {
         lang['email_sender']:lambda:user_send_email.openWin(root,lang),
+        "Hashe Calculator": lambda: utilit_hashe.open_window(root,lang,global_bg,global_fg,GlobalAlpha),
         'Photo Generator':lambda:soft.gener_photo(root,lang,global_bg,global_fg,GlobalAlpha),
         'SVB Hotels':lambda:hotels.open_hotel_window(root,lang,global_bg,global_fg,start_time_,edition,GlobalAlpha),
         'SVB PhotoEditor':lambda:photo_editor.open_editor_win(root,lang,global_bg,global_fg,actives_programs),

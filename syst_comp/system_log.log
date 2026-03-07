@@ -18759,3 +18759,178 @@ KeyError: "Нет функции для 'SVB History's' в program_functions"
 2026-03-07 15:15:52,001 - SYSTEM - [14.8] - Load cursor
 2026-03-07 15:15:52,398 - SYSTEM - [15.2] - START: 9.034819900000002 sec
 2026-03-07 15:16:00,345 - INFO - [23.1] - Browser launch
+2026-03-07 16:08:22,772 - SYSTEM - [3.0] - START TIMESTAMP: 2026-03-07 16:08:22
+2026-03-07 16:08:22,773 - SYSTEM - [3.0] - All Global Variables (AGV) initialized
+2026-03-07 16:08:22,774 - SYSTEM - [3.0] - Connect to states.db
+2026-03-07 16:08:22,774 - SYSTEM - [3.0] - ALL SYSTEMS FILES READS
+2026-03-07 16:08:22,784 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-07 16:08:22,788 - SYSTEM - [3.0] - DB Disconnect
+2026-03-07 16:08:22,795 - INFO - [3.0] - Account image: icons//acc6.png
+2026-03-07 16:08:22,796 - SYSTEM - [3.0] - WIFI --> True
+2026-03-07 16:08:22,796 - SYSTEM - [3.0] - BLUETOOTH --> False
+2026-03-07 16:08:22,799 - INFO - Log size OK: 1.35 MB
+2026-03-07 16:08:23,146 - SYSTEM - [3.4] - ----OS LAUNCH----
+2026-03-07 16:08:23,146 - SYSTEM - [3.4] - VERSION OS --> KW3.1.700
+2026-03-07 16:08:23,404 - SYSTEM - [3.6] - ----START LOADING----
+2026-03-07 16:08:23,554 - SYSTEM - [3.8] - Copy file configurations.db to backup_data
+2026-03-07 16:08:23,557 - SYSTEM - [3.8] - DB Disconnect
+2026-03-07 16:08:23,557 - SYSTEM - [3.8] - <--Инициализация БД...-->
+2026-03-07 16:08:23,872 - SYSTEM - [4.1] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-07 16:08:23,877 - INFO - [4.1] - Account image: icons//acc6.png
+2026-03-07 16:08:23,878 - SYSTEM - [4.1] - <--Инициализация конфигураций...-->
+2026-03-07 16:08:24,185 - INFO - Log size OK: 1.35 MB
+2026-03-07 16:08:24,185 - SYSTEM - [4.4] - <--Проверка ЛОгов...-->
+2026-03-07 16:08:24,491 - SYSTEM - [4.7] - WIFI --> True
+2026-03-07 16:08:24,492 - SYSTEM - [4.7] - BLUETOOTH --> False
+2026-03-07 16:08:24,492 - SYSTEM - [4.7] - <--Настройка девайсов...-->
+2026-03-07 16:08:24,801 - SYSTEM - [5.0] - <--Проверка зашифрованых файлов-->
+2026-03-07 16:08:25,115 - SYSTEM - [5.4] - <--Инициалиция конфиг файлов-->
+2026-03-07 16:08:25,424 - SYSTEM - [5.7] - <--Загрузка активности-->
+2026-03-07 16:08:26,323 - INFO - [6.6] - All files are intact
+2026-03-07 16:08:26,323 - SYSTEM - [6.6] - <--Проверка целостности файлов-->
+2026-03-07 16:08:26,631 - SYSTEM - [6.9] - <--Завершаем настройку...-->
+2026-03-07 16:08:27,454 - SYSTEM - [7.7] - ----START OS----
+2026-03-07 16:08:27,454 - SYSTEM - [7.7] - VERSION OS --> KW3.1.700
+2026-03-07 16:08:27,487 - SYSTEM - [7.7] - CURRENT LANGUE --> RU
+2026-03-07 16:08:27,487 - SYSTEM - [7.7] - VOLUME --> 0.48
+2026-03-07 16:08:27,487 - SYSTEM - [7.7] - CREATE "CONFIGURATIONS.DB"
+2026-03-07 16:08:27,488 - SYSTEM - [7.7] - Connect to configurations.db
+2026-03-07 16:08:27,488 - INFO - [7.7] - READ INVENTORY
+2026-03-07 16:08:27,489 - SYSTEM - [7.7] - Copy file configurations.db to backup_data
+2026-03-07 16:08:27,491 - SYSTEM - [7.7] - Region SET 'NETHERLANDS'
+2026-03-07 16:08:27,492 - SYSTEM - [7.7] - Copy file configurations.db to backup_data
+2026-03-07 16:08:27,616 - SYSTEM - [7.9] - Load cursor
+2026-03-07 16:08:28,043 - SYSTEM - [8.3] - Load cursor
+2026-03-07 16:08:28,343 - SYSTEM - [8.6] - START: 5.579491499998767 sec
+2026-03-07 16:08:33,368 - INFO - [13.6] - Store launch
+2026-03-07 16:08:35,362 - INFO - [15.6] - Program Hashe Calculator downloaded
+2026-03-07 16:08:36,529 - INFO - [16.8] - Message: Программа Hashe Calculator установлена ✅
+2026-03-07 16:09:54,350 - SYSTEM - [2.4] - START TIMESTAMP: 2026-03-07 16:09:54
+2026-03-07 16:09:54,351 - SYSTEM - [2.4] - All Global Variables (AGV) initialized
+2026-03-07 16:09:54,352 - SYSTEM - [2.4] - Connect to states.db
+2026-03-07 16:09:54,352 - SYSTEM - [2.4] - ALL SYSTEMS FILES READS
+2026-03-07 16:09:54,365 - SYSTEM - [2.4] - Copy file configurations.db to backup_data
+2026-03-07 16:09:54,367 - SYSTEM - [2.4] - DB Disconnect
+2026-03-07 16:09:54,373 - INFO - [2.4] - Account image: icons//acc6.png
+2026-03-07 16:09:54,373 - SYSTEM - [2.4] - WIFI --> True
+2026-03-07 16:09:54,373 - SYSTEM - [2.4] - BLUETOOTH --> False
+2026-03-07 16:09:54,376 - INFO - Log size OK: 1.35 MB
+2026-03-07 16:09:54,642 - SYSTEM - [2.7] - ----OS LAUNCH----
+2026-03-07 16:09:54,642 - SYSTEM - [2.7] - VERSION OS --> KW3.1.700
+2026-03-07 16:09:54,817 - SYSTEM - [2.9] - ----START LOADING----
+2026-03-07 16:09:54,969 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-07 16:09:54,971 - SYSTEM - [3.0] - DB Disconnect
+2026-03-07 16:09:54,971 - SYSTEM - [3.0] - <--Инициализация БД...-->
+2026-03-07 16:09:55,284 - SYSTEM - [3.3] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-07 16:09:55,287 - INFO - [3.3] - Account image: icons//acc6.png
+2026-03-07 16:09:55,288 - SYSTEM - [3.3] - <--Инициализация конфигураций...-->
+2026-03-07 16:09:55,593 - INFO - Log size OK: 1.35 MB
+2026-03-07 16:09:55,593 - SYSTEM - [3.7] - <--Проверка ЛОгов...-->
+2026-03-07 16:09:55,899 - SYSTEM - [4.0] - WIFI --> True
+2026-03-07 16:09:55,899 - SYSTEM - [4.0] - BLUETOOTH --> False
+2026-03-07 16:09:55,899 - SYSTEM - [4.0] - <--Настройка девайсов...-->
+2026-03-07 16:09:56,205 - SYSTEM - [4.3] - <--Проверка зашифрованых файлов-->
+2026-03-07 16:09:56,518 - SYSTEM - [4.6] - <--Инициалиция конфиг файлов-->
+2026-03-07 16:09:56,825 - SYSTEM - [4.9] - <--Загрузка активности-->
+2026-03-07 16:09:57,626 - INFO - [5.7] - All files are intact
+2026-03-07 16:09:57,626 - SYSTEM - [5.7] - <--Проверка целостности файлов-->
+2026-03-07 16:09:57,932 - SYSTEM - [6.0] - <--Завершаем настройку...-->
+2026-03-07 16:09:58,726 - SYSTEM - [6.8] - ----START OS----
+2026-03-07 16:09:58,726 - SYSTEM - [6.8] - VERSION OS --> KW3.1.700
+2026-03-07 16:09:58,761 - SYSTEM - [6.8] - CURRENT LANGUE --> RU
+2026-03-07 16:09:58,761 - SYSTEM - [6.8] - VOLUME --> 0.48
+2026-03-07 16:09:58,761 - SYSTEM - [6.8] - CREATE "CONFIGURATIONS.DB"
+2026-03-07 16:09:58,762 - SYSTEM - [6.8] - Connect to configurations.db
+2026-03-07 16:09:58,762 - INFO - [6.8] - READ INVENTORY
+2026-03-07 16:09:58,763 - SYSTEM - [6.8] - Copy file configurations.db to backup_data
+2026-03-07 16:09:58,766 - SYSTEM - [6.8] - Region SET 'NETHERLANDS'
+2026-03-07 16:09:58,767 - SYSTEM - [6.8] - Copy file configurations.db to backup_data
+2026-03-07 16:09:58,892 - SYSTEM - [6.9] - Load cursor
+2026-03-07 16:09:59,338 - SYSTEM - [7.4] - Load cursor
+2026-03-07 16:10:00,350 - SYSTEM - [8.4] - START: 6.005966900000203 sec
+2026-03-07 16:11:17,000 - SYSTEM - [2.2] - START TIMESTAMP: 2026-03-07 16:11:17
+2026-03-07 16:11:17,000 - SYSTEM - [2.2] - All Global Variables (AGV) initialized
+2026-03-07 16:11:17,002 - SYSTEM - [2.2] - Connect to states.db
+2026-03-07 16:11:17,002 - SYSTEM - [2.2] - ALL SYSTEMS FILES READS
+2026-03-07 16:11:17,012 - SYSTEM - [2.2] - Copy file configurations.db to backup_data
+2026-03-07 16:11:17,015 - SYSTEM - [2.2] - DB Disconnect
+2026-03-07 16:11:17,023 - INFO - [2.2] - Account image: icons//acc6.png
+2026-03-07 16:11:17,024 - SYSTEM - [2.2] - WIFI --> True
+2026-03-07 16:11:17,024 - SYSTEM - [2.2] - BLUETOOTH --> False
+2026-03-07 16:11:17,026 - INFO - Log size OK: 1.36 MB
+2026-03-07 16:11:17,299 - SYSTEM - [2.5] - ----OS LAUNCH----
+2026-03-07 16:11:17,299 - SYSTEM - [2.5] - VERSION OS --> KW3.1.700
+2026-03-07 16:11:17,458 - SYSTEM - [2.7] - ----START LOADING----
+2026-03-07 16:11:17,597 - SYSTEM - [2.8] - Copy file configurations.db to backup_data
+2026-03-07 16:11:17,600 - SYSTEM - [2.8] - DB Disconnect
+2026-03-07 16:11:17,600 - SYSTEM - [2.8] - <--Инициализация БД...-->
+2026-03-07 16:11:17,912 - SYSTEM - [3.1] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-07 16:11:17,914 - INFO - [3.1] - Account image: icons//acc6.png
+2026-03-07 16:11:17,915 - SYSTEM - [3.1] - <--Инициализация конфигураций...-->
+2026-03-07 16:11:18,220 - INFO - Log size OK: 1.36 MB
+2026-03-07 16:11:18,220 - SYSTEM - [3.4] - <--Проверка ЛОгов...-->
+2026-03-07 16:11:18,525 - SYSTEM - [3.7] - WIFI --> True
+2026-03-07 16:11:18,525 - SYSTEM - [3.7] - BLUETOOTH --> False
+2026-03-07 16:11:18,525 - SYSTEM - [3.7] - <--Настройка девайсов...-->
+2026-03-07 16:11:18,831 - SYSTEM - [4.1] - <--Проверка зашифрованых файлов-->
+2026-03-07 16:11:19,142 - SYSTEM - [4.4] - <--Инициалиция конфиг файлов-->
+2026-03-07 16:11:19,448 - SYSTEM - [4.7] - <--Загрузка активности-->
+2026-03-07 16:11:20,250 - INFO - [5.5] - All files are intact
+2026-03-07 16:11:20,250 - SYSTEM - [5.5] - <--Проверка целостности файлов-->
+2026-03-07 16:11:20,556 - SYSTEM - [5.8] - <--Завершаем настройку...-->
+2026-03-07 16:11:21,370 - SYSTEM - [6.6] - ----START OS----
+2026-03-07 16:11:21,370 - SYSTEM - [6.6] - VERSION OS --> KW3.1.700
+2026-03-07 16:11:21,406 - SYSTEM - [6.6] - CURRENT LANGUE --> RU
+2026-03-07 16:11:21,407 - SYSTEM - [6.6] - VOLUME --> 0.48
+2026-03-07 16:11:21,407 - SYSTEM - [6.6] - CREATE "CONFIGURATIONS.DB"
+2026-03-07 16:11:21,408 - SYSTEM - [6.6] - Connect to configurations.db
+2026-03-07 16:11:21,408 - INFO - [6.6] - READ INVENTORY
+2026-03-07 16:11:21,410 - SYSTEM - [6.6] - Copy file configurations.db to backup_data
+2026-03-07 16:11:21,413 - SYSTEM - [6.6] - Region SET 'NETHERLANDS'
+2026-03-07 16:11:21,414 - SYSTEM - [6.6] - Copy file configurations.db to backup_data
+2026-03-07 16:11:21,543 - SYSTEM - [6.8] - Load cursor
+2026-03-07 16:11:22,147 - SYSTEM - [7.4] - Load cursor
+2026-03-07 16:11:24,021 - SYSTEM - [9.2] - START: 7.027987100000246 sec
+2026-03-07 16:15:46,143 - SYSTEM - [2.3] - START TIMESTAMP: 2026-03-07 16:15:46
+2026-03-07 16:15:46,144 - SYSTEM - [2.3] - All Global Variables (AGV) initialized
+2026-03-07 16:15:46,145 - SYSTEM - [2.3] - Connect to states.db
+2026-03-07 16:15:46,145 - SYSTEM - [2.3] - ALL SYSTEMS FILES READS
+2026-03-07 16:15:46,156 - SYSTEM - [2.3] - Copy file configurations.db to backup_data
+2026-03-07 16:15:46,159 - SYSTEM - [2.3] - DB Disconnect
+2026-03-07 16:15:46,167 - INFO - [2.3] - Account image: icons//acc6.png
+2026-03-07 16:15:46,168 - SYSTEM - [2.3] - WIFI --> True
+2026-03-07 16:15:46,168 - SYSTEM - [2.3] - BLUETOOTH --> False
+2026-03-07 16:15:46,170 - INFO - Log size OK: 1.36 MB
+2026-03-07 16:15:46,573 - SYSTEM - [2.7] - ----OS LAUNCH----
+2026-03-07 16:15:46,573 - SYSTEM - [2.7] - VERSION OS --> KW3.1.700
+2026-03-07 16:15:46,750 - SYSTEM - [2.9] - ----START LOADING----
+2026-03-07 16:15:46,900 - SYSTEM - [3.1] - Copy file configurations.db to backup_data
+2026-03-07 16:15:46,903 - SYSTEM - [3.1] - DB Disconnect
+2026-03-07 16:15:46,904 - SYSTEM - [3.1] - <--Инициализация БД...-->
+2026-03-07 16:15:47,215 - SYSTEM - [3.4] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-07 16:15:47,219 - INFO - [3.4] - Account image: icons//acc6.png
+2026-03-07 16:15:47,220 - SYSTEM - [3.4] - <--Инициализация конфигураций...-->
+2026-03-07 16:15:47,526 - INFO - Log size OK: 1.36 MB
+2026-03-07 16:15:47,526 - SYSTEM - [3.7] - <--Проверка ЛОгов...-->
+2026-03-07 16:15:47,831 - SYSTEM - [4.0] - WIFI --> True
+2026-03-07 16:15:47,831 - SYSTEM - [4.0] - BLUETOOTH --> False
+2026-03-07 16:15:47,832 - SYSTEM - [4.0] - <--Настройка девайсов...-->
+2026-03-07 16:15:48,140 - SYSTEM - [4.3] - <--Проверка зашифрованых файлов-->
+2026-03-07 16:15:48,465 - SYSTEM - [4.6] - <--Инициалиция конфиг файлов-->
+2026-03-07 16:15:48,774 - SYSTEM - [4.9] - <--Загрузка активности-->
+2026-03-07 16:15:50,693 - INFO - [6.9] - All files are intact
+2026-03-07 16:15:50,693 - SYSTEM - [6.9] - <--Проверка целостности файлов-->
+2026-03-07 16:15:51,002 - SYSTEM - [7.2] - <--Завершаем настройку...-->
+2026-03-07 16:15:51,927 - SYSTEM - [8.1] - ----START OS----
+2026-03-07 16:15:51,927 - SYSTEM - [8.1] - VERSION OS --> KW3.1.700
+2026-03-07 16:15:51,978 - SYSTEM - [8.1] - CURRENT LANGUE --> RU
+2026-03-07 16:15:51,978 - SYSTEM - [8.1] - VOLUME --> 0.48
+2026-03-07 16:15:51,978 - SYSTEM - [8.1] - CREATE "CONFIGURATIONS.DB"
+2026-03-07 16:15:51,980 - SYSTEM - [8.1] - Connect to configurations.db
+2026-03-07 16:15:51,981 - INFO - [8.1] - READ INVENTORY
+2026-03-07 16:15:51,983 - SYSTEM - [8.2] - Copy file configurations.db to backup_data
+2026-03-07 16:15:51,988 - SYSTEM - [8.2] - Region SET 'NETHERLANDS'
+2026-03-07 16:15:51,991 - SYSTEM - [8.2] - Copy file configurations.db to backup_data
+2026-03-07 16:15:52,234 - SYSTEM - [8.4] - Load cursor
+2026-03-07 16:15:53,208 - SYSTEM - [9.4] - Load cursor
+2026-03-07 16:15:56,511 - SYSTEM - [12.7] - START: 10.374255600001561 sec

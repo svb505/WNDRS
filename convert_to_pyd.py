@@ -1,6 +1,6 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/browser.py
+#python -m nuitka --module utilitsCODE/utilit_hashe.py
 
 
