@@ -3,6 +3,7 @@
 # Stubs included by default
 from __future__ import annotations
 from PIL import Image, ImageTk
+from datetime import datetime
 from logtofile import log_to_file
 from play_sound import play_sound
 from tkinter import *, messagebox, simpledialog, ttk
@@ -25,6 +26,7 @@ __name__ = ...
 
 
 # Modules used internally, to allow implicit dependencies to be seen:
+import datetime
 import tkinter
 import tkinter.ttk
 import tkinter.messagebox

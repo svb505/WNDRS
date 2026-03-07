@@ -1,6 +1,6 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/commandConsole.py
+#python -m nuitka --module utilitsCODE/file_manager.py
 
 

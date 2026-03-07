@@ -1,3 +1,4 @@
+from datetime import datetime
 from tkinter import *
 from tkinter import ttk, messagebox, simpledialog
 import os
@@ -83,7 +84,6 @@ def open_file_manager(state_sound, root, lang, global_bg, actives_programs, gl_p
 
         threading.Thread(target=populate_tree_with_progress, args=(tree, base_path)).start()
     def populate_tree_with_progress(tree, base_path):
-
         try:
             items = get_files_from_dll(base_path)
         except Exception as e:
@@ -96,7 +96,12 @@ def open_file_manager(state_sound, root, lang, global_bg, actives_programs, gl_p
         if total == 0: return
 
         def insert_item(idx):
+
             item = items[idx]
+
+            mod_time = datetime.fromtimestamp(
+                item.get("mtime", os.path.getmtime(os.path.join(base_path, item["name"]))))
+            mod_str = mod_time.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 name = item["name"]
                 ext = item["ext"].lower()
@@ -105,13 +110,13 @@ def open_file_manager(state_sound, root, lang, global_bg, actives_programs, gl_p
 
                 if isdir:
                     icon = icon_images.get("folder", icon_images.get("default"))
-                    values = (name, "folder", f"{size:.2f}")
+                    values = (name, "folder", f"{size:.2f}",mod_str)
                     node = tree.insert("", "end", values=values, image=icon) if icon else tree.insert("", "end",
                                                                                                       values=values)
                     tree.insert(node, "end")  # пустышка
                 else:
                     icon = icon_images.get(ext, icon_images.get("default"))
-                    values = (name, "file", f"{size:.2f}")
+                    values = (name, "file", f"{size:.2f}",mod_str)
                     tree.insert("", "end", values=values, image=icon) if icon else tree.insert("", "end", values=values)
             except Exception:
                 pass
@@ -288,7 +293,7 @@ def open_file_manager(state_sound, root, lang, global_bg, actives_programs, gl_p
     win = Toplevel(root)
     win.attributes("-alpha",float(GlobalAlpha))
     win.title(lang["file_manager"])
-    win.geometry("900x600")
+    win.geometry("1100x600")
     win.configure(bg=global_bg)
     icon_images = {}
     win.icon_refs = []
