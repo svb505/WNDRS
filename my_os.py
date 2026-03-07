@@ -3886,6 +3886,51 @@ def main():
 def downl():
     from country_list import countries_for_language
     import customtkinter as ctk
+    def select_to_install():
+        def valid_pre_install():
+            programs.clear()
+            for var, name in vars_list:
+                if var.get(): programs.append(name)
+            for name in programs: write_file("syst_comp/programs.cfg", "a", f'{name}\n')
+
+            messagebox.showinfo("Success", "Programs added to pre-install")
+        win = create_window(Win,"Pre-install",global_bg,1.0,750,300)
+
+        programs = []
+        vars_list = []
+
+        mainFrame = ttk.Frame(win)
+        mainFrame.pack()
+        frame1 = ttk.Frame(mainFrame)
+        frame1.pack(side = LEFT)
+        frame2 = ttk.Frame(mainFrame)
+        frame2.pack(side = LEFT)
+        frame3 = ttk.Frame(mainFrame)
+        frame3.pack(side = LEFT)
+        frame4 = ttk.Frame(mainFrame)
+        frame4.pack(side = LEFT)
+        frame5 = ttk.Frame(mainFrame)
+        frame5.pack(side = LEFT)
+
+        ttk.Label(mainFrame,text = 'Select a program to pre-install').pack()
+
+        for i,name in enumerate(["Photo Generator", 'SVB PhotoEditor', 'SVB Hotels', "SVB History's", 'SVB Bookmaker',
+                     "Internet Store", "SVB Archiver",
+                     "Book reader", "SVB TxT Redactor", "Password Manager", "Trade", "Promocodes", "Lottery",
+                     "State Services", "Auto plate",
+                     "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
+                     "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
+                     "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
+                     "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]):
+            frm = frame1 if i < 10 else frame2 if i < 20 else frame3 if i < 30 else frame4 if i < 40 else frame5
+            var = BooleanVar()
+            check = ttk.Checkbutton(frm, text=name, variable=var)
+            check.pack()
+            vars_list.append((var, name))
+
+        btnOk = ttk.Button(mainFrame,text = "Apply",command = valid_pre_install)
+        btnOk.pack()
+
     def further(name, lastname, email, edition):
         import requests
         def create_act_file(email):
@@ -3898,7 +3943,22 @@ def downl():
                 file_path = f"time_{email}.txt"
                 content = "0"
 
-                repo.create_file(path=file_path, message="Добавлен file", content=content, branch="main")
+                try:
+                    file = repo.get_contents(file_path)
+                    repo.update_file(
+                        path=file_path,
+                        message="Обновлен file",
+                        content=content,
+                        sha=file.sha,
+                        branch="main"
+                    )
+                except:
+                    repo.create_file(
+                        path=file_path,
+                        message="Добавлен file",
+                        content=content,
+                        branch="main"
+                    )
             except Exception as e:
                 messagebox.showerror("ERROR",str(e))
         def further1(vvod, edition):
@@ -3913,8 +3973,9 @@ def downl():
             try:
                 selected_lang = read_encrypted_file("syst_comp/lang.cfg")
             except Exception:
-                selected_lang = "RU"
-                log_to_file('File lang.cfg not exist or error decoding: Langue = RU',start_time_ = start_time_)
+                selected_lang = "EN"
+                log_to_file('File lang.cfg not exist or error decoding: Langue = EN',start_time_ = start_time_)
+
             total_memory = psutil.virtual_memory().total
             total_memory_gb = total_memory / (1024 ** 3)
 
@@ -3922,11 +3983,10 @@ def downl():
             total_disk_gb = total_disk / (1024 ** 3)
             lang = load_language(selected_lang)
             a = ""
-            if "x64" in edition.get():
-                a = "x64"
+            if "x64" in edition: a = "x64"
             else:
                 a = "x32"
-            config_data = f"RAM={total_memory_gb}GB\nROM={total_disk_gb}GB\nEDITION={edition.get()}\nARCH={a}"
+            config_data = f"RAM={total_memory_gb}GB\nROM={total_disk_gb}GB\nEDITION={edition}\nARCH={a}"
 
             write_encrypted_file("syst_comp/parametrs.bin", config_data)
             if vvod == pas:
@@ -4332,6 +4392,9 @@ def downl():
     country_box.set("Russia")
     country_box.pack(pady=10)
 
+    preinstall_btn = ctk.CTkButton(master=content_frame, text="Add pre-install soft", width=200, height=40, corner_radius=15,
+                                 command=select_to_install)
+    preinstall_btn.pack(pady=10)
     continue_btn = ctk.CTkButton(master=content_frame, text="Continue",width=200, height=40, corner_radius=15,
                                  command=lambda: further(en.get(), en1.get(), email1.get(), edition_box.get()))
     continue_btn.pack(pady=(30, 10))
