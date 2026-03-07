@@ -218,6 +218,12 @@ nebo = False
 ban_time = 0
 totalAttemps = 3
 currentAttemp = 0
+all_programs_list = ["Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
+                         "Book reader","SVB TxT Redactor","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
+                         "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
+                         "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
+                         "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
+                         "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]
 ban_timer = False
 shortcut_frame = None
 timer_running = False
@@ -893,6 +899,7 @@ def main():
     def remove_shortcut(program_name):
         pass
     def open_store():
+        global all_programs_list
         run_in_thread(play_sound("sound//click.mp3",volume,state_sound,start_time_))
         actives_programs.append("Store")
         log_to_file('Store launch',start_time_ = start_time_)
@@ -986,12 +993,7 @@ def main():
             column_count = 2
             row, col = 0, 0
 
-            for name in ["Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
-                         "Book reader","SVB TxT Redactor","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
-                         "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
-                         "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
-                         "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
-                         "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]:
+            for name in all_programs_list:
                 path = f"icons//{name.lower()}.png"
                 try:
                     if os.path.exists(path):
@@ -3914,14 +3916,7 @@ def downl():
 
         ttk.Label(mainFrame,text = 'Select a program to pre-install').pack()
 
-        for i,name in enumerate(["Photo Generator", 'SVB PhotoEditor', 'SVB Hotels', "SVB History's", 'SVB Bookmaker',
-                     "Internet Store", "SVB Archiver",
-                     "Book reader", "SVB TxT Redactor", "Password Manager", "Trade", "Promocodes", "Lottery",
-                     "State Services", "Auto plate",
-                     "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
-                     "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
-                     "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
-                     "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]):
+        for i,name in enumerate(all_programs_list):
             frm = frame1 if i < 10 else frame2 if i < 20 else frame3 if i < 30 else frame4 if i < 40 else frame5
             var = BooleanVar()
             check = ttk.Checkbutton(frm, text=name, variable=var)
