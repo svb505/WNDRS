@@ -328,7 +328,7 @@ def razr(win_p,lang,global_bg,global_fg,gl_police):
     create_label(frame, lang["info1"])
 
     frame1 = create_labelframe(Win, lang["nav"])
-    create_label(frame1, lang["znan"] + 'C++ - Pre-middle | Python - Pre-middle | WLangue - Junior', True)
+    create_label(frame1, lang["znan"] + 'C++ - Middle | Python - Middle | C - Junior | WLangue - Junior', True)
 
     frame2 = create_labelframe(Win, lang["prog"])
     create_label(frame2, lang["cetp"])

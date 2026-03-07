@@ -215,6 +215,10 @@ with open("versions/current_version.txt",'r') as f: ver = f.read()
 
 VERSION = f"{ver}"
 nebo = False
+ban_time = 0
+totalAttemps = 3
+currentAttemp = 0
+ban_timer = False
 shortcut_frame = None
 timer_running = False
 stopwatch_running = False
@@ -4342,7 +4346,33 @@ def downl():
     Win.mainloop()
 def enter_password():
     import customtkinter as ctk
-    global invisible_pass
+    global invisible_pass,totalAttemps,currentAttemp
+
+    def start_ban(Win):
+        global ban_time,ban_timer
+
+        def update():
+            global ban_time, ban_timer,currentAttemp,totalAttemps
+            if ban_time.total_seconds() > 0:
+                ban_time -= timedelta(seconds=1)
+                lbl_ban.config(text=f'{ban_time}')
+                Win.after(1000, update)
+            else:
+                ban_timer = False
+                currentAttemp = 0
+                lbl_attemps.config(text = f"Attemps: {currentAttemp}/{totalAttemps}")
+                lbl_ban.config(text="Time's up!")
+
+        ban_timer = True
+        ban_time = timedelta(minutes=10)
+
+        lbl_ban = ttk.Label(Win, text=f'{ban_time}',font = ("Arial",20,"bold"),foreground="red",background = "#018feb")
+        lbl_ban.pack()
+
+        canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2, window=lbl_ban)
+
+        update()
+
     def reset_password():
         def set_new_p(new_p):
             conn = sqlite3.connect("password.db")
@@ -4468,9 +4498,32 @@ def enter_password():
             messagebox.showerror(f"Error {errors[0]}", f"Error with lang.json!{e}")
             log_to_file(f"Error with lang.json!{e}", level="error", start_time_=start_time_)
         return langs[lang_code]
+    def ok():
+        global totalAttemps, currentAttemp,ban_timer
+        if ban_timer: messagebox.showerror('Error',"You have a ban for 10 min! ")
+        elif currentAttemp < totalAttemps:
+            log_to_file('connected to password.db', start_time_=start_time_)
+            conn = sqlite3.connect("password.db")
+            cursor = conn.cursor()
+            cursor.execute('''
+                        SELECT password FROM password
+                    ''')
+            stored_password = cursor.fetchone()
+            conn.close()
 
-    try:
-        selected_lang = read_encrypted_file("syst_comp/lang.cfg").strip()
+            if stored_password and stored_password[0] == en.get():
+                log_to_file("Password correct", start_time_=start_time_)
+                Win.destroy()
+                main()
+            else:
+                currentAttemp += 1
+                lbl_attemps.config(text = f'Attemps: {currentAttemp}/{totalAttemps}')
+                messagebox.showerror("Error", "Incorrect password")
+                log_to_file("Password incorrect", level="error", start_time_=start_time_)
+        else:
+            messagebox.showerror("Error","3 incorrect attempt! Ban for 10 min")
+            start_ban(Win)
+    try: selected_lang = read_encrypted_file("syst_comp/lang.cfg").strip()
     except Exception:
         messagebox.showerror(f'Error {errors[0]}',
                              "No file lang.cfg in directory! We created this file, or you can copy this file from folder 'backup_data'")
@@ -4478,24 +4531,6 @@ def enter_password():
         selected_lang = "EN"
         write_encrypted_file("syst_comp/lang.cfg", selected_lang)
     lang = load_language(selected_lang)
-
-    def ok():
-        log_to_file('connected to password.db', start_time_=start_time_)
-        conn = sqlite3.connect("password.db")
-        cursor = conn.cursor()
-        cursor.execute('''
-            SELECT password FROM password
-        ''')
-        stored_password = cursor.fetchone()
-        conn.close()
-
-        if stored_password and stored_password[0] == en.get():
-            log_to_file("Password correct", start_time_=start_time_)
-            Win.destroy()
-            main()
-        else:
-            messagebox.showerror("Error", "Incorrect password")
-            log_to_file("Password incorrect", level="error", start_time_=start_time_)
 
     log_to_file("Enter password function is running", start_time_=start_time_)
     Win = Tk()
@@ -4517,13 +4552,7 @@ def enter_password():
 
     Win.photo = photo
 
-    canvas_icon = Canvas(
-        Win,
-        width=Win.winfo_screenwidth(),
-        height=Win.winfo_screenheight(),
-        highlightthickness=0,
-        bd=0
-    )
+    canvas_icon = Canvas(Win,width=Win.winfo_screenwidth(),height=Win.winfo_screenheight(),highlightthickness=0, bd=0)
     canvas_icon.pack(fill="both", expand=True)
     canvas_icon.create_image(0, 0, anchor="nw", image=photo)
 
@@ -4535,9 +4564,8 @@ def enter_password():
     lbl_icon.image = icon
     lbl_icon.pack()
 
-    canvas_icon.create_window(
-        Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 480, window=lbl_icon
-    )
+    lbl_attemps = Label(Win, text = f"Attemps: {currentAttemp}/{totalAttemps}",background = "#018feb")
+    lbl_attemps.pack()
 
     style = ttk.Style()
     style.configure("Accent.TButton", font=("Arial", 10, "bold"), padding=8, background="#1E90FF")
@@ -4545,32 +4573,24 @@ def enter_password():
     lbl = Label(Win, text=lang["ent_ps"], background='#0f1632', fg="white", font=("Arial", 25, "bold"))
     lbl.pack()
 
-    canvas_icon.create_window(
-        Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 400, window=lbl
-    )
-
     en = ttk.Entry(Win)
-    if invisible_pass:
-        en.config(show = "*")
+    if invisible_pass: en.config(show = "*")
     en.pack(expand=True, fill=BOTH, padx=10, ipadx=50)
-
-    canvas_icon.create_window(
-        Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 300, window=en
-    )
 
     btn = ttk.Button(Win, text="Ok", command=ok, style="Accent.TButton")
     btn.pack()
 
-    canvas_icon.create_window(
-        Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 250, window=btn
-    )
     reset_p = Label(Win,text = lang['reset_p'],background="#018feb")
     reset_p.pack()
     reset_p.bind("<Button-1>",lambda event:reset_password())
 
-    canvas_icon.create_window(
-        Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 200, window=reset_p
-    )
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 100, window=lbl_attemps)
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 200, window=reset_p)
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 250, window=btn)
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 300, window=en)
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 400, window=lbl)
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 480, window=lbl_icon)
+
 
     Win.mainloop()
 def anim(arg="s"):
