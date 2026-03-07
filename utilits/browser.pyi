@@ -3,20 +3,18 @@
 # Stubs included by default
 from __future__ import annotations
 from PIL import Image, ImageTk
-from copy_file_to_folder import copy_file_to_folder
+from PyQt5.QtCore import QUrl
+from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from logtofile import log_to_file
 from play_sound import play_sound
-from tkhtmlview import HTMLLabel
-from tkinter import *, ttk
+from tkinter import *
 from typing import Any
-import customtkinter
 import logging
-import os
-import random
-import wikipedia
+import sys
 
 SYSTEM_LEVEL = 25
-def open_browser(root: Any, selected_lang: Any, lang: Any, state_sound: Any, volume: Any, errors: Any, edition: Any, start_time_: Any, actives_programs: Any, news_list_: Any, global_bg: Any, global_fg: Any, wifi_state: Any, GlobalAlpha: Any) -> Any:
+def open_browser(root: Any, lang: Any, state_sound: Any, volume: Any, start_time_: Any, actives_programs: Any, global_bg: Any, global_fg: Any, wifi_state: Any, GlobalAlpha: Any) -> Any:
     ...
 
 
@@ -26,17 +24,14 @@ __name__ = ...
 
 # Modules used internally, to allow implicit dependencies to be seen:
 import logging
-import os
-import random
 import tkinter
-import tkinter.ttk
-import tkhtmlview
-import tkhtmlview.HTMLLabel
 import PIL
 import PIL.Image
 import PIL.ImageTk
-import customtkinter
 import logtofile
 import play_sound
-import copy_file_to_folder
-import wikipedia
+import sys
+import PyQt5
+import PyQt5.QtCore
+import PyQt5.QtWidgets
+import PyQt5.QtWebEngineWidgets

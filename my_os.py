@@ -3589,7 +3589,7 @@ def main():
         lang["file_manager"]: lambda:file_manager.open_file_manager(state_sound, root, lang, global_bg,actives_programs,gl_police,global_fg,volume,errors,start_time_,GlobalAlpha),
         "CMD": lambda: commandConsole.open_terminal(VERSION,time.time() - start_time_,vpn, lang, volume, errors, actives_programs, is_recording, recording_thread, root, trigger_bsod,GlobalAlpha),
         lang["calculator"]: lambda:soft.open_calc(state_sound,volume,errors,lang,root,actives_programs,color,special_frames,start_time_,GlobalAlpha),
-        lang["browser"]: lambda:browser.open_browser(root,selected_lang,lang,state_sound,volume,errors,edition,start_time_,actives_programs,news_list_,global_bg,global_fg,wifi_state,GlobalAlpha),
+        lang["browser"]: lambda:browser.open_browser(root,lang,state_sound,volume,start_time_,actives_programs,global_bg,global_fg,wifi_state,GlobalAlpha),
         lang["store"]: open_store,
         lang["globalchat"]:lambda:globalchat.chat_win(root,lang,email,start_time_,GlobalAlpha),
         lang["os_diagnost"]:lambda:os_diagnost.os_diagn_win(root,lang,global_bg,global_fg,start_time_,actives_programs,GlobalAlpha),
