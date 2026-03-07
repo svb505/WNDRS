@@ -83,16 +83,17 @@ def open_file_manager(state_sound, root, lang, global_bg, actives_programs, gl_p
 
         threading.Thread(target=populate_tree_with_progress, args=(tree, base_path)).start()
     def populate_tree_with_progress(tree, base_path):
+
         try:
             items = get_files_from_dll(base_path)
         except Exception as e:
             log_to_file(f"Error load files from DLL: {e}", start_time_, "error")
             messagebox.showerror("Error", f"Error load files from DLL: {e}", parent=win)
             return
-
+        items.sort(key=lambda x: (not x["isdir"], x["name"].lower()))
         total = len(items)
-        if total == 0:
-            return
+
+        if total == 0: return
 
         def insert_item(idx):
             item = items[idx]
@@ -127,11 +128,13 @@ def open_file_manager(state_sound, root, lang, global_bg, actives_programs, gl_p
         scrollbar = Scrollbar(tree_frame)
         scrollbar.pack(side=RIGHT, fill=Y)
 
-        tree = ttk.Treeview(tree_frame, columns=("Name", "Type", "Size (MB)"), show="tree headings",
-                            yscrollcommand=scrollbar.set)
+        tree = ttk.Treeview(tree_frame, columns=("Name", "Type", "Size (MB)","Modified"), show="tree headings",
+                            yscrollcommand=scrollbar.set,selectmode="extended")
         tree.heading("Name", text=lang["name"])
         tree.heading("Type", text=lang["type"])
         tree.heading("Size (MB)", text=lang["sizefile"])
+        tree.heading("Modified", text=lang["modified"])
+        tree.column("Modified", width=120, anchor="center")
         tree.pack(fill="both", expand=True)
 
         scrollbar.config(command=tree.yview)

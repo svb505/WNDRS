@@ -1,6 +1,6 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/os_diagnost.py
+#python -m nuitka --module utilitsCODE/commandConsole.py
 
 

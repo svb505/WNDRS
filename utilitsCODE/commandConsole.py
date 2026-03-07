@@ -31,8 +31,16 @@ users = cursor.fetchall()
 if users:
     user = users[0]
     n, ln, e = user[1], user[2], user[3]
-else:
-    n = ln = e = "Unknown"
+else: n = ln = e = "Unknown"
+
+osName = """
+░██╗░░░░░░░██╗██╗███╗░░██╗██████╗░░█████╗░░█████╗░██████╗░░██████╗  ███████╗██████╗░
+░██║░░██╗░░██║██║████╗░██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝  ██╔════╝╚════██╗
+░╚██╗████╗██╔╝██║██╔██╗██║██║░░██║██║░░██║██║░░██║██████╔╝╚█████╗░  ██████╗░░░███╔═╝
+░░████╔═████║░██║██║╚████║██║░░██║██║░░██║██║░░██║██╔══██╗░╚═══██╗  ╚════██╗██╔══╝░░
+░░╚██╔╝░╚██╔╝░██║██║░╚███║██████╔╝╚█████╔╝╚█████╔╝██║░░██║██████╔╝  ██████╔╝███████╗
+░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░░╚════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░  ╚═════╝░╚══════╝"""
+
 def open_terminal(version,start_time,vpn,lang,volume,errors,actives_programs,is_recording,recording_thread,root,bsod_func,GlobalAlpha):
     global n
     def func(event):
@@ -358,5 +366,5 @@ def open_terminal(version,start_time,vpn,lang,volume,errors,actives_programs,is_
     text.pack(expand=True, fill="both")
 
     win.bind("<Return>",func)
-    text.insert("end",f"WinDoors 52 [VERSION - {version}]\n(c) SVB Corporation SoftWare Dev.\n")
+    text.insert("end",f"{osName}\nWinDoors 52 [VERSION - {version}]\n(c) SVB Corporation SoftWare Dev.\n")
     text.insert("end", f"C:\\{n}> ")  # Оставляем префикс при запуске
