@@ -4434,7 +4434,6 @@ def enter_password():
         canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2, window=lbl_ban)
 
         update()
-
     def reset_password():
         def set_new_p(new_p):
             conn = sqlite3.connect("password.db")
@@ -4585,6 +4584,15 @@ def enter_password():
         else:
             messagebox.showerror("Error","3 incorrect attempt! Ban for 10 min")
             start_ban(Win)
+    def hidePass(entry):
+        global invisible_pass
+
+        if invisible_pass:
+            entry.config(show="")
+            invisible_pass = False
+        else:
+            entry.config(show="*")
+            invisible_pass = True
     try: selected_lang = read_encrypted_file("syst_comp/lang.cfg").strip()
     except Exception:
         messagebox.showerror(f'Error {errors[0]}',
@@ -4626,7 +4634,7 @@ def enter_password():
     lbl_icon.image = icon
     lbl_icon.pack()
 
-    lbl_attemps = Label(Win, text = f"Attemps: {currentAttemp}/{totalAttemps}",background = "#018feb")
+    lbl_attemps = Label(Win, text = f"Attempts: {currentAttemp}/{totalAttemps}",background = "#018feb")
     lbl_attemps.pack()
 
     style = ttk.Style()
@@ -4635,9 +4643,17 @@ def enter_password():
     lbl = Label(Win, text=lang["ent_ps"], background='#0f1632', fg="white", font=("Arial", 25, "bold"))
     lbl.pack()
 
+    img = Image.open('icons/interface/hidePass.png')
+    img = img.resize((25, 25), Image.Resampling.LANCZOS)
+    iconPass = ImageTk.PhotoImage(img)
+
     en = ttk.Entry(Win)
     if invisible_pass: en.config(show = "*")
-    en.pack(expand=True, fill=BOTH, padx=10, ipadx=50)
+    en.pack(side = LEFT)
+    hide = ttk.Button(Win, image=iconPass, command=lambda: hidePass(en))
+    hide.image = iconPass
+    hide.pack(side = RIGHT)
+
 
     btn = ttk.Button(Win, text="Ok", command=ok, style="Accent.TButton")
     btn.pack()
@@ -4650,6 +4666,7 @@ def enter_password():
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 200, window=reset_p)
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 250, window=btn)
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 300, window=en)
+    canvas_icon.create_window(Win.winfo_screenwidth() // 2 + 100, Win.winfo_screenheight() // 2 - 300, window=hide)
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 400, window=lbl)
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 480, window=lbl_icon)
 
