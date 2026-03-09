@@ -222,7 +222,7 @@ def create_ide(language,actives_programs, root, lang,state_sound, volume, start_
 
     cfg = LANGUAGES[language]
 
-    "",actives_programs.append(language)
+    actives_programs.append(language)
     play_sound("sound//click.mp3", volume, state_sound, start_time_)
     log_to_file(f"{language} IDE launched", start_time_=start_time_)
 

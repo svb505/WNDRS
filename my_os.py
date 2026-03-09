@@ -943,7 +943,7 @@ def main():
                         transactions("-2.000 SVb Coins"+f" {datetime.now()}",start_time_)
                         save_balance(svb_coins,start_time_)
                         log_to_file(f'Program {program_name} downloaded',start_time_ = start_time_)
-                        write_file(installed_programs_file,"a",program_name + "\n")
+                        write_file(installed_programs_file,"a","\n"+program_name + "\n")
                         messagebox.showinfo(lang["success"], lang['program'] + " " + program_name + " " + lang["downloaded"],parent=win)
                         log_to_file(f'Message: {lang["program"] + " " + program_name + " " + lang["downloaded"]}',start_time_ = start_time_)
 
@@ -956,7 +956,7 @@ def main():
                         messagebox.showerror(lang["error"],"Your balace is less than 2000 SVB Coins",parent=win)
                         log_to_file(f"Message: Your balance is less than 2000 SVB Coins", level="warning",start_time_ = start_time_)
                 log_to_file(f'Program {program_name} downloaded',start_time_ = start_time_)
-                write_file(installed_programs_file,"a",program_name + "\n")
+                write_file(installed_programs_file,"a","\n" + program_name + "\n")
                 messagebox.showinfo(lang["success"], lang['program'] + " " + program_name + " " + lang["downloaded"],parent=win)
                 log_to_file(f'Message: {lang["program"] + " " + program_name + " " + lang["downloaded"]}',start_time_ = start_time_)
 
