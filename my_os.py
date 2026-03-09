@@ -901,7 +901,8 @@ def main():
         pass
     def open_store():
         global all_programs_list
-        run_in_thread(play_sound("sound//click.mp3",volume,state_sound,start_time_))
+
+        run_in_thread(lambda: play_sound("sound//click.mp3",volume,state_sound,start_time_))
         actives_programs.append("Store")
         log_to_file('Store launch',start_time_ = start_time_)
 
@@ -923,8 +924,7 @@ def main():
         main_frame = Frame(canvas,bg = global_bg,padx=10, pady=10)
         canvas.create_window((0, 0), window=main_frame, anchor="nw")
 
-        def _on_mousewheel(event):
-            canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+        def _on_mousewheel(event): canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
         canvas.bind_all("<MouseWheel>", _on_mousewheel)
 
@@ -955,6 +955,7 @@ def main():
                     else:
                         messagebox.showerror(lang["error"],"Your balace is less than 2000 SVB Coins",parent=win)
                         log_to_file(f"Message: Your balance is less than 2000 SVB Coins", level="warning",start_time_ = start_time_)
+                    return
                 log_to_file(f'Program {program_name} downloaded',start_time_ = start_time_)
                 write_file(installed_programs_file,"a","\n" + program_name + "\n")
                 messagebox.showinfo(lang["success"], lang['program'] + " " + program_name + " " + lang["downloaded"],parent=win)
@@ -4658,6 +4659,8 @@ def enter_password():
 
     btn = ttk.Button(Win, text="Ok", command=ok, style="Accent.TButton")
     btn.pack()
+
+    Win.bind("<Return>", lambda event: ok())
 
     reset_p = Label(Win,text = lang['reset_p'],background="#018feb")
     reset_p.pack()
