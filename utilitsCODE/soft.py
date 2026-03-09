@@ -19,6 +19,8 @@ from send_email_template import send
 from transactions import transactions
 import math
 from save_and_load_balance import save_balance,load_balance
+from create_window import create_window
+import pyttsx3
 
 svb_coins = 0
 SYSTEM_LEVEL = 25
@@ -1091,4 +1093,28 @@ def open_mus(lang,root,actives_programs,volume,state_sound,errors,start_time_,gl
         playlist_listbox.insert(END, name)
 
     Winn.mainloop()
+def textSpeech(root,lang,global_bg,global_fg,globalalpha):
+    def textToSpeech(text, filename="output.mp3"):
+        engine = pyttsx3.init()
+
+        rate = engine.getProperty('rate')
+        engine.setProperty('rate', rate + 1)
+
+        volume = engine.getProperty('volume')
+        engine.setProperty('volume', volume + 0.1)
+
+        engine.save_to_file(text, filename)
+        engine.runAndWait()
+    Win = create_window(root,lang["textSpeech"],global_bg,globalalpha,500,400)
+
+    Label(Win,text = lang["enter_text_to_speech"],background=global_bg,foreground=global_fg).pack()
+    text = ttk.Entry(Win)
+    text.pack()
+
+    Label(Win, text=lang["enter_path_to_save"], background=global_bg, foreground=global_fg).pack()
+    path = ttk.Entry(Win)
+    path.pack()
+
+    btn = ttk.Button(Win,text = "OK",command = lambda: textToSpeech(text))
+    btn.pack()
 

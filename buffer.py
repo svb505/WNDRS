@@ -1,17 +1,16 @@
-import sys
+import pyttsx3
 
-from PyQt5.QtCore import QUrl
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtWebEngineWidgets import QWebEngineView
+def textToSpeech(text, filename="output.mp3"):
+    engine = pyttsx3.init()
 
-app = QApplication(sys.argv)
+    rate = engine.getProperty('rate')
+    engine.setProperty('rate', rate + 1)  # Скорость
 
-window = QMainWindow()
-browser = QWebEngineView()
+    volume = engine.getProperty('volume')
+    engine.setProperty('volume', volume + 0.1)  # Громкость
 
-browser.load(QUrl("https://google.com"))
+    engine.save_to_file(text, filename)  # Сохранение в файл
+    engine.runAndWait()
 
-window.setCentralWidget(browser)
-window.show()
-
-app.exec_()
+text = input("Введите текст для озвучки: ")
+textToSpeech(text)
