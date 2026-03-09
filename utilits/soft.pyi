@@ -4,11 +4,13 @@
 from __future__ import annotations
 from PIL import Image, ImageTk
 from copy_file_to_folder import copy_file_to_folder
+from create_window import create_window
 from datetime import datetime
 from io import BytesIO
 from logger_setup import system_logger
 from logtofile import log_to_file
 from play_sound import play_sound
+from pytubefix import YouTube
 from save_and_load_balance import load_balance, save_balance
 from send_email_template import send
 from server_statistick import update_file
@@ -19,6 +21,7 @@ import customtkinter
 import logging
 import math
 import os
+import pyttsx3
 import random
 import requests
 import sqlite3
@@ -64,6 +67,12 @@ def pokup_nomer(lang: Any, root: Any, edition: Any, start_time_: Any, global_bg:
 def open_mus(lang: Any, root: Any, actives_programs: Any, volume: Any, state_sound: Any, errors: Any, start_time_: Any, global_bg: Any, global_fg: Any, GlobalAlpha: Any) -> Any:
     ...
 
+def textSpeech(root: Any, lang: Any, global_bg: Any, global_fg: Any, globalalpha: Any) -> Any:
+    ...
+
+def ytDownloader(root: Any, lang: Any, global_bg: Any, global_fg: Any, globalalpha: Any) -> Any:
+    ...
+
 
 __name__ = ...
 
@@ -96,5 +105,9 @@ import send_email_template
 import transactions
 import math
 import save_and_load_balance
+import create_window
+import pyttsx3
+import pytubefix
+import pytubefix.YouTube
 import json
 import pygame

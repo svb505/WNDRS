@@ -219,7 +219,7 @@ nebo = False
 ban_time = 0
 totalAttemps = 3
 currentAttemp = 0
-all_programs_list = ["Hashe Calculator","Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
+all_programs_list = ["Text Speech","YouTube Downloader","Hashe Calculator","Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
                     "Book reader","SVB TxT Redactor","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
                     "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
                     "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
@@ -3584,6 +3584,8 @@ def main():
         "SVB Archiver":lambda:archivator.open_archivator(actives_programs,root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
         "SVB TxT Redactor":lambda:svbred.redactor(root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
         'Book reader':lambda:book.bbb(actives_programs,root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
+        "YouTube Downloader": lambda: soft.ytDownloader(root,lang,global_bg,global_fg,GlobalAlpha),
+        "Text Speech": lambda: soft.textSpeech(root,lang,global_bg,global_fg,GlobalAlpha),
         'Password Manager':lambda:manager(lang,actives_programs,root,errors,start_time_,global_bg,global_fg,GlobalAlpha),
         "Trade":lambda:trade.trade(actives_programs,lang,root,start_time_,global_bg,global_fg,GlobalAlpha),
         'Lottery': lambda:soft.lotereya(actives_programs,lang,root,edition,start_time_,global_bg,global_fg,GlobalAlpha),

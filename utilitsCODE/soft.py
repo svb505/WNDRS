@@ -21,6 +21,7 @@ import math
 from save_and_load_balance import save_balance,load_balance
 from create_window import create_window
 import pyttsx3
+from pytubefix import YouTube
 
 svb_coins = 0
 SYSTEM_LEVEL = 25
@@ -1115,6 +1116,25 @@ def textSpeech(root,lang,global_bg,global_fg,globalalpha):
     path = ttk.Entry(Win)
     path.pack()
 
-    btn = ttk.Button(Win,text = "OK",command = lambda: textToSpeech(text))
+    btn = ttk.Button(Win,text = "OK",command = lambda: textToSpeech(text.get()))
     btn.pack()
+def ytDownloader(root,lang,global_bg,global_fg,globalalpha):
+    def download(link):
+        yt = YouTube(link)
 
+        try:
+            stream = yt.streams.get_highest_resolution()
+            stream.download()
+
+            messagebox.showinfo(lang["success"],lang["video_downloaded_successfully"])
+        except Exception as e:
+            messagebox.showerror(lang['error'],str(e))
+    Win = create_window(root, lang["ytDownloader"], global_bg, globalalpha, 300, 300)
+
+    Label(Win,text = lang['enter_link_for_video']).pack()
+
+    link = ttk.Entry(Win)
+    link.pack()
+
+    btn = ttk.Button(Win,text = lang["download_video"],command = lambda:download(link.get()))
+    btn.pack()
