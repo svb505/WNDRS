@@ -1,6 +1,6 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/hashes.py
+#python -m nuitka --module utilitsCODE/soft.py
 
 

@@ -22,12 +22,17 @@ from save_and_load_balance import save_balance,load_balance
 from create_window import create_window
 import pyttsx3
 from pytubefix import YouTube
+from load_env import load_env
 
 svb_coins = 0
 SYSTEM_LEVEL = 25
 logging.addLevelName(SYSTEM_LEVEL, "SYSTEM")
 config = {}
 count = 0
+
+load_env()
+
+API_KEY = os.getenv("WEATHER_API")
 
 def open_notepad(state_sound,lang,root,volume,errors,actives_programs,global_fg,global_bg,start_time_,GlobalAlpha):
     play_sound("sound//click.mp3", volume, state_sound, start_time_)
@@ -1140,3 +1145,44 @@ def ytDownloader(root,lang,global_bg,global_fg,globalalpha):
 
     btn = ttk.Button(Win,text = lang["download_video"],command = lambda:download(link.get()))
     btn.pack()
+def weatherWin(root,lang,global_bg,global_fg,globalalpha,start_time_):
+    def get_weather():
+        city = entry_city.get()
+
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=ru"
+
+        response = requests.get(url, timeout=5)
+        data = response.json()
+
+        if str(data["cod"]) != "200":
+            log_to_file(data,start_time_,"error")
+            lbl_result.config(text=lang["api_error"])
+            return
+
+        temp = data["main"]["temp"]
+        weather = data["weather"][0]["description"]
+        icon = data["weather"][0]["icon"]
+
+        lbl_result.config(text=f"{city}\n{temp}°C\n{weather}")
+
+        icon_url = f"http://openweathermap.org/img/wn/{icon}@2x.png"
+        img_data = requests.get(icon_url).content
+
+        img = Image.open(BytesIO(img_data))
+        photo = ImageTk.PhotoImage(img)
+
+        lbl_icon.config(image=photo)
+        lbl_icon.image = photo
+    Win = create_window(root,lang["weather"],global_bg,globalalpha,350,300,"icons/weather.png")
+
+    entry_city = ttk.Entry(Win, font=15)
+    entry_city.pack(pady=10)
+
+    btn = ttk.Button(Win, text=lang["get_weather"], command=get_weather)
+    btn.pack(pady=5)
+
+    lbl_result = ttk.Label(Win, text="", font=14,background=global_bg,foreground=global_fg)
+    lbl_result.pack(pady=10)
+
+    lbl_icon = ttk.Label(Win,background=global_bg,foreground=global_fg)
+    lbl_icon.pack()

@@ -18,6 +18,5 @@ for f in base_folder.rglob("*"):  # рекурсивно ищем файлы
         h = sha256(f)
         hashes_list.append(f"{rel_path}:{h}")
 
-# превращаем в строку для DLL
 hashes_str = ";".join(hashes_list)
 print(hashes_str)

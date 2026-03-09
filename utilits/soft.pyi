@@ -7,6 +7,7 @@ from copy_file_to_folder import copy_file_to_folder
 from create_window import create_window
 from datetime import datetime
 from io import BytesIO
+from load_env import load_env
 from logger_setup import system_logger
 from logtofile import log_to_file
 from play_sound import play_sound
@@ -73,6 +74,9 @@ def textSpeech(root: Any, lang: Any, global_bg: Any, global_fg: Any, globalalpha
 def ytDownloader(root: Any, lang: Any, global_bg: Any, global_fg: Any, globalalpha: Any) -> Any:
     ...
 
+def weatherWin(root: Any, lang: Any, global_bg: Any, global_fg: Any, globalalpha: Any, start_time_: Any) -> Any:
+    ...
+
 
 __name__ = ...
 
@@ -109,5 +113,6 @@ import create_window
 import pyttsx3
 import pytubefix
 import pytubefix.YouTube
+import load_env
 import json
 import pygame

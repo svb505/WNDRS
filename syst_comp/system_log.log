@@ -19718,3 +19718,55 @@ KeyError: "Нет функции для 'SVB History's' в program_functions"
 2026-03-09 16:40:23,474 - SYSTEM - [5.5] - <--Проверка целостности файлов-->
 2026-03-09 16:40:23,782 - SYSTEM - [5.8] - <--Завершаем настройку...-->
 2026-03-09 16:40:24,636 - INFO - [6.7] - Enter password function is running
+2026-03-09 16:41:22,700 - SYSTEM - [3.9] - START TIMESTAMP: 2026-03-09 16:41:22
+2026-03-09 16:41:22,700 - SYSTEM - [3.9] - All Global Variables (AGV) initialized
+2026-03-09 16:41:22,701 - SYSTEM - [3.9] - Connect to states.db
+2026-03-09 16:41:22,701 - SYSTEM - [3.9] - ALL SYSTEMS FILES READS
+2026-03-09 16:41:22,713 - SYSTEM - [3.9] - Copy file configurations.db to backup_data
+2026-03-09 16:41:22,716 - SYSTEM - [4.0] - DB Disconnect
+2026-03-09 16:41:22,725 - INFO - [4.0] - Account image: icons//acc6.png
+2026-03-09 16:41:22,727 - SYSTEM - [4.0] - WIFI --> True
+2026-03-09 16:41:22,727 - SYSTEM - [4.0] - BLUETOOTH --> False
+2026-03-09 16:41:22,732 - INFO - Log size OK: 1.42 MB
+2026-03-09 16:41:23,059 - SYSTEM - [4.3] - ----OS LAUNCH----
+2026-03-09 16:41:23,060 - SYSTEM - [4.3] - VERSION OS --> KW3.1.700
+2026-03-09 16:41:23,268 - SYSTEM - [4.5] - ----START LOADING----
+2026-03-09 16:41:23,428 - SYSTEM - [4.7] - Copy file configurations.db to backup_data
+2026-03-09 16:41:23,430 - SYSTEM - [4.7] - DB Disconnect
+2026-03-09 16:41:23,430 - SYSTEM - [4.7] - <--Инициализация БД...-->
+2026-03-09 16:41:23,742 - SYSTEM - [5.0] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-09 16:41:23,746 - INFO - [5.0] - Account image: icons//acc6.png
+2026-03-09 16:41:23,747 - SYSTEM - [5.0] - <--Инициализация конфигураций...-->
+2026-03-09 16:41:24,053 - INFO - Log size OK: 1.42 MB
+2026-03-09 16:41:24,053 - SYSTEM - [5.3] - <--Проверка ЛОгов...-->
+2026-03-09 16:41:24,359 - SYSTEM - [5.6] - WIFI --> True
+2026-03-09 16:41:24,359 - SYSTEM - [5.6] - BLUETOOTH --> False
+2026-03-09 16:41:24,359 - SYSTEM - [5.6] - <--Настройка девайсов...-->
+2026-03-09 16:41:24,665 - SYSTEM - [5.9] - <--Проверка зашифрованых файлов-->
+2026-03-09 16:41:24,977 - SYSTEM - [6.2] - <--Инициалиция конфиг файлов-->
+2026-03-09 16:41:25,283 - SYSTEM - [6.5] - <--Загрузка активности-->
+2026-03-09 16:41:26,100 - INFO - [7.3] - All files are intact
+2026-03-09 16:41:26,100 - SYSTEM - [7.3] - <--Проверка целостности файлов-->
+2026-03-09 16:41:26,404 - SYSTEM - [7.6] - <--Завершаем настройку...-->
+2026-03-09 16:41:27,254 - INFO - [8.5] - Enter password function is running
+2026-03-09 16:41:56,014 - INFO - [37.2] - connected to password.db
+2026-03-09 16:41:56,016 - INFO - [37.3] - Password correct
+2026-03-09 16:41:56,052 - SYSTEM - [37.3] - ----START OS----
+2026-03-09 16:41:56,052 - SYSTEM - [37.3] - VERSION OS --> KW3.1.700
+2026-03-09 16:41:56,094 - SYSTEM - [37.3] - CURRENT LANGUE --> RU
+2026-03-09 16:41:56,094 - SYSTEM - [37.3] - VOLUME --> 0.48
+2026-03-09 16:41:56,094 - SYSTEM - [37.3] - CREATE "CONFIGURATIONS.DB"
+2026-03-09 16:41:56,095 - SYSTEM - [37.3] - Connect to configurations.db
+2026-03-09 16:41:56,095 - INFO - [37.3] - READ INVENTORY
+2026-03-09 16:41:56,096 - SYSTEM - [37.3] - Copy file configurations.db to backup_data
+2026-03-09 16:41:56,099 - SYSTEM - [37.3] - Region SET 'NETHERLANDS'
+2026-03-09 16:41:56,100 - SYSTEM - [37.3] - Copy file configurations.db to backup_data
+2026-03-09 16:41:56,284 - SYSTEM - [37.5] - Load cursor
+2026-03-09 16:41:56,748 - SYSTEM - [38.0] - Load cursor
+2026-03-09 16:41:57,867 - SYSTEM - [39.1] - START: 35.175226499995915 sec
+2026-03-09 16:41:59,492 - INFO - [40.7] - Pusk launch
+2026-03-09 16:42:01,793 - SYSTEM - [43.0] - Load cursor
+2026-03-09 16:42:05,293 - SYSTEM - [46.5] - Connect to password.db
+2026-03-09 16:42:10,156 - INFO - [51.4] - Password correct
+2026-03-09 16:42:10,171 - INFO - [51.4] - Password database file deleted
+2026-03-09 16:42:11,368 - INFO - [52.6] - Message Пароль успешно удален
