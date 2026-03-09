@@ -1095,7 +1095,7 @@ def open_mus(lang,root,actives_programs,volume,state_sound,errors,start_time_,gl
 
     Winn.mainloop()
 def textSpeech(root,lang,global_bg,global_fg,globalalpha):
-    def textToSpeech(text, filename="output.mp3"):
+    def textToSpeech(text, filename):
         engine = pyttsx3.init()
 
         rate = engine.getProperty('rate')
@@ -1106,7 +1106,9 @@ def textSpeech(root,lang,global_bg,global_fg,globalalpha):
 
         engine.save_to_file(text, filename)
         engine.runAndWait()
-    Win = create_window(root,lang["textSpeech"],global_bg,globalalpha,500,400)
+
+        messagebox.showinfo(lang["success"], lang["text_speeched_successfully"] + filename)
+    Win = create_window(root,lang["textSpeech"],global_bg,globalalpha,500,400,"icons/Text Speech.png")
 
     Label(Win,text = lang["enter_text_to_speech"],background=global_bg,foreground=global_fg).pack()
     text = ttk.Entry(Win)
@@ -1129,7 +1131,7 @@ def ytDownloader(root,lang,global_bg,global_fg,globalalpha):
             messagebox.showinfo(lang["success"],lang["video_downloaded_successfully"])
         except Exception as e:
             messagebox.showerror(lang['error'],str(e))
-    Win = create_window(root, lang["ytDownloader"], global_bg, globalalpha, 300, 300)
+    Win = create_window(root, lang["ytDownloader"], global_bg, globalalpha, 300, 300,"icons/Youtube Downloader.png")
 
     Label(Win,text = lang['enter_link_for_video']).pack()
 

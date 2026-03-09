@@ -18934,3 +18934,181 @@ KeyError: "Нет функции для 'SVB History's' в program_functions"
 2026-03-07 16:15:52,234 - SYSTEM - [8.4] - Load cursor
 2026-03-07 16:15:53,208 - SYSTEM - [9.4] - Load cursor
 2026-03-07 16:15:56,511 - SYSTEM - [12.7] - START: 10.374255600001561 sec
+2026-03-09 15:54:22,447 - SYSTEM - [3.7] - START TIMESTAMP: 2026-03-09 15:54:22
+2026-03-09 15:54:22,448 - SYSTEM - [3.7] - All Global Variables (AGV) initialized
+2026-03-09 15:54:22,449 - SYSTEM - [3.7] - Connect to states.db
+2026-03-09 15:54:22,449 - SYSTEM - [3.7] - ALL SYSTEMS FILES READS
+2026-03-09 15:54:22,461 - SYSTEM - [3.7] - Copy file configurations.db to backup_data
+2026-03-09 15:54:22,465 - SYSTEM - [3.7] - DB Disconnect
+2026-03-09 15:54:22,475 - INFO - [3.7] - Account image: icons//acc6.png
+2026-03-09 15:54:22,477 - SYSTEM - [3.7] - WIFI --> True
+2026-03-09 15:54:22,477 - SYSTEM - [3.7] - BLUETOOTH --> False
+2026-03-09 15:54:22,481 - INFO - Log size OK: 1.36 MB
+2026-03-09 15:54:22,856 - SYSTEM - [4.1] - ----OS LAUNCH----
+2026-03-09 15:54:22,856 - SYSTEM - [4.1] - VERSION OS --> KW3.1.700
+2026-03-09 15:54:23,129 - SYSTEM - [4.3] - ----START LOADING----
+2026-03-09 15:54:23,289 - SYSTEM - [4.5] - Copy file configurations.db to backup_data
+2026-03-09 15:54:23,291 - SYSTEM - [4.5] - DB Disconnect
+2026-03-09 15:54:23,293 - SYSTEM - [4.5] - <--Инициализация БД...-->
+2026-03-09 15:54:23,605 - SYSTEM - [4.8] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-09 15:54:23,608 - INFO - [4.8] - Account image: icons//acc6.png
+2026-03-09 15:54:23,609 - SYSTEM - [4.8] - <--Инициализация конфигураций...-->
+2026-03-09 15:54:23,916 - INFO - Log size OK: 1.36 MB
+2026-03-09 15:54:23,916 - SYSTEM - [5.1] - <--Проверка ЛОгов...-->
+2026-03-09 15:54:24,219 - SYSTEM - [5.4] - WIFI --> True
+2026-03-09 15:54:24,220 - SYSTEM - [5.4] - BLUETOOTH --> False
+2026-03-09 15:54:24,220 - SYSTEM - [5.4] - <--Настройка девайсов...-->
+2026-03-09 15:54:24,527 - SYSTEM - [5.7] - <--Проверка зашифрованых файлов-->
+2026-03-09 15:54:24,838 - SYSTEM - [6.1] - <--Инициалиция конфиг файлов-->
+2026-03-09 15:54:25,144 - SYSTEM - [6.4] - <--Загрузка активности-->
+2026-03-09 15:54:26,889 - ERROR - [8.1] - Integrity error: icons\Text Speech.png
+2026-03-09 15:54:30,937 - SYSTEM - [12.2] - <--Проверка целостности файлов-->
+2026-03-09 15:54:31,244 - SYSTEM - [12.5] - <--Завершаем настройку...-->
+2026-03-09 15:56:34,790 - SYSTEM - [2.4] - START TIMESTAMP: 2026-03-09 15:56:34
+2026-03-09 15:56:34,790 - SYSTEM - [2.4] - All Global Variables (AGV) initialized
+2026-03-09 15:56:34,791 - SYSTEM - [2.4] - Connect to states.db
+2026-03-09 15:56:34,792 - SYSTEM - [2.4] - ALL SYSTEMS FILES READS
+2026-03-09 15:56:34,807 - SYSTEM - [2.5] - Copy file configurations.db to backup_data
+2026-03-09 15:56:34,810 - SYSTEM - [2.5] - DB Disconnect
+2026-03-09 15:56:34,817 - INFO - [2.5] - Account image: icons//acc6.png
+2026-03-09 15:56:34,818 - SYSTEM - [2.5] - WIFI --> True
+2026-03-09 15:56:34,818 - SYSTEM - [2.5] - BLUETOOTH --> False
+2026-03-09 15:56:34,822 - INFO - Log size OK: 1.37 MB
+2026-03-09 15:56:35,095 - SYSTEM - [2.7] - ----OS LAUNCH----
+2026-03-09 15:56:35,095 - SYSTEM - [2.7] - VERSION OS --> KW3.1.700
+2026-03-09 15:56:35,249 - SYSTEM - [2.9] - ----START LOADING----
+2026-03-09 15:56:35,395 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-09 15:56:35,397 - SYSTEM - [3.0] - DB Disconnect
+2026-03-09 15:56:35,397 - SYSTEM - [3.0] - <--Инициализация БД...-->
+2026-03-09 15:56:35,710 - SYSTEM - [3.4] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-09 15:56:35,712 - INFO - [3.4] - Account image: icons//acc6.png
+2026-03-09 15:56:35,713 - SYSTEM - [3.4] - <--Инициализация конфигураций...-->
+2026-03-09 15:56:36,019 - INFO - Log size OK: 1.37 MB
+2026-03-09 15:56:36,019 - SYSTEM - [3.7] - <--Проверка ЛОгов...-->
+2026-03-09 15:56:36,323 - SYSTEM - [4.0] - WIFI --> True
+2026-03-09 15:56:36,323 - SYSTEM - [4.0] - BLUETOOTH --> False
+2026-03-09 15:56:36,323 - SYSTEM - [4.0] - <--Настройка девайсов...-->
+2026-03-09 15:56:36,629 - SYSTEM - [4.3] - <--Проверка зашифрованых файлов-->
+2026-03-09 15:56:36,941 - SYSTEM - [4.6] - <--Инициалиция конфиг файлов-->
+2026-03-09 15:56:37,248 - SYSTEM - [4.9] - <--Загрузка активности-->
+2026-03-09 15:56:38,133 - INFO - [5.8] - All files are intact
+2026-03-09 15:56:38,133 - SYSTEM - [5.8] - <--Проверка целостности файлов-->
+2026-03-09 15:56:38,439 - SYSTEM - [6.1] - <--Завершаем настройку...-->
+2026-03-09 15:56:39,251 - SYSTEM - [6.9] - ----START OS----
+2026-03-09 15:56:39,252 - SYSTEM - [6.9] - VERSION OS --> KW3.1.700
+2026-03-09 15:56:39,287 - SYSTEM - [6.9] - CURRENT LANGUE --> RU
+2026-03-09 15:56:39,287 - SYSTEM - [6.9] - VOLUME --> 0.48
+2026-03-09 15:56:39,287 - SYSTEM - [6.9] - CREATE "CONFIGURATIONS.DB"
+2026-03-09 15:56:39,288 - SYSTEM - [6.9] - Connect to configurations.db
+2026-03-09 15:56:39,289 - INFO - [6.9] - READ INVENTORY
+2026-03-09 15:56:39,290 - SYSTEM - [6.9] - Copy file configurations.db to backup_data
+2026-03-09 15:56:39,295 - SYSTEM - [6.9] - Region SET 'NETHERLANDS'
+2026-03-09 15:56:39,297 - SYSTEM - [6.9] - Copy file configurations.db to backup_data
+2026-03-09 15:56:39,425 - SYSTEM - [7.1] - Load cursor
+2026-03-09 15:56:39,849 - SYSTEM - [7.5] - Load cursor
+2026-03-09 15:56:40,057 - SYSTEM - [7.7] - START: 5.27491629999713 sec
+2026-03-09 15:56:45,253 - INFO - [12.9] - Store launch
+2026-03-09 15:56:48,582 - INFO - [16.2] - Program Text Speech downloaded
+2026-03-09 15:56:49,735 - INFO - [17.4] - Message: Программа Text Speech установлена ✅
+2026-03-09 15:56:52,414 - INFO - [20.1] - Program YouTube Downloader downloaded
+2026-03-09 15:56:53,404 - INFO - [21.1] - Message: Программа YouTube Downloader установлена ✅
+2026-03-09 16:00:13,154 - SYSTEM - [4.7] - START TIMESTAMP: 2026-03-09 16:00:13
+2026-03-09 16:00:13,155 - SYSTEM - [4.7] - All Global Variables (AGV) initialized
+2026-03-09 16:00:13,158 - SYSTEM - [4.7] - Connect to states.db
+2026-03-09 16:00:13,158 - SYSTEM - [4.7] - ALL SYSTEMS FILES READS
+2026-03-09 16:00:13,197 - SYSTEM - [4.8] - Copy file configurations.db to backup_data
+2026-03-09 16:00:13,209 - SYSTEM - [4.8] - DB Disconnect
+2026-03-09 16:00:13,239 - INFO - [4.8] - Account image: icons//acc6.png
+2026-03-09 16:00:13,244 - SYSTEM - [4.8] - WIFI --> True
+2026-03-09 16:00:13,246 - SYSTEM - [4.8] - BLUETOOTH --> False
+2026-03-09 16:00:13,258 - INFO - Log size OK: 1.37 MB
+2026-03-09 16:00:18,588 - SYSTEM - [10.2] - ----OS LAUNCH----
+2026-03-09 16:00:18,588 - SYSTEM - [10.2] - VERSION OS --> KW3.1.700
+2026-03-09 16:00:19,210 - SYSTEM - [10.8] - ----START LOADING----
+2026-03-09 16:00:19,488 - SYSTEM - [11.1] - Copy file configurations.db to backup_data
+2026-03-09 16:00:19,496 - SYSTEM - [11.1] - DB Disconnect
+2026-03-09 16:00:19,497 - SYSTEM - [11.1] - <--Инициализация БД...-->
+2026-03-09 16:00:19,824 - SYSTEM - [11.4] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-09 16:00:19,832 - INFO - [11.4] - Account image: icons//acc6.png
+2026-03-09 16:00:19,834 - SYSTEM - [11.4] - <--Инициализация конфигураций...-->
+2026-03-09 16:00:20,143 - INFO - Log size OK: 1.37 MB
+2026-03-09 16:00:20,143 - SYSTEM - [11.7] - <--Проверка ЛОгов...-->
+2026-03-09 16:00:20,457 - SYSTEM - [12.0] - WIFI --> True
+2026-03-09 16:00:20,458 - SYSTEM - [12.0] - BLUETOOTH --> False
+2026-03-09 16:00:20,458 - SYSTEM - [12.0] - <--Настройка девайсов...-->
+2026-03-09 16:00:20,768 - SYSTEM - [12.3] - <--Проверка зашифрованых файлов-->
+2026-03-09 16:00:21,089 - SYSTEM - [12.7] - <--Инициалиция конфиг файлов-->
+2026-03-09 16:00:21,397 - SYSTEM - [13.0] - <--Загрузка активности-->
+2026-03-09 16:00:22,300 - INFO - [13.9] - All files are intact
+2026-03-09 16:00:22,300 - SYSTEM - [13.9] - <--Проверка целостности файлов-->
+2026-03-09 16:00:22,607 - SYSTEM - [14.2] - <--Завершаем настройку...-->
+2026-03-09 16:00:23,425 - SYSTEM - [15.0] - ----START OS----
+2026-03-09 16:00:23,425 - SYSTEM - [15.0] - VERSION OS --> KW3.1.700
+2026-03-09 16:00:23,465 - SYSTEM - [15.0] - CURRENT LANGUE --> RU
+2026-03-09 16:00:23,465 - SYSTEM - [15.0] - VOLUME --> 0.48
+2026-03-09 16:00:23,465 - SYSTEM - [15.0] - CREATE "CONFIGURATIONS.DB"
+2026-03-09 16:00:23,466 - SYSTEM - [15.0] - Connect to configurations.db
+2026-03-09 16:00:23,467 - INFO - [15.0] - READ INVENTORY
+2026-03-09 16:00:23,468 - SYSTEM - [15.0] - Copy file configurations.db to backup_data
+2026-03-09 16:00:23,471 - SYSTEM - [15.0] - Region SET 'NETHERLANDS'
+2026-03-09 16:00:23,472 - SYSTEM - [15.0] - Copy file configurations.db to backup_data
+2026-03-09 16:00:23,634 - SYSTEM - [15.2] - Load cursor
+2026-03-09 16:00:24,178 - SYSTEM - [15.7] - Load cursor
+2026-03-09 16:00:24,452 - WARNING - [16.0] - Load Image Error Hashe CalculatorText SpeechYouTube Downloader: [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\hashe calculatortext speechyoutube downloader.png'
+2026-03-09 16:00:24,454 - SYSTEM - [16.0] - START: 11.370036300009815 sec
+2026-03-09 16:00:33,891 - INFO - [25.5] - Store launch
+2026-03-09 16:00:37,006 - INFO - [28.6] - Program YouTube Downloader downloaded
+2026-03-09 16:00:39,586 - INFO - [31.2] - Message: Программа YouTube Downloader установлена ✅
+2026-03-09 16:00:39,874 - WARNING - [31.4] - Load Image Error Hashe CalculatorText SpeechYouTube Downloader: [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\hashe calculatortext speechyoutube downloader.png'
+2026-03-09 16:01:14,348 - SYSTEM - [3.0] - START TIMESTAMP: 2026-03-09 16:01:14
+2026-03-09 16:01:14,348 - SYSTEM - [3.0] - All Global Variables (AGV) initialized
+2026-03-09 16:01:14,349 - SYSTEM - [3.0] - Connect to states.db
+2026-03-09 16:01:14,349 - SYSTEM - [3.0] - ALL SYSTEMS FILES READS
+2026-03-09 16:01:14,363 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-09 16:01:14,366 - SYSTEM - [3.0] - DB Disconnect
+2026-03-09 16:01:14,375 - INFO - [3.0] - Account image: icons//acc6.png
+2026-03-09 16:01:14,376 - SYSTEM - [3.0] - WIFI --> True
+2026-03-09 16:01:14,376 - SYSTEM - [3.0] - BLUETOOTH --> False
+2026-03-09 16:01:14,378 - INFO - Log size OK: 1.37 MB
+2026-03-09 16:01:14,645 - SYSTEM - [3.3] - ----OS LAUNCH----
+2026-03-09 16:01:14,645 - SYSTEM - [3.3] - VERSION OS --> KW3.1.700
+2026-03-09 16:01:14,810 - SYSTEM - [3.4] - ----START LOADING----
+2026-03-09 16:01:14,960 - SYSTEM - [3.6] - Copy file configurations.db to backup_data
+2026-03-09 16:01:14,962 - SYSTEM - [3.6] - DB Disconnect
+2026-03-09 16:01:14,962 - SYSTEM - [3.6] - <--Инициализация БД...-->
+2026-03-09 16:01:15,275 - SYSTEM - [3.9] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-09 16:01:15,278 - INFO - [3.9] - Account image: icons//acc6.png
+2026-03-09 16:01:15,279 - SYSTEM - [3.9] - <--Инициализация конфигураций...-->
+2026-03-09 16:01:15,586 - INFO - Log size OK: 1.37 MB
+2026-03-09 16:01:15,586 - SYSTEM - [4.2] - <--Проверка ЛОгов...-->
+2026-03-09 16:01:15,893 - SYSTEM - [4.5] - WIFI --> True
+2026-03-09 16:01:15,893 - SYSTEM - [4.5] - BLUETOOTH --> False
+2026-03-09 16:01:15,893 - SYSTEM - [4.5] - <--Настройка девайсов...-->
+2026-03-09 16:01:16,202 - SYSTEM - [4.8] - <--Проверка зашифрованых файлов-->
+2026-03-09 16:01:16,514 - SYSTEM - [5.1] - <--Инициалиция конфиг файлов-->
+2026-03-09 16:01:16,821 - SYSTEM - [5.4] - <--Загрузка активности-->
+2026-03-09 16:01:17,628 - INFO - [6.2] - All files are intact
+2026-03-09 16:01:17,628 - SYSTEM - [6.2] - <--Проверка целостности файлов-->
+2026-03-09 16:01:17,935 - SYSTEM - [6.5] - <--Завершаем настройку...-->
+2026-03-09 16:01:18,735 - SYSTEM - [7.3] - ----START OS----
+2026-03-09 16:01:18,736 - SYSTEM - [7.3] - VERSION OS --> KW3.1.700
+2026-03-09 16:01:18,769 - SYSTEM - [7.4] - CURRENT LANGUE --> RU
+2026-03-09 16:01:18,770 - SYSTEM - [7.4] - VOLUME --> 0.48
+2026-03-09 16:01:18,770 - SYSTEM - [7.4] - CREATE "CONFIGURATIONS.DB"
+2026-03-09 16:01:18,770 - SYSTEM - [7.4] - Connect to configurations.db
+2026-03-09 16:01:18,770 - INFO - [7.4] - READ INVENTORY
+2026-03-09 16:01:18,771 - SYSTEM - [7.4] - Copy file configurations.db to backup_data
+2026-03-09 16:01:18,774 - SYSTEM - [7.4] - Region SET 'NETHERLANDS'
+2026-03-09 16:01:18,775 - SYSTEM - [7.4] - Copy file configurations.db to backup_data
+2026-03-09 16:01:18,903 - SYSTEM - [7.5] - Load cursor
+2026-03-09 16:01:19,401 - SYSTEM - [8.0] - Load cursor
+2026-03-09 16:01:19,625 - WARNING - [8.2] - Load Image Error Hashe CalculatorText SpeechYouTube DownloaderYouTube Downloader: [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\hashe calculatortext speechyoutube downloaderyoutube downloader.png'
+2026-03-09 16:01:19,627 - SYSTEM - [8.2] - START: 5.285934899991844 sec
+2026-03-09 16:01:27,802 - INFO - [16.4] - Store launch
+2026-03-09 16:01:31,255 - INFO - [19.9] - Program Internet Store removed
+2026-03-09 16:01:31,508 - WARNING - [20.1] - Load Image Error Hashe CalculatorText SpeechYouTube DownloaderYouTube Downloader: [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\hashe calculatortext speechyoutube downloaderyoutube downloader.png'
+2026-03-09 16:01:33,344 - INFO - [22.0] - Message: Программа Internet Store Удалена
+2026-03-09 16:01:40,550 - INFO - [29.2] - Store launch
+2026-03-09 16:01:46,373 - INFO - [35.0] - Program Internet Store downloaded
+2026-03-09 16:01:47,423 - INFO - [36.0] - Message: Программа Internet Store установлена ✅
+2026-03-09 16:01:47,710 - WARNING - [36.3] - Load Image Error Hashe CalculatorText SpeechYouTube DownloaderYouTube Downloader: [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\hashe calculatortext speechyoutube downloaderyoutube downloader.png'
