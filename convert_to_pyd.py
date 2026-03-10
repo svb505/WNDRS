@@ -1,6 +1,5 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/soft.py
-
+#python -m nuitka --module utilitsCODE/svbred.py
 

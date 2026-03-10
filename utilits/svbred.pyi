@@ -3,12 +3,14 @@
 # Stubs included by default
 from __future__ import annotations
 from PIL import Image, ImageTk
-from create_window import create_window
+from docx import Document
+from docx.shared import RGBColor
 from tkinter import *, colorchooser, filedialog, font, simpledialog, ttk
 from typing import Any
-import json
+import create_window
 import os
 
+SAVE_DIR = 'MyTextFiles'
 tooltip = None
 def show_tooltip(event: Any, txt: Any) -> Any:
     ...
@@ -31,10 +33,11 @@ import tkinter.filedialog
 import tkinter.colorchooser
 import tkinter.simpledialog
 import tkinter.ttk
-import json
+import docx
+import docx.Document
+import docx.shared
 import PIL
 import PIL.Image
 import PIL.ImageTk
 import os
 import create_window
-import ntpath
