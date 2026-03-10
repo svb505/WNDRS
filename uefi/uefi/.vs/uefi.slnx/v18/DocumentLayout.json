@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\programar\\WNDRS\\uefi\\uefi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E0FAD42-ECF5-4BB0-B819-308DB61C0C3A}|uefi\\uefi.vcxproj|D:\\programar\\WNDRS\\uefi\\uefi\\uefi\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2E0FAD42-ECF5-4BB0-B819-308DB61C0C3A}|uefi\\uefi.vcxproj|solutionrelative:uefi\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E0FAD42-ECF5-4BB0-B819-308DB61C0C3A}|uefi\\uefi.vcxproj|D:\\programar\\WNDRS\\uefi\\uefi\\uefi\\uefi.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2E0FAD42-ECF5-4BB0-B819-308DB61C0C3A}|uefi\\uefi.vcxproj|solutionrelative:uefi\\uefi.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\programar\\WNDRS\\uefi\\uefi\\uefi\\main.cpp",
+              "RelativeDocumentMoniker": "uefi\\main.cpp",
+              "ToolTip": "D:\\programar\\WNDRS\\uefi\\uefi\\uefi\\main.cpp",
+              "RelativeToolTip": "uefi\\main.cpp",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAK4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-10T16:44:58.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "uefi.cpp",
+              "DocumentMoniker": "D:\\programar\\WNDRS\\uefi\\uefi\\uefi\\uefi.cpp",
+              "RelativeDocumentMoniker": "uefi\\uefi.cpp",
+              "ToolTip": "D:\\programar\\WNDRS\\uefi\\uefi\\uefi\\uefi.cpp",
+              "RelativeToolTip": "uefi\\uefi.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-10T16:44:50.438Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
