@@ -22,8 +22,8 @@ def svbpptx(root,lang,global_bg,alpha):
             update_slide_list()
             preview_text.delete("1.0", END)
     def add_slide_dialog():
-        title = simpledialog.askstring(lang["slide"], lang["enter_slide_title"])
-        text = simpledialog.askstring(lang["slide"], lang["enter_slide_text"])
+        title = simpledialog.askstring(lang["slide"], lang["enter_slide_title"],parent = Win)
+        text = simpledialog.askstring(lang["slide"], lang["enter_slide_text"],parent = Win)
         if title is not None and text is not None:
             add_slide(title, text)
             update_slide_list()

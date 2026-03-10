@@ -34,8 +34,8 @@ def hide_tooltip(event):
 
 
 def redactor(root, lang, start_time_, global_bg, global_fg, GlobalAlpha):
-    roott = create_window.create_window(root,lang["redactor"],global_bg,GlobalAlpha,900,600,
-                                        "icons/SVB TxT Redactor.png")
+    roott = create_window.create_window(root,lang["redactor"],global_bg,GlobalAlpha,900,700,
+                                        "icons/svbword.png")
 
     text_font = font.Font(family="Arial", size=12)
     text = Text(roott, wrap="word", font=text_font, undo=True)
@@ -149,7 +149,7 @@ def redactor(root, lang, start_time_, global_bg, global_fg, GlobalAlpha):
             text.insert("end", "\n")
 
     def find_text():
-        word = simpledialog.askstring(lang["resred"], lang["whatre"])
+        word = simpledialog.askstring(lang["resred"], lang["whatre"],parent = roott)
         if not word: return
         text.tag_remove("highlight", "1.0", "end")
         start = "1.0"

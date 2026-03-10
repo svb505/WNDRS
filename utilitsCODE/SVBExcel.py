@@ -6,11 +6,9 @@ from create_window import create_window
 workbook = Workbook()
 sheet = workbook.active
 current_file = None
-tree = None
 
 def svbexcel(root,lang,global_bg,alpha):
     def setup_table(rows, cols):
-        global tree
         tree.delete(*tree.get_children())
         tree["columns"] = [str(i + 1) for i in range(cols)]
         for col in tree["columns"]:
@@ -19,6 +17,8 @@ def svbexcel(root,lang,global_bg,alpha):
         for r in range(rows):
             tree.insert("", "end", values=["" for _ in range(cols)])
     def edit_cell(event):
+        selection = tree.selection()
+        if not selection: return
         item = tree.selection()[0]
         col = tree.identify_column(event.x)
         col_index = int(col.replace("#", "")) - 1
@@ -32,7 +32,7 @@ def svbexcel(root,lang,global_bg,alpha):
         entry = tk.Entry(edit_win)
         entry.pack(padx=10, pady=5)
         entry.insert(0, old_value)
-        entry.focus()
+        entry.focus_set()
 
         def save_edit():
             new_value = entry.get()

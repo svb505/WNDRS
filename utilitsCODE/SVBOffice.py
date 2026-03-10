@@ -3,7 +3,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk, ImageGrab
 from create_window import create_window
 import os
-from utilits import svbred,SVBExcel,SVBPPTX
+from utilits import SVBWord,SVBExcel,SVBPPTX
 
 def SVBOffice(root, lang,  global_bg, global_fg,GlobalAlpha,start_time_):
     Win = create_window(root,"SVB Office",global_bg,GlobalAlpha, 600,500,"icons/svb office.png")
@@ -26,7 +26,7 @@ def SVBOffice(root, lang,  global_bg, global_fg,GlobalAlpha,start_time_):
     images = [Win.excel, Win.word, Win.pptx]
     names = ["SVBExcel","SVBWord","SVB PowerPoint"]
     commands = [lambda:SVBExcel.svbexcel(root,lang,global_bg,GlobalAlpha),
-                lambda: svbred.redactor(root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
+                lambda: SVBWord.redactor(root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
                 lambda: SVBPPTX.svbpptx(root,lang,global_bg,GlobalAlpha)
         ]
 
