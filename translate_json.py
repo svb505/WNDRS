@@ -1,4 +1,3 @@
-# translate_fill_missing.py
 import json
 import time
 import shutil
@@ -7,25 +6,23 @@ from deep_translator import GoogleTranslator
 LANG_FILE = "syst_comp/lang.json"
 BACKUP_FILE = "syst_comp/lang.json.bak"
 
-# Список кодов языков в JSON (ключи в файле)
 LANG_KEYS = [
     "RU","EN","FR","UA","BY","DE","SRB","ALB","IT","PL","ES","CS","PT","BG","HU","TUR","RO","JP","CN"
 ]
 
-# Сопоставление ключа JSON -> кодам, которые принимает GoogleTranslator
 LANG_CODE_MAP = {
     "RU": "ru",
     "EN": "en",
     "FR": "fr",
-    "UA": "uk",      # Ukrainian
-    "BY": "be",      # Belarusian
+    "UA": "uk",
+    "BY": "be",
     "DE": "de",
-    "SRB": "sr",     # Serbian
-    "ALB": "sq",     # Albanian
+    "SRB": "sr",
+    "ALB": "sq",
     "IT": "it",
     "PL": "pl",
     "ES": "es",
-    "CS": "cs",      # Czech
+    "CS": "cs",
     "PT": "pt",
     "BG": "bg",
     "HU": "hu",
@@ -35,8 +32,7 @@ LANG_CODE_MAP = {
     "CN": "zh-CN"
 }
 
-# Задержка между запросами, чтобы снизить шанс бана/rate-limit
-DELAY_BETWEEN_REQUESTS = 0.35  # секунды
+DELAY_BETWEEN_REQUESTS = 0.10
 
 def load_lang_file(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -52,29 +48,20 @@ def ensure_language_keys(data):
 def is_string(v):
     return isinstance(v, str)
 def translate_value(text, src_code, tgt_code, translator_cache):
-    """Переводит текст, используя кэшированного переводчика для пары src->tgt."""
-    # Кэшируем экземпляр переводчика, чтобы не создавать новый каждый раз
     cache_key = (src_code, tgt_code)
     if cache_key not in translator_cache:
         translator_cache[cache_key] = GoogleTranslator(source=src_code, target=tgt_code)
     translator = translator_cache[cache_key]
     return translator.translate(text)
 def merge_translate_recursive(src_obj, tgt_obj, src_code, tgt_code, translator_cache, path_prefix=""):
-    """
-    Рекурсивно проходит src_obj (эталон, обычно RU) и добавляет в tgt_obj
-    отсутствующие ключи, переводя значения-строки.
-    Возвращает количество добавленных ключей.
-    """
     added = 0
     for key, val in src_obj.items():
         path = f"{path_prefix}.{key}" if path_prefix else key
         if isinstance(val, dict):
-            # если в целевом нет объекта, создаём
             if key not in tgt_obj or not isinstance(tgt_obj[key], dict):
                 tgt_obj[key] = {}
             added += merge_translate_recursive(val, tgt_obj[key], src_code, tgt_code, translator_cache, path)
         elif is_string(val):
-            # если ключ отсутствует в целевом — перевести и вставить
             if key not in tgt_obj or not is_string(tgt_obj[key]) or tgt_obj[key] == "":
                 try:
                     translated = translate_value(val, src_code, tgt_code, translator_cache)
@@ -85,7 +72,6 @@ def merge_translate_recursive(src_obj, tgt_obj, src_code, tgt_code, translator_c
                 except Exception as e:
                     print(f"  ! Ошибка при переводе ключа '{path}' ({src_code}->{tgt_code}): {e}")
         else:
-            # значение не строка и не dict — просто копируем, если нет в целевом
             if key not in tgt_obj:
                 tgt_obj[key] = val
                 added += 1
@@ -95,11 +81,9 @@ def main():
     print("Загрузка файла...")
     data = load_lang_file(LANG_FILE)
 
-    # Резервная копия
     print(f"Создаю резервную копию: {BACKUP_FILE}")
     shutil.copyfile(LANG_FILE, BACKUP_FILE)
 
-    # Убедимся, что RU есть
     if "RU" not in data:
         print("ОШИБКА: В файле нет секции 'RU' — нужен эталон для переводов.")
         return
@@ -111,8 +95,7 @@ def main():
 
     total_added = 0
     for lang_key in LANG_KEYS:
-        if lang_key == "RU":
-            continue  # пропускаем сам источник
+        if lang_key == "RU": continue
         tgt_code = LANG_CODE_MAP.get(lang_key)
         if not tgt_code:
             print(f"Пропущен {lang_key}: нет соответствия коду языка для переводчика.")
