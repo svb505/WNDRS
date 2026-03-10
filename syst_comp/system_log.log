@@ -20142,3 +20142,107 @@ KeyError: "Нет функции для 'SVB History's' в program_functions"
 2026-03-10 18:17:29,205 - INFO - [13.7] - Store launch
 2026-03-10 18:17:34,678 - INFO - [19.2] - Program SVB TxT Redactor downloaded
 2026-03-10 18:17:36,013 - INFO - [20.5] - Message: Программа SVB TxT Redactor установлена ✅
+2026-03-10 18:52:56,786 - SYSTEM - [5.4] - START TIMESTAMP: 2026-03-10 18:52:56
+2026-03-10 18:52:56,786 - SYSTEM - [5.4] - All Global Variables (AGV) initialized
+2026-03-10 18:52:56,788 - SYSTEM - [5.4] - Connect to states.db
+2026-03-10 18:52:56,788 - SYSTEM - [5.4] - ALL SYSTEMS FILES READS
+2026-03-10 18:52:56,813 - SYSTEM - [5.4] - Copy file configurations.db to backup_data
+2026-03-10 18:52:56,821 - SYSTEM - [5.4] - DB Disconnect
+2026-03-10 18:52:56,843 - INFO - [5.4] - Account image: icons//acc6.png
+2026-03-10 18:52:56,846 - SYSTEM - [5.4] - WIFI --> True
+2026-03-10 18:52:56,846 - SYSTEM - [5.4] - BLUETOOTH --> False
+2026-03-10 18:52:56,856 - INFO - Log size OK: 1.45 MB
+2026-03-10 18:52:57,537 - SYSTEM - [6.1] - ----OS LAUNCH----
+2026-03-10 18:52:57,537 - SYSTEM - [6.1] - VERSION OS --> KW3.1.700
+2026-03-10 18:53:16,274 - SYSTEM - [3.6] - START TIMESTAMP: 2026-03-10 18:53:16
+2026-03-10 18:53:16,274 - SYSTEM - [3.6] - All Global Variables (AGV) initialized
+2026-03-10 18:53:16,275 - SYSTEM - [3.6] - Connect to states.db
+2026-03-10 18:53:16,275 - SYSTEM - [3.6] - ALL SYSTEMS FILES READS
+2026-03-10 18:53:16,286 - SYSTEM - [3.6] - Copy file configurations.db to backup_data
+2026-03-10 18:53:16,289 - SYSTEM - [3.6] - DB Disconnect
+2026-03-10 18:53:16,297 - INFO - [3.6] - Account image: icons//acc6.png
+2026-03-10 18:53:16,298 - SYSTEM - [3.6] - WIFI --> True
+2026-03-10 18:53:16,298 - SYSTEM - [3.6] - BLUETOOTH --> False
+2026-03-10 18:53:16,301 - INFO - Log size OK: 1.46 MB
+2026-03-10 18:53:16,593 - SYSTEM - [3.9] - ----OS LAUNCH----
+2026-03-10 18:53:16,594 - SYSTEM - [3.9] - VERSION OS --> KW3.1.700
+2026-03-10 18:54:20,019 - SYSTEM - [3.0] - START TIMESTAMP: 2026-03-10 18:54:20
+2026-03-10 18:54:20,019 - SYSTEM - [3.0] - All Global Variables (AGV) initialized
+2026-03-10 18:54:20,020 - SYSTEM - [3.0] - Connect to states.db
+2026-03-10 18:54:20,020 - SYSTEM - [3.0] - ALL SYSTEMS FILES READS
+2026-03-10 18:54:20,032 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-10 18:54:20,036 - SYSTEM - [3.0] - DB Disconnect
+2026-03-10 18:54:20,041 - INFO - [3.0] - Account image: icons//acc6.png
+2026-03-10 18:54:20,043 - SYSTEM - [3.0] - WIFI --> True
+2026-03-10 18:54:20,043 - SYSTEM - [3.0] - BLUETOOTH --> False
+2026-03-10 18:54:20,046 - INFO - Log size OK: 1.46 MB
+2026-03-10 18:54:20,318 - SYSTEM - [3.3] - ----OS LAUNCH----
+2026-03-10 18:54:20,318 - SYSTEM - [3.3] - VERSION OS --> KW3.1.700
+2026-03-10 18:54:26,338 - ERROR - [9.3] - Error with lang.json!: Invalid control character at: line 14 column 47 (char 515)
+2026-03-10 18:55:24,970 - SYSTEM - [2.9] - START TIMESTAMP: 2026-03-10 18:55:24
+2026-03-10 18:55:24,970 - SYSTEM - [2.9] - All Global Variables (AGV) initialized
+2026-03-10 18:55:24,971 - SYSTEM - [2.9] - Connect to states.db
+2026-03-10 18:55:24,971 - SYSTEM - [2.9] - ALL SYSTEMS FILES READS
+2026-03-10 18:55:24,985 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-10 18:55:24,987 - SYSTEM - [3.0] - DB Disconnect
+2026-03-10 18:55:24,996 - INFO - [3.0] - Account image: icons//acc6.png
+2026-03-10 18:55:24,997 - SYSTEM - [3.0] - WIFI --> True
+2026-03-10 18:55:24,997 - SYSTEM - [3.0] - BLUETOOTH --> False
+2026-03-10 18:55:24,999 - INFO - Log size OK: 1.46 MB
+2026-03-10 18:55:25,286 - SYSTEM - [3.3] - ----OS LAUNCH----
+2026-03-10 18:55:25,286 - SYSTEM - [3.3] - VERSION OS --> KW3.1.700
+2026-03-10 18:56:33,275 - ERROR - [71.2] - Error with lang.json!: Invalid control character at: line 14 column 47 (char 515)
+2026-03-10 18:56:56,387 - SYSTEM - [9.6] - START TIMESTAMP: 2026-03-10 18:56:56
+2026-03-10 18:56:56,388 - SYSTEM - [9.6] - All Global Variables (AGV) initialized
+2026-03-10 18:56:56,389 - SYSTEM - [9.6] - Connect to states.db
+2026-03-10 18:56:56,389 - SYSTEM - [9.6] - ALL SYSTEMS FILES READS
+2026-03-10 18:56:56,404 - SYSTEM - [9.6] - Copy file configurations.db to backup_data
+2026-03-10 18:56:56,409 - SYSTEM - [9.6] - DB Disconnect
+2026-03-10 18:56:56,419 - INFO - [9.6] - Account image: icons//acc6.png
+2026-03-10 18:56:56,421 - SYSTEM - [9.6] - WIFI --> True
+2026-03-10 18:56:56,421 - SYSTEM - [9.6] - BLUETOOTH --> False
+2026-03-10 18:56:56,425 - INFO - Log size OK: 1.46 MB
+2026-03-10 18:56:56,820 - SYSTEM - [10.0] - ----OS LAUNCH----
+2026-03-10 18:56:56,820 - SYSTEM - [10.0] - VERSION OS --> KW3.1.700
+2026-03-10 18:56:57,099 - SYSTEM - [10.3] - ----START LOADING----
+2026-03-10 18:56:57,273 - SYSTEM - [10.5] - Copy file configurations.db to backup_data
+2026-03-10 18:56:57,277 - SYSTEM - [10.5] - DB Disconnect
+2026-03-10 18:56:57,277 - SYSTEM - [10.5] - <--Инициализация БД...-->
+2026-03-10 18:56:57,592 - SYSTEM - [10.8] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-10 18:56:57,596 - INFO - [10.8] - Account image: icons//acc6.png
+2026-03-10 18:56:57,597 - SYSTEM - [10.8] - <--Инициализация конфигураций...-->
+2026-03-10 18:56:57,904 - INFO - Log size OK: 1.46 MB
+2026-03-10 18:56:57,904 - SYSTEM - [11.1] - <--Проверка ЛОгов...-->
+2026-03-10 18:56:58,209 - SYSTEM - [11.4] - WIFI --> True
+2026-03-10 18:56:58,209 - SYSTEM - [11.4] - BLUETOOTH --> False
+2026-03-10 18:56:58,209 - SYSTEM - [11.4] - <--Настройка девайсов...-->
+2026-03-10 18:56:58,517 - SYSTEM - [11.7] - <--Проверка зашифрованых файлов-->
+2026-03-10 18:56:58,830 - SYSTEM - [12.0] - <--Инициалиция конфиг файлов-->
+2026-03-10 18:56:59,135 - SYSTEM - [12.3] - <--Загрузка активности-->
+2026-03-10 18:57:00,025 - INFO - [13.2] - All files are intact
+2026-03-10 18:57:00,025 - SYSTEM - [13.2] - <--Проверка целостности файлов-->
+2026-03-10 18:57:00,330 - SYSTEM - [13.5] - <--Завершаем настройку...-->
+2026-03-10 18:57:01,144 - SYSTEM - [14.3] - ----START OS----
+2026-03-10 18:57:01,144 - SYSTEM - [14.3] - VERSION OS --> KW3.1.700
+2026-03-10 18:57:01,178 - SYSTEM - [14.4] - CURRENT LANGUE --> RU
+2026-03-10 18:57:01,178 - SYSTEM - [14.4] - VOLUME --> 0.48
+2026-03-10 18:57:01,178 - SYSTEM - [14.4] - CREATE "CONFIGURATIONS.DB"
+2026-03-10 18:57:01,179 - SYSTEM - [14.4] - Connect to configurations.db
+2026-03-10 18:57:01,179 - INFO - [14.4] - READ INVENTORY
+2026-03-10 18:57:01,180 - SYSTEM - [14.4] - Copy file configurations.db to backup_data
+2026-03-10 18:57:01,182 - SYSTEM - [14.4] - Region SET 'NETHERLANDS'
+2026-03-10 18:57:01,183 - SYSTEM - [14.4] - Copy file configurations.db to backup_data
+2026-03-10 18:57:01,303 - SYSTEM - [14.5] - Load cursor
+2026-03-10 18:57:01,682 - SYSTEM - [14.9] - Load cursor
+2026-03-10 18:57:01,872 - WARNING - [15.1] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-10 18:57:01,877 - SYSTEM - [15.1] - START: 5.498745100005181 sec
+2026-03-10 18:57:06,356 - ERROR - [19.6] - [2026-03-10 18:57:06.354190] Ошибка при запуске 'SVB TxT Redactor': "No function for 'SVB TxT Redactor' in program_functions"
+Traceback (most recent call last):
+  File "D:\programar\WNDRS\my_os.py", line 3126, in safe_run
+    raise KeyError(f"No function for '{prog_id}' in program_functions")
+KeyError: "No function for 'SVB TxT Redactor' in program_functions"
+
+2026-03-10 18:57:11,062 - INFO - [24.3] - Store launch
+2026-03-10 18:57:18,005 - INFO - [31.2] - Program SVB Office downloaded
+2026-03-10 18:57:19,082 - INFO - [32.3] - Message: Программа SVB Office установлена ✅
+2026-03-10 18:57:19,593 - WARNING - [32.8] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'

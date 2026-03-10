@@ -1,5 +1,5 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/svbred.py
+#python -m nuitka --module utilitsCODE/hashes.py
 

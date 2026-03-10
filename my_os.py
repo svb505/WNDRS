@@ -67,6 +67,7 @@ for file in os.listdir(module_folder):
 t0 = time.perf_counter()
 
 if False:
+    from utilits import SVBOffice
     from utilits import soft
     from utilits import commandConsole
     from utilits import standart_games
@@ -104,7 +105,6 @@ if False:
     from utilits import deliv
     from utilits import os_diagnost
     from utilits import trade
-    from utilits import svbred
     from utilits import utilit_hashe
 
 load_env()
@@ -220,7 +220,7 @@ ban_time = 0
 totalAttemps = 3
 currentAttemp = 0
 all_programs_list = ["Weather","Text Speech","YouTube Downloader","Hashe Calculator","Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
-                    "Book reader","SVB TxT Redactor","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
+                    "Book reader","SVB Office","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
                     "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
                     "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
                     "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
@@ -3583,7 +3583,7 @@ def main():
         'SVB Bookmaker':lambda:BookMaker.open_win(root,lang,actives_programs,edition,start_time_,global_bg,global_fg,GlobalAlpha),
         "Internet Store":lambda:SVBStore.main_w(root,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha),
         "SVB Archiver":lambda:archivator.open_archivator(actives_programs,root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
-        "SVB TxT Redactor":lambda:svbred.redactor(root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
+        "SVB Office": lambda: SVBOffice.SVBOffice(root, lang,  global_bg, global_fg,GlobalAlpha,start_time_),
         'Book reader':lambda:book.bbb(actives_programs,root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
         "YouTube Downloader": lambda: soft.ytDownloader(root,lang,global_bg,global_fg,GlobalAlpha),
         "Text Speech": lambda: soft.textSpeech(root,lang,global_bg,global_fg,GlobalAlpha),
