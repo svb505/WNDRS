@@ -35,7 +35,7 @@ def hide_tooltip(event):
 
 def redactor(root, lang, start_time_, global_bg, global_fg, GlobalAlpha):
     roott = create_window.create_window(root,lang["redactor"],global_bg,GlobalAlpha,900,600,
-                                        "SVB TxT Redactor.png")
+                                        "icons/SVB TxT Redactor.png")
 
     text_font = font.Font(family="Arial", size=12)
     text = Text(roott, wrap="word", font=text_font, undo=True)
