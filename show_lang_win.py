@@ -24,7 +24,7 @@ def update_layout_label(root,layout_label,last_layout,LANGUAGES):
     if layout != last_layout:
         layout_label.config(text=layout)
         last_layout = layout
-    root.after(300, update_layout_label)
+    root.after(300, lambda: update_layout_label(root,layout_label,last_layout,LANGUAGES))
 def show_lang(root,taskbar_fg,lang,taskbar,start_time_,lang_win, layout_label, LANGUAGES, taskbar_height):
     user32 = ctypes.WinDLL('user32', use_last_error=True)
     layout_label.config(bg=taskbar_fg)

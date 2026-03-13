@@ -34,4 +34,4 @@ def check_activity_limit(root,lang,start_time_):
         if elapsed_minutes >= max_minutes:
             messagebox.showwarning("Time limit", lang["limit!"])
             block_user(root, lang)
-    root.after(60000, check_activity_limit)
+    root.after(60000, lambda:check_activity_limit(root,lang,start_time_))

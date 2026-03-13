@@ -1,7 +1,7 @@
 import hashlib
 import os
 import subprocess
-from logtofile import log_to_file,log_system
+from logtofile import log_system
 from show_error import show_error
 from crypto_work import load_key
 from cryptography.fernet import Fernet

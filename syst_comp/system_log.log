@@ -21520,3 +21520,54 @@ KeyError: "No function for 'SVB TxT Redactor' in program_functions"
 2026-03-13 19:32:08,049 - INFO - [15.3] - Updater Path: D:\programar\WNDRS\updater.exe
 2026-03-13 19:32:08,050 - INFO - [15.3] - Exists: True
 2026-03-13 19:32:11,687 - INFO - [18.9] - Pusk launch
+2026-03-13 19:52:34,696 - SYSTEM - [2.6] - START TIMESTAMP: 2026-03-13 19:52:34
+2026-03-13 19:52:34,696 - SYSTEM - [2.6] - All Global Variables (AGV) initialized
+2026-03-13 19:52:34,697 - SYSTEM - [2.6] - Connect to states.db
+2026-03-13 19:52:34,697 - SYSTEM - [2.6] - ALL SYSTEMS FILES READS
+2026-03-13 19:52:34,709 - SYSTEM - [2.7] - Copy file configurations.db to backup_data
+2026-03-13 19:52:34,711 - SYSTEM - [2.7] - DB Disconnect
+2026-03-13 19:52:34,716 - INFO - [2.7] - Account image: icons//acc6.png
+2026-03-13 19:52:34,718 - SYSTEM - [2.7] - WIFI --> True
+2026-03-13 19:52:34,718 - SYSTEM - [2.7] - BLUETOOTH --> False
+2026-03-13 19:52:34,720 - INFO - Log size OK: 1.55 MB
+2026-03-13 19:52:35,036 - SYSTEM - [3.0] - ----OS LAUNCH----
+2026-03-13 19:52:35,036 - SYSTEM - [3.0] - VERSION OS --> KW3.1.700
+2026-03-13 19:52:35,193 - SYSTEM - [3.1] - ----START LOADING----
+2026-03-13 19:52:35,335 - SYSTEM - [3.3] - Copy file configurations.db to backup_data
+2026-03-13 19:52:35,337 - SYSTEM - [3.3] - DB Disconnect
+2026-03-13 19:52:35,337 - SYSTEM - [3.3] - <--Инициализация БД...-->
+2026-03-13 19:52:35,647 - SYSTEM - [3.6] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-13 19:52:35,651 - INFO - [3.6] - Account image: icons//acc6.png
+2026-03-13 19:52:35,652 - SYSTEM - [3.6] - <--Инициализация конфигураций...-->
+2026-03-13 19:52:35,958 - INFO - Log size OK: 1.55 MB
+2026-03-13 19:52:35,958 - SYSTEM - [3.9] - <--Проверка ЛОгов...-->
+2026-03-13 19:52:36,263 - SYSTEM - [4.2] - WIFI --> True
+2026-03-13 19:52:36,263 - SYSTEM - [4.2] - BLUETOOTH --> False
+2026-03-13 19:52:36,263 - SYSTEM - [4.2] - <--Настройка девайсов...-->
+2026-03-13 19:52:36,570 - SYSTEM - [4.5] - <--Проверка зашифрованых файлов-->
+2026-03-13 19:52:36,883 - SYSTEM - [4.8] - <--Инициалиция конфиг файлов-->
+2026-03-13 19:52:37,189 - SYSTEM - [5.1] - <--Загрузка активности-->
+2026-03-13 19:52:38,005 - INFO - [6.0] - All files are intact
+2026-03-13 19:52:38,005 - SYSTEM - [6.0] - <--Проверка целостности файлов-->
+2026-03-13 19:52:38,311 - SYSTEM - [6.3] - <--Завершаем настройку...-->
+2026-03-13 19:52:39,127 - SYSTEM - [7.1] - ----START OS----
+2026-03-13 19:52:39,128 - SYSTEM - [7.1] - VERSION OS --> KW3.1.700
+2026-03-13 19:52:39,170 - SYSTEM - [7.1] - CURRENT LANGUE --> RU
+2026-03-13 19:52:39,170 - SYSTEM - [7.1] - VOLUME --> 0.14
+2026-03-13 19:52:39,170 - SYSTEM - [7.1] - CREATE "CONFIGURATIONS.DB"
+2026-03-13 19:52:39,171 - SYSTEM - [7.1] - Connect to configurations.db
+2026-03-13 19:52:39,172 - INFO - [7.1] - READ INVENTORY
+2026-03-13 19:52:39,173 - SYSTEM - [7.1] - Region SET 'NETHERLANDS'
+2026-03-13 19:52:39,313 - SYSTEM - [7.3] - Load cursor
+2026-03-13 19:52:39,934 - SYSTEM - [7.9] - Load cursor
+2026-03-13 19:52:41,300 - WARNING - [9.3] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-13 19:52:41,399 - SYSTEM - [9.4] - START: 6.7 sec
+2026-03-13 19:52:41,405 - INFO - [9.4] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-13 19:52:41,406 - INFO - [9.4] - Exists: True
+2026-03-13 19:52:54,530 - ERROR - [22.5] - [2026-03-13 19:52:54.527836] Ошибка при запуске 'SVB TxT Redactor': "No function for 'SVB TxT Redactor' in program_functions"
+Traceback (most recent call last):
+  File "D:\programar\WNDRS\my_os.py", line 2807, in safe_run
+    raise KeyError(f"No function for '{prog_id}' in program_functions")
+KeyError: "No function for 'SVB TxT Redactor' in program_functions"
+
+2026-03-13 19:52:57,358 - INFO - [25.3] - Opened SVB Bookmaker

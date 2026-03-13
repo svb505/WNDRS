@@ -1,9 +1,6 @@
 import json
 import subprocess
 import requests
-import win32gui
-import win32process
-import win32api
 import ecran_block
 from show_error import show_error
 import shutil
@@ -22,7 +19,6 @@ from videplayer import video_player
 from wlps import draw_galaxy, draw_night_sky, draw_gradient, anim_galaxy
 import threading
 import numpy as np
-from dateutil.relativedelta import relativedelta
 import sqlite3
 from tkinter import *
 from tkinter import messagebox, ttk, filedialog,Scale,simpledialog
@@ -46,7 +42,6 @@ import importlib
 from transactions import transactions
 from create_change_log import win_changelogs
 from view_change_logs import WinDow
-from tkcalendar import Calendar
 from download_sdk import download_funcs
 from load_cursor import load_cursor
 from hwid_work import check_did
@@ -59,14 +54,14 @@ from activity import block_ecran_no_act,check_activity_limit,load_activity_contr
 from create_db import create_database,initialize_db
 from inventory import read_inventory_from_db
 from region import set_region
-from show_lang_win import show_lang,get_keyboard_layout,update_layout_label
+from show_lang_win import show_lang,update_layout_label
 from create_toggle import create_toggle
 from gradien_colors import load_gradient_colors
 from save_cursor import save_cursor
 from tb_settings import load_settings,save_settings
 from volume_wins import volume_min,volume_plus,mute
 from runupdater import run_updater
-from calendar import date_c
+from calendar_win import date_c
 from check_ach import check_ach
 from check_salary import check_salary
 
