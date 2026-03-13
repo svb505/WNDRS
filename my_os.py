@@ -128,6 +128,43 @@ ll_n = []
 paths = []
 names = []
 
+
+def show_tooltip(event, txt, intop):
+    global tooltip
+    if tooltip: return
+
+    x = event.widget.winfo_rootx() + 20
+    if not intop: y = event.widget.winfo_rooty() + event.widget.winfo_height() + 10
+    else: y = event.widget.winfo_rooty() - event.widget.winfo_height() + 10
+
+    tooltip = Toplevel()
+    tooltip.wm_overrideredirect(True)
+    tooltip.wm_geometry(f"+{x}+{y}")
+    tooltip.configure(bg="#333333")
+
+    label = Label(tooltip,
+                  text=txt,
+                  background="#fcfcfa",
+                  foreground="#000000",
+                  font=("Segoe UI", 10),
+                  relief="solid",
+                  borderwidth=1,
+                  padx=8, pady=4)
+
+    label.pack()
+
+    try:
+        tooltip.attributes("-alpha", 0.97)
+        tooltip.attributes("-topmost", True)
+    except Exception as e:
+        log_to_file(str(e), level="error", start_time_=start_time_)
+
+
+def hide_tooltip(event):
+    global tooltip
+    if tooltip:
+        tooltip.destroy()
+        tooltip = None
 def state_cache(data):
     if os.path.exists("state/logs.cache"):
         try: write_file("state/logs.cache", "a", f"{data}\n")
@@ -1770,39 +1807,6 @@ def main():
                 "hotkey_record": hotkey_record
             }, f)
     def open_pusk():
-        def show_tooltip(event, txt):
-            global tooltip
-            if tooltip: return
-
-            x = event.widget.winfo_rootx() + 20
-            y = event.widget.winfo_rooty() + event.widget.winfo_height() + 10
-
-            tooltip = Toplevel()
-            tooltip.wm_overrideredirect(True)
-            tooltip.wm_geometry(f"+{x}+{y}")
-            tooltip.configure(bg="#333333")
-
-            label = Label(tooltip,
-                          text=txt,
-                          background="#fcfcfa",
-                          foreground="#000000",
-                          font=("Segoe UI", 10),
-                          relief="solid",
-                          borderwidth=1,
-                          padx=8, pady=4)
-
-            label.pack()
-
-            try:
-                tooltip.attributes("-alpha", 0.97)
-                tooltip.attributes("-topmost", True)
-            except Exception as e:
-                log_to_file(str(e), level="error", start_time_=start_time_)
-        def hide_tooltip(event):
-            global tooltip
-            if tooltip:
-                tooltip.destroy()
-                tooltip = None
         global acc, account_img, is_recording
         run_in_thread(play_sound("sound//click.mp3",volume,state_sound,start_time_))
         def settings():
@@ -3438,12 +3442,10 @@ def main():
         finally:
             menu.grab_release()
     def save_taskbar_buttons(buttons):
-        """Сохраняем список кнопок (только ID программ, а не переводы)"""
         with open(TASKBAR_CONFIG_FILE, "w", encoding="utf-8") as f:
             json.dump([{"id": prog_id} for prog_id, _ in buttons],
                       f, ensure_ascii=False, indent=4)
     def load_taskbar_buttons():
-        """Загружаем список кнопок из JSON"""
         if os.path.exists(TASKBAR_CONFIG_FILE):
             with open(TASKBAR_CONFIG_FILE, "r", encoding="utf-8") as f:
                 return json.load(f)
@@ -3458,6 +3460,9 @@ def main():
         btn.image = img
         btn.pack(side=LEFT, padx=2)
 
+        btn.bind("<Enter>",lambda event:show_tooltip(event,lang[prog_id]))
+        btn.bind("<Leave>", lambda event: hide_tooltip(event))
+
         taskbar_buttons.append((prog_id, btn))
         save_taskbar_buttons(taskbar_buttons)
     def remove_from_taskbar(prog_id):
@@ -3469,7 +3474,6 @@ def main():
                 break
         save_taskbar_buttons(taskbar_buttons)
     def restore_taskbar_buttons(frame, command_map, icons):
-        """Восстанавливаем кнопки из JSON"""
         loaded = load_taskbar_buttons()
         id_to_lang = {
             "store": lang["store"],
@@ -3494,8 +3498,8 @@ def main():
                     btn = Button(frame, image=img, command=command_map[prog_id], bg=taskbar_bg, bd=0)
                     btn.image = img
                     btn.pack(side=LEFT, padx=2)
-                    btn.bind("<Enter>", lambda event,bt = btn: bt.config(bg=taskbar_fg))
-                    btn.bind("<Leave>", lambda event,bt = btn: bt.config(bg=taskbar_bg))
+                    btn.bind("<Enter>", lambda event,bt = btn,txt = prog_id: [bt.config(bg=taskbar_fg),show_tooltip(event,lang[txt],True)])
+                    btn.bind("<Leave>", lambda event,bt = btn: [bt.config(bg=taskbar_bg), hide_tooltip(event)])
                     taskbar_buttons.append((prog_id, btn))
                 except Exception as e:
                     log_to_file(f"Taskbar restore error {prog_id}: {e}", level="error", start_time_=start_time_)
