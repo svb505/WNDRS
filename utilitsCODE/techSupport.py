@@ -366,9 +366,9 @@ def techpodd(lang, root, errors, global_bg, global_fg, start_time_,GlobalAlpha):
                 listbox.delete(0, END)
                 for file in pathes_programs:
                     listbox.insert(END, os.path.basename(file))
-        def get_text(name,email,others,sh_d,yesno,long_discr):
+        def get_text(name,uid,email,others,sh_d,yesno,long_discr):
             global pathes_programs
-            if not any([name,email,sh_d,yesno,long_discr]):
+            if not any([name,email,sh_d,yesno,long_discr,uid]):
                 messagebox.showwarning(lang["warning"], lang["empty_msg"],parent=win3)
                 return
             if not pathes_programs:
@@ -422,6 +422,9 @@ def techpodd(lang, root, errors, global_bg, global_fg, start_time_,GlobalAlpha):
                         </div>
                         <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
                             <strong>Никнейм:</strong> {name}
+                        </div>
+                        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                            <strong>UID:</strong> {uid}
                         </div>
                         <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
                             <strong>Email:</strong> <a href="mailto:{email}" style="color:#0066cc; text-decoration:none;">{email}</a>
@@ -480,6 +483,9 @@ def techpodd(lang, root, errors, global_bg, global_fg, start_time_,GlobalAlpha):
         name = ctk.CTkEntry(win3, placeholder_text=lang['enter_your_nickname'], width=250)
         name.pack()
 
+        uid = ctk.CTkEntry(win3, placeholder_text=lang['enter_your_uid'], width=250)
+        uid.pack()
+
         email = ctk.CTkEntry(win3, placeholder_text=lang['enter_email'], width=250)
         email.pack()
 
@@ -502,7 +508,7 @@ def techpodd(lang, root, errors, global_bg, global_fg, start_time_,GlobalAlpha):
         attach_btn.pack()
         listbox = Listbox(win3, height=4)
         listbox.pack(fill="both", expand=False, padx=10)
-        btn = ttk.Button(win3, text=lang["send"], command=lambda:get_text(name.get(),email.get(),
+        btn = ttk.Button(win3, text=lang["send"], command=lambda:get_text(name.get(),uid.get(),email.get(),
                         others.get("1.0", "end-1c"),sh_d.get(),yesno.get(),
                         long_discr.get("1.0", "end-1c")))
         btn.pack()

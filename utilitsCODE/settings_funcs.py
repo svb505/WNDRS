@@ -258,6 +258,7 @@ def open_acc(win_p,lang,global_bg,global_fg,gl_police,edition,version,start_time
     Label(frame, text=lang["name"] + n, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text=lang["last-name"] + ln, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text=lang["email"] + e, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
+    Label(frame, text=f"UID: {read_file('uid.key','r')}", font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text="Country - " + country, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     if icon_f != None:
         lbl = Label(frame, image=icon_f)
@@ -277,8 +278,8 @@ def open_lic(win_p,lang,global_bg):
     win = create_window(win_p, lang['licn'], global_bg, 1.0, 500, 500, "icons/lic.png")
     text = Text(win, wrap="word", height=20, width=60)
     text.pack(padx=10, pady=10)
-    text.insert("1.0", open_eula())  # Вызов функции!
-    text.config(state="disabled")  # Только для чтения
+    text.insert("1.0", open_eula())
+    text.config(state="disabled")
 def razr(win_p,lang,global_bg,global_fg,gl_police):
     def show_tooltip(event,txt):
         global tooltip

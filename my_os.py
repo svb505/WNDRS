@@ -1,6 +1,6 @@
 import json
 import subprocess
-
+import requests
 import win32gui
 import win32process
 import win32api
@@ -651,6 +651,52 @@ def handle_night_mode(night_value):
         global_fg = "white"
         taskbar_bg = "#000000"
         taskbar_fg = '#2a2929'
+def check_partner_program():
+    global svb_coins
+    try:
+        _,_,email = return_user_info()
+        headers = {
+            "Authorization": f"token {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json"
+        }
+        gist_url = f"https://api.github.com/gists/{GITHUB_GIST_ID}"
+
+        response = requests.get(gist_url, headers=headers)
+        response.raise_for_status()
+
+        gist_json = response.json()
+        files = gist_json.get("files", {})
+
+        content = files.get(GITHUB_GIST_FILENAME, {}).get("content", "{}")
+        try:
+            users_data = json.loads(content)
+        except Exception as e:
+            messagebox.showerror(lang["error"],str(e))
+            return
+
+        if email in users_data and users_data[email].get("payement"):
+            svb_coins = load_balance(start_time_)
+            svb_coins += 500000
+            save_balance(svb_coins, start_time_)
+            messagebox.showinfo(lang["parthner_program"], lang["parthner_program_info"])
+            users_data[email]["payement"] = False
+        update_data = {
+            "files": {
+                GITHUB_GIST_FILENAME: {
+                    "content": json.dumps(users_data, indent=4, ensure_ascii=False)
+                }
+            }
+        }
+
+        update_resp = requests.patch(gist_url, headers=headers, json=update_data)
+        update_resp.raise_for_status()
+
+        if update_resp.status_code not in (200, 201):
+            log_to_file(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}",
+                        start_time_=start_time_)
+            raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")
+    except Exception as ex:
+        log_to_file(f"Failed to upload user data to server: {ex}", start_time_=start_time_)
 
 initialize_system_state_async()
 log_system("ALL SYSTEMS FILES READS",start_time_)
@@ -3883,14 +3929,15 @@ def main():
             messagebox.showinfo("", f"{lang['nach']} {net_salary} SVB Coins")
 
     import ctypes
-
     update_button_added = False
 
     if not showed: win_changelogs(root,selected_lang,lang)
 
     monitor_update_flag()
-    log_system(f"START: {time.perf_counter() - t0} sec",start_time_)
+    log_system(f"START: {time.perf_counter() - t0:.1f} sec",start_time_)
     threading.Thread(target = run_updater)
+
+    threading.Thread(target=check_partner_program, daemon=True).start()
 
     root.mainloop()
 def downl():
@@ -4145,7 +4192,8 @@ def downl():
                 "email": email,
                 "edition": edition.get() if callable(getattr(edition, "get", None)) else edition,
                 "license_key": pas,
-                "UID":uid
+                "UID":uid,
+                "payement":False
             }
 
             update_data = {
@@ -4163,7 +4211,6 @@ def downl():
             if update_resp.status_code not in (200, 201):
                 log_to_file(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}",start_time_ = start_time_)
                 raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")
-
         except Exception as ex:
             log_to_file(f"Failed to upload user data to server: {ex}",start_time_ = start_time_)
         def save_country_to_db(selected_country):
