@@ -20866,3 +20866,50 @@ KeyError: "No function for 'SVB TxT Redactor' in program_functions"
 2026-03-13 18:16:42,402 - INFO - [18.3] - load_balance
 2026-03-13 18:16:42,402 - INFO - [18.3] - Balance loaded
 2026-03-13 18:16:52,513 - INFO - [28.4] - Pusk launch
+2026-03-13 18:23:41,906 - SYSTEM - [2.5] - START TIMESTAMP: 2026-03-13 18:23:41
+2026-03-13 18:23:41,907 - SYSTEM - [2.5] - All Global Variables (AGV) initialized
+2026-03-13 18:23:41,908 - SYSTEM - [2.5] - Connect to states.db
+2026-03-13 18:23:41,908 - SYSTEM - [2.5] - ALL SYSTEMS FILES READS
+2026-03-13 18:23:41,920 - SYSTEM - [2.5] - Copy file configurations.db to backup_data
+2026-03-13 18:23:41,923 - SYSTEM - [2.5] - DB Disconnect
+2026-03-13 18:23:41,929 - INFO - [2.5] - Account image: icons//acc6.png
+2026-03-13 18:23:41,930 - SYSTEM - [2.5] - WIFI --> True
+2026-03-13 18:23:41,930 - SYSTEM - [2.5] - BLUETOOTH --> False
+2026-03-13 18:23:41,933 - INFO - Log size OK: 1.51 MB
+2026-03-13 18:23:42,212 - SYSTEM - [2.8] - ----OS LAUNCH----
+2026-03-13 18:23:42,212 - SYSTEM - [2.8] - VERSION OS --> KW3.1.700
+2026-03-13 18:23:42,360 - SYSTEM - [2.9] - ----START LOADING----
+2026-03-13 18:23:42,496 - SYSTEM - [3.1] - Copy file configurations.db to backup_data
+2026-03-13 18:23:42,499 - SYSTEM - [3.1] - DB Disconnect
+2026-03-13 18:23:42,499 - SYSTEM - [3.1] - <--Инициализация БД...-->
+2026-03-13 18:23:42,808 - SYSTEM - [3.4] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-13 18:23:42,810 - INFO - [3.4] - Account image: icons//acc6.png
+2026-03-13 18:23:42,812 - SYSTEM - [3.4] - <--Инициализация конфигураций...-->
+2026-03-13 18:23:43,117 - INFO - Log size OK: 1.51 MB
+2026-03-13 18:23:43,117 - SYSTEM - [3.7] - <--Проверка ЛОгов...-->
+2026-03-13 18:23:43,421 - SYSTEM - [4.0] - WIFI --> True
+2026-03-13 18:23:43,421 - SYSTEM - [4.0] - BLUETOOTH --> False
+2026-03-13 18:23:43,421 - SYSTEM - [4.0] - <--Настройка девайсов...-->
+2026-03-13 18:23:43,729 - SYSTEM - [4.3] - <--Проверка зашифрованых файлов-->
+2026-03-13 18:23:44,042 - SYSTEM - [4.6] - <--Инициалиция конфиг файлов-->
+2026-03-13 18:23:44,350 - SYSTEM - [4.9] - <--Загрузка активности-->
+2026-03-13 18:23:45,159 - INFO - [5.7] - All files are intact
+2026-03-13 18:23:45,159 - SYSTEM - [5.7] - <--Проверка целостности файлов-->
+2026-03-13 18:23:45,466 - SYSTEM - [6.0] - <--Завершаем настройку...-->
+2026-03-13 18:23:46,280 - SYSTEM - [6.9] - ----START OS----
+2026-03-13 18:23:46,280 - SYSTEM - [6.9] - VERSION OS --> KW3.1.700
+2026-03-13 18:23:46,316 - SYSTEM - [6.9] - CURRENT LANGUE --> RU
+2026-03-13 18:23:46,316 - SYSTEM - [6.9] - VOLUME --> 0.48
+2026-03-13 18:23:46,316 - SYSTEM - [6.9] - CREATE "CONFIGURATIONS.DB"
+2026-03-13 18:23:46,317 - SYSTEM - [6.9] - Connect to configurations.db
+2026-03-13 18:23:46,318 - INFO - [6.9] - READ INVENTORY
+2026-03-13 18:23:46,319 - SYSTEM - [6.9] - Copy file configurations.db to backup_data
+2026-03-13 18:23:46,322 - SYSTEM - [6.9] - Region SET 'NETHERLANDS'
+2026-03-13 18:23:46,323 - SYSTEM - [6.9] - Copy file configurations.db to backup_data
+2026-03-13 18:23:46,449 - SYSTEM - [7.0] - Load cursor
+2026-03-13 18:23:46,938 - SYSTEM - [7.5] - Load cursor
+2026-03-13 18:23:47,753 - WARNING - [8.3] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-13 18:23:48,049 - SYSTEM - [8.6] - START: 6.1 sec
+2026-03-13 18:23:49,545 - INFO - [10.1] - Pusk launch
+2026-03-13 18:23:51,532 - INFO - [12.1] - Show account
+2026-03-13 18:23:51,536 - SYSTEM - [12.1] - Copy file configurations.db to backup_data

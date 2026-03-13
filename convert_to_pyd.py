@@ -1,5 +1,5 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/techSupport.py
+#python -m nuitka --module utilitsCODE/settings_funcs.py
 
