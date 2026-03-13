@@ -4,7 +4,6 @@ import requests
 import win32gui
 import win32process
 import win32api
-import winreg
 import ecran_block
 from show_error import show_error
 import shutil
@@ -55,9 +54,25 @@ from fadeinout import fade_in,fade_out
 from autostartconfigs import remove_exe_from_autostart,add_exe_to_autostart
 from save_and_load_balance import save_balance,load_balance
 from validate_hashes import check
+from return_user_info import return_user_info
+from activity import block_ecran_no_act,check_activity_limit,load_activity_control
+from create_db import create_database,initialize_db
+from inventory import read_inventory_from_db
+from region import set_region
+from show_lang_win import show_lang,get_keyboard_layout,update_layout_label
+from create_toggle import create_toggle
+from gradien_colors import load_gradient_colors
+from save_cursor import save_cursor
+from tb_settings import load_settings,save_settings
+from volume_wins import volume_min,volume_plus,mute
+from runupdater import run_updater
+from calendar import date_c
+from check_ach import check_ach
+from check_salary import check_salary
 
 start_time_ = time.time()
 module_folder = "utilits"
+
 for file in os.listdir(module_folder):
     if file.endswith((".py", ".pyd")) and not file.startswith("__"):
         name = file.split(".")[0]
@@ -128,8 +143,7 @@ ll_n = []
 paths = []
 names = []
 
-
-def show_tooltip(event, txt, intop):
+def show_tooltip(event, txt, intop = False):
     global tooltip
     if tooltip: return
 
@@ -158,8 +172,6 @@ def show_tooltip(event, txt, intop):
         tooltip.attributes("-topmost", True)
     except Exception as e:
         log_to_file(str(e), level="error", start_time_=start_time_)
-
-
 def hide_tooltip(event):
     global tooltip
     if tooltip:
@@ -178,6 +190,7 @@ else: key = load_key()
 
 errors = ["80010X10","80020X10","80030X10","80040X10","80050X10","80060x10"]
 errors_bsod = ["AZ0001x001","AZ0020x001","FZ0001x001","TY0001x001"]
+
 def load_valid_languages_encrypted(filepath="syst_comp/valids/vld_l.cfg"):
     global user_langs
     decrypted_lines = read_encrypted_file(filepath)
@@ -431,6 +444,7 @@ def set_rows(size_sh):
     MAX_ROWS = ROWS_MAP.get(size_sh, 9)
 log_system(f"START TIMESTAMP: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",start_time_)
 log_system("All Global Variables (AGV) initialized",start_time_)
+
 def init_database():
     global wifi, bluetooth, vpn, state_sound, log_inform,aut
 
@@ -654,23 +668,6 @@ def initialize_system_state():
     load_secure_configs()
     validate_log_size()
     validate_cfg_files()
-def load_activity_control():
-    try:
-        max_minutes = int(read_encrypted_file("syst_comp/max_minutes.cfg"))
-    except:
-        max_minutes = None
-
-    try:
-        next_date = read_encrypted_file("syst_comp/control_nxt_date.cfg")
-    except:
-        next_date = None
-
-    try:
-        updation_days = read_encrypted_file("syst_comp/updation_days.cfg")
-    except:
-        updation_days = None
-
-    return max_minutes, next_date, updation_days
 def initialize_system_state_async():
     import threading
     threading.Thread(target=initialize_system_state, daemon=True).start()
@@ -737,34 +734,12 @@ def check_partner_program():
 
 initialize_system_state_async()
 log_system("ALL SYSTEMS FILES READS",start_time_)
-def return_user_info():
-    conn = sqlite3.connect("configurations.db")
-    cursor = conn.cursor()
 
-    cursor.execute("""
-                           CREATE TABLE IF NOT EXISTS users (
-                               id INTEGER PRIMARY KEY AUTOINCREMENT,
-                               first_name TEXT,
-                               last_name TEXT,
-                               email TEXT
-                           )
-                           """)
-    conn.commit()
-
-    cursor.execute("SELECT * FROM users")
-    users = cursor.fetchall()
-
-    if users:
-        user = users[0]
-        n, ln, e = user[1], user[2], user[3]
-    else: n = ln = e = "Unknown"
-    return n,ln,e
 def is_blocked():
     try:
         unblock_time = read_encrypted_file("syst_comp/control_nxt_date.cfg")
         unblock_time = datetime.strptime(unblock_time, "%d-%m-%Y %H:%M:%S")
         if datetime.now() < unblock_time: return True
-
     except:
         return False
     return False
@@ -774,17 +749,6 @@ def main():
         blinking,cursor_id,global_fg, exclusive_bac,state_sound, galaxy, galaxy_, edition, custom_wallpeper, wifi_state, \
         size_sh, number, lang,bluetooth_state,clock,night_state,GlobalAlpha,is_recording,recording_thread,showed,icons,module_folder, \
     invisible_pass
-    def block_user():
-        try:
-            days = int(read_encrypted_file("syst_comp/updation_days.cfg"))
-        except:
-            days = 1
-        unblock_time = datetime.now() + timedelta(days=days)
-        write_encrypted_file("syst_comp/control_nxt_date.cfg",
-                             unblock_time.strftime("%d-%m-%Y %H:%M:%S"))
-
-        messagebox.showwarning("Time limit", f"{lang['limit!2']} {days} {lang['dn']}.")
-        root.destroy()
     def set_icons():
         global icons
         icons = {
@@ -813,25 +777,9 @@ def main():
         if timer_id is not None: root.after_cancel(timer_id)
 
         start_timer()
-    def block_ecran_no_act():
-        global timeoutEcran
-        Win = create_window(root,"",'#170E0E',float(GlobalAlpha),100,100,None,True)
-        Label(Win,text=f"{lang['you_bee_inactivited']} {timeoutEcran//1000} {lang['sec']}\n{lang['press_any_key_to_continue']}",
-              bg='#170E0E', fg="white",font=("Arial", 40, "bold")).pack()
-        Win.bind_all("<KeyPress>", lambda event: Win.destroy())
     def start_timer():
         global timer_id
-        timer_id = root.after(timeoutEcran,block_ecran_no_act)
-    def check_activity_limit():
-        global start_time_
-
-        max_minutes, next_date, upd_days = load_activity_control()
-        if max_minutes:
-            elapsed_minutes = int((time.time() - start_time_) / 60)
-            if elapsed_minutes >= max_minutes:
-                messagebox.showwarning("Time limit", lang["limit!"])
-                block_user()
-        root.after(60000, check_activity_limit)
+        timer_id = root.after(timeoutEcran,lambda: block_ecran_no_act(timeoutEcran,root,lang,GlobalAlpha))
     def load_language(lang_code=""):
         try:
             with open("syst_comp/lang.json", "r", encoding="utf-8") as file:
@@ -843,30 +791,6 @@ def main():
             messagebox.showerror(f"Error {errors[0]}",f"Error with lang.json! {e}")
             log_to_file("No file lang.json",level="error",start_time_ = start_time_)
         return langs[lang_code]
-    def check_ach():
-        global svb_coins
-        svb_coins = load_balance(start_time_)
-
-        conn = sqlite3.connect("achievements.db")
-        cursor = conn.cursor()
-
-        cursor.execute("SELECT name, status, max, prize FROM achievements")
-        rows = cursor.fetchall()
-
-        for name, status, max_val, prize in rows:
-            if status == "no" and svb_coins >= max_val:
-                svb_coins += int(prize)
-                transactions(f"-{prize} SVB Coins",start_time_)
-                update_file("count_svbcoins.txt",int(prize))
-                save_balance(svb_coins,start_time_)
-                cursor.execute(
-                    "UPDATE achievements SET current = ?, status = ? WHERE name = ?",
-                    (svb_coins, "yes", name)
-                )
-                conn.commit()
-                messagebox.showinfo(lang["success"],lang["ach_tr"] + str(prize))
-
-        conn.close()
     log_system("----START OS----",start_time_)
     log_system(f'VERSION OS --> {VERSION}',start_time_)
     SETTINGS_FILE = "syst_comp/gamebar_settings/settings.json"
@@ -884,98 +808,17 @@ def main():
 
     lang = load_language(selected_lang)
     set_icons()
-    news_list_ = [
-        lang["news1"], lang["news2"], lang["news3"], lang["news4"], lang["news5"],
-        lang["news6"], lang["news7"], lang["news8"], lang["news9"], lang["news10"],
-        lang["news11"], lang["news12"], lang["news13"], lang["news14"], lang["news15"],
-        lang["news16"], lang["news17"], lang["news18"], lang["news19"], lang["news20"],
-    ]
+
     volume = max(0.0, min(1.0, number / 100))
     log_system(f"CURRENT LANGUE --> {selected_lang}",start_time_)
     log_system(f'VOLUME --> {volume}',start_time_)
 
+    create_database(start_time_)
 
-    def create_database():
-        log_system('CREATE "CONFIGURATIONS.DB"',start_time_)
-        if not os.path.exists('configurations.db'):
-            log_system('DB not EXIST',start_time_)
-            conn = sqlite3.connect('configurations.db')
-            cursor = conn.cursor()
+    if os.path.exists('configurations.db'): galaxy, nebo,galaxy_ = read_inventory_from_db(start_time_,lang)
 
-            cursor.execute('''CREATE TABLE IF NOT EXISTS inventory (
-                              id INTEGER PRIMARY KEY AUTOINCREMENT,
-                              name TEXT NOT NULL,
-                              rarity TEXT NOT NULL)''')
+    reg = set_region(lang,start_time_)
 
-            conn.commit()
-            conn.close()
-            log_system("DB Created",start_time_)
-            if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
-                copy_file_to_folder("configurations.db", "backup_data",start_time_)
-                log_system("Copy file: configurations.db",start_time_)
-
-        else:
-            conn = sqlite3.connect('configurations.db')
-            cursor = conn.cursor()
-            log_system("Connect to configurations.db",start_time_)
-            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='inventory';")
-            table_exists = cursor.fetchone()
-            if not table_exists:
-                cursor.execute('''CREATE TABLE inventory (
-                                  id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                  name TEXT NOT NULL,
-                                  rarity TEXT NOT NULL)''')
-                conn.commit()
-            conn.close()
-    create_database()
-    def read_inventory_from_db():
-        log_to_file("READ INVENTORY",start_time_ = start_time_)
-        conn = sqlite3.connect('configurations.db')
-        cursor = conn.cursor()
-
-        cursor.execute("SELECT name FROM inventory WHERE name = ?", (lang["theme_"],))
-        result_nebo = cursor.fetchone()
-        cursor.execute("SELECT name FROM inventory WHERE name = ?", (lang["galaxy"],))
-        result_galaxy = cursor.fetchone()
-        cursor.execute("SELECT name FROM inventory WHERE name = ?", (lang["galaxy_"],))
-        result_galaxy_ = cursor.fetchone()
-        nebo = result_nebo is not None
-        galaxy = result_galaxy is not None
-        galaxy_ = result_galaxy_ is not None
-        conn.close()
-        if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
-            copy_file_to_folder("configurations.db", "backup_data",start_time_)
-        return galaxy, nebo,galaxy_
-
-    if os.path.exists('configurations.db'): galaxy, nebo,galaxy_ = read_inventory_from_db()
-    try:
-        reg = read_file("syst_comp/region.cfg", 'r').strip()
-    except:
-        reg = "usa"
-    if reg == "usa":
-        reg = lang["usa"]
-        log_system("Region SET 'USA'",start_time_)
-    elif reg == "netherlans":
-        reg = lang["netherlans"]
-        log_system("Region SET 'NETHERLANDS'",start_time_)
-    elif reg == "france":
-        reg = lang["france"]
-        log_system("Region SET 'FRANCE'",start_time_)
-    elif reg == "russia":
-        reg = lang["russia"]
-        log_system("Region SET 'RUSSIA'",start_time_)
-    elif reg == "hungry":
-        reg = lang["hungry"]
-        log_system("Region SET 'HUNGRY'",start_time_)
-    elif reg == "italia":
-        reg = lang["italia"]
-        log_system("Region SET 'ITALIA'",start_time_)
-    elif reg == "canada":
-        reg = lang["canada"]
-        log_system("Region SET 'CANADA'",start_time_)
-    else:
-        reg = lang['australia']
-        log_system("Region SET 'AUSTRALIA'",start_time_)
     def update_time():
         global clock,clock_type
         if clock_type == "hhmm": current_time = datetime.now().strftime("%H:%M")
@@ -1062,7 +905,7 @@ def main():
                     update_file("count_svbcoins.txt", 2000)
                     transactions("+2.000 SVb Coins"+f" {datetime.now()}",start_time_)
                     save_balance(svb_coins,start_time_)
-                    check_ach()
+                    check_ach(svb_coins,start_time_,lang)
                 log_to_file(f'Program {program_name} removed',start_time_ = start_time_)
                 installed_programs.remove(program_name)
                 write_file(installed_programs_file,"w","\n".join(installed_programs)+"\n")
@@ -1187,113 +1030,6 @@ def main():
             battery_bt.config(bg=taskbar_bg)
         else:
             show_battery_info()
-    def show_lang():
-        user32 = ctypes.WinDLL('user32', use_last_error=True)
-        global lang_win, layout_label, LANGUAGES,taskbar_height
-        layout_label.config(bg=taskbar_fg)
-
-        lang_win = Toplevel(root)
-        lang_win.attributes('-alpha',0.0)
-        fade_in(lang_win)
-        screen_width = root.winfo_screenwidth()
-        x = screen_width - 650 - 100
-        offset = 50
-        taskbar_screen_y = root.winfo_rooty() + taskbar.winfo_y()
-        y = taskbar_screen_y - offset - 250
-        lang_win.geometry(f"650x350+{x}+{y}")
-        lang_win.overrideredirect(True)
-        lang_win.title(lang["raskl"])
-
-        img = Image.open("icons/interface/raskl.png")
-        icon_image = ImageTk.PhotoImage(img)
-        lang_win.iconphoto(False, icon_image)
-
-        def get_keyboard_layouts():
-            """Получить список доступных раскладок из реестра"""
-            layouts = {}
-            try:
-                key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,
-                                     r"SYSTEM\CurrentControlSet\Control\Keyboard Layouts")
-                i = 0
-                while True:
-                    subkey_name = winreg.EnumKey(key, i)
-                    subkey = winreg.OpenKey(key, subkey_name)
-                    try:
-                        layout_text, _ = winreg.QueryValueEx(subkey, "Layout Text")
-                        layouts[subkey_name] = layout_text
-                    except FileNotFoundError:
-                        layouts[subkey_name] = "Unknown"
-                    i += 1
-            except OSError:
-                pass
-            return layouts
-        def switch_layout(hkl_str):
-            hkl = user32.LoadKeyboardLayoutW(hkl_str, 1)
-            if hkl == 0:
-                pass
-            else:
-                res = user32.ActivateKeyboardLayout(hkl, 0)
-                if res == 0:
-                    log_to_file(f"Failed to switch layout {hkl_str}",level="error",start_time_ = start_time_)
-                else:
-                    log_to_file(f"Layout switched to {layouts[hkl_str]}",start_time_ = start_time_)
-        def on_radio_change_update():
-            hkl_str = var.get()
-            switch_layout(hkl_str)
-            layout_label.config(text=layouts[hkl_str])
-            current_label.config(text=f"{lang['tek-ras']}: {layouts[hkl_str]}")
-        layouts = get_keyboard_layouts()
-        var = StringVar()
-
-        current_hkl_int = user32.GetKeyboardLayout(0)
-        current_hkl_str = f"{current_hkl_int & 0xFFFFFFFF:08x}".upper()
-        header_label = ttk.Label(lang_win, text=lang["raskl"], font=("Segoe UI", 16, "bold"))
-        header_label.pack(pady=(10, 5))
-        current_label = ttk.Label(lang_win, text=lang['tek-ras_n'], font=("Segoe UI", 12))
-        current_label.pack(pady=(0, 10))
-
-        frame = ttk.Frame(lang_win, padding=10)
-        frame.pack(fill='both', expand=True)
-
-        canvas = Canvas(frame)
-        canvas.pack(side='left', fill='both', expand=True)
-
-        scrollbar = ttk.Scrollbar(frame, orient='vertical', command=canvas.yview)
-        scrollbar.pack(side='right', fill='y')
-
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        def on_mouse_wheel(event):
-            canvas.yview_scroll(-int(event.delta / 120), "units")
-
-        canvas.bind_all("<MouseWheel>", on_mouse_wheel)
-
-        radio_frame = ttk.Frame(canvas)
-        canvas.create_window((0, 0), window=radio_frame, anchor='nw')
-
-        if current_hkl_str in layouts:
-            var.set(current_hkl_str)
-            current_label.config(text=f"{lang['tek-ras']} {layouts[current_hkl_str]}")
-            layout_label.config(text=layouts[current_hkl_str])
-        else:
-            current_label.config(text=lang["tek-ras-not-found"])
-
-        for hkl_str, name in layouts.items():
-            rb = ttk.Radiobutton(radio_frame, text=name, variable=var, value=hkl_str, command=on_radio_change_update)
-            rb.pack(anchor='w', pady=3)
-
-        def on_frame_configure(event):
-            canvas.configure(scrollregion=canvas.bbox("all"))
-
-        radio_frame.bind("<Configure>", on_frame_configure)
-
-        close_btn = ttk.Button(lang_win, text=lang["zakr"], command=lang_win.destroy)
-        close_btn.pack(pady=10)
-
-        lang_win.update_idletasks()
-        x = (lang_win.winfo_screenwidth() - lang_win.winfo_width()) // 2
-        y = (lang_win.winfo_screenheight() - lang_win.winfo_height()) // 2
-        lang_win.geometry(f"+{x}+{y}")
     def toggle_lang():
         global lang_win,layout_label
 
@@ -1302,7 +1038,7 @@ def main():
             lang_win = None
             layout_label.config(bg=taskbar_bg)
         else:
-            show_lang()
+            show_lang(root,taskbar_fg,lang,taskbar,start_time_,lang_win, layout_label, LANGUAGES, taskbar_height)
     def toggle_calendar():
         global calendar_win, date_label
 
@@ -1311,7 +1047,7 @@ def main():
             calendar_win = None
             date_label.config(bg=taskbar_bg)
         else:
-            date_c()
+            date_c(root,lang,taskbar_fg,global_bg,taskbar,global_fg,calendar_win, date_label, taskbar_height,selected_lang)
     def open_network_simulator():
         run_in_thread(play_sound("sound//click.mp3", volume, state_sound, start_time_))
 
@@ -1339,44 +1075,16 @@ def main():
         wifi_label = Label(wifi_win, text="Wifi: " + lang['wifi_off'],font = (gl_police,10),bg=global_bg,fg=global_fg)
         wifi_label.pack(pady=10)
 
-        wifi_toggle = create_toggle(wifi_win, toggle_wifi, "icons/interface/on_image.png", "icons/interface/off_image.png")
+        wifi_toggle = create_toggle(wifi_win, toggle_wifi, "icons/interface/on_image.png", "icons/interface/off_image.png",global_bg)
         wifi_toggle.pack(pady=5)
 
         bluetooth_label = Label(wifi_win, text="Bluetooth: " + lang['bt_off'],font = (gl_police,10),bg=global_bg,fg=global_fg)
         bluetooth_label.pack(pady=10)
 
-        bluetooth_toggle = create_toggle(wifi_win, toggle_bluetooth, "icons/interface/on_image.png", "icons/interface/off_image.png")
+        bluetooth_toggle = create_toggle(wifi_win, toggle_bluetooth, "icons/interface/on_image.png", "icons/interface/off_image.png",global_bg)
         bluetooth_toggle.pack(pady=5)
 
         check_current_state()
-    def create_toggle(parent, command, on_image_path, off_image_path):
-        frame = Frame(parent, bg=global_bg)
-        toggle_data = {"is_on": False}
-
-        on_image = ImageTk.PhotoImage(Image.open(on_image_path).resize((60, 60)))
-        off_image = ImageTk.PhotoImage(Image.open(off_image_path).resize((60, 60)))
-
-        toggle_data["on_image"] = on_image
-        toggle_data["off_image"] = off_image
-
-        label = Label(frame, image=off_image, bg=global_bg)
-        label.pack()
-
-        def toggle(event=None):
-            toggle_data["is_on"] = not toggle_data["is_on"]
-            if toggle_data["is_on"]:
-                label.config(image=on_image)
-                label.image = on_image
-            else:
-                label.config(image=off_image)
-                label.image = off_image
-            command()
-
-        label.bind("<Button-1>", toggle)
-
-        frame.toggle_data = toggle_data
-        frame.label = label
-        return frame
     def check_current_state():
         global wifi_state, bluetooth_state
 
@@ -1463,25 +1171,6 @@ def main():
         conn.close()
         if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
             copy_file_to_folder("configurations.db", "backup_data",start_time_)
-    def initialize_db():
-        conn = sqlite3.connect("configurations.db")
-        cursor = conn.cursor()
-        cursor.execute('''CREATE TABLE IF NOT EXISTS states (
-                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                            vpn TEXT,
-                            wifi TEXT,
-                            bluetooth TEXT
-                        )''')
-
-        cursor.execute('''SELECT COUNT(*) FROM states''')
-        row_count = cursor.fetchone()[0]
-        if row_count == 0:
-            cursor.execute('''INSERT INTO states (vpn, wifi, bluetooth) VALUES (?, ?, ?)''', ("off", "off", "off"))
-            conn.commit()
-
-        conn.close()
-        if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
-            copy_file_to_folder("configurations.db", "backup_data",start_time_)
     initialize_db()
     def update_battery():
         import psutil
@@ -1533,50 +1222,11 @@ def main():
         else: battery_label.config(text="Baterry not found")
 
         root.after(10, update_battery)
-    def load_gradient_colors():
-        if not os.path.exists("configurations.db"): return None, None
-        try:
-            conn = sqlite3.connect("configurations.db")
-            cursor = conn.cursor()
-            cursor.execute('''CREATE TABLE IF NOT EXISTS gradients (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                          start_color TEXT NOT NULL,
-                                          end_color TEXT NOT NULL)''')
-
-            conn.commit()
-            cursor.execute("SELECT start_color, end_color FROM gradients ORDER BY id DESC LIMIT 1")
-            row = cursor.fetchone()
-            conn.close()
-
-            if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
-                copy_file_to_folder("configurations.db", "backup_data",start_time_)
-
-            return row if row else (None, None)
-        except Exception as e:
-            log_to_file(f"Error loading gradient colors: {e}",level="error",start_time_ = start_time_)
-            return None, None
-    def save_cursor(cursor_name):
-        log_to_file('Save cursor,start_time_ = start_time_',start_time_ = start_time_)
-        conn = sqlite3.connect("configurations.db")
-        cursor = conn.cursor()
-
-        cursor.execute('''CREATE TABLE IF NOT EXISTS cursor_table (
-                            id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            cursor_name TEXT
-                          )''')
-
-        cursor.execute("DELETE FROM cursor_table")
-        cursor.execute("INSERT INTO cursor_table (cursor_name) VALUES (?)", (cursor_name,))
-        conn.commit()
-        conn.close()
-        if edition in ("Professional x64", "Gaming x64", "Professional x32", "Gaming x32"):
-            copy_file_to_folder("configurations.db", "backup_data",start_time_)
-        log_to_file(f"Cursor {cursor_name} saved",start_time_ = start_time_)
     def game_bar():
         import keyboard
         global setting_key
         log_to_file("Game Bar lauch", start_time_=start_time_)
-        setting_key = load_settings()
+        setting_key = load_settings(SETTINGS_FILE)
 
         print(setting_key)
 
@@ -1600,16 +1250,13 @@ def main():
         def start_move(event):
             roott.x = event.x
             roott.y = event.y
-
         def do_move(event):
             x = event.x_root - roott.x
             y = event.y_root - roott.y
             roott.geometry(f"+{x}+{y}")
-
         def close_bar():
             log_to_file('Exit to Game Bar', start_time_=start_time_)
             roott.destroy()
-
         def take_screenshot():
             log_to_file('Screenshoot', start_time_=start_time_)
             os.makedirs("screenshoots", exist_ok=True)
@@ -1628,7 +1275,7 @@ def main():
                 fps_s = var_fps.get()
                 hotkey_screenshot = entry_screenshot.get()
                 hotkey_record = entry_record.get()
-                save_settings(hotkey_screenshot, hotkey_record)
+                save_settings(hotkey_screenshot, hotkey_record,SETTINGS_FILE)
 
                 keyboard.remove_all_hotkeys()
                 keyboard.add_hotkey(hotkey_screenshot, take_screenshot, suppress=True, trigger_on_release=True)
@@ -1793,19 +1440,6 @@ def main():
             if recording_indicator:
                 recording_indicator.destroy()
                 recording_indicator = None
-    def load_settings():
-        if os.path.exists(SETTINGS_FILE):
-            with open(SETTINGS_FILE, "r") as f: return json.load(f)
-        return {
-            "hotkey_screenshot": "F9",
-            "hotkey_record": "F10"
-        }
-    def save_settings(hotkey_screenshot, hotkey_record):
-        with open(SETTINGS_FILE, "w") as f:
-            json.dump({
-                "hotkey_screenshot": hotkey_screenshot,
-                "hotkey_record": hotkey_record
-            }, f)
     def open_pusk():
         global acc, account_img, is_recording
         run_in_thread(play_sound("sound//click.mp3",volume,state_sound,start_time_))
@@ -1962,7 +1596,7 @@ def main():
                 state_sound = int(st_sound)
 
                 cursor_name = cursor_var.get()
-                save_cursor(cursor_name)
+                save_cursor(cursor_name,start_time_)
                 root.config(cursor=cursor_name)
 
                 ll = var1.get()
@@ -3033,7 +2667,7 @@ def main():
                     lambda: cloud.cloud(root,lang,actives_programs,global_bg,global_fg,start_time_),
                     lambda: t_manager.open_task_manager(state_sound, volume, errors, lang, root, actives_programs, start_time_,global_bg, global_fg),
                     lambda: settings_funcs.faq(win_p, lang, global_bg, gl_police),
-                    open_update_window,
+                    lambda: settings_funcs.open_update_window(root,lang,GlobalAlpha,start_time_),
                     lambda: settings_funcs.show_hotkeys(win_p,lang,global_bg,global_fg,gl_police)]
         images = [acc,bios_img,diagn_img,logs_img,settings_img,param_img,gbar_img,clock_img,cloud_img,tmanager_img,
                   faq2_img,upd_img,hotkeys_img]
@@ -3222,175 +2856,6 @@ def main():
                 if row >= rowss * 2:
                     row = 0
                     col += 1
-    def volume_plus(event,n):
-        def close_win(): Win.destroy()
-
-        Win = Toplevel(root)
-        Win.attributes("-alpha", float(GlobalAlpha))
-        Win.title("")
-        Win.configure(bg=global_bg)
-        Win.attributes("-topmost", True)
-        screen_width = root.winfo_screenwidth()
-        x = screen_width - 400 - 700
-        offset = 50
-        taskbar_screen_y = root.winfo_rooty() + taskbar.winfo_y()
-        y = taskbar_screen_y - offset
-        Win.overrideredirect(True)
-        Win.geometry(f"400x50+{x}+{y}")
-        img = Image.open("icons/interface/sound.png")
-        icon_image = ImageTk.PhotoImage(img)
-        Win.iconphoto(False, icon_image)
-        try:
-            content = read_encrypted_file("syst_comp/volume.cfg")
-            v = float(content)
-        except Exception:
-            v = 50.0
-        v += float(n)
-        if int(v) == 0:
-            sound_b.config(image=sound_off)
-        elif 0.01 < float(v) <= 49.0:
-            sound_but.config(image=sound_low)
-        else:
-            sound_but.config(image=sound)
-        write_encrypted_file("syst_comp/volume.cfg",str(v))
-        gr = Label(Win,text=f'{v:.2f}', font=("Arial", 13), bg=global_bg, fg=global_fg)
-        gr.pack()
-        volume_slider = ttk.Scale(Win, from_=0, to=100, orient='horizontal')
-        volume_slider.set(v)
-        volume_slider.pack(side="top", padx=10)
-        volume_slider.config(state="disabled")
-
-        Win.after(3000,lambda:close_win())
-    def volume_min(event, n):
-        def close_win(): Win.destroy()
-
-        Win = Toplevel(root)
-        Win.attributes("-alpha", float(GlobalAlpha))
-        Win.title("")
-        Win.configure(bg=global_bg)
-        Win.attributes("-topmost", True)
-        screen_width = root.winfo_screenwidth()
-        x = screen_width - 400 - 700
-        offset = 50
-        taskbar_screen_y = root.winfo_rooty() + taskbar.winfo_y()
-        y = taskbar_screen_y - offset
-        Win.overrideredirect(True)
-        Win.geometry(f"400x50+{x}+{y}")
-        img = Image.open("icons/interface/sound.png")
-        icon_image = ImageTk.PhotoImage(img)
-        Win.iconphoto(False, icon_image)
-        try:
-            content = read_encrypted_file("syst_comp/volume.cfg")
-            v = float(content)
-        except Exception:
-            v = 50.0
-        v -= float(n)
-        if int(v) == 0: sound_b.config(image=sound_off)
-        elif 0.01 < float(v) <= 49.0: sound_but.config(image=sound_low)
-        else: sound_but.config(image=sound)
-
-        write_encrypted_file("syst_comp/volume.cfg", str(v))
-        gr = Label(Win, text=f'{v:.2f}', font=("Arial", 13), bg=global_bg, fg=global_fg)
-        gr.pack()
-        volume_slider = ttk.Scale(Win, from_=0, to=100, orient='horizontal')
-        volume_slider.set(v)
-        volume_slider.pack(side="top", padx=10)
-        volume_slider.config(state="disabled")
-
-        Win.after(3000, lambda: close_win())
-    def mute(event):
-        def close_win(): Win.destroy()
-        global mute_state,user_volume
-        Win = Toplevel(root)
-        Win.attributes("-alpha", float(GlobalAlpha))
-        Win.title("")
-        Win.configure(bg=global_bg)
-        Win.attributes("-topmost", True)
-        screen_width = root.winfo_screenwidth()
-        x = screen_width - 400 - 700
-        offset = 50
-        taskbar_screen_y = root.winfo_rooty() + taskbar.winfo_y()
-        y = taskbar_screen_y - offset
-        Win.overrideredirect(True)
-        Win.geometry(f"400x50+{x}+{y}")
-        img = Image.open("icons/interface/sound.png")
-        icon_image = ImageTk.PhotoImage(img)
-        Win.iconphoto(False, icon_image)
-        if mute_state == "False":
-            mute_state = "True"
-            write_encrypted_file("syst_comp/mute.cfg", "True")
-            try:
-                content = read_encrypted_file("syst_comp/volume.cfg")
-                v = float(content)
-            except Exception: v = 50.0
-            user_volume = v
-            write_encrypted_file("syst_comp/user_v.cfg", str(user_volume))
-            v = 0.0
-            write_encrypted_file("syst_comp/volume.cfg", str(v))
-        else:
-            mute_state = "False"
-            write_encrypted_file("syst_comp/mute.cfg","False")
-            try:
-                content = read_encrypted_file("syst_comp/user_v.cfg")
-                v = float(content)
-            except Exception: v = 50.0
-        if int(v) == 0: sound_b.config(image=sound_off)
-        elif 0.01 < float(v) <= 49.0: sound_but.config(image=sound_low)
-        else: sound_but.config(image=sound)
-
-        write_encrypted_file("syst_comp/volume.cfg",str(v))
-        gr = Label(Win,text=f'{v:.2f}', font=("Arial", 13), bg=global_bg, fg=global_fg)
-        gr.pack()
-        volume_slider = ttk.Scale(Win, from_=0, to=100, orient='horizontal')
-        volume_slider.set(v)
-        volume_slider.pack(side="top", padx=10)
-        volume_slider.config(state="disabled")
-
-        Win.after(3000,lambda:close_win())
-    def open_update_window():
-        for widget in root.winfo_children():
-            if isinstance(widget, Toplevel):
-                widget.destroy()
-        w = Toplevel(root)
-        w.attributes("-alpha", float(GlobalAlpha))
-        w.geometry("500x500")
-        w.title(lang['update-'])
-        img = Image.open("icons/interface/update.png")
-        icon_image = ImageTk.PhotoImage(img)
-        w.iconphoto(False, icon_image)
-
-        date_img = ImageTk.PhotoImage(
-            Image.open(f"icons/interface/date.png").resize((25, 25), Image.Resampling.LANCZOS))
-        serv_img = ImageTk.PhotoImage(
-            Image.open(f"icons/interface/server.png").resize((25, 25), Image.Resampling.LANCZOS))
-        local_img = ImageTk.PhotoImage(
-            Image.open(f"icons/interface/local.png").resize((25, 25), Image.Resampling.LANCZOS))
-
-        serv = read_file("syst_comp/updates/update_flag.cache",'r')
-        local = read_file("versions/current_version.txt",'r')
-        frm1 = Frame(w)
-        frm1.pack()
-        frm2 = Frame(w)
-        frm2.pack()
-        frm3 = Frame(w)
-        frm3.pack()
-
-        lbl = Label(frm1,image = date_img)
-        lbl.image = date_img
-        lbl.pack(side = LEFT)
-        Label(frm1, text=f"{lang['last_check']}: {datetime.now().strftime('%d.%m.%Y %H:%M:%S')}", font=("Arial", 10)).pack(side = LEFT)
-        lbl = Label(frm2, image=serv_img)
-        lbl.image = serv_img
-        lbl.pack(side=LEFT)
-        Label(frm2,text = f'{lang["server_version"]}: {serv}',font = ("Arial",15,"bold"),fg = "blue").pack(side = LEFT)
-        lbl = Label(frm3, image=local_img)
-        lbl.image = local_img
-        lbl.pack(side=LEFT)
-        Label(frm3,text = f'{lang["local_version"]}: {local}',font = ("Arial",15,"bold"),fg = "blue").pack(side = LEFT)
-        if serv != local:
-            Label(w,text = lang["avaible_upd"],font = ("Arial",11,"bold"),fg = "red").pack()
-            ttk.Button(w,text = lang['update_w'],command = run_updater).pack()
-        else: Label(w, text=lang["no_avaible_upd"], font=("Arial", 10, "bold"), fg="red").pack()
     def check_update_flag():
         fl = read_file("syst_comp/updates/update_flag.cache",'r')
         c = read_file('versions/current_version.txt','r')
@@ -3407,7 +2872,7 @@ def main():
             try:
                 update_icon = Image.open("icons/interface/update.png").resize((32, 32))
                 update_icon = ImageTk.PhotoImage(update_icon)
-                update_button = Button(taskbar, image=update_icon, command=open_update_window, bg="red")
+                update_button = Button(taskbar, image=update_icon, command=lambda:settings_funcs.open_update_window(root,lang,GlobalAlpha,start_time_), bg="red")
                 update_button.image = update_icon
                 update_button.pack(side="right", padx=5)
                 blink_button(update_button)
@@ -3554,57 +3019,24 @@ def main():
                 pady=10)
         else:
             Label(bat_win, text=lang['bat_neob'], font=("Arial", 12), bg=global_bg, fg=global_fg).pack(pady=20)
-    def date_c():
-        global calendar_win,date_label,taskbar_height
-        date_label.config(bg = taskbar_fg)
-        calendar_win = Toplevel(root)
-        calendar_win.title(lang['calendar'])
-        calendar_win.config(bg=global_bg)
-        calendar_win.attributes('-alpha',0.0)
-        fade_in(calendar_win,0.0)
-        screen_width = root.winfo_screenwidth()
-        x = screen_width - 300 - 100
-        offset = 50
-        taskbar_screen_y = root.winfo_rooty() + taskbar.winfo_y()
-        y = taskbar_screen_y - offset - 250
-        calendar_win.overrideredirect(True)
-        calendar_win.geometry(f"300x250+{x}+{y}")
-        img = Image.open("icons/interface/kalen.png")
-        icon_image = ImageTk.PhotoImage(img)
-        calendar_win.iconphoto(False, icon_image)
-        with open("syst_comp/locales.json","r") as f:
-            lcls = json.load(f)
-        date_entry = Calendar(calendar_win, width=30, background=global_bg, foreground=global_fg,
-                                  bordercolor=global_fg,
-                                  headersbackground=global_bg, headersforeground=global_fg, selectbackground='blue',
-                                  selectforeground=global_bg, weekendbackground=global_bg, weekendforeground='red',
-                                  date_pattern='dd.mm.yyyy',
-                                  locale=lcls[selected_lang])
-        date_entry.pack(pady=10)
-    def run_updater():
-        exe_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-        updater_path = os.path.join(exe_dir, "updater.exe")
-        log_to_file(f"Updater Path: {updater_path}",start_time_=start_time_)
-        log_to_file(f"Exists: {os.path.exists(updater_path)}", start_time_=start_time_)
-        if os.path.exists(updater_path):
-            threading.Thread(target = ctypes.windll.shell32.ShellExecuteW(None, "runas", updater_path, None, None, 1))
-        else:
-            log_to_file(f"Updater not found", start_time_=start_time_,level="error")
     def trigger_bsod():
         root.destroy()
         bsod.open_bsod("TY0001x001", "Test BSOD", on_finish=main)
 
     root = Tk()
     root.title(f"WinDoors 52 - {VERSION}")
-    check_activity_limit()
-    root.bind("<Control-Key-1>", lambda event:volume_plus(event,2))
-    root.bind("<Control-Key-2>", lambda event:volume_min(event,2))
-    root.bind("<Control-Key-3>", lambda event:mute(event))
+
+    check_activity_limit(root,lang,start_time_)
+
+    root.bind("<Control-Key-1>", lambda event:volume_plus(event,2,root,global_bg,global_fg,GlobalAlpha,taskbar,sound_b))
+    root.bind("<Control-Key-2>", lambda event:volume_min(event,2,root,GlobalAlpha,global_bg,global_fg, taskbar,sound_b))
+    root.bind("<Control-Key-3>", lambda event:mute(event,root,global_bg,global_fg,GlobalAlpha,taskbar,sound_b,mute_state,user_volume))
     root.bind("<Control-Shift-A>",lambda event:ecran_block.ecran_b(root,lang,errors,state_sound,actives_programs,volume,
     recording_thread,is_recording,start_time_,email,selected_lang))
     root.bind_all("<Motion>", lambda event:on_activity)
     root.bind_all("<KeyPress>", lambda event:on_activity)
     root.bind_all("<Button>", lambda event:on_activity)
+
     start_timer()
     root.focus_set()
 
@@ -3731,7 +3163,7 @@ def main():
             canvas.place(x=0, y=0)
             anim_galaxy(canvas,root)
     elif custom_wallpeper:
-        start_color, end_color = load_gradient_colors()
+        start_color, end_color = load_gradient_colors(start_time_)
         canvas = Canvas(root, width=root.winfo_screenwidth(), height=root.winfo_screenheight(), highlightthickness=0)
         canvas.place(x=0, y=0)
         draw_gradient(canvas, start_color, end_color,root,lang)
@@ -3855,25 +3287,9 @@ def main():
         vpn_label.bind("<Enter>", lambda event: vpn_label.config(bg=taskbar_fg))
         vpn_label.bind("<Leave>", lambda event: vpn_label.config(bg=taskbar_bg))
     update_time()
-    global LANGUAGES
-
-    def get_keyboard_layout():
-        hwnd = win32gui.GetForegroundWindow()
-        thread_id, _ = win32process.GetWindowThreadProcessId(hwnd)
-        layout_id = win32api.GetKeyboardLayout(thread_id)
-        lang_id = layout_id & 0xffff
-        return LANGUAGES.get(lang_id, f'Unkn:{hex(lang_id)}')
-    def update_layout_label():
-        global last_layout
-        layout = get_keyboard_layout()
-        if layout != last_layout:
-            layout_label.config(text=layout)
-            last_layout = layout
-        root.after(300, update_layout_label)
-
-    global layout_label
+    global LANGUAGES,layout_label
     layout_label = Label(taskbar, text="", fg="white", bg=taskbar_bg, font=("Arial", 14))
-    update_layout_label()
+    update_layout_label(root,layout_label,last_layout,LANGUAGES)
     layout_label.pack(side="right", padx=10)
     layout_label.bind("<Button-1>", lambda event: toggle_lang())
     layout_label.bind("<Enter>", lambda event: layout_label.config(bg=taskbar_fg))
@@ -3900,46 +3316,18 @@ def main():
     load_cursor(start_time_)
     place_shortcuts(size_sh,MAX_ROWS,color)
     root.protocol("WM_DELETE_WINDOW", on_closing)
-    if os.path.exists("state/dat.cfg"):
-        date_str = read_file("state/dat.cfg",'r').strip()
 
-        try: date_obj = datetime.strptime(date_str, "%d.%m.%Y").date()
-        except ValueError: date_obj = datetime.today().date()
+    global svb_coins
 
-        today = datetime.today().date()
-        if date_obj <= today:
-            with open("state/job.cfg", "r", encoding='utf-8') as f:
-                for line in f:
-                    key2, value1 = line.strip().split("=")
-                    config[key2] = value1
+    check_salary(config,svb_coins,start_time_,lang)
 
-            a = config.get("SALARY", "0")
-            a = int(a)
-            year = a * 12
-
-            tax = (a / 100) * (13 if year < 5000000 else 15)
-            net_salary = int(a - tax)
-            global svb_coins
-            svb_coins = load_balance(start_time_)
-            svb_coins += net_salary
-            transactions(f'+{net_salary} SVB Coins',start_time_)
-            update_file("count_svbcoins.txt", int(net_salary))
-            save_balance(svb_coins,start_time_)
-            check_ach()
-
-            next_month_date = datetime.today() + relativedelta(months=1)
-            write_file('state/dat.cfg','w',next_month_date.strftime("%d.%m.%Y"))
-            transactions(f"+{net_salary} SVB Coins {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",start_time_)
-            messagebox.showinfo("", f"{lang['nach']} {net_salary} SVB Coins")
-
-    import ctypes
     update_button_added = False
 
     if not showed: win_changelogs(root,selected_lang,lang)
 
     monitor_update_flag()
     log_system(f"START: {time.perf_counter() - t0:.1f} sec",start_time_)
-    threading.Thread(target = run_updater)
+    threading.Thread(target = lambda:run_updater(start_time_), daemon=True).start()
 
     threading.Thread(target=check_partner_program, daemon=True).start()
 

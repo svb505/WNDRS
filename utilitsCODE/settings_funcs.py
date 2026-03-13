@@ -21,6 +21,7 @@ from datetime import datetime
 from transactions import transactions
 from crypto_work import write_encrypted_file
 from load_cursor import load_cursor
+from runupdater import run_updater
 
 SYSTEM_LEVEL = 25
 logging.addLevelName(SYSTEM_LEVEL, "SYSTEM")
@@ -29,6 +30,53 @@ tooltip = None
 
 svb_coins = 0
 
+
+def open_update_window(root,lang,GlobalAlpha,start_time_):
+    for widget in root.winfo_children():
+        if isinstance(widget, Toplevel):
+            widget.destroy()
+    w = Toplevel(root)
+    w.attributes("-alpha", float(GlobalAlpha))
+    w.geometry("500x500")
+    w.title(lang['update-'])
+    img = Image.open("icons/interface/update.png")
+    icon_image = ImageTk.PhotoImage(img)
+    w.iconphoto(False, icon_image)
+
+    date_img = ImageTk.PhotoImage(
+        Image.open(f"icons/interface/date.png").resize((25, 25), Image.Resampling.LANCZOS))
+    serv_img = ImageTk.PhotoImage(
+        Image.open(f"icons/interface/server.png").resize((25, 25), Image.Resampling.LANCZOS))
+    local_img = ImageTk.PhotoImage(
+        Image.open(f"icons/interface/local.png").resize((25, 25), Image.Resampling.LANCZOS))
+
+    serv = read_file("syst_comp/updates/update_flag.cache", 'r')
+    local = read_file("versions/current_version.txt", 'r')
+    frm1 = Frame(w)
+    frm1.pack()
+    frm2 = Frame(w)
+    frm2.pack()
+    frm3 = Frame(w)
+    frm3.pack()
+
+    lbl = Label(frm1, image=date_img)
+    lbl.image = date_img
+    lbl.pack(side=LEFT)
+    Label(frm1, text=f"{lang['last_check']}: {datetime.now().strftime('%d.%m.%Y %H:%M:%S')}", font=("Arial", 10)).pack(
+        side=LEFT)
+    lbl = Label(frm2, image=serv_img)
+    lbl.image = serv_img
+    lbl.pack(side=LEFT)
+    Label(frm2, text=f'{lang["server_version"]}: {serv}', font=("Arial", 15, "bold"), fg="blue").pack(side=LEFT)
+    lbl = Label(frm3, image=local_img)
+    lbl.image = local_img
+    lbl.pack(side=LEFT)
+    Label(frm3, text=f'{lang["local_version"]}: {local}', font=("Arial", 15, "bold"), fg="blue").pack(side=LEFT)
+    if serv != local:
+        Label(w, text=lang["avaible_upd"], font=("Arial", 11, "bold"), fg="red").pack()
+        ttk.Button(w, text=lang['update_w'], command=lambda:run_updater(start_time_)).pack()
+    else:
+        Label(w, text=lang["no_avaible_upd"], font=("Arial", 10, "bold"), fg="red").pack()
 def open_journal(win_p,global_bg,lang,start_time_):
     log_to_file('Journal Action launch',start_time_)
     win = create_window(win_p, lang['journal'], global_bg, 1.0, 600, 500,"icons/interface/jd.png")

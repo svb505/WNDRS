@@ -11,6 +11,7 @@ from download_sdk import download_funcs
 from load_cursor import load_cursor
 from logtofile import log_system, log_to_file
 from readandwrite_to_files import read_file
+from runupdater import run_updater
 from save_and_load_balance import load_balance, save_balance
 from tkinter import *, messagebox, ttk
 from transactions import transactions
@@ -29,6 +30,9 @@ SYSTEM_LEVEL = 25
 config = {}
 tooltip = None
 svb_coins = 0
+def open_update_window(root: Any, lang: Any, GlobalAlpha: Any, start_time_: Any) -> Any:
+    ...
+
 def open_journal(win_p: Any, global_bg: Any, lang: Any, start_time_: Any) -> Any:
     ...
 
@@ -105,3 +109,4 @@ import save_and_load_balance
 import datetime
 import transactions
 import load_cursor
+import runupdater
