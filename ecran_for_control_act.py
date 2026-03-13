@@ -13,3 +13,4 @@ def control_ecran():
     Label(Win,text = f"The limit will be exhausted {date}",fg = "white",font = ("Arial",35,"bold"),bg = "black").pack()
 
     Win.mainloop()
+control_ecran()

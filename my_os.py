@@ -1,4 +1,6 @@
 import json
+import subprocess
+
 import win32gui
 import win32process
 import win32api
@@ -214,12 +216,13 @@ flags = set()
 
 with open("versions/current_version.txt",'r') as f: ver = f.read()
 
-VERSION = f"{ver}"
+VERSION = ver
 nebo = False
 ban_time = 0
 totalAttemps = 3
 currentAttemp = 0
-all_programs_list = ["Weather","Text Speech","YouTube Downloader","Hashe Calculator","Photo Generator",'SVB PhotoEditor','SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
+all_programs_list = ["Weather","Text Speech","YouTube Downloader","Hashe Calculator","Photo Generator",'SVB PhotoEditor',
+                     'SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
                     "Book reader","SVB Office","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
                     "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
                     "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
@@ -958,7 +961,7 @@ def main():
                     return
                 log_to_file(f'Program {program_name} downloaded',start_time_ = start_time_)
                 write_file(installed_programs_file,"a","\n" + program_name + "\n")
-                messagebox.showinfo(lang["success"], lang['program'] + " " + program_name + " " + lang["downloaded"],parent=win)
+                messagebox.showinfo(lang["success"], lang['program'] + " " + lang[program_name] + " " + lang["downloaded"],parent=win)
                 log_to_file(f'Message: {lang["program"] + " " + program_name + " " + lang["downloaded"]}',start_time_ = start_time_)
 
                 installed_programs.append(program_name)
@@ -986,7 +989,7 @@ def main():
                 place_shortcuts(size_sh,MAX_ROWS,color)
                 refresh_buttons()
 
-                messagebox.showinfo(lang['deleted'], lang["program"] + " " + program_name + " " + lang["deleted"],parent=win)
+                messagebox.showinfo(lang['deleted'], lang["program"] + " " + lang[program_name] + " " + lang["deleted"],parent=win)
                 log_to_file(f'Message: {lang["program"] + " " + program_name + " " + lang["deleted"]}',start_time_ = start_time_)
         def refresh_buttons():
             for widget in main_frame.winfo_children():
@@ -1016,18 +1019,18 @@ def main():
                     lbl.image = icon
                     lbl.pack(side="left", padx=5)
 
-                label_text = f"{lang['downloaded']}" if name in installed_programs else name
+                label_text = f"{lang['downloaded']}" if name in installed_programs else lang[name]
                 btn = Label(frame, text=label_text, fg="green" if name in installed_programs else "black",
                             font=("Arial", 11, "bold"), bg="white")
                 btn.pack(side="right", padx=5)
 
                 if name in installed_programs:
-                    remove_btn = Button(frame, text=f"{lang['delete']} {name}", font=("Arial", 10),
+                    remove_btn = Button(frame, text=f"{lang['delete']} {lang[name]}", font=("Arial", 10),
                                         bg="#f44336", fg="white",
                                         command=lambda n=name: remove_program(n))
                     remove_btn.pack(side="right", padx=5)
                 else:
-                    download_btn = Button(frame, text=f"{lang['download']} {name}" + (
+                    download_btn = Button(frame, text=f"{lang['download']} {lang[name]}" + (
                         " 2000 SVB Coins" if name in ["SVB Antivirus", "Translator"] else ""),
                                           font=("Arial", 10), bg="#007bff", fg="white",
                                           command=lambda n=name: download(n))
@@ -3090,8 +3093,7 @@ def main():
 
         row, col = 0, 0
         icon_refs = {}
-        for widget in shortcut_frame.winfo_children():
-            widget.destroy()
+        for widget in shortcut_frame.winfo_children(): widget.destroy()
         user_codes_folder = "user_progs"
         if os.path.isdir(user_codes_folder):
             files = os.listdir(user_codes_folder)
@@ -4809,7 +4811,9 @@ def anim(arg="s"):
 
 if check_did(start_time_):
     if os.path.exists("syst_comp/license.bin"):
-        if is_blocked(): os.startfile("LimitWin.exe")
+        if is_blocked():
+            date = read_encrypted_file("syst_comp/control_nxt_date.cfg")
+            subprocess.Popen(["LimitWin.exe", date])
         else:
             if os.path.exists("password.db"): anim("p")
             else: anim()

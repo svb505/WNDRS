@@ -6,7 +6,6 @@ from crypto_work import load_key, decrypt_message, encrypt_message
 
 version = "1.4.40"
 
-# === Универсальные функции ===
 def read_cfg(path, encrypted=False, mode="r"):
     key = load_key()
     with open(path, "rb" if encrypted else mode) as f:
@@ -18,7 +17,6 @@ def write_cfg(path, value, encrypted=False):
     with open(path, "wb" if encrypted else "w") as f:
         f.write(data)
 
-# === Валидные данные ===
 valid_lang = {"RU", "EN", "FR", "UA", "BY","DE","ALB","IT","SRB","ES","PL","PT","CS","BG","HU","TUR","RO","CN","JP"}
 valid_colors = {"#2C3E50","red","yellow","green","#808000","#D2691E","#00BFFF","#DAA520","#FF6347","#FF1493","#800080","#FFA500","#00FF00"}
 valid_icons = {"icons//acc1.png","icons//acc2.png","icons//acc3.png","icons//acc4.png","icons//acc5.png",
@@ -83,12 +81,11 @@ def recover_files(files, mode):
         write_cfg(path, str(default), encrypted=rule.get("encrypted", False))
     messagebox.showinfo("Success", f"All {mode} files recovered.")
 
-# === UI ===
 Win = Tk()
 Win.geometry("300x300")
 Win.title(f"SVB File Viewer - {version}")
 Win.resizable(False, False)
-Win.iconphoto(True, ImageTk.PhotoImage(Image.open("icons/free-icon-file-11611070.png")))
+Win.iconphoto(True, ImageTk.PhotoImage(Image.open("icons/fileviewer.png")))
 
 Label(text=f"Version - {version}").pack()
 

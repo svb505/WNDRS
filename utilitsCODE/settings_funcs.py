@@ -274,7 +274,7 @@ def open_lic(win_p,lang,global_bg):
             print(e)
             return "No EULA in dirrectory"
 
-    win = create_window(win_p, lang['lic_n'], global_bg, 1.0, 500, 500, "icons/lic.png")
+    win = create_window(win_p, lang['licn'], global_bg, 1.0, 500, 500, "icons/lic.png")
     text = Text(win, wrap="word", height=20, width=60)
     text.pack(padx=10, pady=10)
     text.insert("1.0", open_eula())  # Вызов функции!
@@ -368,7 +368,7 @@ def razr(win_p,lang,global_bg,global_fg,gl_police):
     btn.bind("<Enter>", lambda event:show_tooltip(event,lang["func_in_dev"]))
     btn.bind("<Leave>", hide_tooltip)
 def open_errors_codes(win_p,lang,global_bg,global_fg,errors,gl_police):
-    win = create_window(win_p, lang['Inf-err'], global_bg, 1.0, 550, 300, "icons/interface/errors.png")
+    win = create_window(win_p, lang['Inf-er'], global_bg, 1.0, 550, 300, "icons/interface/errors.png")
     Label(win, text=errors[0] + " - " + lang["nofile"], font=(gl_police, 10), fg=global_fg, bg=global_bg).pack()
     Label(win, text=errors[1] + " - " + lang["nofolder"], font=(gl_police, 10), fg=global_fg, bg=global_bg).pack()
     Label(win, text=errors[2] + " - " + lang["nodata"], font=(gl_police, 10), fg=global_fg, bg=global_bg).pack()

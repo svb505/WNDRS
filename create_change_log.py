@@ -21,9 +21,9 @@ def win_changelogs(root,selected_lang,l,file = None):
         with open(f"changelogs/{file}", "r", encoding="utf-8") as f:
             data = json.load(f)[lang]
     icons = {
-        "added": "icons/interface/plus.png",  # зелёный плюс
-        "changed": "icons/interface/change.png",  # оранжевая стрелка
-        "fixed": "icons/interface/fix.png"  # красный гаечный ключ
+        "added": "icons/interface/plus.png",
+        "changed": "icons/interface/change.png",
+        "fixed": "icons/interface/fix.png"
     }
 
     html_content = f"""
@@ -68,8 +68,10 @@ def win_changelogs(root,selected_lang,l,file = None):
     icon_image = ImageTk.PhotoImage(img)
     Win.iconphoto(False, icon_image)
     Win.resizable(False,False)
+
     frame = HtmlFrame(Win, horizontal_scrollbar="auto")
     frame.pack(fill="both", expand=True)
+
     var = BooleanVar(value = True)
     check = ttk.Checkbutton(Win,text = l["nepokaz"],variable = var,onvalue = True,offvalue=False,
                             command = lambda:set_sh(var.get()))

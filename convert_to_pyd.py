@@ -1,5 +1,5 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/SVBExcel.py
+#python -m nuitka --module utilitsCODE/settings_funcs.py
 

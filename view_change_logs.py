@@ -28,5 +28,5 @@ def WinDow(root,lang,selected_lang,GlobalAlpha):
 
     for i,(name,path) in enumerate(zip(names,paths)):
         frm = left_frm if i < 13 else right_frm
-        btn = ttk.Button(frm,text = name,command = lambda p = path:win_changelogs(root,selected_lang,p))
+        btn = ttk.Button(frm,text = name,command = lambda p = path:win_changelogs(root,selected_lang,lang,p))
         btn.pack()
