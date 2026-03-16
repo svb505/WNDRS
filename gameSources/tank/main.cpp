@@ -28,6 +28,7 @@
 #include "shells.h"
 #include "replenishmentAmmo.h"
 #include "minimap.h"
+#include "lightning.h"
 
 #define COUNT 55
 #define ECRANW 1600
@@ -39,6 +40,7 @@ Sound sound;
 HUD hud;
 Replishment repl;
 MiniMap mnMap;
+Light light;
 
 void processTankInput(GLFWwindow* window, float dt,ProjectileSystem& projectileSystem){
     float moveSpeed = 6.0f * dt;
@@ -118,9 +120,10 @@ void processTankInput(GLFWwindow* window, float dt,ProjectileSystem& projectileS
 
         projectileSystem.spawnShell(playerTank.x,playerTank.y + 1.6f,playerTank.z,yaw,playerTank.gunPitch,
             playerTank.selectedShell,playerTank.shellSpeed);
-
-        alSourceStop(sound.shootSource);
-        alSourcePlay(sound.shootSource);
+        
+        sound.setSourcePosition(sound.shotSource, playerTank.x, playerTank.y + 1.6f, playerTank.z);
+        alSourceStop(sound.shotSource);
+        alSourcePlay(sound.shotSource);
 
         --playerTank.totalShells;
 
@@ -133,8 +136,22 @@ void processTankInput(GLFWwindow* window, float dt,ProjectileSystem& projectileS
 
         projectileSystem.spawnBullet(playerTank.x,playerTank.y + 1.0f,playerTank.z,yaw);
 
+        sound.setSourcePosition(sound.mgunSource, playerTank.x, playerTank.y + 1.6f, playerTank.z);
         alSourceStop(sound.mgunSource);
         alSourcePlay(sound.mgunSource);
+    }
+}
+void countFps(double& deltaTime,double& lastTime,double& currentTime,int& frames,float& fps,float& fpsTimer) {
+    deltaTime = currentTime - lastTime;
+    lastTime = currentTime;
+
+    fpsTimer += deltaTime;
+    frames++;
+
+    if (fpsTimer >= 1.0f) {
+        fps = frames / fpsTimer;
+        frames = 0;
+        fpsTimer = 0.0f;
     }
 }
 int main(){
@@ -191,22 +208,24 @@ int main(){
     int frames = 0;
     float fps = 0.0f;
 
+    light.initLighting();
+
     generateEnemyes(enemyes,COUNT);
     repl.setCoordinates(10.0f, static_cast<float>(rand() % 30),static_cast<float>((rand() % 50) - 50));
 
     while (!glfwWindowShouldClose(window)){
         double currentTime = glfwGetTime();
-        deltaTime = currentTime - lastTime;
-        lastTime = currentTime;
 
-        fpsTimer += deltaTime;
-        frames++;
+        countFps(deltaTime,lastTime,currentTime,frames,fps,fpsTimer);
 
-        if (fpsTimer >= 1.0f) {
-            fps = frames / fpsTimer;
-            frames = 0;
-            fpsTimer = 0.0f;
-        }
+        float radYaw = cam.cameraYaw * 3.14159265f / 180.0f;
+        float radPitch = cam.angle * 3.14159265f / 180.0f;
+        float fx = cos(radPitch) * sin(radYaw);
+        float fy = sin(radPitch);
+        float fz = -cos(radPitch) * cos(radYaw);
+
+        sound.setListener(cam.cameraX, cam.cameraY, cam.cameraZ, fx, fy, fz);
+
         if (playerTank.finishReload > 0.0f) playerTank.finishReload -= deltaTime;
 
         processTankInput(window, (float)deltaTime, projectileSystem);
@@ -224,7 +243,7 @@ int main(){
 
         if (repl.isInCircle(playerTank.x, playerTank.z)) repl.startReplish(deltaTime,playerTank,ECRANH,ECRANW);
 
-        projectileSystem.update((float)deltaTime,enemyes,healths, bounds,explosions,smokes,sound.explosionSource);
+        projectileSystem.update((float)deltaTime,sound,enemyes,healths, bounds,explosions,smokes,sound.explosionSource);
 
         for (auto& p : projectileSystem.projectiles) {
             if (!p.alive) continue;
@@ -273,9 +292,11 @@ int main(){
 
         mnMap.draw(ECRANW, ECRANH, playerTank, projectileSystem, explosions, smokes, cam, deltaTime);
 
+        glDisable(GL_LIGHTING);
         glDisable(GL_DEPTH_TEST);
         hud.drawHud(ECRANW, ECRANH, playerTank,55,fps);
         glEnable(GL_DEPTH_TEST);
+        glEnable(GL_LIGHTING);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
