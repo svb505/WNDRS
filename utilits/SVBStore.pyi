@@ -17,6 +17,10 @@ import json
 import os
 import random
 import sqlite3
+import sys
+
+def get_root_dir() -> Any:
+    ...
 
 def check_activated() -> Any:
     ...
@@ -49,6 +53,7 @@ __name__ = ...
 
 # Modules used internally, to allow implicit dependencies to be seen:
 import random
+import sys
 import tkinter
 import tkinter.ttk
 import tkinter.messagebox
@@ -65,4 +70,5 @@ import create_window
 import send_email_template
 import transactions
 import save_and_load_balance
+import ntpath
 import datetime

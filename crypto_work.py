@@ -1,10 +1,20 @@
+import os
+
 from cryptography.fernet import Fernet
 
 def load_key():
-    try:
-        return open("syst_comp/syst.key", "rb").read()
-    except:
-        return None
+    path = "syst_comp/syst.key"
+
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Key file not found: {path}")
+
+    with open(path, "rb") as f:
+        key = f.read()
+
+    if not key:
+        raise ValueError("Key file is empty!")
+
+    return key
 def decrypt_message(encrypted_message, key):
     f = Fernet(key)
     return f.decrypt(encrypted_message).decode()

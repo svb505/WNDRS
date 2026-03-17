@@ -95,6 +95,8 @@ def generate_exe_thread():
             "--distpath", os.path.join(script_dir, "dist"),
             "--workpath", os.path.join(script_dir, "build"),
             "--add-binary", "D:\\programar\\WNDRS\\DLLs;DLLs",
+            "--add-data","icons;icons",
+            "--add-data","games;games",
             # путь чтобы PyInstaller видел пакет
             "--paths", script_dir,
             "--hidden-import=tkhtmlview",

@@ -1,4 +1,5 @@
 import random
+import sys
 from tkinter import *
 from tkinter import ttk,messagebox
 import sqlite3
@@ -12,9 +13,18 @@ from create_window import create_window
 from send_email_template import send
 from transactions import transactions
 from save_and_load_balance import save_balance,load_balance
+def get_root_dir():
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)  # 🔴 папка exe
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+BASE_DIR = get_root_dir()
+
+cfg_path = os.path.join(BASE_DIR, "store", "prms.cfg")
+promos_path = os.path.join(BASE_DIR, "store", "mypromos.cfg")
 def check_activated():
-    with open("store/prms.cfg","rb") as f:
+    with open(cfg_path,"rb") as f:
         key = load_key()
         activated = decrypt_message(f.read().strip(),key)
     return activated
@@ -365,11 +375,11 @@ def main_w(root,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha):
 
             key = load_key()
             data = f"{bonus}\n"
-            if os.path.exists("store/mypromos.cfg"):
-                with open("store/mypromos.cfg",'ab') as f:
+            if os.path.exists(promos_path):
+                with open(promos_path,'ab') as f:
                     f.write(encrypt_message(data,key))
             else:
-                with open("store/mypromos.cfg",'wb') as f:
+                with open(promos_path,'wb') as f:
                     f.write(encrypt_message(data,key))
             messagebox.showinfo(lang["success"],lang["bonus_activated"],parent=Win)
         def activate():
@@ -378,10 +388,10 @@ def main_w(root,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha):
                 sale =  random.randint(2,20)
                 sale_percent = sale
                 key = load_key()
-                with open("store/mypromos.cfg", "rb") as f:
+                with open(promos_path, "rb") as f:
                     data = decrypt_message(f.read().strip(), key)
                 data = data.strip(bns)
-                with open("store/mypromos.cfg", "wb") as f:
+                with open(promos_path, "wb") as f:
                     f.write(encrypt_message(data,key))
                 messagebox.showinfo(lang["success"],lang["you_have_sale"] + str(sale_percent) + "%",parent=Win)
             www = create_window(root, lang['enter_bonus'], global_bg, float(GlobalAlpha), 300, 300)
@@ -405,7 +415,7 @@ def main_w(root,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha):
         w = create_window(Win, lang['show_promo'], global_bg, float(GlobalAlpha), 400, 300)
 
         key = load_key()
-        with open("store/mypromos.cfg",'rb') as f:
+        with open(promos_path,'rb') as f:
             data = decrypt_message(f.read(),key).strip()
 
         text = Text(w,bg = global_bg,fg = global_fg)
@@ -1574,7 +1584,7 @@ def main_w(root,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha):
     right_frame7.pack(side=LEFT)
 
     ttk.Button(top_frame,text = lang["add_promo"],command = promo).pack()
-    if os.path.exists("store/mypromos.cfg"):
+    if os.path.exists(promos_path):
         ttk.Button(top_frame, text=lang["show_promo"], command=show).pack()
     c = ttk.Button(top_frame,image=Win.card,command = open_corz)
     c.pack()

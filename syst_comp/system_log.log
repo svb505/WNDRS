@@ -22736,3 +22736,332 @@ KeyError: "No function for 'SVB TxT Redactor' in program_functions"
 2026-03-17 12:53:12,849 - INFO - [16.2] - Exists: True
 2026-03-17 12:53:27,502 - SYSTEM - [30.8] - ----SHUT DOWN OS----
 2026-03-17 12:53:27,502 - INFO - [30.8] - Program Standart Games close
+2026-03-17 16:56:37,577 - SYSTEM - [3.1] - START TIMESTAMP: 2026-03-17 16:56:37
+2026-03-17 16:56:37,577 - SYSTEM - [3.1] - All Global Variables (AGV) initialized
+2026-03-17 16:56:37,578 - SYSTEM - [3.1] - Connect to states.db
+2026-03-17 16:56:37,579 - SYSTEM - [3.1] - ALL SYSTEMS FILES READS
+2026-03-17 16:56:37,593 - SYSTEM - [3.1] - Copy file configurations.db to backup_data
+2026-03-17 16:56:37,595 - SYSTEM - [3.1] - DB Disconnect
+2026-03-17 16:56:37,606 - INFO - [3.1] - Account image: icons//acc6.png
+2026-03-17 16:56:37,607 - SYSTEM - [3.1] - WIFI --> True
+2026-03-17 16:56:37,607 - SYSTEM - [3.1] - BLUETOOTH --> False
+2026-03-17 16:56:37,610 - INFO - Log size OK: 1.64 MB
+2026-03-17 16:56:37,978 - SYSTEM - [3.5] - ----OS LAUNCH----
+2026-03-17 16:56:37,978 - SYSTEM - [3.5] - VERSION OS --> KW3.1.700
+2026-03-17 16:56:38,187 - SYSTEM - [3.7] - ----START LOADING----
+2026-03-17 16:56:38,331 - SYSTEM - [3.9] - Copy file configurations.db to backup_data
+2026-03-17 16:56:38,334 - SYSTEM - [3.9] - DB Disconnect
+2026-03-17 16:56:38,334 - SYSTEM - [3.9] - <--Инициализация БД...-->
+2026-03-17 16:56:38,647 - SYSTEM - [4.2] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 16:56:38,651 - INFO - [4.2] - Account image: icons//acc6.png
+2026-03-17 16:56:38,652 - SYSTEM - [4.2] - <--Инициализация конфигураций...-->
+2026-03-17 16:56:38,957 - INFO - Log size OK: 1.64 MB
+2026-03-17 16:56:38,957 - SYSTEM - [4.5] - <--Проверка ЛОгов...-->
+2026-03-17 16:56:39,261 - SYSTEM - [4.8] - WIFI --> True
+2026-03-17 16:56:39,261 - SYSTEM - [4.8] - BLUETOOTH --> False
+2026-03-17 16:56:39,261 - SYSTEM - [4.8] - <--Настройка девайсов...-->
+2026-03-17 16:56:39,577 - SYSTEM - [5.1] - <--Проверка зашифрованых файлов-->
+2026-03-17 16:56:39,894 - SYSTEM - [5.4] - <--Инициалиция конфиг файлов-->
+2026-03-17 16:56:40,201 - SYSTEM - [5.7] - <--Загрузка активности-->
+2026-03-17 16:56:41,431 - INFO - [7.0] - All files are intact
+2026-03-17 16:56:41,432 - SYSTEM - [7.0] - <--Проверка целостности файлов-->
+2026-03-17 16:56:41,738 - SYSTEM - [7.3] - <--Завершаем настройку...-->
+2026-03-17 16:56:42,581 - SYSTEM - [8.1] - ----START OS----
+2026-03-17 16:56:42,581 - SYSTEM - [8.1] - VERSION OS --> KW3.1.700
+2026-03-17 16:56:42,622 - SYSTEM - [8.2] - CURRENT LANGUE --> RU
+2026-03-17 16:56:42,622 - SYSTEM - [8.2] - VOLUME --> 0.14
+2026-03-17 16:56:42,622 - SYSTEM - [8.2] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 16:56:42,623 - SYSTEM - [8.2] - Connect to configurations.db
+2026-03-17 16:56:42,625 - INFO - [8.2] - READ INVENTORY
+2026-03-17 16:56:42,626 - SYSTEM - [8.2] - Region SET 'NETHERLANDS'
+2026-03-17 16:56:42,760 - SYSTEM - [8.3] - Load cursor
+2026-03-17 16:56:43,372 - SYSTEM - [8.9] - Load cursor
+2026-03-17 16:56:43,797 - WARNING - [9.3] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 16:56:43,821 - SYSTEM - [9.4] - START: 9.4 sec
+2026-03-17 16:56:43,825 - INFO - [9.4] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 16:56:43,826 - INFO - [9.4] - Exists: True
+2026-03-17 17:26:36,460 - SYSTEM - [2.4] - START TIMESTAMP: 2026-03-17 17:26:36
+2026-03-17 17:26:36,461 - SYSTEM - [2.4] - All Global Variables (AGV) initialized
+2026-03-17 17:26:36,463 - SYSTEM - [2.4] - Connect to states.db
+2026-03-17 17:26:36,463 - SYSTEM - [2.4] - ALL SYSTEMS FILES READS
+2026-03-17 17:26:36,476 - SYSTEM - [2.4] - Copy file configurations.db to backup_data
+2026-03-17 17:26:36,479 - SYSTEM - [2.4] - DB Disconnect
+2026-03-17 17:26:36,487 - INFO - [2.4] - Account image: icons//acc6.png
+2026-03-17 17:26:36,488 - SYSTEM - [2.4] - WIFI --> True
+2026-03-17 17:26:36,488 - SYSTEM - [2.4] - BLUETOOTH --> False
+2026-03-17 17:26:36,491 - INFO - Log size OK: 1.64 MB
+2026-03-17 17:26:36,767 - SYSTEM - [2.7] - ----OS LAUNCH----
+2026-03-17 17:26:36,767 - SYSTEM - [2.7] - VERSION OS --> KW3.1.700
+2026-03-17 17:26:36,963 - SYSTEM - [2.9] - ----START LOADING----
+2026-03-17 17:26:37,115 - SYSTEM - [3.1] - Copy file configurations.db to backup_data
+2026-03-17 17:26:37,119 - SYSTEM - [3.1] - DB Disconnect
+2026-03-17 17:26:37,119 - SYSTEM - [3.1] - <--Инициализация БД...-->
+2026-03-17 17:26:37,432 - SYSTEM - [3.4] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 17:26:37,436 - INFO - [3.4] - Account image: icons//acc6.png
+2026-03-17 17:26:37,436 - SYSTEM - [3.4] - <--Инициализация конфигураций...-->
+2026-03-17 17:26:37,742 - INFO - Log size OK: 1.64 MB
+2026-03-17 17:26:37,742 - SYSTEM - [3.7] - <--Проверка ЛОгов...-->
+2026-03-17 17:26:38,047 - SYSTEM - [4.0] - WIFI --> True
+2026-03-17 17:26:38,047 - SYSTEM - [4.0] - BLUETOOTH --> False
+2026-03-17 17:26:38,047 - SYSTEM - [4.0] - <--Настройка девайсов...-->
+2026-03-17 17:26:38,354 - SYSTEM - [4.3] - <--Проверка зашифрованых файлов-->
+2026-03-17 17:26:38,667 - SYSTEM - [4.6] - <--Инициалиция конфиг файлов-->
+2026-03-17 17:26:38,973 - SYSTEM - [4.9] - <--Загрузка активности-->
+2026-03-17 17:26:39,782 - INFO - [5.7] - All files are intact
+2026-03-17 17:26:39,782 - SYSTEM - [5.7] - <--Проверка целостности файлов-->
+2026-03-17 17:26:40,088 - SYSTEM - [6.0] - <--Завершаем настройку...-->
+2026-03-17 17:26:40,887 - SYSTEM - [6.8] - ----START OS----
+2026-03-17 17:26:40,887 - SYSTEM - [6.8] - VERSION OS --> KW3.1.700
+2026-03-17 17:26:40,924 - SYSTEM - [6.9] - CURRENT LANGUE --> RU
+2026-03-17 17:26:40,925 - SYSTEM - [6.9] - VOLUME --> 0.14
+2026-03-17 17:26:40,925 - SYSTEM - [6.9] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 17:26:40,925 - SYSTEM - [6.9] - Connect to configurations.db
+2026-03-17 17:26:40,926 - INFO - [6.9] - READ INVENTORY
+2026-03-17 17:26:40,927 - SYSTEM - [6.9] - Region SET 'NETHERLANDS'
+2026-03-17 17:26:41,054 - SYSTEM - [7.0] - Load cursor
+2026-03-17 17:26:41,490 - SYSTEM - [7.4] - Load cursor
+2026-03-17 17:26:41,762 - WARNING - [7.7] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 17:26:43,585 - SYSTEM - [9.5] - START: 9.5 sec
+2026-03-17 17:26:43,594 - INFO - [9.5] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 17:26:43,605 - INFO - [9.6] - Exists: True
+2026-03-17 17:27:07,446 - SYSTEM - [33.4] - ----SHUT DOWN OS----
+2026-03-17 17:27:07,448 - INFO - [33.4] - Program Standart Games close
+2026-03-17 17:27:07,450 - INFO - [33.4] - Program Standart Games close
+2026-03-17 17:45:17,371 - SYSTEM - [2.2] - START TIMESTAMP: 2026-03-17 17:45:17
+2026-03-17 17:45:17,371 - SYSTEM - [2.2] - All Global Variables (AGV) initialized
+2026-03-17 17:45:17,372 - SYSTEM - [2.2] - Connect to states.db
+2026-03-17 17:45:17,374 - SYSTEM - [2.2] - ALL SYSTEMS FILES READS
+2026-03-17 17:45:17,383 - SYSTEM - [2.2] - Copy file configurations.db to backup_data
+2026-03-17 17:45:17,387 - SYSTEM - [2.2] - DB Disconnect
+2026-03-17 17:45:17,391 - INFO - [2.2] - Account image: icons//acc6.png
+2026-03-17 17:45:17,392 - SYSTEM - [2.2] - WIFI --> True
+2026-03-17 17:45:17,392 - SYSTEM - [2.2] - BLUETOOTH --> False
+2026-03-17 17:45:17,394 - INFO - Log size OK: 1.65 MB
+2026-03-17 17:45:17,722 - SYSTEM - [2.5] - ----OS LAUNCH----
+2026-03-17 17:45:17,722 - SYSTEM - [2.5] - VERSION OS --> KW3.1.700
+2026-03-17 17:45:17,889 - SYSTEM - [2.7] - ----START LOADING----
+2026-03-17 17:45:18,036 - SYSTEM - [2.8] - Copy file configurations.db to backup_data
+2026-03-17 17:45:18,038 - SYSTEM - [2.8] - DB Disconnect
+2026-03-17 17:45:18,038 - SYSTEM - [2.8] - <--Инициализация БД...-->
+2026-03-17 17:45:18,349 - SYSTEM - [3.2] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 17:45:18,351 - INFO - [3.2] - Account image: icons//acc6.png
+2026-03-17 17:45:18,352 - SYSTEM - [3.2] - <--Инициализация конфигураций...-->
+2026-03-17 17:45:18,658 - INFO - Log size OK: 1.65 MB
+2026-03-17 17:45:18,660 - SYSTEM - [3.5] - <--Проверка ЛОгов...-->
+2026-03-17 17:45:18,965 - SYSTEM - [3.8] - WIFI --> True
+2026-03-17 17:45:18,965 - SYSTEM - [3.8] - BLUETOOTH --> False
+2026-03-17 17:45:18,965 - SYSTEM - [3.8] - <--Настройка девайсов...-->
+2026-03-17 17:45:19,271 - SYSTEM - [4.1] - <--Проверка зашифрованых файлов-->
+2026-03-17 17:45:19,583 - SYSTEM - [4.4] - <--Инициалиция конфиг файлов-->
+2026-03-17 17:45:19,889 - SYSTEM - [4.7] - <--Загрузка активности-->
+2026-03-17 17:45:20,718 - INFO - [5.5] - All files are intact
+2026-03-17 17:45:20,718 - SYSTEM - [5.5] - <--Проверка целостности файлов-->
+2026-03-17 17:45:21,024 - SYSTEM - [5.8] - <--Завершаем настройку...-->
+2026-03-17 17:45:21,827 - SYSTEM - [6.6] - ----START OS----
+2026-03-17 17:45:21,827 - SYSTEM - [6.6] - VERSION OS --> KW3.1.700
+2026-03-17 17:45:21,867 - SYSTEM - [6.7] - CURRENT LANGUE --> RU
+2026-03-17 17:45:21,867 - SYSTEM - [6.7] - VOLUME --> 0.14
+2026-03-17 17:45:21,867 - SYSTEM - [6.7] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 17:45:21,868 - SYSTEM - [6.7] - Connect to configurations.db
+2026-03-17 17:45:21,868 - INFO - [6.7] - READ INVENTORY
+2026-03-17 17:45:21,869 - SYSTEM - [6.7] - Region SET 'NETHERLANDS'
+2026-03-17 17:45:21,990 - SYSTEM - [6.8] - Load cursor
+2026-03-17 17:45:22,441 - SYSTEM - [7.3] - Load cursor
+2026-03-17 17:45:23,650 - WARNING - [8.5] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 17:45:25,919 - SYSTEM - [10.7] - START: 10.7 sec
+2026-03-17 17:45:25,967 - INFO - [10.8] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 17:45:26,034 - INFO - [10.8] - Exists: True
+2026-03-17 17:45:33,872 - INFO - [18.7] - Poker launched
+2026-03-17 17:45:33,874 - INFO - [18.7] - Combinations initialized
+2026-03-17 17:45:34,035 - INFO - [18.8] - Dice drawing
+2026-03-17 17:45:34,036 - INFO - [18.8] - Dice drawing
+2026-03-17 17:45:34,036 - INFO - [18.8] - Dice drawing
+2026-03-17 17:45:34,038 - INFO - [18.8] - Dice drawing
+2026-03-17 17:45:34,039 - INFO - [18.8] - Dice drawing
+2026-03-17 17:46:13,858 - SYSTEM - [58.7] - ----SHUT DOWN OS----
+2026-03-17 17:46:13,859 - INFO - [58.7] - Program Standart Games close
+2026-03-17 17:51:51,263 - SYSTEM - [2.2] - START TIMESTAMP: 2026-03-17 17:51:51
+2026-03-17 17:51:51,263 - SYSTEM - [2.2] - All Global Variables (AGV) initialized
+2026-03-17 17:51:51,264 - SYSTEM - [2.2] - Connect to states.db
+2026-03-17 17:51:51,264 - SYSTEM - [2.2] - ALL SYSTEMS FILES READS
+2026-03-17 17:51:51,278 - SYSTEM - [2.2] - Copy file configurations.db to backup_data
+2026-03-17 17:51:51,281 - SYSTEM - [2.2] - DB Disconnect
+2026-03-17 17:51:51,287 - INFO - [2.2] - Account image: icons//acc6.png
+2026-03-17 17:51:51,288 - SYSTEM - [2.2] - WIFI --> True
+2026-03-17 17:51:51,288 - SYSTEM - [2.2] - BLUETOOTH --> False
+2026-03-17 17:51:51,290 - INFO - Log size OK: 1.65 MB
+2026-03-17 17:51:51,562 - SYSTEM - [2.5] - ----OS LAUNCH----
+2026-03-17 17:51:51,562 - SYSTEM - [2.5] - VERSION OS --> KW3.1.700
+2026-03-17 17:51:51,738 - SYSTEM - [2.7] - ----START LOADING----
+2026-03-17 17:51:51,891 - SYSTEM - [2.8] - Copy file configurations.db to backup_data
+2026-03-17 17:51:51,893 - SYSTEM - [2.8] - DB Disconnect
+2026-03-17 17:51:51,894 - SYSTEM - [2.8] - <--Инициализация БД...-->
+2026-03-17 17:51:52,204 - SYSTEM - [3.1] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 17:51:52,207 - INFO - [3.1] - Account image: icons//acc6.png
+2026-03-17 17:51:52,208 - SYSTEM - [3.1] - <--Инициализация конфигураций...-->
+2026-03-17 17:51:52,513 - INFO - Log size OK: 1.65 MB
+2026-03-17 17:51:52,513 - SYSTEM - [3.4] - <--Проверка ЛОгов...-->
+2026-03-17 17:51:52,818 - SYSTEM - [3.7] - WIFI --> True
+2026-03-17 17:51:52,818 - SYSTEM - [3.7] - BLUETOOTH --> False
+2026-03-17 17:51:52,818 - SYSTEM - [3.7] - <--Настройка девайсов...-->
+2026-03-17 17:51:53,125 - SYSTEM - [4.0] - <--Проверка зашифрованых файлов-->
+2026-03-17 17:51:53,435 - SYSTEM - [4.4] - <--Инициалиция конфиг файлов-->
+2026-03-17 17:51:53,742 - SYSTEM - [4.7] - <--Загрузка активности-->
+2026-03-17 17:51:54,571 - INFO - [5.5] - All files are intact
+2026-03-17 17:51:54,571 - SYSTEM - [5.5] - <--Проверка целостности файлов-->
+2026-03-17 17:51:54,877 - SYSTEM - [5.8] - <--Завершаем настройку...-->
+2026-03-17 17:51:55,692 - SYSTEM - [6.6] - ----START OS----
+2026-03-17 17:51:55,692 - SYSTEM - [6.6] - VERSION OS --> KW3.1.700
+2026-03-17 17:51:55,731 - SYSTEM - [6.6] - CURRENT LANGUE --> RU
+2026-03-17 17:51:55,731 - SYSTEM - [6.6] - VOLUME --> 0.14
+2026-03-17 17:51:55,731 - SYSTEM - [6.6] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 17:51:55,732 - SYSTEM - [6.6] - Connect to configurations.db
+2026-03-17 17:51:55,733 - INFO - [6.6] - READ INVENTORY
+2026-03-17 17:51:55,734 - SYSTEM - [6.7] - Region SET 'NETHERLANDS'
+2026-03-17 17:51:55,860 - SYSTEM - [6.8] - Load cursor
+2026-03-17 17:51:56,296 - SYSTEM - [7.2] - Load cursor
+2026-03-17 17:51:56,966 - WARNING - [7.9] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 17:52:00,580 - SYSTEM - [11.5] - START: 11.5 sec
+2026-03-17 17:52:00,593 - INFO - [11.5] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 17:52:00,670 - INFO - [11.6] - Exists: True
+2026-03-17 17:52:12,912 - SYSTEM - [23.8] - ----SHUT DOWN OS----
+2026-03-17 17:52:12,912 - INFO - [23.8] - Program Standart Games close
+2026-03-17 17:58:40,500 - SYSTEM - [2.4] - START TIMESTAMP: 2026-03-17 17:58:40
+2026-03-17 17:58:40,500 - SYSTEM - [2.4] - All Global Variables (AGV) initialized
+2026-03-17 17:58:40,501 - SYSTEM - [2.4] - Connect to states.db
+2026-03-17 17:58:40,502 - SYSTEM - [2.4] - ALL SYSTEMS FILES READS
+2026-03-17 17:58:40,514 - SYSTEM - [2.4] - Copy file configurations.db to backup_data
+2026-03-17 17:58:40,516 - SYSTEM - [2.4] - DB Disconnect
+2026-03-17 17:58:40,521 - INFO - [2.4] - Account image: icons//acc6.png
+2026-03-17 17:58:40,523 - SYSTEM - [2.4] - WIFI --> True
+2026-03-17 17:58:40,523 - SYSTEM - [2.4] - BLUETOOTH --> False
+2026-03-17 17:58:40,526 - INFO - Log size OK: 1.65 MB
+2026-03-17 17:58:40,810 - SYSTEM - [2.7] - ----OS LAUNCH----
+2026-03-17 17:58:40,810 - SYSTEM - [2.7] - VERSION OS --> KW3.1.700
+2026-03-17 17:58:40,990 - SYSTEM - [2.8] - ----START LOADING----
+2026-03-17 17:58:41,144 - SYSTEM - [3.0] - Copy file configurations.db to backup_data
+2026-03-17 17:58:41,148 - SYSTEM - [3.0] - DB Disconnect
+2026-03-17 17:58:41,148 - SYSTEM - [3.0] - <--Инициализация БД...-->
+2026-03-17 17:58:41,459 - SYSTEM - [3.3] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 17:58:41,461 - INFO - [3.3] - Account image: icons//acc6.png
+2026-03-17 17:58:41,462 - SYSTEM - [3.3] - <--Инициализация конфигураций...-->
+2026-03-17 17:58:41,769 - INFO - Log size OK: 1.65 MB
+2026-03-17 17:58:41,769 - SYSTEM - [3.6] - <--Проверка ЛОгов...-->
+2026-03-17 17:58:42,073 - SYSTEM - [3.9] - WIFI --> True
+2026-03-17 17:58:42,073 - SYSTEM - [3.9] - BLUETOOTH --> False
+2026-03-17 17:58:42,073 - SYSTEM - [3.9] - <--Настройка девайсов...-->
+2026-03-17 17:58:42,381 - SYSTEM - [4.2] - <--Проверка зашифрованых файлов-->
+2026-03-17 17:58:42,694 - SYSTEM - [4.5] - <--Инициалиция конфиг файлов-->
+2026-03-17 17:58:43,000 - SYSTEM - [4.9] - <--Загрузка активности-->
+2026-03-17 17:58:43,883 - INFO - [5.7] - All files are intact
+2026-03-17 17:58:43,883 - SYSTEM - [5.7] - <--Проверка целостности файлов-->
+2026-03-17 17:58:44,189 - SYSTEM - [6.0] - <--Завершаем настройку...-->
+2026-03-17 17:58:44,994 - SYSTEM - [6.8] - ----START OS----
+2026-03-17 17:58:44,994 - SYSTEM - [6.8] - VERSION OS --> KW3.1.700
+2026-03-17 17:58:45,035 - SYSTEM - [6.9] - CURRENT LANGUE --> RU
+2026-03-17 17:58:45,035 - SYSTEM - [6.9] - VOLUME --> 0.14
+2026-03-17 17:58:45,035 - SYSTEM - [6.9] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 17:58:45,036 - SYSTEM - [6.9] - Connect to configurations.db
+2026-03-17 17:58:45,037 - INFO - [6.9] - READ INVENTORY
+2026-03-17 17:58:45,038 - SYSTEM - [6.9] - Region SET 'NETHERLANDS'
+2026-03-17 17:58:45,197 - SYSTEM - [7.0] - Load cursor
+2026-03-17 17:58:45,751 - SYSTEM - [7.6] - Load cursor
+2026-03-17 17:58:47,783 - WARNING - [9.6] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 17:58:50,857 - SYSTEM - [12.7] - START: 12.7 sec
+2026-03-17 17:58:50,865 - INFO - [12.7] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 17:58:50,869 - INFO - [12.7] - Exists: True
+2026-03-17 17:59:06,414 - SYSTEM - [28.3] - ----SHUT DOWN OS----
+2026-03-17 17:59:06,414 - INFO - [28.3] - Program Standart Games close
+2026-03-17 18:10:14,222 - SYSTEM - [2.6] - START TIMESTAMP: 2026-03-17 18:10:14
+2026-03-17 18:10:14,222 - SYSTEM - [2.6] - All Global Variables (AGV) initialized
+2026-03-17 18:10:14,223 - SYSTEM - [2.6] - Connect to states.db
+2026-03-17 18:10:14,224 - SYSTEM - [2.6] - ALL SYSTEMS FILES READS
+2026-03-17 18:10:14,237 - SYSTEM - [2.6] - Copy file configurations.db to backup_data
+2026-03-17 18:10:14,240 - SYSTEM - [2.6] - DB Disconnect
+2026-03-17 18:10:14,246 - INFO - [2.6] - Account image: icons//acc6.png
+2026-03-17 18:10:14,247 - SYSTEM - [2.6] - WIFI --> True
+2026-03-17 18:10:14,247 - SYSTEM - [2.6] - BLUETOOTH --> False
+2026-03-17 18:10:14,249 - INFO - Log size OK: 1.66 MB
+2026-03-17 18:10:14,570 - SYSTEM - [3.0] - ----OS LAUNCH----
+2026-03-17 18:10:14,570 - SYSTEM - [3.0] - VERSION OS --> KW3.1.700
+2026-03-17 18:10:14,730 - SYSTEM - [3.1] - ----START LOADING----
+2026-03-17 18:10:14,884 - SYSTEM - [3.3] - Copy file configurations.db to backup_data
+2026-03-17 18:10:14,887 - SYSTEM - [3.3] - DB Disconnect
+2026-03-17 18:10:14,887 - SYSTEM - [3.3] - <--Инициализация БД...-->
+2026-03-17 18:10:15,199 - SYSTEM - [3.6] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 18:10:15,201 - INFO - [3.6] - Account image: icons//acc6.png
+2026-03-17 18:10:15,202 - SYSTEM - [3.6] - <--Инициализация конфигураций...-->
+2026-03-17 18:10:15,509 - INFO - Log size OK: 1.66 MB
+2026-03-17 18:10:15,509 - SYSTEM - [3.9] - <--Проверка ЛОгов...-->
+2026-03-17 18:10:15,815 - SYSTEM - [4.2] - WIFI --> True
+2026-03-17 18:10:15,815 - SYSTEM - [4.2] - BLUETOOTH --> False
+2026-03-17 18:10:15,815 - SYSTEM - [4.2] - <--Настройка девайсов...-->
+2026-03-17 18:10:16,125 - SYSTEM - [4.5] - <--Проверка зашифрованых файлов-->
+2026-03-17 18:10:16,439 - SYSTEM - [4.8] - <--Инициалиция конфиг файлов-->
+2026-03-17 18:10:16,745 - SYSTEM - [5.1] - <--Загрузка активности-->
+2026-03-17 18:10:17,552 - INFO - [6.0] - All files are intact
+2026-03-17 18:10:17,552 - SYSTEM - [6.0] - <--Проверка целостности файлов-->
+2026-03-17 18:10:17,859 - SYSTEM - [6.3] - <--Завершаем настройку...-->
+2026-03-17 18:10:18,665 - SYSTEM - [7.1] - ----START OS----
+2026-03-17 18:10:18,666 - SYSTEM - [7.1] - VERSION OS --> KW3.1.700
+2026-03-17 18:10:18,702 - SYSTEM - [7.1] - CURRENT LANGUE --> RU
+2026-03-17 18:10:18,702 - SYSTEM - [7.1] - VOLUME --> 0.14
+2026-03-17 18:10:18,702 - SYSTEM - [7.1] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 18:10:18,703 - SYSTEM - [7.1] - Connect to configurations.db
+2026-03-17 18:10:18,704 - INFO - [7.1] - READ INVENTORY
+2026-03-17 18:10:18,705 - SYSTEM - [7.1] - Region SET 'NETHERLANDS'
+2026-03-17 18:10:18,833 - SYSTEM - [7.2] - Load cursor
+2026-03-17 18:10:19,265 - SYSTEM - [7.7] - Load cursor
+2026-03-17 18:10:19,744 - WARNING - [8.1] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 18:10:23,039 - SYSTEM - [11.4] - START: 11.4 sec
+2026-03-17 18:10:23,511 - INFO - [11.9] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 18:10:23,518 - INFO - [11.9] - Exists: True
+2026-03-17 18:10:37,338 - INFO - [25.7] - Store launch
+2026-03-17 18:10:42,930 - INFO - [31.3] - Program Internet Store downloaded
+2026-03-17 18:10:43,836 - INFO - [32.2] - Message: Программа Internet Store установлена ✅
+2026-03-17 18:10:44,285 - WARNING - [32.7] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 18:22:33,976 - SYSTEM - [2.2] - START TIMESTAMP: 2026-03-17 18:22:33
+2026-03-17 18:22:33,976 - SYSTEM - [2.2] - All Global Variables (AGV) initialized
+2026-03-17 18:22:33,977 - SYSTEM - [2.2] - Connect to states.db
+2026-03-17 18:22:33,977 - SYSTEM - [2.2] - ALL SYSTEMS FILES READS
+2026-03-17 18:22:33,989 - SYSTEM - [2.2] - Copy file configurations.db to backup_data
+2026-03-17 18:22:33,991 - SYSTEM - [2.2] - DB Disconnect
+2026-03-17 18:22:33,996 - INFO - [2.2] - Account image: icons//acc6.png
+2026-03-17 18:22:33,998 - SYSTEM - [2.2] - WIFI --> True
+2026-03-17 18:22:33,998 - SYSTEM - [2.2] - BLUETOOTH --> False
+2026-03-17 18:22:34,000 - INFO - Log size OK: 1.66 MB
+2026-03-17 18:22:34,327 - SYSTEM - [2.6] - ----OS LAUNCH----
+2026-03-17 18:22:34,327 - SYSTEM - [2.6] - VERSION OS --> KW3.1.700
+2026-03-17 18:22:34,478 - SYSTEM - [2.7] - ----START LOADING----
+2026-03-17 18:22:34,633 - SYSTEM - [2.9] - Copy file configurations.db to backup_data
+2026-03-17 18:22:34,636 - SYSTEM - [2.9] - DB Disconnect
+2026-03-17 18:22:34,637 - SYSTEM - [2.9] - <--Инициализация БД...-->
+2026-03-17 18:22:34,949 - SYSTEM - [3.2] - Copy file syst_comp/gamebar_settings/gamebar_theme.cfg to backup_data
+2026-03-17 18:22:34,951 - INFO - [3.2] - Account image: icons//acc6.png
+2026-03-17 18:22:34,952 - SYSTEM - [3.2] - <--Инициализация конфигураций...-->
+2026-03-17 18:22:35,264 - INFO - Log size OK: 1.66 MB
+2026-03-17 18:22:35,264 - SYSTEM - [3.5] - <--Проверка ЛОгов...-->
+2026-03-17 18:22:35,571 - SYSTEM - [3.8] - WIFI --> True
+2026-03-17 18:22:35,571 - SYSTEM - [3.8] - BLUETOOTH --> False
+2026-03-17 18:22:35,571 - SYSTEM - [3.8] - <--Настройка девайсов...-->
+2026-03-17 18:22:35,884 - SYSTEM - [4.1] - <--Проверка зашифрованых файлов-->
+2026-03-17 18:22:36,199 - SYSTEM - [4.4] - <--Инициалиция конфиг файлов-->
+2026-03-17 18:22:36,505 - SYSTEM - [4.8] - <--Загрузка активности-->
+2026-03-17 18:22:37,414 - INFO - [5.7] - All files are intact
+2026-03-17 18:22:37,414 - SYSTEM - [5.7] - <--Проверка целостности файлов-->
+2026-03-17 18:22:37,735 - SYSTEM - [6.0] - <--Завершаем настройку...-->
+2026-03-17 18:22:38,606 - SYSTEM - [6.9] - ----START OS----
+2026-03-17 18:22:38,606 - SYSTEM - [6.9] - VERSION OS --> KW3.1.700
+2026-03-17 18:22:38,640 - SYSTEM - [6.9] - CURRENT LANGUE --> RU
+2026-03-17 18:22:38,640 - SYSTEM - [6.9] - VOLUME --> 0.14
+2026-03-17 18:22:38,640 - SYSTEM - [6.9] - CREATE "CONFIGURATIONS.DB"
+2026-03-17 18:22:38,641 - SYSTEM - [6.9] - Connect to configurations.db
+2026-03-17 18:22:38,641 - INFO - [6.9] - READ INVENTORY
+2026-03-17 18:22:38,642 - SYSTEM - [6.9] - Region SET 'NETHERLANDS'
+2026-03-17 18:22:38,762 - SYSTEM - [7.0] - Load cursor
+2026-03-17 18:22:39,169 - SYSTEM - [7.4] - Load cursor
+2026-03-17 18:22:39,353 - WARNING - [7.6] - Load Image Error : [Errno 2] No such file or directory: 'D:\\programar\\WNDRS\\icons\\.png'
+2026-03-17 18:22:39,749 - SYSTEM - [8.0] - START: 8.0 sec
+2026-03-17 18:22:39,750 - INFO - [8.0] - Updater Path: D:\programar\WNDRS\updater.exe
+2026-03-17 18:22:39,751 - INFO - [8.0] - Exists: True
+2026-03-17 18:23:20,382 - SYSTEM - [48.6] - ----SHUT DOWN OS----

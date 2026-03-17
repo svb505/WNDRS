@@ -10,6 +10,10 @@ from typing import Any
 from utilits import BsEmpire, arkanoid, avtomobils, ball_game, coordinat, durak, poker, snakeGame, soft
 import os
 import subprocess
+import sys
+
+def get_base_dir() -> Any:
+    ...
 
 def standart_games(root: Any, lang: Any, actives_programs: Any, state_sound: Any, start_time_: Any, volume: Any, errors: Any, global_bg: Any, global_fg: Any, GlobalAlpha: Any) -> Any:
     ...
@@ -21,6 +25,8 @@ __name__ = ...
 
 # Modules used internally, to allow implicit dependencies to be seen:
 import subprocess
+import sys
+import os
 import tkinter
 import tkinter.ttk
 import PIL
@@ -37,6 +43,5 @@ import utilits.snakeGame
 import utilits.arkanoid
 import utilits.avtomobils
 import utilits.soft
-import os
 import load_env
 import ntpath
