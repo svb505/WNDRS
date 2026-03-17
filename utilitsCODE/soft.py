@@ -10,7 +10,6 @@ from datetime import datetime
 from PIL import Image, ImageTk
 import requests
 from io import BytesIO
-from server_statistick import update_file
 import customtkinter as ctk
 from logtofile import log_to_file
 from play_sound import play_sound
@@ -288,7 +287,6 @@ def check_ach(lang,start_time_):
         if status == "no" and svb_coins >= max_val:
             svb_coins += int(prize)
             send('receipt', int(prize))
-            update_file("count_svbcoins.txt", int(prize))
             save_balance(svb_coins,start_time_)
 
             cursor.execute(
@@ -366,7 +364,6 @@ def lotereya(actives_programs,lang,root,edition,start_time_,global_bg,global_fg,
 
             svb_coins += nagr
             send('receipt', nagr)
-            update_file("count_svbcoins.txt", int(nagr))
 
             save_balance(svb_coins,start_time_)
             check_ach(lang,start_time_)
@@ -581,7 +578,6 @@ def promocodes(lang,root,edition,start_time_,global_bg,global_fg,GlobalAlpha):
 
             svb_coins += money
             send('receipt', money)
-            update_file("count_svbcoins.txt", int(money))
             transactions(f"-{money} SVB Coins" + f" {datetime.now()}",start_time_)
             save_balance(svb_coins,start_time_)
             check_ach(lang,start_time_)
@@ -694,7 +690,6 @@ def millioner(lang,root,start_time_,global_bg,global_fg,GlobalAlpha):
                 svb_coins = load_balance(start_time_)
                 svb_coins += int(state["money"])
                 send('receipt', int(state["money"]))
-                update_file("count_svbcoins.txt", int(state["money"]))
                 save_balance(svb_coins,start_time_)
                 check_ach(lang,start_time_)
                 transactions(f"+{state['money']} SVB Coins",start_time_)

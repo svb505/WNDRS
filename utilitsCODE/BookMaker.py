@@ -1,7 +1,6 @@
 from datetime import datetime
 from tkinter import *
 from tkinter import ttk, messagebox
-from server_statistick import update_file
 from send_email import send_email
 from logger_setup import system_logger
 import time
@@ -185,7 +184,6 @@ def open_win(root, lang, actives_programs, edition, start_time_, global_bg, glob
                 total_sum = int(d) * float(coof)
                 svb_coins += int(total_sum)
                 send('receipt', int(total_sum))
-                update_file("count_svbcoins.txt", int(total_sum))
                 save_balance(svb_coins,start_time_)
                 transactions(f'+{total_sum} Svb Coins', start_time_)
                 Label(win, text=f"{lang['pozd']}{lang['stavka_v']}:{total_sum} SVb Coins", bg=global_bg,
@@ -239,7 +237,6 @@ def open_win(root, lang, actives_programs, edition, start_time_, global_bg, glob
                 total_sum = int(d) * float(coof)
                 svb_coins += int(total_sum)
                 send('receipt', int(total_sum))
-                update_file("count_svbcoins.txt", int(total_sum))
                 save_balance(svb_coins,start_time_)
                 transactions(f'+{total_sum} Svb Coins', start_time_)
                 Label(win, text=f"{lang['pozd']}{lang['stavka_v']}:{total_sum} SVb Coins", bg=global_bg,
@@ -293,7 +290,6 @@ def open_win(root, lang, actives_programs, edition, start_time_, global_bg, glob
                 total_sum = int(d) * float(coof)
                 svb_coins += int(total_sum)
                 send('receipt', int(total_sum))
-                update_file("count_svbcoins.txt", int(total_sum))
                 save_balance(svb_coins,start_time_)
                 transactions(f'+{total_sum} Svb Coins', start_time_)
                 Label(win, text=f"{lang['pozd']}{lang['stavka_v']}:{total_sum} SVb Coins", bg=global_bg,

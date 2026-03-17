@@ -8,7 +8,7 @@ from random import randint
 import customtkinter as ctk
 import os
 from datetime import datetime
-from utilitsCODE import connectingDB
+from utilits import connectingDB
 
 WIDTH,HEIGHT = 600,600
 FPS = 100

@@ -9,7 +9,6 @@ from logtofile import log_to_file
 from play_sound import play_sound
 from save_and_load_balance import load_balance, save_balance
 from send_email_template import send
-from server_statistick import update_file
 from tkinter import *, messagebox
 from transactions import transactions
 from typing import Any
@@ -36,7 +35,6 @@ __name__ = ...
 
 # Modules used internally, to allow implicit dependencies to be seen:
 import logging
-import server_statistick
 import logger_setup
 import time
 import tkinter

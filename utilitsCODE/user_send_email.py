@@ -4,7 +4,6 @@ from tkinter import messagebox,filedialog,ttk
 import webbrowser
 from tkhtmlview import HTMLLabel
 
-
 files = []
 
 def openWin(root,lang):

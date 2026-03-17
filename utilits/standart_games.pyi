@@ -4,6 +4,7 @@
 from __future__ import annotations
 from PIL import Image, ImageTk
 from games import kamn, saper, tetris
+from load_env import load_env
 from tkinter import *, ttk
 from typing import Any
 from utilits import BsEmpire, arkanoid, avtomobils, ball_game, coordinat, durak, poker, snakeGame, soft
@@ -37,4 +38,5 @@ import utilits.arkanoid
 import utilits.avtomobils
 import utilits.soft
 import os
+import load_env
 import ntpath

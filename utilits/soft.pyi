@@ -14,7 +14,6 @@ from play_sound import play_sound
 from pytubefix import YouTube
 from save_and_load_balance import load_balance, save_balance
 from send_email_template import send
-from server_statistick import update_file
 from tkinter import *, colorchooser, filedialog, messagebox, ttk
 from transactions import transactions
 from typing import Any
@@ -100,7 +99,6 @@ import PIL.Image
 import PIL.ImageTk
 import requests
 import io
-import server_statistick
 import customtkinter
 import logtofile
 import play_sound

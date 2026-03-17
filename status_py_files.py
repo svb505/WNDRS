@@ -59,9 +59,9 @@ def analyze_directory(directory):
 
 
 if __name__ == "__main__":
-    paths = [os.getcwd(), "utilitsCODE","D:/OpenGL_EDU/tank/tank","D:/OpenGL_EDU/fpvdrone/fpvdrone",
-             "D:/OpenGL_EDU/checkers/checkers","D:\Qt_EDU\Console_ex\ValidateImgHashe\ValidateImgHashe",
-             "uefi/uefi/uefi","LimitWin/LimitWin/LimitWin"]
+    paths = [os.getcwd(), "utilitsCODE","gameSources/fpvdrone","gameSources/tank","gameSources/checkers",
+             "D:\Qt_EDU\Console_ex\ValidateImgHashe\ValidateImgHashe","uefi/uefi/uefi","LimitWin/LimitWin/LimitWin",
+             "gameSources/cannon","gameSources/coordinat3D"]
     print(f"Анализируем директории: {paths}\n")
 
     total_stats = {

@@ -10,7 +10,6 @@ from logtofile import log_to_file
 from save_and_load_balance import load_balance, save_balance
 from send_email import send_email
 from send_email_template import send
-from server_statistick import update_file
 from tkinter import *, messagebox, ttk
 from transactions import transactions
 from typing import Any
@@ -51,7 +50,6 @@ import datetime
 import tkinter
 import tkinter.ttk
 import tkinter.messagebox
-import server_statistick
 import send_email
 import logger_setup
 import time

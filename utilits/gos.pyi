@@ -11,7 +11,6 @@ from random import randint
 from save_and_load_balance import load_balance, save_balance
 from send_email import send_email
 from send_email_template import send
-from server_statistick import update_file
 from tkinter import *, messagebox, ttk
 from transactions import transactions
 from typing import Any
@@ -52,7 +51,6 @@ import random
 import country_list
 import country_list.countries_for_language
 import sqlite3
-import server_statistick
 import customtkinter
 import logtofile
 import copy_file_to_folder

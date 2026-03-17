@@ -10,7 +10,7 @@ from customtkinter import CTkLabel
 from datetime import datetime
 from tkinter import colorchooser
 import tabulate
-from utilitsCODE import connectingDB
+from utilits import connectingDB
 
 x = [0.0,0.1,0.2,0.3]
 y = [-0.9,-0.8]

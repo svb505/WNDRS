@@ -8,7 +8,6 @@ from datetime import datetime
 from logtofile import log_to_file
 from save_and_load_balance import load_balance, save_balance
 from send_email_template import send
-from server_statistick import update_file
 from tkinter import *, messagebox, ttk
 from transactions import transactions
 from typing import Any
@@ -40,7 +39,6 @@ import PIL.Image
 import PIL.ImageTk
 import random
 import datetime
-import server_statistick
 import customtkinter
 import logtofile
 import send_email_template

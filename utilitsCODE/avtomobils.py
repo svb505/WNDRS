@@ -10,7 +10,7 @@ from tkinter import messagebox
 import json
 from datetime import datetime
 import math
-from utilitsCODE import connectingDB
+from utilits import connectingDB
 
 MUSIC_FOLDER = "games/OpenGLgames/automobil/music"
 JSON_NAME = "games/OpenGLgames/automobil/autos_settings.json"

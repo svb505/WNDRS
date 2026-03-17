@@ -306,6 +306,7 @@ def open_acc(win_p,lang,global_bg,global_fg,gl_police,edition,version,start_time
     Label(frame, text=lang["name"] + n, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text=lang["last-name"] + ln, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text=lang["email"] + e, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
+    Label(frame, text=f"{lang['app_type']}: {lang[os.getenv('TYPE')]}", font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text=f"UID: {read_encrypted_file('uid.key')}", font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     Label(frame, text="Country - " + country, font=(gl_police, 10), bg=global_bg, fg=global_fg).pack()
     if icon_f != None:

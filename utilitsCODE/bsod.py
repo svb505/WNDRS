@@ -1,7 +1,6 @@
 from tkinter import *
 from datetime import datetime
 
-
 def open_bsod(code, decr, on_finish=None):  # ← Добавили on_finish
     def compl(i=1):
         if i <= 100:

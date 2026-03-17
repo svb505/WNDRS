@@ -10,7 +10,6 @@ from logtofile import log_to_file
 from play_sound import play_sound
 from save_and_load_balance import load_balance, save_balance
 from send_email_template import send
-from server_statistick import update_file
 from tkinter import *, messagebox
 from transactions import transactions
 from typing import Any
@@ -53,7 +52,6 @@ import random
 import PIL
 import PIL.Image
 import PIL.ImageTk
-import server_statistick
 import logtofile
 import play_sound
 import send_email_template

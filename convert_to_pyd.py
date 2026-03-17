@@ -1,5 +1,5 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/settings_funcs.py
+#python -m nuitka --module utilitsCODE/ball_game.py
 

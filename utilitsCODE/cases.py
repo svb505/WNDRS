@@ -9,7 +9,6 @@ import logging
 from datetime import datetime
 import random
 from PIL import Image, ImageTk
-from server_statistick import update_file
 from logtofile import log_to_file
 from play_sound import play_sound
 from send_email_template import send
@@ -41,7 +40,6 @@ def check_ach(lang,start_time_):
         if status == "no" and svb_coins >= max_val:
             svb_coins += int(prize)
             send('receipt',prize)
-            update_file("count_svbcoins.txt", int(prize))
             save_balance(svb_coins,start_time_)
 
             cursor.execute(
@@ -166,7 +164,6 @@ def cases(actives_programs,state_sound,volume,root,errors,edition,lang,start_tim
             if reward["type"] == "coins":
                 svb_coins += reward["value"]
                 send('receipt',reward["value"])
-                update_file("count_svbcoins.txt", int(reward["value"]))
                 transactions(f"+{reward['value']} SVb Coins" + f" {datetime.now()}",start_time_ = start_time_)
                 save_balance(svb_coins,start_time_)
                 check_ach(lang,start_time_)
@@ -179,7 +176,6 @@ def cases(actives_programs,state_sound,volume,root,errors,edition,lang,start_tim
                     comp_value = 75  # Компенсация
                     svb_coins += comp_value
                     send('receipt', comp_value)
-                    update_file("count_svbcoins.txt", int(comp_value))
                     transactions(f"+{comp_value} SVb Coins" + f" {datetime.now()}",start_time_ = start_time_)
                     save_balance(svb_coins,start_time_)
                     check_ach(lang,start_time_)

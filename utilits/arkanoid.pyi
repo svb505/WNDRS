@@ -10,7 +10,7 @@ from pygame.locals import *
 from tkinter import colorchooser
 from typing import Any
 from typing_extensions import TypeAlias
-from utilitsCODE import connectingDB
+from utilits import connectingDB
 import customtkinter
 import math
 import os
@@ -78,5 +78,5 @@ import datetime
 import tkinter
 import tkinter.colorchooser
 import tabulate
-import utilitsCODE
-import utilitsCODE.connectingDB
+import utilits
+import utilits.connectingDB

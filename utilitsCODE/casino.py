@@ -1,5 +1,4 @@
 import logging
-from server_statistick import update_file
 from logger_setup import system_logger
 import time
 from tkinter import *
@@ -32,7 +31,6 @@ def check_ach(lang,start_time_):
         if status == "no" and svb_coins >= max_val:
             svb_coins += int(prize)
             send('receipt', int(prize))
-            update_file("count_svbcoins.txt", int(prize))
             save_balance(start_time_ = start_time_)
 
             # Обновляем достижение в базе
@@ -103,7 +101,6 @@ def open_casino(state_sound,volume,root,actives_programs,errors,lang,edition,sta
             svb_coins = load_balance(start_time_)
             svb_coins += 10000
             send('receipt', 10000)
-            update_file("count_svbcoins.txt", 10000)
 
             transactions("+10.000 SVb Coins" + f" {datetime.now()}",start_time_ = start_time_)
             save_balance(svb_coins,start_time_)
@@ -119,7 +116,6 @@ def open_casino(state_sound,volume,root,actives_programs,errors,lang,edition,sta
             load_balance(start_time_ = start_time_)
             svb_coins += 1000
             send('receipt', 1000)
-            update_file("count_svbcoins.txt", 1000)
 
             transactions("+1.000 SVb Coins" + f" {datetime.now()}",start_time_ = start_time_)
             save_balance(start_time_ = start_time_)

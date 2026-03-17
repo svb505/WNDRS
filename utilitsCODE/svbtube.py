@@ -65,10 +65,8 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
     actives_programs.append("SVBTube")
     global acc, video_files, cap, fps, total_frames, duration, current_frame, paused, current_video_index, likes_dict, dislikes_dict, comments_dict, current_img
 
-    if os.path.exists("svbtube/account.db"):
-        acc = True
+    if os.path.exists("svbtube/account.db"): acc = True
 
-    # ---------------------- Работа с данными ----------------------
     def load_video_data():
         global likes_dict, dislikes_dict, comments_dict
         if os.path.exists(DATA_FILE):
@@ -91,7 +89,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
         with open(DATA_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
-    # ---------------------- UI вспомогательные ----------------------
     def format_time(seconds):
         m, s = divmod(int(seconds), 60)
         return f"{m:02}:{s:02}"
@@ -107,7 +104,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
         ratio = current_frame / total_frames if total_frames else 0
         progress.create_rectangle(0, 0, w * ratio, 20, fill='green')
 
-    # ---------------------- Видео ----------------------
     def load_video(path):
         global cap, fps, total_frames, duration, current_frame, paused
         path = normalize_dropbox_url(path) if path.startswith("http") else path
@@ -164,7 +160,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
         load_video(video_files[current_video_index])
         update_ui_for_video(video_files[current_video_index])
 
-    # ---------------------- Лайки / Дизлайки / Комменты ----------------------
     def update_ui_for_video(video_path):
         like_label.config(text=f"👍 {likes_dict.get(video_path, 0)}")
         dislike_label.config(text=f"👎 {dislikes_dict.get(video_path, 0)}")
@@ -189,7 +184,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
             comment_entry.delete(0, END)
             save_video_data()
 
-    # ---------------------- Dropbox URL ----------------------
     def normalize_dropbox_url(url):
         url = url.strip().replace(" ", "")
         if "dropbox.com" not in url:
@@ -214,7 +208,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
             decrypted = decrypt_message(f.read(), key)
         return [line.strip() for line in decrypted.splitlines() if line.strip()]
 
-    # ---------------------- Загрузка видео ----------------------
     try:
         video_files = [get_direct_dropbox_url(u) for u in load_videos_encrypted()]
     except:
@@ -222,7 +215,7 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
 
     load_video_data()
 
-    # ---------------------- Интерфейс ----------------------
+
     Win = Toplevel(root)
     Win.attributes("-alpha", float(GlobalAlpha))
     Win.configure(bg=global_bg)
@@ -276,7 +269,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
     next_btn.pack(side=LEFT, padx=5)
     progress.bind("<Button-1>", seek)
 
-    # ---------------------- Лайки/Дизлайки ----------------------
     like_dislike_frame = Frame(left_panel)
     like_dislike_frame.grid(row=0, column=0, pady=10)
     like_label = Label(like_dislike_frame, text="👍 0", fg=global_fg, bg=global_bg)
@@ -289,7 +281,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
 
     dislike_btn.grid(row=1, column=1, pady=5)
 
-    # ---------------------- Комменты ----------------------
     comment_frame = Frame(left_panel)
     comment_frame.grid(row=1, column=0, pady=20)
     comment_listbox = Listbox(comment_frame, width=30, height=10)
@@ -299,7 +290,6 @@ def svbtube(root, lang, actives_programs, global_bg, global_fg,GlobalAlpha):
     add_comment_btn = Button(comment_frame, text="💬", command=lambda: add_comment(comment_entry.get()))
     add_comment_btn.grid(row=1, column=1, sticky="e", padx=5)
 
-    # ---------------------- Загрузка видео ----------------------
     load_video(video_files[current_video_index])
     update_ui_for_video(video_files[current_video_index])
     show_frame()

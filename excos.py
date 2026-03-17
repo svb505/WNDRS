@@ -5,7 +5,6 @@ from logtofile import log_system,log_to_file
 import logging
 import os
 import sys
-from server_statistick import update_file,update_elpsed
 from play_sound import play_sound
 
 SYSTEM_LEVEL = 25
@@ -14,13 +13,6 @@ logging.addLevelName(SYSTEM_LEVEL, "SYSTEM")
 
 def on_closing(start_time_,email):
     log_system("----SHUT DOWN OS----",start_time_)
-    try:
-        elapsed = time.time() - start_time_
-    except NameError:
-        elapsed = 0  # Если start_time_ нет, пишем 0 секунд
-    update_file("time_in_windoors.txt", int(elapsed))
-    update_file(f"time_{email}.txt", int(elapsed))
-    update_elpsed("max_time.txt", int(elapsed))
 def restart_os(actives_programs,start_time_,email):
     log_system("----RESTART OS----",start_time_ = start_time_)
     for i in actives_programs:

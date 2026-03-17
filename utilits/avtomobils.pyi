@@ -9,7 +9,7 @@ from datetime import datetime
 from pygame.locals import *
 from tkinter import messagebox
 from typing import Any
-from utilitsCODE import connectingDB
+from utilits import connectingDB
 import customtkinter
 import json
 import math
@@ -96,5 +96,5 @@ import tkinter.messagebox
 import json
 import datetime
 import math
-import utilitsCODE
-import utilitsCODE.connectingDB
+import utilits
+import utilits.connectingDB

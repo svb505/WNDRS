@@ -9,7 +9,7 @@ from datetime import datetime
 from pygame.locals import *
 from random import randint
 from typing import Any
-from utilitsCODE import connectingDB
+from utilits import connectingDB
 import customtkinter
 import math
 import os
@@ -60,5 +60,5 @@ import OpenGL.GLU
 import random
 import os
 import datetime
-import utilitsCODE
-import utilitsCODE.connectingDB
+import utilits
+import utilits.connectingDB

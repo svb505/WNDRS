@@ -4,9 +4,7 @@ from dateutil.relativedelta import relativedelta
 from check_ach import check_ach
 from readandwrite_to_files import read_file, write_file
 from save_and_load_balance import load_balance, save_balance
-from server_statistick import update_file
 from transactions import transactions
-
 
 def check_salary(config,svb_coins,start_time_,lang):
     if os.path.exists("state/dat.cfg"):
@@ -32,7 +30,6 @@ def check_salary(config,svb_coins,start_time_,lang):
             svb_coins = load_balance(start_time_)
             svb_coins += net_salary
             transactions(f'+{net_salary} SVB Coins',start_time_)
-            update_file("count_svbcoins.txt", int(net_salary))
             save_balance(svb_coins,start_time_)
             check_ach(svb_coins,start_time_,lang)
 

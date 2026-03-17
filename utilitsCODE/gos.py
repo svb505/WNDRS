@@ -7,7 +7,6 @@ import random
 from random import randint
 from country_list import countries_for_language
 import sqlite3
-from server_statistick import update_file
 import customtkinter as ctk
 from logtofile import log_to_file
 from copy_file_to_folder import copy_file_to_folder
@@ -56,7 +55,6 @@ def check_ach(lang,start_time_):
         if status == "no" and svb_coins >= max_val:
             svb_coins += int(prize)
             send('receipt', int(prize))
-            update_file("count_svbcoins.txt", int(prize))
             save_balance(svb_coins,start_time_)
 
             cursor.execute(
@@ -998,7 +996,6 @@ def gosuslugi(root,lang,actives_programs,errors,edition,start_time_,global_bg,gl
             svb_coins = load_balance(start_time_)
             svb_coins += int(price)
             send('receipt', int(price))
-            update_file("count_svbcoins.txt", int(price))
             transactions(f"+{int(price)} SVb Coins" + f" {datetime.now()}",start_time_)
             save_balance(svb_coins,start_time_)
             check_ach(lang,start_time_)

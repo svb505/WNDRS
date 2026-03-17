@@ -6,9 +6,14 @@ from games import saper, tetris,kamn
 from utilits import coordinat, durak, poker, BsEmpire, ball_game, snakeGame, arkanoid, avtomobils
 from utilits import soft
 import os
+from load_env import load_env
+
+load_env()
 
 def standart_games(root, lang, actives_programs, state_sound, start_time_, volume, errors, global_bg, global_fg,
                    GlobalAlpha):
+    type = os.getenv("TYPE")
+
     actives_programs.append("Standart Games")
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -122,6 +127,8 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_, volum
             frm = frm_right1
         elif i < 20:
             frm = frm_right2
-
-        Label(frm, image=image, bg=global_bg, fg=global_fg).pack()
-        ttk.Button(frm, text=name, command=com).pack()
+        if name in [lang["BEG"],lang["game_durak"],lang["asteroids"],lang["ballG"],lang['automobils']] and type == "FREE":
+            pass
+        else:
+            Label(frm, image=image, bg=global_bg, fg=global_fg).pack()
+            ttk.Button(frm, text=name, command=com).pack()

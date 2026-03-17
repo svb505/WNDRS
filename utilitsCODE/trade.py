@@ -5,7 +5,6 @@ import sqlite3
 from PIL import Image, ImageTk
 import random
 from datetime import datetime
-from server_statistick import update_file
 import customtkinter as ctk
 from logtofile import log_to_file
 from send_email_template import send
@@ -29,7 +28,6 @@ def check_ach(lang,start_time_):
         if status == "no" and svb_coins >= max_val:
             svb_coins += int(prize)
             send('receipt', int(prize))
-            update_file("count_svbcoins.txt", int(prize))
             save_balance(svb_coins,start_time_)
 
             cursor.execute(
@@ -175,7 +173,6 @@ def trade(actives_programs,lang,root,start_time_,global_bg,global_fg,GlobalAlpha
             svb_coins = load_balance(start_time_)
             svb_coins += int(price)
             send('receipt', int(price))
-            update_file("count_svbcoins.txt", int(price))
             save_balance(svb_coins,start_time_)
             check_ach(lang,start_time_)
             transactions(f"+{price} SVB Coins | {datetime.now()}",start_time_)

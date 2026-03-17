@@ -1,7 +1,5 @@
 import json
 import subprocess
-import requests
-import ecran_block
 from show_error import show_error
 import shutil
 from show_screenshoots import OpenWindow
@@ -10,7 +8,6 @@ from utilits import user_send_email
 import sys
 from create_window import create_window
 from pass_manager import manager
-from excos import shutdown_animation
 from achievements import ach
 from speedtest import speedtest
 from photoviewer import photo_viewer
@@ -20,8 +17,8 @@ from wlps import draw_galaxy, draw_night_sky, draw_gradient, anim_galaxy
 import threading
 import numpy as np
 import sqlite3
-from tkinter import *
-from tkinter import messagebox, ttk, filedialog,Scale,simpledialog
+from tkinter import Tk,Toplevel,Label,Frame,Button,messagebox, ttk, filedialog,Scale,simpledialog,Canvas,BOTH,RIGHT,LEFT,VERTICAL
+from tkinter import RIDGE,Y,StringVar,IntVar,N,TOP,LabelFrame,Scrollbar,Entry,BooleanVar,TclError,Menu,W,S,BOTTOM,X,DoubleVar
 from datetime import datetime, date, timedelta
 import random
 import os
@@ -29,9 +26,7 @@ from send_email import send_email
 import time
 from PIL import Image, ImageTk, ImageGrab
 from runinthread import run_in_thread
-from server_statistick import update_file,update_elpsed
 from logtofile import log_to_file,log_system
-from github import Github
 from play_sound import play_sound
 from crypto_work import generate_key,load_key,encrypt_message,decrypt_message,read_encrypted_file,write_encrypted_file
 from copy_file_to_folder import copy_file_to_folder
@@ -42,7 +37,6 @@ import importlib
 from transactions import transactions
 from create_change_log import win_changelogs
 from view_change_logs import WinDow
-from download_sdk import download_funcs
 from load_cursor import load_cursor
 from hwid_work import check_did
 from fadeinout import fade_in,fade_out
@@ -62,74 +56,58 @@ from tb_settings import load_settings,save_settings
 from volume_wins import volume_min,volume_plus,mute
 from runupdater import run_updater
 from calendar_win import date_c
-from check_ach import check_ach
-from check_salary import check_salary
+from excos import shutdown_animation
+from download_sdk import download_funcs
 
 start_time_ = time.time()
-module_folder = "utilits"
 
-for file in os.listdir(module_folder):
-    if file.endswith((".py", ".pyd")) and not file.startswith("__"):
-        name = file.split(".")[0]
-        try:
-            globals()[name] = importlib.import_module(f"utilits.{name}")
-        except Exception as e:
-            print(f"MODULE NOT FOUND: {e}")
-            log_to_file(f"MODULE NOT FOUND: {e}",start_time_,level = "error")
 t0 = time.perf_counter()
 
-if False:
-    from utilits import SVBOffice
-    from utilits import soft
-    from utilits import commandConsole
-    from utilits import standart_games
-    from utilits import settings_funcs
-    from utilits import bsod
-    from utilits import browser
-    from utilits import antvrs
-    from utilits import SVBantvrs
-    from utilits import bank
-    from utilits import globalchat
-    from utilits import messanger
-    from utilits import techSupport
-    from utilits import ides
-    from utilits import file_manager
-    from utilits import activity_center
-    from utilits import cloud
-    from utilits import t_manager
-    from utilits import clocks
-    from utilits import VPN
-    from utilits import GetWifiInfo
-    from utilits import activity_control
-    from utilits import archivator
-    from utilits import BookMaker
-    from utilits import buy_num
-    from utilits import book
-    from utilits import cleaning
-    from utilits import casino
-    from utilits import cases
-    from utilits import hotels
-    from utilits import historys
-    from utilits import gos
-    from utilits import photo_editor
-    from utilits import SVBStore
-    from utilits import svbtube
-    from utilits import deliv
-    from utilits import os_diagnost
-    from utilits import trade
-    from utilits import utilit_hashe
+from utilits import soft
+from utilits import commandConsole
+from utilits import standart_games
+from utilits import settings_funcs
+from utilits import bsod
+from utilits import browser
+#from utilits import antvrs
+#from utilits import SVBantvrs
+from utilits import bank
+from utilits import messanger
+from utilits import techSupport
+from utilits import ides
+from utilits import file_manager
+from utilits import cloud
+from utilits import t_manager
+from utilits import clocks
+from utilits import VPN
+from utilits import GetWifiInfo
+from utilits import activity_control
+from utilits import archivator
+from utilits import BookMaker
+from utilits import buy_num
+from utilits import book
+from utilits import cleaning
+from utilits import casino
+from utilits import cases
+from utilits import hotels
+from utilits import historys
+from utilits import gos
+from utilits import photo_editor
+from utilits import SVBStore
+from utilits import svbtube
+from utilits import deliv
+from utilits import os_diagnost
+from utilits import trade
+from utilits import utilit_hashe
 
 load_env()
 
 token = os.getenv('TOKEN_FOR_USERS')
-repo_name = os.getenv('STAT_REPO')
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_GIST_ID = os.getenv("GIST_ID")
 GITHUB_GIST_FILENAME = os.getenv("GIST_FNAME")
 
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
-try: base_dir = os.path.dirname(os.path.realpath(__file__))
-except NameError: base_dir = os.getcwd()
 
 user_langs = []
 user_color = []
@@ -248,16 +226,11 @@ def load_images_icons_encrypted(filepath="syst_comp/valids/vld_icons.cfg"):
             user_icons.append(clean_line)
     return set(line.strip() for line in decrypted_lines.splitlines() if line.strip())
 
-valid_lang = load_valid_languages_encrypted()
 valid_colors = load_valid_colors_encrypted()
-valid_icons = load_images_icons_encrypted()
 valid_wlp_paths = load_names_encrypted()
 valid_wlp_names = load_paths_encrypted()
 
-valid_region = {"netherlans","usa","france","russia","hungry","italia",'australia',"canada"}
 valid_size = {"32","42","52","64","76","84"}
-
-flags = set()
 
 with open("versions/current_version.txt",'r') as f: ver = f.read()
 
@@ -268,31 +241,24 @@ totalAttemps = 3
 currentAttemp = 0
 all_programs_list = ["Weather","Text Speech","YouTube Downloader","Hashe Calculator","Photo Generator",'SVB PhotoEditor',
                      'SVB Hotels',"SVB History's",'SVB Bookmaker',"Internet Store","SVB Archiver",
-                    "Book reader","SVB Office","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
+                    "Book reader","Password Manager","Trade","Promocodes","Lottery","State Services","Auto plate",
                     "Delivery", "Telephone", "Telegrom", "VPN", "Paint", "Casino", "SVB Antivirus", "Translator",
                     "IDE Universal", "IDE Python", "IDE C++", "IDE C", "IDE C#", "IDE HTML CSS",
                     "IDE JavaScript", "IDE Java", "IDE SQL", "IDE GO", "IDE Kotlin", "IDE Rust",
                     "IDE Ruby", "IDE Swift", "IDE PHP", "IDE TypeScript"]
 ban_timer = False
 shortcut_frame = None
-timer_running = False
-stopwatch_running = False
-stopwatch_time = timedelta()
-exclusive_bac = False
 galaxy = False
 galaxy_ = False
-paused = False
 is_on = False
 showed = False
 is_recording = False
 state_sound = False
 update_button_added = False
 mes_count = False
-blinking = False
 progress_window = None
 progress_bar = None
 invisible_pass = False
-current_song = None
 vpn_win = None
 vpn_label = None
 email_state = True
@@ -300,18 +266,15 @@ wifi_button = None
 canvas_icon = None
 lang_win = None
 layout_label = None
-cursor_id = None
 block_state = False
 change_state = False
 recording_thread = None
 recording_indicator = None
-recording_window = None
 img = None
 tooltip = None
 photo = None
 antvrs_state = True
 aut = None
-active_wifi_win = False
 wifi_win = None
 sound_win = None
 sound_but = None
@@ -329,22 +292,14 @@ GlobalAlpha = 100
 timer_id = None
 img_path_pass = ""
 image_wallpeper_pass = False
-paths_pass = []
-level_svb = 0
 night_state = 0
-RAM = 16
-ROM=1024
 svb_coins = 0
-count = 0
-count_casino = 5
 LoggingSett = 0
 MAX_ROWS = 0
 taskbar_height = 0
-timer_time = 0
 active_bg = "#34495e"
 mute_state = ''
 user_volume = ''
-current_playlist = ""
 TASKBAR_CONFIG_FILE = "syst_comp/taskbar_config.json"
 img_path = ""
 account_img = "icons//myacc.png"
@@ -362,7 +317,6 @@ global_fg = ""
 tbColor = ""
 taskbar_bg = ''
 taskbar_fg = ''
-path_wlp = ""
 win_theme = ""
 clock = ""
 icon_refs = {}
@@ -423,7 +377,6 @@ LANGUAGES = {
     0x804: 'ZH',         # Chinese Simplified
     0x808: 'ZH',         # Chinese Traditional
 }
-playlist = {}
 ROWS_MAP = {"32": 9, "42": 9, "52": 9, "64": 8, "76": 6, "84": 5}
 labels = []
 special_frames = []
@@ -681,7 +634,7 @@ def handle_night_mode(night_value):
         taskbar_bg = "#000000"
         taskbar_fg = '#2a2929'
 def check_partner_program():
-    global svb_coins
+    """"global svb_coins
     try:
         _,_,email = return_user_info()
         headers = {
@@ -725,7 +678,7 @@ def check_partner_program():
                         start_time_=start_time_)
             raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")
     except Exception as ex:
-        log_to_file(f"Failed to upload user data to server: {ex}", start_time_=start_time_)
+        log_to_file(f"Failed to upload user data to server: {ex}", start_time_=start_time_)"""""
 
 initialize_system_state_async()
 log_system("ALL SYSTEMS FILES READS",start_time_)
@@ -741,8 +694,8 @@ def is_blocked():
 def main():
     global shortcut_frame,ROWS_MAP,antvrs_state,LoggingSett,win_theme,vpn_win,stopwatch_time,stopwatch_running,valid_wlp_names,valid_wlp_paths,\
         taskbar_fg,taskbar_bg,taskbar_buttons,auto_update_enabled,img_path,image_wallpeper,user_langs,nebo,global_bg,\
-        blinking,cursor_id,global_fg, exclusive_bac,state_sound, galaxy, galaxy_, edition, custom_wallpeper, wifi_state, \
-        size_sh, number, lang,bluetooth_state,clock,night_state,GlobalAlpha,is_recording,recording_thread,showed,icons,module_folder, \
+        blinking,global_fg, exclusive_bac,state_sound, galaxy, galaxy_, edition, custom_wallpeper, wifi_state, \
+        size_sh, number, lang,bluetooth_state,clock,night_state,GlobalAlpha,is_recording,recording_thread,showed,icons, \
     invisible_pass
     def set_icons():
         global icons
@@ -751,7 +704,6 @@ def main():
             "cleaning": "icons/cleaning.png",
             "video_player": 'icons//videoread.png',
             "photov": "icons/svb_photo.png",
-            "globalchat": "icons/interface/glchat.png",
             "CMD": "icons//cmd.png",
             "standart_games": "icons/interface/games.png",
             "SVB SpeedTest": "icons/interface/speed.png",
@@ -824,39 +776,6 @@ def main():
     def remove_shortcut(program_name):
         pass
     def open_store():
-        global all_programs_list
-
-        run_in_thread(lambda: play_sound("sound//click.mp3",volume,state_sound,start_time_))
-        actives_programs.append("Store")
-        log_to_file('Store launch',start_time_ = start_time_)
-
-        win = create_window(root,lang["store"], global_bg, float(GlobalAlpha), 1200, 600, "icons/store.png")
-        Label(win, text=lang["select_program"], font=("Arial", 14, "bold"),bg=global_bg,fg=global_fg).pack(pady=10)
-
-        canvas_frame = Frame(win,bg=global_bg)
-        canvas_frame.pack(padx=10, pady=10, fill=BOTH, expand=True)
-
-        canvas = Canvas(canvas_frame,bg=global_bg)
-        canvas.pack(side=LEFT, fill=BOTH, expand=True)
-
-        scrollbar = Scrollbar(canvas_frame, orient=VERTICAL, command=canvas.yview)
-        scrollbar.pack(side=RIGHT, fill=Y)
-
-        canvas.configure(yscrollcommand=scrollbar.set)
-        canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
-
-        main_frame = Frame(canvas,bg = global_bg,padx=10, pady=10)
-        canvas.create_window((0, 0), window=main_frame, anchor="nw")
-
-        def _on_mousewheel(event): canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
-
-        canvas.bind_all("<MouseWheel>", _on_mousewheel)
-
-        installed_frame = Frame(win, bg="#dff0d8", padx=10, pady=10, relief=RIDGE, bd=2)
-        installed_frame.pack(padx=10, pady=10, fill=BOTH)
-
-        Label(installed_frame, text=lang["downloaded"], font=("Arial", 12, "bold"), bg="#dff0d8").pack(pady=5)
-
         def download(program_name):
             if program_name not in installed_programs:
                 if program_name == "SVB Antivirus":
@@ -888,19 +807,19 @@ def main():
                 installed_programs.append(program_name)
                 icons[program_name] = f"icons//{program_name.lower()}.png"
 
-                place_shortcuts(size_sh,MAX_ROWS,color)
-                refresh_buttons()
+                threading.Thread(target=place_shortcuts(size_sh,MAX_ROWS,color),daemon=True)
+                threading.Thread(target=refresh_buttons(),daemon=True)
         def remove_program(program_name):
             global svb_coins
-            run_in_thread(play_sound("sound//no.mp3", volume, state_sound, start_time_))
+            run_in_thread(lambda: play_sound("sound//no.mp3", volume, state_sound, start_time_))
             if program_name in installed_programs:
                 if program_name == "SVB Antivirus" or program_name == "Translator":
                     svb_coins = load_balance(start_time_)
                     svb_coins += 2000
-                    update_file("count_svbcoins.txt", 2000)
+                    #update_file("count_svbcoins.txt", 2000)
                     transactions("+2.000 SVb Coins"+f" {datetime.now()}",start_time_)
                     save_balance(svb_coins,start_time_)
-                    check_ach(svb_coins,start_time_,lang)
+                    #check_ach(svb_coins,start_time_,lang)
                 log_to_file(f'Program {program_name} removed',start_time_ = start_time_)
                 installed_programs.remove(program_name)
                 write_file(installed_programs_file,"w","\n".join(installed_programs)+"\n")
@@ -918,49 +837,85 @@ def main():
 
             column_count = 2
             row, col = 0, 0
-
+            type = os.getenv("TYPE")
             for name in all_programs_list:
                 path = f"icons//{name.lower()}.png"
-                try:
-                    if os.path.exists(path):
-                        img = Image.open(path)
-                        img = img.resize((64, 64), Image.Resampling.LANCZOS)
-                        icon = ImageTk.PhotoImage(img)
-                    else: icon = None
-
-                except Exception as e:
-                    icon = None
-                    log_to_file(f"Load Image Error {name}: {e}",level="warning",start_time_ = start_time_)
-
-                frame = Frame(main_frame,bg = global_bg, padx=10, pady=5)
-                frame.grid(row=row, column=col, padx=5, pady=5, sticky="w")
-
-                if icon:
-                    lbl = Label(frame, image=icon, fg = global_fg,bg = global_bg)
-                    lbl.image = icon
-                    lbl.pack(side="left", padx=5)
-
-                label_text = f"{lang['downloaded']}" if name in installed_programs else lang[name]
-                btn = Label(frame, text=label_text, fg="green" if name in installed_programs else "black",
-                            font=("Arial", 11, "bold"), bg="white")
-                btn.pack(side="right", padx=5)
-
-                if name in installed_programs:
-                    remove_btn = Button(frame, text=f"{lang['delete']} {lang[name]}", font=("Arial", 10),
-                                        bg="#f44336", fg="white",
-                                        command=lambda n=name: remove_program(n))
-                    remove_btn.pack(side="right", padx=5)
+                if name in ["Text Speech","YouTube Downloader"] and type == "FREE":
+                    pass
                 else:
-                    download_btn = Button(frame, text=f"{lang['download']} {lang[name]}" + (
-                        " 2000 SVB Coins" if name in ["SVB Antivirus", "Translator"] else ""),
-                                          font=("Arial", 10), bg="#007bff", fg="white",
-                                          command=lambda n=name: download(n))
-                    download_btn.pack(side="right", padx=5)
+                    try:
+                        if os.path.exists(path):
+                            img = Image.open(path)
+                            img = img.resize((64, 64), Image.Resampling.LANCZOS)
+                            icon = ImageTk.PhotoImage(img)
+                        else:
+                            icon = None
+                    except Exception as e:
+                        icon = None
+                        log_to_file(f"Load Image Error {name}: {e}", level="warning", start_time_=start_time_)
 
-                col += 1
-                if col >= column_count:
-                    col = 0
-                    row += 1
+                    frame = Frame(main_frame, bg=global_bg, padx=10, pady=5)
+                    frame.grid(row=row, column=col, padx=5, pady=5, sticky="w")
+
+                    if icon:
+                        lbl = Label(frame, image=icon, fg=global_fg, bg=global_bg)
+                        lbl.image = icon
+                        lbl.pack(side="left", padx=5)
+
+                    label_text = f"{lang['downloaded']}" if name in installed_programs else lang[name]
+                    btn = Label(frame, text=label_text, fg="green" if name in installed_programs else "black",
+                                font=("Arial", 11, "bold"), bg="white")
+                    btn.pack(side="right", padx=5)
+
+                    if name in installed_programs:
+                        remove_btn = Button(frame, text=f"{lang['delete']} {lang[name]}", font=("Arial", 10),
+                                            bg="#f44336", fg="white",
+                                            command=lambda n=name: remove_program(n))
+                        remove_btn.pack(side="right", padx=5)
+                    else:
+                        download_btn = Button(frame, text=f"{lang['download']} {lang[name]}" + (
+                            " 2000 SVB Coins" if name in ["SVB Antivirus", "Translator"] else ""),
+                                              font=("Arial", 10), bg="#007bff", fg="white",
+                                              command=lambda n=name: download(n))
+                        download_btn.pack(side="right", padx=5)
+
+                    col += 1
+                    if col >= column_count:
+                        col = 0
+                        row += 1
+        def _on_mousewheel(event): canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+        global all_programs_list
+
+        run_in_thread(lambda: play_sound("sound//click.mp3",volume,state_sound,start_time_))
+        actives_programs.append("Store")
+        log_to_file('Store launch',start_time_ = start_time_)
+
+        win = create_window(root,lang["store"], global_bg, float(GlobalAlpha), 1200, 600, "icons/store.png")
+        Label(win, text=lang["select_program"], font=("Arial", 14, "bold"),bg=global_bg,fg=global_fg).pack(pady=10)
+
+        canvas_frame = Frame(win,bg=global_bg)
+        canvas_frame.pack(padx=10, pady=10, fill=BOTH, expand=True)
+
+        canvas = Canvas(canvas_frame,bg=global_bg)
+        canvas.pack(side=LEFT, fill=BOTH, expand=True)
+
+        scrollbar = Scrollbar(canvas_frame, orient=VERTICAL, command=canvas.yview)
+        scrollbar.pack(side=RIGHT, fill=Y)
+
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+
+        main_frame = Frame(canvas,bg = global_bg,padx=10, pady=10)
+        canvas.create_window((0, 0), window=main_frame, anchor="nw")
+
+        canvas.bind_all("<MouseWheel>", _on_mousewheel)
+
+        installed_frame = Frame(win, bg="#dff0d8", padx=10, pady=10, relief=RIDGE, bd=2)
+        installed_frame.pack(padx=10, pady=10, fill=BOTH)
+
+        Label(installed_frame, text=lang["downloaded"], font=("Arial", 12, "bold"), bg="#dff0d8").pack(pady=5)
+
         refresh_buttons()
     def on_closing():
         log_system("----SHUT DOWN OS----",start_time_)
@@ -975,9 +930,9 @@ def main():
         except NameError:
             elapsed = 0
         n,ln,e = return_user_info()
-        update_file("time_in_windoors.txt",int(elapsed))
-        update_file(f"time_{e}.txt", int(elapsed))
-        update_elpsed("max_time.txt", int(elapsed))
+        #update_file("time_in_windoors.txt",int(elapsed))
+        #update_file(f"time_{e}.txt", int(elapsed))
+        #update_elpsed("max_time.txt", int(elapsed))
         root.destroy()
     def toggle_wifi_window():
         global wifi_win, wifi_button
@@ -1044,9 +999,9 @@ def main():
         else:
             date_c(root,lang,taskbar_fg,global_bg,taskbar,global_fg,calendar_win, date_label, taskbar_height,selected_lang)
     def open_network_simulator():
-        run_in_thread(play_sound("sound//click.mp3", volume, state_sound, start_time_))
+        run_in_thread(lambda: play_sound("sound//click.mp3", volume, state_sound, start_time_))
 
-        global taskbar_height,wifi_state, bluetooth_state, wifi_label, bluetooth_label, wifi_toggle, bluetooth_toggle,gl_police,active_wifi_win,wifi_win
+        global taskbar_height,wifi_state, bluetooth_state, wifi_label, bluetooth_label, wifi_toggle, bluetooth_toggle,gl_police,wifi_win
         wifi_button.config(bg = taskbar_fg)
         wifi_win = Toplevel()
         wifi_win.title("Wifi & Bluetooth")
@@ -1410,7 +1365,7 @@ def main():
             recording_indicator.config(fg=new_color)
             root.after(500, blink_indicator)
     def toggle_recording(btn):
-        global is_recording, recording_thread, recording_indicator, recording_window
+        global is_recording, recording_thread, recording_indicator
 
         if not is_recording:
             is_recording = True
@@ -1437,7 +1392,7 @@ def main():
                 recording_indicator = None
     def open_pusk():
         global acc, account_img, is_recording
-        run_in_thread(play_sound("sound//click.mp3",volume,state_sound,start_time_))
+        run_in_thread(lambda: play_sound("sound//click.mp3",volume,state_sound,start_time_))
         def settings():
             import customtkinter as ctk
             def prim(var_log,var_sound,var_night):
@@ -1766,7 +1721,7 @@ def main():
                 svb_coins = load_balance(start_time_)
                 if messagebox.askyesnocancel("",lang["pay"],parent=win):
                     log_to_file(f"User accept: {lang['pay']}",start_time_ = start_time_)
-                    run_in_thread(play_sound("sound//oldspice.mp3",volume,state_sound,start_time_))
+                    run_in_thread(lambda: play_sound("sound//oldspice.mp3",volume,state_sound,start_time_))
                     log_to_file("Custom wallpeper on",start_time_ = start_time_)
                     svb_coins -= 1000
                     transactions("-1.000 SVb Coins"+f" {datetime.now()}",start_time_)
@@ -2324,8 +2279,6 @@ def main():
                 "RO": "Română",
             }
 
-            display_to_code = {v: k for k, v in lang_display.items()}
-
             l = list(lang_display.values())
             if len(user_langs) > 0: l.extend(user_langs)
 
@@ -2690,7 +2643,6 @@ def main():
             (lang["ach"], lambda: ach(root, lang, global_bg, global_fg,GlobalAlpha)),
             (lang["show_screenshoots"], lambda: OpenWindow(root,lang,global_bg,global_fg,GlobalAlpha)),
             (lang["show_screenrecords"], lambda: OpenWindowRec(root, lang, global_bg, global_fg, GlobalAlpha)),
-            (lang["activity_center"], lambda: activity_center.activity_center(root,lang,global_bg,global_fg,start_time_)),
             (lang["activity_control"],lambda:activity_control.control_window(root,lang,actives_programs,global_bg,global_fg)),
             (lang["wifiinfo"],lambda:GetWifiInfo.get_wifi_info(root,lang,start_time_)),
             (lang["pror"], lambda: settings_funcs.razr(win_p, lang, global_bg, global_fg, gl_police)),
@@ -2799,7 +2751,7 @@ def main():
                             messagebox.showerror(lang["error"],f"{lang['error_execute']} {script_name}:{e}",parent=root)
                             log_to_file(f"Executing error {script_name}: {e}",level="error",start_time_ = start_time_)
                     program_functions[name] = run_user_code
-
+        type = os.getenv("TYPE")
         def safe_run(prog_id):
             try:
                 func = program_functions.get(prog_id)
@@ -3026,8 +2978,8 @@ def main():
     root.bind("<Control-Key-1>", lambda event:volume_plus(event,2,root,global_bg,global_fg,GlobalAlpha,taskbar,sound_b))
     root.bind("<Control-Key-2>", lambda event:volume_min(event,2,root,GlobalAlpha,global_bg,global_fg, taskbar,sound_b))
     root.bind("<Control-Key-3>", lambda event:mute(event,root,global_bg,global_fg,GlobalAlpha,taskbar,sound_b,mute_state,user_volume))
-    root.bind("<Control-Shift-A>",lambda event:ecran_block.ecran_b(root,lang,errors,state_sound,actives_programs,volume,
-    recording_thread,is_recording,start_time_,email,selected_lang))
+    #root.bind("<Control-Shift-A>",lambda event:ecran_block.ecran_b(root,lang,errors,state_sound,actives_programs,volume,
+    #recording_thread,is_recording,start_time_,email,selected_lang))
     root.bind_all("<Motion>", lambda event:on_activity)
     root.bind_all("<KeyPress>", lambda event:on_activity)
     root.bind_all("<Button>", lambda event:on_activity)
@@ -3062,7 +3014,6 @@ def main():
         'SVB Bookmaker':lambda:BookMaker.open_win(root,lang,actives_programs,edition,start_time_,global_bg,global_fg,GlobalAlpha),
         "Internet Store":lambda:SVBStore.main_w(root,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha),
         "SVB Archiver":lambda:archivator.open_archivator(actives_programs,root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
-        "SVB Office": lambda: SVBOffice.SVBOffice(root, lang,  global_bg, global_fg,GlobalAlpha,start_time_),
         'Book reader':lambda:book.bbb(actives_programs,root,lang,start_time_,global_bg,global_fg,GlobalAlpha),
         "YouTube Downloader": lambda: soft.ytDownloader(root,lang,global_bg,global_fg,GlobalAlpha),
         "Text Speech": lambda: soft.textSpeech(root,lang,global_bg,global_fg,GlobalAlpha),
@@ -3078,7 +3029,6 @@ def main():
         lang["calculator"]: lambda:soft.open_calc(state_sound,volume,errors,lang,root,actives_programs,color,special_frames,start_time_,GlobalAlpha),
         lang["browser"]: lambda:browser.open_browser(root,lang,state_sound,volume,start_time_,actives_programs,global_bg,global_fg,wifi_state,GlobalAlpha),
         lang["store"]: open_store,
-        lang["globalchat"]:lambda:globalchat.chat_win(root,lang,email,start_time_,GlobalAlpha),
         lang["os_diagnost"]:lambda:os_diagnost.os_diagn_win(root,lang,global_bg,global_fg,start_time_,actives_programs,GlobalAlpha),
         lang["case"]: lambda:cases.cases(actives_programs,state_sound,volume,root,errors,edition,lang,start_time_,global_bg,global_fg,GlobalAlpha),
         lang["pod1"]: lambda:techSupport.techpodd(lang,root,errors,global_bg,global_fg,start_time_,GlobalAlpha),
@@ -3092,7 +3042,6 @@ def main():
         lang['standart_games']:lambda:standart_games.standart_games(root,lang,actives_programs,state_sound,start_time_,volume,errors,global_bg,global_fg,GlobalAlpha),
         "Auto plate": lambda:buy_num.buy_num(lang,root,edition,errors,start_time_,global_bg,global_fg,GlobalAlpha),
         "Telephone": lambda:soft.pokup_nomer(lang,root,edition,start_time_,global_bg,global_fg,GlobalAlpha),
-        lang["antivirus"]: lambda:antvrs.open_antv(actives_programs,root,lang,color,special_frames,start_time_,GlobalAlpha),
         lang["notepad"]: lambda:soft.open_notepad(state_sound,lang,root,volume,errors,actives_programs,global_fg,global_bg,start_time_,GlobalAlpha),
         "Casino": lambda:casino.open_casino(state_sound,volume,root,actives_programs,errors,lang,edition,start_time_,global_bg,global_fg,GlobalAlpha),
         "IDE Py": lambda:ides.create_ide("Python",actives_programs,root,lang,state_sound,volume,start_time_,GlobalAlpha),
@@ -3112,7 +3061,6 @@ def main():
         "IDE Swift": lambda:ides.create_ide("Swift",actives_programs,root,lang,state_sound,volume,start_time_,GlobalAlpha),
         "IDE GO": lambda:ides.create_ide("GO",actives_programs,root,lang,state_sound,volume,start_time_,GlobalAlpha),
         "IDE Java": lambda:ides.create_ide("Java",actives_programs,root,lang,state_sound,volume,start_time_,GlobalAlpha),
-        "SVB Antivirus": lambda:SVBantvrs.svb_ant(root,lang,start_time_,svb_coins,GlobalAlpha,global_bg),
         "Translator": lambda:soft.translate(root,actives_programs,state_sound,volume,errors,lang,global_fg,global_bg,start_time_,GlobalAlpha),
         "Delivery": lambda:deliv.delivery(root,lang,actives_programs,start_time_,global_bg,global_fg,GlobalAlpha)
     }
@@ -3314,7 +3262,7 @@ def main():
 
     global svb_coins
 
-    check_salary(config,svb_coins,start_time_,lang)
+    #check_salary(config,svb_coins,start_time_,lang)
 
     update_button_added = False
 
@@ -3367,11 +3315,30 @@ def downl():
 
         btnOk = ttk.Button(mainFrame,text = "Apply",command = valid_pre_install)
         btnOk.pack()
-
     def further(name, lastname, email, edition):
         import requests
+        def save_user(first, last, email_val):
+            cursor.execute("INSERT INTO users (first_name, last_name, email) VALUES (?, ?, ?)",
+                           (first, last, email_val))
+            conn.commit()
+            log_to_file("File users.db created",start_time_ = start_time_)
+        def save_country_to_db(selected_country):
+            conn = sqlite3.connect("configurations.db")
+            cur = conn.cursor()
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS user_settings (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    country TEXT
+                )
+            """)
+            cur.execute("INSERT INTO user_settings (country) VALUES (?)", (selected_country,))
+            conn.commit()
+            conn.close()
+            log_to_file("Country saved",start_time_ = start_time_)
+            if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
+                copy_file_to_folder("configurations.db", "backup_data",start_time_)
         def create_act_file(email):
-            try:
+            """"try:
                 token = os.getenv("TOKEN_FOR_USERS")
                 g = Github(token)
 
@@ -3382,7 +3349,7 @@ def downl():
 
                 try:
                     file = repo.get_contents(file_path)
-                    repo.update_file(
+                    repo.#update_file(
                         path=file_path,
                         message="Обновлен file",
                         content=content,
@@ -3396,8 +3363,7 @@ def downl():
                         content=content,
                         branch="main"
                     )
-            except Exception as e:
-                messagebox.showerror("ERROR",str(e))
+            except Exception as e: messagebox.showerror("ERROR",str(e))"""""
         def further1(vvod, edition):
             import psutil
             def load_language(lang_code=""):
@@ -3515,8 +3481,6 @@ def downl():
         write_encrypted_file("syst_comp/lang.cfg", lang_code)
         log_system(f"Language.SET(={lang_code}=)",start_time_)
         copy_file_to_folder("syst_comp/lang.cfg", "backup_data",start_time_)
-        log_system('Copy file lang.cfg',start_time_)
-        log_system('Copy file lang.cfg',start_time_)
 
         global pas
         pas = "-".join("".join(random.choices('0123456789ABCDEFGHIJKLMNOPQRSTUVWYZ', k=4)) for _ in range(6))
@@ -3543,14 +3507,13 @@ def downl():
           </body>
         </html>
         """)
-
         )
         except Exception as ex:
             messagebox.showerror('Error', f"{errors[4]}\n\n{ex}")
 
         global GITHUB_TOKEN,GITHUB_GIST_ID,GITHUB_GIST_FILENAME
         try:
-            headers = {
+            """""headers = {
                 "Authorization": f"token {GITHUB_TOKEN}",
                 "Accept": "application/vnd.github+json"
             }
@@ -3580,6 +3543,7 @@ def downl():
                 "edition": edition.get() if callable(getattr(edition, "get", None)) else edition,
                 "license_key": pas,
                 "UID":uid,
+                "HWID": read_encrypted_file("syst_comp/hwid.key"),
                 "payement":False
             }
 
@@ -3593,28 +3557,14 @@ def downl():
 
             update_resp = requests.patch(gist_url, headers=headers, json=update_data)
             update_resp.raise_for_status()
-            update_file("count_users.txt",1)
+            #update_file("count_users.txt",1)
             log_to_file("User data saved to server successfully.",start_time_ = start_time_)
             if update_resp.status_code not in (200, 201):
                 log_to_file(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}",start_time_ = start_time_)
-                raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")
+                raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")"""""
         except Exception as ex:
             log_to_file(f"Failed to upload user data to server: {ex}",start_time_ = start_time_)
-        def save_country_to_db(selected_country):
-            conn = sqlite3.connect("configurations.db")
-            cur = conn.cursor()
-            cur.execute("""
-                CREATE TABLE IF NOT EXISTS user_settings (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    country TEXT
-                )
-            """)
-            cur.execute("INSERT INTO user_settings (country) VALUES (?)", (selected_country,))
-            conn.commit()
-            conn.close()
-            log_to_file("Country saved",start_time_ = start_time_)
-            if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
-                copy_file_to_folder("configurations.db", "backup_data",start_time_)
+
         selected = country_box.get()
         if selected in countries_list:
             save_country_to_db(selected)
@@ -3633,18 +3583,7 @@ def downl():
         )""")
         conn.commit()
 
-        def save_user(first, last, email_val):
-            cursor.execute("INSERT INTO users (first_name, last_name, email) VALUES (?, ?, ?)",
-                           (first, last, email_val))
-            conn.commit()
-            log_to_file("File users.db created",start_time_ = start_time_)
-        def update_user(user_id, new_first, new_last, new_email):
-            cursor.execute("""
-            UPDATE users
-            SET first_name = ?, last_name = ?, email = ?
-            WHERE id = ?
-            """, (new_first, new_last, new_email, user_id))
-            conn.commit()
+
         save_user(name, lastname, email)
 
         for widget in content_frame.winfo_children():
@@ -3666,7 +3605,7 @@ def downl():
             email = email_entry.get()
             key = key_entry.get()
             try:
-                headers = {
+                ''''headers = {
                     "Authorization": f"token {GITHUB_TOKEN}",
                     "Accept": "application/vnd.github+json"
                 }
@@ -3758,7 +3697,7 @@ def downl():
                     else:
                         messagebox.showerror("Error","Invalid code!")
                 else:
-                    messagebox.showerror("Error", "Invalid login")
+                    messagebox.showerror("Error", "Invalid login")'''''
             except Exception as e:
                 messagebox.showerror("Error", f"Login failed:\n{e}")
                 log_to_file(f"Error with logging: {e}",start_time_ = start_time_)
@@ -3878,8 +3817,6 @@ def enter_password():
             cursor = conn.cursor()
 
             cursor.execute("SELECT password FROM password")
-            rows = cursor.fetchall()
-
             cursor.execute(
                         "UPDATE password SET password = ?",
                         (new_p,)
@@ -4031,6 +3968,7 @@ def enter_password():
         else:
             entry.config(show="*")
             invisible_pass = True
+
     try: selected_lang = read_encrypted_file("syst_comp/lang.cfg").strip()
     except Exception:
         messagebox.showerror(f'Error {errors[0]}',
@@ -4038,6 +3976,7 @@ def enter_password():
         log_to_file("No file lang.cfg in directory", level="error", start_time_=start_time_)
         selected_lang = "EN"
         write_encrypted_file("syst_comp/lang.cfg", selected_lang)
+
     lang = load_language(selected_lang)
 
     log_to_file("Enter password function is running", start_time_=start_time_)
@@ -4109,7 +4048,6 @@ def enter_password():
     canvas_icon.create_window(Win.winfo_screenwidth() // 2 + 100, Win.winfo_screenheight() // 2 - 300, window=hide)
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 400, window=lbl)
     canvas_icon.create_window(Win.winfo_screenwidth() // 2, Win.winfo_screenheight() // 2 - 480, window=lbl_icon)
-
 
     Win.mainloop()
 def anim(arg="s"):
@@ -4211,7 +4149,7 @@ def anim(arg="s"):
             Win.update_idletasks()
 
         welc(arg)
-    run_in_thread(("sound//brr.mp3",None,state_sound,start_time_))
+    run_in_thread(play_sound("sound//brr.mp3",None,state_sound,start_time_))
     Win = Tk()
     Win.config(bg = "#2C3E50")
     Win.title(lang["launch"])
@@ -4243,12 +4181,24 @@ def anim(arg="s"):
 
     Win.mainloop()
 
-if check_did(start_time_):
-    if os.path.exists("syst_comp/license.bin"):
-        if is_blocked():
+def start():
+    license_exists = os.path.exists("syst_comp/license.bin")
+
+    if not check_did(start_time_) or not license_exists:
+        downl()
+        return
+
+    if is_blocked():
+        try:
             date = read_encrypted_file("syst_comp/control_nxt_date.cfg")
             subprocess.Popen(["LimitWin.exe", date])
-        else:
-            if os.path.exists("password.db"): anim("p")
-            else: anim()
-    else:  downl()
+        except Exception:
+            downl()
+        return
+
+    if os.path.exists("password.db"):
+        anim("p")
+    else:
+        anim()
+
+start()
