@@ -22,10 +22,8 @@ In this moment, project count >36k lines of code(with the games and others utili
 | fernet |   algorithm    |
 | dateutil |   sndfile    |
 | cv2 |    stb_image   |
-| docx |   format    |
-| dotenv |       |
+| dotenv |    format   |
 | faker |       |
-| github |       |
 | idlelib |       |
 | hashlib |       |
 | importlib |       |
@@ -35,13 +33,11 @@ In this moment, project count >36k lines of code(with the games and others utili
 | keyword |       |
 | logging |       |
 | math |       |
-| openpyxl |       |
 | pathlib |       |
 | piexif |       |
 | os |       |
 | platform |       |
 | plyer |       |
-| pptx |       |
 | psutil |       |
 | pygame |       |
 | pyautogui |       |
@@ -55,7 +51,6 @@ In this moment, project count >36k lines of code(with the games and others utili
 | shutil |       |
 | smtplib |       |
 | socket |       |
-| stream_chat |       |
 | supabase |       |
 | tabulate |       |
 | subprocess |       |
