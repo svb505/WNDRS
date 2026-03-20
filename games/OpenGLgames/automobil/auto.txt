@@ -1,1 +1,1 @@
-20_09_2025_15:10:47 - [info] Exit from game
+17_03_2026_19:56:49 - [info] Sound played: games/OpenGLgames/automobil/music/engine.mp3 in channel <pygame.mixer.Channel object at 0x00000141E3327890>

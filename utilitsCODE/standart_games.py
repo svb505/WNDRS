@@ -1,10 +1,10 @@
 import subprocess
 import sys
 import os
+import webbrowser
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-
 from games import saper, tetris, kamn
 from utilits import coordinat, durak, poker, BsEmpire, ball_game, snakeGame, arkanoid, avtomobils
 from utilits import soft
@@ -34,22 +34,19 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_,
     Win.title(lang.get("standart_games", "Games"))
     Win.geometry('750x500')
 
-    # 🔴 хранилище изображений
     Win.images = {}
 
     def load_img(key, path):
         if not os.path.exists(path):
-            print("MISSING:", path)
             return None
 
         img = ImageTk.PhotoImage(
             Image.open(path).resize((45, 45), Image.Resampling.LANCZOS)
         )
 
-        Win.images[key] = img  # сохраняем
+        Win.images[key] = img
         return img
 
-    # --- UI ---
     frm_top = Frame(Win)
     frm_top.pack(fill=X, side=TOP)
 
@@ -73,7 +70,6 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_,
         fg=global_fg
     ).pack()
 
-    # --- ИКОНКИ ---
     icons = {
         "tetris": load_img("tetris", os.path.join(BASE_DIR, 'icons/tetris.png')),
         "durak": load_img("durak", os.path.join(BASE_DIR, 'icons/interface/durak.png')),
@@ -91,6 +87,7 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_,
         "checkers": load_img("checkers", os.path.join(BASE_DIR, 'games/checkers/icon.png')),
         "kamn": load_img("kamn", os.path.join(BASE_DIR, 'icons/rock_paper_scissors.png')),
         "mill": load_img("mill", os.path.join(BASE_DIR, 'icons/millionaire.png')),
+        "horror": load_img("horror", os.path.join(BASE_DIR, 'icons/horror.png')),
     }
 
     names = [
@@ -110,6 +107,7 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_,
         lang.get("checkers", "checkers"),
         lang.get("kamnozhbum", "kamn"),
         lang.get("mill", "mill"),
+        lang.get("horror","horror")
     ]
 
     commands = [
@@ -140,7 +138,8 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_,
             cwd=os.path.join(BASE_DIR, "games/checkers")
         ),
         lambda: kamn(root, lang, start_time_, global_bg, global_fg, GlobalAlpha),
-        lambda: soft.millioner(lang, root, start_time_, global_bg, global_fg, GlobalAlpha)
+        lambda: soft.millioner(lang, root, start_time_, global_bg, global_fg, GlobalAlpha),
+        lambda: webbrowser.open(os.path.join(BASE_DIR, 'games/horror.html'))
     ]
 
     frames = [frm_left, frm_right, frm_right1, frm_right2]
@@ -148,20 +147,15 @@ def standart_games(root, lang, actives_programs, state_sound, start_time_,
     for i, (name, key, cmd) in enumerate(zip(names, icons.keys(), commands)):
         frm = frames[i // 5]
 
-        if name in [
-            lang.get("BEG"),
-            lang.get("game_durak"),
-            lang.get("asteroids"),
-            lang.get("ballG"),
-            lang.get("automobils")
-        ] and type_ == "FREE":
+        if name in [lang.get("BEG"),lang.get("game_durak"),lang.get("asteroids"),lang.get("ballG"), lang.get("automobils"),
+            lang.get("horror")] and type_ == "FREE":
             continue
 
         img = icons[key]
 
         if img:
             lbl = Label(frm, image=img, bg=global_bg)
-            lbl.image = img  # 🔴 критично
+            lbl.image = img
             lbl.pack()
 
         ttk.Button(frm, text=name, command=cmd).pack()

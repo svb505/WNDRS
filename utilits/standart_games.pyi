@@ -11,6 +11,7 @@ from utilits import BsEmpire, arkanoid, avtomobils, ball_game, coordinat, durak,
 import os
 import subprocess
 import sys
+import webbrowser
 
 def get_base_dir() -> Any:
     ...
@@ -27,6 +28,7 @@ __name__ = ...
 import subprocess
 import sys
 import os
+import webbrowser
 import tkinter
 import tkinter.ttk
 import PIL

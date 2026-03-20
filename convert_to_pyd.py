@@ -1,5 +1,5 @@
 """
 
 """
-#python -m nuitka --module utilitsCODE/standart_games.py
+#python -m nuitka --module utilitsCODE/hashes.py
 

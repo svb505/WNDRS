@@ -11,11 +11,18 @@ import json
 import ctypes
 import sys
 
-PARENT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if getattr(sys, 'frozen', False):
+    base_dir = os.path.dirname(sys.executable)  # папка exe
+else:
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+PARENT_DIR = os.path.dirname(base_dir)
+
+dll_path = os.path.join(base_dir, "DLLs", "LoadFiles.dll")
 
 if PARENT_DIR not in sys.path:
     sys.path.insert(0, PARENT_DIR)
-dll_path = os.path.join(PARENT_DIR, "DLLs", "LoadFiles.dll")
+
 filelist_dll = ctypes.CDLL(dll_path)
 
 def get_files_from_dll(path):

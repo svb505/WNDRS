@@ -250,3 +250,5 @@
 05_10_2025_18:48:46 - [info] Game over
 05_10_2025_18:48:47 - [info] Change direction. Current direction: Right
 05_10_2025_18:48:51 - [info] Exit from game
+17_03_2026_19:28:13 - [info] Selected 1 level
+17_03_2026_19:28:13 - [info] game launch

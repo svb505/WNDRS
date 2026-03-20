@@ -51,3 +51,5 @@
 15_10_2025_17:52:15 - [info] Hit to asteroid
 15_10_2025_17:52:15 - [info] Astorid destroyed
 15_10_2025_17:52:33 - [info] Collision with a ship!
+17_03_2026_19:28:28 - [info] Selected 1 level
+17_03_2026_19:28:28 - [info] Game launch

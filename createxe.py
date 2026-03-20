@@ -17,7 +17,6 @@ def select_script():
     if file_path:
         entry_script.delete(0, tk.END)
         entry_script.insert(0, file_path)
-
 def select_image():
     file_path = filedialog.askopenfilename(title="Выберите изображение", filetypes=[("Файлы изображений", "*.png;*.jpg;*.jpeg;*.ico")])
     if file_path:
@@ -27,14 +26,12 @@ def select_image():
             load_image_preview(file_path)
         except Exception:
             image_preview_label.config(image='')
-
 def load_image_preview(file_path):
     image = Image.open(file_path)
     image.thumbnail((100, 100))
     img = ImageTk.PhotoImage(image)
     image_preview_label.config(image=img)
     image_preview_label.image = img
-
 def toggle_icon_checkbox():
     state = "normal" if checkbox_icon.get() else "disabled"
     entry_image.config(state=state)
@@ -48,26 +45,22 @@ def toggle_icon_checkbox():
     else:
         image_preview_label.config(image='')
         image_preview_label.image = None
-
 def add_extra_file():
     file_path = filedialog.askopenfilename(title="Выберите файл для включения в exe")
     if file_path:
         extra_files.append(file_path)
         listbox_files.insert(tk.END, file_path)
-
 def remove_extra_file():
     selection = listbox_files.curselection()
     if selection:
         index = selection[0]
         extra_files.pop(index)
         listbox_files.delete(index)
-
 def append_log(message):
     text_log.config(state="normal")
     text_log.insert(tk.END, message + "\n")
     text_log.see(tk.END)
     text_log.config(state="disabled")
-
 def generate_exe_thread():
     try:
         script_path = entry_script.get().strip()
@@ -95,6 +88,7 @@ def generate_exe_thread():
             "--distpath", os.path.join(script_dir, "dist"),
             "--workpath", os.path.join(script_dir, "build"),
             "--add-binary", "D:\\programar\\WNDRS\\DLLs;DLLs",
+            "--add-data", r"D:\programar\WNDRS\.venv2\Lib\site-packages\country_list\country_data\data;country_list/country_data/data",
             "--add-data","icons;icons",
             "--add-data","games;games",
             # путь чтобы PyInstaller видел пакет
@@ -116,6 +110,7 @@ def generate_exe_thread():
             "--hidden-import=supabase",
             "--hidden-import=piexif",
             "--hidden-import=dropbox",
+            "--hidden-import=country_list",
             # добавить саму папку utilits
             "--add-data", f"{utilits_path};utilits",
 
@@ -187,11 +182,9 @@ def generate_exe_thread():
 
     except Exception as e:
         messagebox.showerror("Ошибка", f"Произошла ошибка при создании exe файла: {e}")
-
 def generate_exe():
     threading.Thread(target=generate_exe_thread, daemon=True).start()
 
-# GUI
 root = tk.Tk()
 root.geometry("700x700")
 root.title("Генератор EXE файлов с опциями")
@@ -204,6 +197,7 @@ frame_select = ttk.Frame(root, padding=10)
 frame_select.pack(fill=tk.X)
 ttk.Label(frame_select, text="Выберите Python скрипт:").grid(row=0, column=0, sticky=tk.W)
 entry_script = ttk.Entry(frame_select, width=50)
+entry_script.insert(0,"D:/programar/WNDRS/my_os.py")
 entry_script.grid(row=0, column=1, padx=5)
 ttk.Button(frame_select, text="Обзор...", command=select_script).grid(row=0, column=2, padx=5)
 
@@ -211,7 +205,7 @@ ttk.Button(frame_select, text="Обзор...", command=select_script).grid(row=0
 frame_options = ttk.Labelframe(root, text="Опции", padding=10)
 frame_options.pack(fill="both", expand=True, padx=10, pady=5)
 checkbox_console = tk.BooleanVar(value=False)
-checkbox_icon = tk.BooleanVar()
+checkbox_icon = tk.BooleanVar(value=True)
 ttk.Checkbutton(frame_options,
                 text="Консольное окно (для консольных приложений)",
                 variable=checkbox_console).grid(row=0, column=0, padx=5, pady=5, sticky=tk.W)
@@ -222,9 +216,11 @@ ttk.Checkbutton(frame_options, text="Использовать иконку", var
 frame_image = ttk.Frame(root, padding=10)
 frame_image.pack(fill=tk.X)
 ttk.Label(frame_image, text="Выберите иконку (PNG/ICO):").grid(row=0, column=0, sticky=tk.W)
-entry_image = ttk.Entry(frame_image, width=50, state="disabled")
+entry_image = ttk.Entry(frame_image, width=50)
+entry_image.insert(0,"D:/programar/WNDRS/icons/WinDoors52-ICON.png")
 entry_image.grid(row=0, column=1, padx=5)
-button_browse_image = ttk.Button(frame_image, text="Обзор...", command=select_image, state="disabled")
+
+button_browse_image = ttk.Button(frame_image, text="Обзор...", command=select_image)
 button_browse_image.grid(row=0, column=2, padx=5)
 image_preview_label = ttk.Label(frame_image)
 image_preview_label.grid(row=1, column=0, columnspan=3, pady=10)

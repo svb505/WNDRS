@@ -1,5 +1,7 @@
 import json
 import subprocess
+
+from check_ach import check_ach
 from show_error import show_error
 import shutil
 from show_screenshoots import OpenWindow
@@ -69,8 +71,6 @@ from utilits import standart_games
 from utilits import settings_funcs
 from utilits import bsod
 from utilits import browser
-#from utilits import antvrs
-#from utilits import SVBantvrs
 from utilits import bank
 from utilits import messanger
 from utilits import techSupport
@@ -101,12 +101,6 @@ from utilits import trade
 from utilits import utilit_hashe
 
 load_env()
-
-
-token = os.getenv('TOKEN_FOR_USERS')
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_GIST_ID = os.getenv("GIST_ID")
-GITHUB_GIST_FILENAME = os.getenv("GIST_FNAME")
 
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
@@ -634,52 +628,6 @@ def handle_night_mode(night_value):
         global_fg = "white"
         taskbar_bg = "#000000"
         taskbar_fg = '#2a2929'
-def check_partner_program():
-    """"global svb_coins
-    try:
-        _,_,email = return_user_info()
-        headers = {
-            "Authorization": f"token {GITHUB_TOKEN}",
-            "Accept": "application/vnd.github+json"
-        }
-        gist_url = f"https://api.github.com/gists/{GITHUB_GIST_ID}"
-
-        response = requests.get(gist_url, headers=headers)
-        response.raise_for_status()
-
-        gist_json = response.json()
-        files = gist_json.get("files", {})
-
-        content = files.get(GITHUB_GIST_FILENAME, {}).get("content", "{}")
-        try:
-            users_data = json.loads(content)
-        except Exception as e:
-            messagebox.showerror(lang["error"],str(e))
-            return
-
-        if email in users_data and users_data[email].get("payement"):
-            svb_coins = load_balance(start_time_)
-            svb_coins += 500000
-            save_balance(svb_coins, start_time_)
-            messagebox.showinfo(lang["parthner_program"], lang["parthner_program_info"])
-            users_data[email]["payement"] = False
-        update_data = {
-            "files": {
-                GITHUB_GIST_FILENAME: {
-                    "content": json.dumps(users_data, indent=4, ensure_ascii=False)
-                }
-            }
-        }
-
-        update_resp = requests.patch(gist_url, headers=headers, json=update_data)
-        update_resp.raise_for_status()
-
-        if update_resp.status_code not in (200, 201):
-            log_to_file(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}",
-                        start_time_=start_time_)
-            raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")
-    except Exception as ex:
-        log_to_file(f"Failed to upload user data to server: {ex}", start_time_=start_time_)"""""
 
 initialize_system_state_async()
 log_system("ALL SYSTEMS FILES READS",start_time_)
@@ -711,7 +659,6 @@ def main():
             "calculator": "icons//calculator.png",
             "browser": "icons//browser.png",
             "store": "icons//store.png",
-            "antivirus": "icons//antivirus.png",
             "notepad": "icons//notebook.png",
             "case": "icons//cases.png",
             "pod1": "icons//tech_support.png",
@@ -817,10 +764,9 @@ def main():
                 if program_name == "SVB Antivirus" or program_name == "Translator":
                     svb_coins = load_balance(start_time_)
                     svb_coins += 2000
-                    #update_file("count_svbcoins.txt", 2000)
                     transactions("+2.000 SVb Coins"+f" {datetime.now()}",start_time_)
                     save_balance(svb_coins,start_time_)
-                    #check_ach(svb_coins,start_time_,lang)
+                    check_ach(svb_coins,start_time_,lang)
                 log_to_file(f'Program {program_name} removed',start_time_ = start_time_)
                 installed_programs.remove(program_name)
                 write_file(installed_programs_file,"w","\n".join(installed_programs)+"\n")
@@ -3273,8 +3219,6 @@ def main():
     log_system(f"START: {time.perf_counter() - t0:.1f} sec",start_time_)
     threading.Thread(target = lambda:run_updater(start_time_), daemon=True).start()
 
-    threading.Thread(target=check_partner_program, daemon=True).start()
-
     root.mainloop()
 def downl():
     from country_list import countries_for_language
@@ -3317,7 +3261,6 @@ def downl():
         btnOk = ttk.Button(mainFrame,text = "Apply",command = valid_pre_install)
         btnOk.pack()
     def further(name, lastname, email, edition):
-        import requests
         def save_user(first, last, email_val):
             cursor.execute("INSERT INTO users (first_name, last_name, email) VALUES (?, ?, ?)",
                            (first, last, email_val))
@@ -3338,33 +3281,6 @@ def downl():
             log_to_file("Country saved",start_time_ = start_time_)
             if edition in ("Professional x64", "Gaming x64","Professional x32", "Gaming x32"):
                 copy_file_to_folder("configurations.db", "backup_data",start_time_)
-        def create_act_file(email):
-            """"try:
-                token = os.getenv("TOKEN_FOR_USERS")
-                g = Github(token)
-
-                repo = g.get_user().get_repo("statistick")
-
-                file_path = f"time_{email}.txt"
-                content = "0"
-
-                try:
-                    file = repo.get_contents(file_path)
-                    repo.#update_file(
-                        path=file_path,
-                        message="Обновлен file",
-                        content=content,
-                        sha=file.sha,
-                        branch="main"
-                    )
-                except:
-                    repo.create_file(
-                        path=file_path,
-                        message="Добавлен file",
-                        content=content,
-                        branch="main"
-                    )
-            except Exception as e: messagebox.showerror("ERROR",str(e))"""""
         def further1(vvod, edition):
             import psutil
             def load_language(lang_code=""):
@@ -3398,7 +3314,6 @@ def downl():
                     widget.destroy()
 
                 write_file("syst_comp/license.bin","w",pas)
-                create_act_file(email)
                 style = ttk.Style()
                 style.configure("Custom.TFrame", background="#2C3E50", padding=10)
                 contentt_frame = ttk.Frame(Win,style = 'Custom.TFrame')
@@ -3512,60 +3427,6 @@ def downl():
         except Exception as ex:
             messagebox.showerror('Error', f"{errors[4]}\n\n{ex}")
 
-        global GITHUB_TOKEN,GITHUB_GIST_ID,GITHUB_GIST_FILENAME
-        try:
-            """""headers = {
-                "Authorization": f"token {GITHUB_TOKEN}",
-                "Accept": "application/vnd.github+json"
-            }
-            gist_url = f"https://api.github.com/gists/{GITHUB_GIST_ID}"
-
-            response = requests.get(gist_url, headers=headers)
-            response.raise_for_status()
-
-            gist_json = response.json()
-            files = gist_json.get("files", {})
-
-            content = files.get(GITHUB_GIST_FILENAME, {}).get("content", "{}")
-            try:
-                users_data = json.loads(content)
-                if not isinstance(users_data, dict):
-                    users_data = {}
-            except json.JSONDecodeError:
-                users_data = {}
-
-            uid = "".join("".join(random.choices('0123456789ABCDEFGHIJKLMNOPQRSTUVWYZ', k=4)) for _ in range(2))
-            write_encrypted_file("uid.key",uid)
-
-            users_data[email] = {
-                "first_name": name,
-                "last_name": lastname,
-                "email": email,
-                "edition": edition.get() if callable(getattr(edition, "get", None)) else edition,
-                "license_key": pas,
-                "UID":uid,
-                "HWID": read_encrypted_file("syst_comp/hwid.key"),
-                "payement":False
-            }
-
-            update_data = {
-                "files": {
-                    GITHUB_GIST_FILENAME: {
-                        "content": json.dumps(users_data, indent=4, ensure_ascii=False)
-                    }
-                }
-            }
-
-            update_resp = requests.patch(gist_url, headers=headers, json=update_data)
-            update_resp.raise_for_status()
-            #update_file("count_users.txt",1)
-            log_to_file("User data saved to server successfully.",start_time_ = start_time_)
-            if update_resp.status_code not in (200, 201):
-                log_to_file(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}",start_time_ = start_time_)
-                raise Exception(f"Failed to update gist: status code {update_resp.status_code} - {update_resp.text}")"""""
-        except Exception as ex:
-            log_to_file(f"Failed to upload user data to server: {ex}",start_time_ = start_time_)
-
         selected = country_box.get()
         if selected in countries_list:
             save_country_to_db(selected)
@@ -3598,121 +3459,6 @@ def downl():
         en2.pack(pady=5)
         ttk.Button(content_frame, text="Continue", style="Accent.TButton",
                    command=lambda: further1(en2.get(), edition)).pack(pady=10)
-    def login_screen():
-        import customtkinter as ctk
-        import requests
-        def try_login():
-            import psutil
-            email = email_entry.get()
-            key = key_entry.get()
-            try:
-                ''''headers = {
-                    "Authorization": f"token {GITHUB_TOKEN}",
-                    "Accept": "application/vnd.github+json"
-                }
-                gist_url = f"https://api.github.com/gists/{GITHUB_GIST_ID}"
-
-                response = requests.get(gist_url, headers=headers)
-                if response.status_code != 200:
-                    raise Exception(f"Failed to fetch gist: {response.status_code}\n{response.text}")
-
-                gist_json = response.json()
-                files = gist_json.get("files", {})
-                if not isinstance(files, dict) or GITHUB_GIST_FILENAME not in files:
-                    raise Exception(f"File {GITHUB_GIST_FILENAME} not found in gist")
-
-                users_content = files[GITHUB_GIST_FILENAME]["content"]
-                users_data = json.loads(users_content)
-
-                if email in users_data and users_data[email].get("license_key") == key:
-                    login_pass = random.randint(100000,999999)
-                    run_in_thread(send_email(
-                        to=str(email),
-                        subject="🔐 Your Activation Code",
-                        html=f"""
-                            <html>
-                     <body style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">
-                        <div style="background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0px 2px 6px rgba(0,0,0,0.1); max-width: 500px; margin: auto;">
-                             <h2 style="color: #333;">🔑 Login Verification</h2>
-                             <p style="font-size: 16px; color: #555;">
-                             We received a request to sign in to your account. Enter the verification code below to complete your login:
-                                 </p>
-                    <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; text-align: center; font-size: 24px; letter-spacing: 2px; font-weight: bold; color: #007BFF;">
-                                 {login_pass}
-                                </div>
-                        <p style="font-size: 14px; color: #888; margin-top: 20px;">
-                          This code will expire in 10 minutes. If you did not request this code, please ignore this email.
-                         </p>
-                         <p style="font-size: 14px; color: #888;">
-                           🔒 Keep your account secure.
-                              </p>
-                         </div>
-                         </body>
-                        </html>
-                        """)
-
-                                 )
-                    user_input = simpledialog.askinteger("Verification","Enter verification code from email")
-                    if user_input == login_pass:
-                        user_info = users_data[email]
-
-                        write_file("syst_comp/license.bin","w",key)
-
-                        edition_str = user_info.get("edition", "Standart x64")
-                        a = "x64" if "x64" in edition_str else "x32"
-                        total_memory_gb = psutil.virtual_memory().total / (1024 ** 3)
-                        total_disk_gb = psutil.disk_usage('/').total / (1024 ** 3)
-                        config_data = f"RAM={total_memory_gb}GB\nROM={total_disk_gb}GB\nEDITION={edition_str}\nARCH={a}"
-                        write_encrypted_file("syst_comp/parametrs.bin", config_data)
-
-                        lang_code = "EN"
-                        try:
-                            selected_lang = read_encrypted_file("syst_comp/lang.cfg")
-                            lang_code = selected_lang if selected_lang else "EN"
-                        except:
-                            write_encrypted_file("syst_comp/lang.cfg", lang_code)
-
-                        conn = sqlite3.connect("configurations.db")
-                        cursor = conn.cursor()
-                        cursor.execute("""
-                                                CREATE TABLE IF NOT EXISTS users (
-                                                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                    first_name TEXT,
-                                                    last_name TEXT,
-                                                    email TEXT
-                                                )""")
-                        conn.commit()
-
-                        cursor.execute("INSERT INTO users (first_name, last_name, email) VALUES (?, ?, ?)",
-                                       (user_info.get("first_name"), user_info.get("last_name"), email))
-                        conn.commit()
-                        conn.close()
-
-                        copy_file_to_folder("configurations.db", "backup_data",start_time_)
-                        copy_file_to_folder("syst_comp/lang.cfg", "backup_data",start_time_)
-
-                        log_to_file("Login successful. Data saved.", start_time_=start_time_)
-                        messagebox.showinfo("Success", "Login successful")
-                        Win.destroy()
-                        main()
-                    else:
-                        messagebox.showerror("Error","Invalid code!")
-                else:
-                    messagebox.showerror("Error", "Invalid login")'''''
-            except Exception as e:
-                messagebox.showerror("Error", f"Login failed:\n{e}")
-                log_to_file(f"Error with logging: {e}",start_time_ = start_time_)
-        for widget in content_frame.winfo_children():
-            widget.destroy()
-
-        ttk.Label(content_frame, text="Login with your license", background="#2C3E50", foreground="white").pack()
-        ttk.Label(content_frame, text="Enter your email", background="#2C3E50", foreground="white").pack()
-        email_entry = ctk.CTkEntry(content_frame, font=("Arial", 12),placeholder_text="Email",fg_color = fg_widget,placeholder_text_color="white")
-        email_entry.pack(pady=5)
-        ttk.Label(content_frame, text="Enter your license key", background="#2C3E50", foreground="white").pack()
-        key_entry = ctk.CTkEntry(content_frame, font=("Arial", 12),placeholder_text='License',fg_color = fg_widget,placeholder_text_color="white")
-        key_entry.pack(pady=5)
-        ctk.CTkButton(master=content_frame, text="Login", width=200, height=40, corner_radius=15,command=try_login).pack()
     log_to_file("----DOWNLOADER LAUNCH----",start_time_ = start_time_)
 
     fg_widget = "#2980B9"
@@ -3775,10 +3521,6 @@ def downl():
     continue_btn = ctk.CTkButton(master=content_frame, text="Continue",width=200, height=40, corner_radius=15,
                                  command=lambda: further(en.get(), en1.get(), email1.get(), edition_box.get()))
     continue_btn.pack(pady=(30, 10))
-
-    login_btn = ctk.CTkButton(master=content_frame, text="Already have a license?",width=200, height=35, corner_radius=15,
-                              fg_color="#1ABC9C", hover_color="#16A085",command=login_screen)
-    login_btn.pack(pady=(0, 20))
 
     footer_label = ctk.CTkLabel(master=content_frame, text="Developed by SVB.",font=ctk.CTkFont(size=14, weight="bold"))
     footer_label.pack(side="bottom", pady=10)
