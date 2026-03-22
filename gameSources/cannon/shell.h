@@ -3,11 +3,12 @@
 #include <cmath>
 #include <vector>
 
+float shellSpeed = 25.0f;
+
 struct Position {
 	float x0, y0, z0;
 	float x, y, z;
 	float vx, vy, vz;
-	float shellSpeed = 25.0f;
 	float gravity = 9.8f;
 	float t;
 	bool alive = false;
@@ -59,9 +60,9 @@ public:
 		pos.y0 = yTop;
 		pos.z0 = -5.0f;
 
-		pos.vx = cos(pitchRad) * sin(yawRad) * pos.shellSpeed;
-		pos.vy = (sin(pitchRad) * pos.shellSpeed);
-		pos.vz = cos(pitchRad) * cos(yawRad) * pos.shellSpeed;
+		pos.vx = cos(pitchRad) * sin(yawRad) * shellSpeed;
+		pos.vy = (sin(pitchRad) * shellSpeed);
+		pos.vz = cos(pitchRad) * cos(yawRad) * shellSpeed;
 
 		pos.gravity = 9.8f;
 		pos.t = 0.0f;

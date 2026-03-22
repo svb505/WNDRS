@@ -3,12 +3,13 @@
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
 #include <cmath>
+#include "gethight.h"
 
 class Cannon {
 public:
     // ===== Параметры пушки =====
     float baseWidth = 2.0f;   // ширина корпуса
-    float baseHeight = 1.0f;   // высота корпуса
+    float baseHeight = getHeight(2.0f / 2, 3.0f / 2);   // высота корпуса
     float baseDepth = 3.0f;   // глубина корпуса
 
     float barrelRadius = 0.2f; // радиус ствола
@@ -24,7 +25,7 @@ public:
     void drawBox(float w, float h, float d) {
 
         float x = w / 2;
-        float y = h / 2;
+        float y = h;
         float z = d / 2;
 
         glBegin(GL_QUADS);
@@ -49,55 +50,80 @@ public:
 
         glEnd();
     }
-    void drawCylinder(float radius, float length, int slices){
-        glBegin(GL_QUAD_STRIP);
+    void drawCylinderCap(float radius, float z, int slices, bool front) {
+        glBegin(GL_TRIANGLE_FAN);
 
-        for (int i = 0; i <= slices; i++){
+        glNormal3f(0, 0, front ? -1.0f : 1.0f);
+        glVertex3f(0, 0, z);
+
+        for (int i = 0; i <= slices; i++) {
+            float a = 2.0f * 3.1415926f * i / slices;
+            float x = cos(a) * radius;
+            float y = sin(a) * radius;
+            glVertex3f(x, y, z);
+        }
+
+        glEnd();
+    }
+    void drawBetterCylinder(float radius, float length, int slices) {
+        // боковая поверхность
+        glBegin(GL_QUAD_STRIP);
+        for (int i = 0; i <= slices; i++) {
             float a = 2.0f * 3.1415926f * i / slices;
 
             float x = cos(a);
             float y = sin(a);
 
             glNormal3f(x, y, 0);
-
             glVertex3f(x * radius, y * radius, 0);
             glVertex3f(x * radius, y * radius, length);
         }
-
         glEnd();
+
+        // крышки
+        drawCylinderCap(radius, 0.0f, slices, true);
+        drawCylinderCap(radius, length, slices, false);
     }
-    void drawCannon(){
-        // ===== Рисуем основание =====
+
+    void drawCannon() {
+        // ===== Основание (гусеничная платформа) =====
         glPushMatrix();
-        glColor3f(0.4f, 0.4f, 0.4f);
+        glColor3f(0.25f, 0.25f, 0.25f);
         drawBox(baseWidth, baseHeight, baseDepth);
         glPopMatrix();
 
-        // ===== Рисуем ствол =====
+        // ===== Башня =====
         glPushMatrix();
+        glTranslatef(0.0f, baseHeight * 0.5f, 0.0f);
 
-        // Перемещение на верх корпуса
-        glTranslatef(0.0f, barrelOffsetY, 0.0f);
-
-        // Поворот вокруг вертикальной оси (yaw)
         glRotatef(cannonYaw, 0.0f, 1.0f, 0.0f);
 
-        // Сдвиг вперёд перед наклоном
-        glTranslatef(0.0f, 0.0f, barrelOffsetZ);
+        glColor3f(0.35f, 0.35f, 0.35f);
+        drawBox(baseWidth * 0.7f, baseHeight * 0.6f, baseDepth * 0.7f);
 
-        // Наклон вверх/вниз (pitch)
+        // ===== Ствол =====
+        glPushMatrix();
+
+        glTranslatef(0.0f, barrelOffsetY, barrelOffsetZ);
         glRotatef(-cannonPitch, 1.0f, 0.0f, 0.0f);
 
-        // Цвет ствола (можно менять динамически)
-        float r = (cannonYaw + 180.0f) / 360.0f;
-        float g = (cannonPitch + 45.0f) / 90.0f;
-        float b = 0.5f;
-        glColor3f(r, g, b);
+        // Основание ствола (толще)
+        glColor3f(0.3f, 0.3f, 0.3f);
+        drawBetterCylinder(barrelRadius * 1.5f, barrelLength * 0.2f, 32);
 
-        // Рисуем цилиндр ствола
-        drawCylinder(barrelRadius, barrelLength, 32);
+        // Основной ствол
+        glTranslatef(0.0f, 0.0f, barrelLength * 0.2f);
+        glColor3f(0.5f, 0.5f, 0.5f);
+        drawBetterCylinder(barrelRadius, barrelLength * 0.7f, 32);
 
-        glPopMatrix();
+        // Дульный тормоз
+        glTranslatef(0.0f, 0.0f, barrelLength * 0.7f);
+        glColor3f(0.2f, 0.2f, 0.2f);
+        drawBetterCylinder(barrelRadius * 1.2f, barrelLength * 0.1f, 32);
+
+        glPopMatrix(); // ствол
+
+        glPopMatrix(); // башня
     }
     void drawTrajectory(float startX, float startY, float startZ,float yaw, float pitch,
         float speed, float gravity){

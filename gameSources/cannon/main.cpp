@@ -79,14 +79,16 @@ void processInput(GLFWwindow* window,float dt){
         sound.setSourcePosition(sound.shootSource, cannon.baseWidth, cannon.baseHeight, cannon.baseDepth);
         alSourcePlay(sound.shootSource);
     }
-    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) cam.pitch += camStep * dt;
-    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) cam.pitch -= camStep * dt;
-    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) cam.yaw += camStep * dt;
-    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) cam.yaw -= camStep * dt;
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) cam.pitch += camStep * 2 * dt;
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) cam.pitch -= camStep * 2 * dt;
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) cam.yaw += camStep * 2 * dt;
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) cam.yaw -= camStep * 2 * dt;
     if (glfwGetKey(window, GLFW_KEY_KP_8) == GLFW_PRESS) cam.y += camStep * dt;
     if (glfwGetKey(window, GLFW_KEY_KP_2) == GLFW_PRESS) cam.y -= camStep * dt;
     if (glfwGetKey(window, GLFW_KEY_KP_4) == GLFW_PRESS) cam.x -= camStep * dt;
     if (glfwGetKey(window, GLFW_KEY_KP_6) == GLFW_PRESS) cam.x += camStep * dt;
+    if (glfwGetKey(window, GLFW_KEY_KP_7) == GLFW_PRESS) cam.z -= camStep * dt;
+    if (glfwGetKey(window, GLFW_KEY_KP_9) == GLFW_PRESS) cam.z += camStep * dt;
 }
 int main(){
     sound.setupBuffers();
@@ -139,17 +141,27 @@ int main(){
     light.initLighting();
 
     while (!glfwWindowShouldClose(window)){
+        if (!light.enabled) {
+            glDisable(GL_LIGHTING);
+            glDisable(GL_LIGHT0);
+            glDisable(GL_COLOR_MATERIAL);
+        }
+        else {
+            glEnable(GL_LIGHTING);
+            glEnable(GL_LIGHT0);
+            glEnable(GL_COLOR_MATERIAL);
+        }
+
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        gui.drawGui(score,cannon.reload,fps);
+        gui.drawGui(score,cannon.reload,fps, cannon,light,trg);
 
         ImGui::Render();
 
         fpsCount(deltaTime,lastTime,fpsTimer,frames,fps);
        
-
         float radYaw = cam.yaw * 3.14159265f / 180.0f;
         float radPitch = cam.pitch * 3.14159265f / 180.0f;
         float fx = cos(radPitch) * sin(radYaw);
@@ -180,7 +192,7 @@ int main(){
 
         drawGround(cam.x, cam.z);
         drawGrid(cam.x, cam.z);
-        drawGridText(cam.x, cam.z);
+        if (gridTextEnadled) drawGridText(cam.x, cam.z);
 
         trg.draw();
 
@@ -190,7 +202,7 @@ int main(){
         glPopMatrix();
 
         if (level == 1) cannon.drawTrajectory(0.0f, 0.5f, -13.0f,cannon.cannonYaw,cannon.cannonPitch,
-            shell.pos.shellSpeed,shell.pos.gravity);
+            shellSpeed,shell.pos.gravity);
 
         for (auto& s : shell.shells) {
             glPushMatrix();

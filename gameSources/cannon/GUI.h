@@ -2,6 +2,11 @@
 #include <vector>
 #include <string>
 #include "imgui.h"
+#include "canon.h"
+#include "shell.h"
+#include "lightning.h"
+#include "environnement.h"
+#include <cmath>
 
 extern int level;
 
@@ -10,19 +15,35 @@ private:
 	std::vector<std::string> levels = { "1", "2" };
 	std::vector<const char*> cstrs;
 	int currentIndex = 0;
+	std::string control = "\nW - Raise gun\nS - Lower gun\nA - Gun to left\nD - Gun to right"
+		"\nSPACE - Shot\n< - Turn cam to left\n> - Turn cam to right\n^ - Turn cam to up\n"
+		"v - Turn cam to down\nNPAD 7 - Camera to forward\nNPAD 9 - Camera to back"
+		"\nNPAD 6 - Camera to right\nNPAD 4 - Camera to left\nNPAD 8 - Camera to up\nNPAD 2 - Camera to down";
 public:
 	GUI() {
 		for (auto& s : levels)
 			cstrs.push_back(s.c_str());
 	}
-	void drawGui(int score,float reloadTime,float fps) {
+	void drawGui(int score,float reloadTime,float fps, Cannon& cn,Light& l, Target& trg) {
 		ImGui::Begin("Settings & Info");
+
+		ImGui::Text("Gun pitch: %.1f", cn.cannonPitch);
+		ImGui::Text("Gun yaw: %.1f", cn.cannonYaw);
+		ImGui::SliderFloat("Shell speed", &shellSpeed, 10.0f, 50.0f);
+
+		ImGui::Text("Distance to target: %.1f", sqrt(pow(trg.getCoordinates()[0],2) + 
+			pow(trg.getCoordinates()[1],2) + pow(trg.getCoordinates()[2], 2)));
+
+		ImGui::Checkbox("Enable light", &l.enabled);
+		ImGui::Checkbox("Enable grid text", &gridTextEnadled);
 
 		ImGui::Text("Score: %d", score);
 		ImGui::Text("Reload: %.1f", reloadTime);
 		ImGui::Text("FPS: %.0f", fps);
 
 		if (ImGui::Combo("Select level", &currentIndex, cstrs.data(), cstrs.size())) level = std::stoi(levels[currentIndex]);
+
+		ImGui::Text("Control: %s", control.c_str());
 
 		ImGui::End();
 	}

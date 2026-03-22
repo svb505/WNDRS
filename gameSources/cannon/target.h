@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <random>
 #include "shell.h"
+#include "gethight.h"
 
 class Target {
 private:
@@ -57,8 +58,9 @@ public:
 		std::uniform_real_distribution<float> distS(0.5f,0.9f);
 
 		pos[0] = distX(gen);
-		pos[1] = 0;
 		pos[2] = distZ(gen);
+
+		pos[1] = getHeight(pos[0],pos[2]);
 		s = distS(gen);
 
 	}

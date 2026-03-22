@@ -7,7 +7,7 @@ struct CameraSettings{
     float pitch;  // Â ÃĞÀÄÓÑÀÕ
 };
 
-CameraSettings cam = { 0, 3.5f, 5, 0, -15 };
+extern CameraSettings cam;
 
 class Camera {
 public:
