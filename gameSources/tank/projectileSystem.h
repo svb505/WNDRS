@@ -10,14 +10,15 @@
 #include "effects.h"
 #include "Info.h"
 #include "sounds.h"
+#include "shells.h"
+#include "artillery.h"
 
 struct Info;
 class ProjectileSystem {
 public:
     std::vector<Projectile> projectiles;
 
-    void spawnShell(float x, float y, float z,float yawDeg, float pitchDeg,shellType _shellType,int shellSpeed)
-    {
+    void spawnShell(float x, float y, float z,float yawDeg, float pitchDeg,shellType _shellType,int shellSpeed){
         Projectile p;
         p.type = ProjectileType::Shell;
 
@@ -36,8 +37,7 @@ public:
 
         projectiles.push_back(p);
     }
-    void spawnBullet(float x, float y, float z,float yawDeg)
-    {
+    void spawnBullet(float x, float y, float z,float yawDeg){
         Projectile p;
         p.type = ProjectileType::Bullet;
         p.x = x; p.y = y; p.z = z;
@@ -96,7 +96,51 @@ public:
         }
         std::erase_if(projectiles, [](const Projectile& p) { return !p.alive; });
     }
+    void updateProjectiles(ProjectileSystem& projectileSystem) {
+        for (auto& p : projectileSystem.projectiles) {
+            if (!p.alive) continue;
 
+            glPushMatrix();
+            glTranslatef(p.x, p.y, p.z);
+
+            if (p.type == ProjectileType::Shell) drawShell();
+            else drawBullet();
+
+            glPopMatrix();
+        }
+    }
+    void updateArtillery(std::vector<Projectile>& artilleryProjectiles, Sound& sound,
+        std::unordered_map<int, Entity>& enemies, std::vector<ExplosionEffect*>& explosions,
+        std::vector<SmokeEffect*>& smokes, ALuint explosionSource) {
+        for (auto& p : artilleryProjectiles) {
+            if (!p.alive) continue;
+
+            bool exploded = false;
+
+            for (auto& [id, en] : enemies) {
+                if (!healths.contains(id) || healths[id].destroyed) continue;
+                if (!bounds.contains(id)) continue;
+
+                if (checkCollision(bounds[id], p)) {
+                    healths[id].current -= p.damage;
+
+                    explosions.push_back(new ExplosionEffect(p.x, p.y, p.z,200));
+
+                    p.alive = false;
+                    exploded = true;
+                    sound.setSourcePosition(sound.explosionSource, p.x, p.y, p.z);
+                    alSourcePlay(explosionSource);
+                    break;
+                }
+            }
+            if (!exploded && p.y <= 0.0f) {
+                explosions.push_back(new ExplosionEffect(p.x, p.y, p.z, 200));
+                sound.setSourcePosition(sound.explosionSource, p.x, p.y, p.z);
+                alSourcePlay(explosionSource);
+                p.alive = false;
+            }
+        }
+    }
 private:
     bool checkCollision(const Bounds& bounds, const Projectile& p){
         return p.x >= bounds.minX && p.x <= bounds.maxX &&

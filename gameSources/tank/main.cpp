@@ -25,10 +25,14 @@
 #include "HUD.h"
 #include "camera.h"
 #include "sounds.h"
-#include "shells.h"
 #include "replenishmentAmmo.h"
 #include "minimap.h"
 #include "lightning.h"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+#include "GUI.h"
+#include "artillery.h"
 
 #define COUNT 55
 #define ECRANW 1600
@@ -41,6 +45,8 @@ HUD hud;
 Replishment repl;
 MiniMap mnMap;
 Light light;
+GUI gui;
+Artillery art;
 
 void processTankInput(GLFWwindow* window, float dt,ProjectileSystem& projectileSystem){
     float moveSpeed = 6.0f * dt;
@@ -164,15 +170,13 @@ int main(){
     unsigned char* pixels = stbi_load("icon.png", &width, &height, &channels, 4);
 
 
-    if (!glfwInit())
-    {
+    if (!glfwInit()){
         std::cout << "Failed to initialize GLFW\n";
         return -1;
     }
 
     GLFWwindow* window = glfwCreateWindow(ECRANW,ECRANH, "Tank", NULL, NULL);
-    if (!window)
-    {
+    if (!window){
         std::cout << "Failed to create window\n";
         glfwTerminate();
         return -1;
@@ -213,10 +217,27 @@ int main(){
     generateEnemyes(enemyes,COUNT);
     repl.setCoordinates(10.0f, static_cast<float>(rand() % 30),static_cast<float>((rand() % 50) - 50));
 
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init("#version 330");
+
+    ImGui::StyleColorsDark();
+
     while (!glfwWindowShouldClose(window)){
         double currentTime = glfwGetTime();
 
         countFps(deltaTime,lastTime,currentTime,frames,fps,fpsTimer);
+
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        gui.render(fps, playerTank,art,sound);
+
+        ImGui::Render();
 
         float radYaw = cam.cameraYaw * 3.14159265f / 180.0f;
         float radPitch = cam.angle * 3.14159265f / 180.0f;
@@ -243,66 +264,29 @@ int main(){
 
         if (repl.isInCircle(playerTank.x, playerTank.z)) repl.startReplish(deltaTime,playerTank,ECRANH,ECRANW);
 
+        art.updateShells(deltaTime);
+        art.drawAllShells();
+        art.deleteIfAlived();
+
         projectileSystem.update((float)deltaTime,sound,enemyes,healths, bounds,explosions,smokes,sound.explosionSource);
-
-        for (auto& p : projectileSystem.projectiles) {
-            if (!p.alive) continue;
-
-            glPushMatrix();
-            glTranslatef(p.x, p.y, p.z);
-
-            if (p.type == ProjectileType::Shell) drawShell();
-            else drawBullet();
-               
-            glPopMatrix();
-        }
-        for (auto it = explosions.begin(); it != explosions.end();) {
-            (*it)->Update(deltaTime);
-            (*it)->Draw();
-
-            if ((*it)->IsFinished()) {
-                delete* it;
-                it = explosions.erase(it);
-            }
-            else ++it;
-        }
-        for (auto it = smokes.begin(); it != smokes.end(); ){
-            SmokeEffect* smoke = *it;
-
-            bool alive = false;
-            for (auto& p : smoke->getCoordinates()) {
-                if (p.y <= 5.0f) {
-                    alive = true;
-                    break; 
-                }
-            }
-            if (!alive) {
-                delete smoke;        
-                it = smokes.erase(it); 
-            }
-            else {
-                smoke->Update(deltaTime);
-                smoke->Draw();
-                ++it;
-            }
-            
-        }
+        projectileSystem.updateProjectiles(projectileSystem);
+        projectileSystem.updateArtillery(art.shells,sound,enemyes,explosions,smokes,sound.artExplosionSource);
+        
+        updateExplosions(explosions, deltaTime);
+        updateSmokes(smokes, deltaTime);
         
         hud.Draw3DAim(playerTank);
 
         mnMap.draw(ECRANW, ECRANH, playerTank, projectileSystem, explosions, smokes, cam, deltaTime);
 
-        glDisable(GL_LIGHTING);
-        glDisable(GL_DEPTH_TEST);
-        hud.drawHud(ECRANW, ECRANH, playerTank,55,fps);
-        glEnable(GL_DEPTH_TEST);
-        glEnable(GL_LIGHTING);
-
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
     glfwDestroyWindow(window);
     glfwTerminate();
 

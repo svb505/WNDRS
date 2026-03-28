@@ -27,13 +27,22 @@
     <ClCompile Include="lightning.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="hethight.cpp">
+    <ClCompile Include="gethight.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="environnement.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="camera.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="minimap.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="target.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="shell.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,6 +75,12 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="gethight.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="minimap.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

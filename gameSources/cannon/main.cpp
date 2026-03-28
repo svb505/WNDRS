@@ -19,6 +19,7 @@
 #include "effects.h"
 #include "GUI.h"
 #include "lightning.h"
+#include "minimap.h"
 
 #define WW 1500
 #define WH 900
@@ -30,6 +31,7 @@ Sound sound;
 Target trg;
 GUI gui;
 Light light;
+MiniMap mnm;
 
 int score = 0;
 int level = 1;
@@ -204,6 +206,8 @@ int main(){
         if (level == 1) cannon.drawTrajectory(0.0f, 0.5f, -13.0f,cannon.cannonYaw,cannon.cannonPitch,
             shellSpeed,shell.pos.gravity);
 
+        shell.updatePos(deltaTime);
+
         for (auto& s : shell.shells) {
             glPushMatrix();
             glTranslatef(s.x,s.y,s.z);
@@ -221,14 +225,11 @@ int main(){
 
                 s.alive = true;
             }
-            if (trg.checkCollision(s.x,s.y,s.z,0.1f)) {
+            if (trg.checkCollision(s.x,s.y,s.z,1.0f)) {
                 score++;
                 trg.initTarget();
             }
         }
-
-        shell.updatePos(deltaTime);
-
         for (auto it = explosions.begin(); it != explosions.end();) {
             (*it)->Update(deltaTime);
             (*it)->Draw();
@@ -260,7 +261,13 @@ int main(){
             }
 
         }
-        
+        for (auto it = shell.shells.begin(); it != shell.shells.end();) {
+            if ((*it).y <= 0.0f) it = shell.shells.erase(it);
+            else ++it;
+        }
+
+        mnm.draw(WW, WH, cannon, trg, explosions, smokes, camera, deltaTime);
+
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
         glfwPollEvents();
