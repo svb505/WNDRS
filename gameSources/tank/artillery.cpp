@@ -7,6 +7,7 @@
 #include "enemyes.h"
 #include "projectileSystem.h"
 #include "projectile.h"
+#include "Logger.h"
 
 std::vector<float> Artillery::returnRandomError() {
     std::random_device rd;
@@ -27,6 +28,8 @@ float Artillery::returnSpeedError() {
 }
 void Artillery::drawShell() {
     float s = 0.1f;
+
+    glColor3f(255.0f / 255.0f, 128.0f / 255.0f, 0.0f);
     glBegin(GL_QUADS);
     // front
     glVertex3f(-s, -s, s); glVertex3f(s, -s, s); glVertex3f(s, s, s); glVertex3f(-s, s, s);
@@ -43,13 +46,14 @@ void Artillery::drawShell() {
     glEnd();
 }
 void Artillery::spawnShells(float x,float z) {
+    LOG_INFO("Spawned artillery shell");
+
     for (int i = 0; i < volley; i++) {
         auto error = returnRandomError();
-        Projectile s;
+        Projectile s(shellType::HE);
         s.x = x + error[0];
         s.y = shellHeight;
         s.z = z + error[1];
-        s.damage = 100.0f;
         s.delay = 5.0f;
         s.active = false;
         s.speed = shellSpeed * returnSpeedError();

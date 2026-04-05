@@ -7,21 +7,21 @@
 
 class Sound {
 public:
+    bool rainPlayed = false;
+
     ALCdevice* audioDevice = nullptr;
     ALCcontext* audioContext = nullptr;
 
-    ALuint tankBuffer = 0;
-    ALuint explosionBuffer = 0;
-    ALuint shotBuffer = 0;
-    ALuint mgunBuffer = 0;
-    ALuint artVolleyBuffer = 0;
-    ALuint artExplosionBuffer = 0;
-    ALuint tankSource = 0;
-    ALuint explosionSource = 0;
-    ALuint artExplosionSource = 0;
-    ALuint artVolleySource = 0;
-    ALuint shotSource = 0;
-    ALuint mgunSource = 0;
+    ALuint tankSource = 0, tankBuffer = 0;
+    ALuint explosionSource = 0, explosionBuffer = 0;
+    ALuint artExplosionSource = 0, artExplosionBuffer = 0;
+    ALuint artVolleySource = 0, artVolleyBuffer = 0;
+    ALuint shotSource = 0, shotBuffer = 0;
+    ALuint mgunSource = 0, mgunBuffer = 0;
+    ALuint collisionSource = 0, collisionBuffer = 0;
+    ALuint rainSource = 0, rainBuffer = 0;
+    ALuint smokeSource = 0, smokeBuffer = 0;
+    ALuint killSource = 0, killBuffer = 0;
 
     void setSourcePosition(ALuint source, float x, float y, float z) {
         ALfloat pos[] = { x, y, z };
@@ -43,8 +43,7 @@ public:
         alListenerfv(AL_VELOCITY, vel);
         alListenerfv(AL_ORIENTATION, ori);
     }
-    ALuint LoadWav(const char* filename)
-    {
+    ALuint LoadWav(const char* filename){
         SF_INFO info{};
         SNDFILE* file = sf_open(filename, SFM_READ, &info);
         if (!file) {
@@ -84,6 +83,10 @@ public:
         shotBuffer = LoadWav("sounds/shot.wav");
         mgunBuffer = LoadWav("sounds/mgun.wav");
         artVolleyBuffer = LoadWav("sounds/artVolley.wav");
+        collisionBuffer = LoadWav("sounds/collision.wav");
+        rainBuffer = LoadWav("sounds/rain.wav");
+        smokeBuffer = LoadWav("sounds/smoke.wav");
+        killBuffer = LoadWav("sounds/kill.wav");
     }
     void createSources() {
         alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
@@ -98,6 +101,18 @@ public:
         alSourcei(explosionSource, AL_BUFFER, explosionBuffer);
         alSourcef(explosionSource, AL_GAIN, 1.0f);
 
+        alGenSources(1, &rainSource);
+        alSourcei(rainSource, AL_BUFFER, rainBuffer);
+        alSourcef(rainSource, AL_GAIN, 1.0f);
+
+        alGenSources(1, &killSource);
+        alSourcei(killSource, AL_BUFFER, killBuffer);
+        alSourcef(killSource, AL_GAIN, 1.0f);
+
+        alGenSources(1, &collisionSource);
+        alSourcei(collisionSource, AL_BUFFER, collisionBuffer);
+        alSourcef(collisionSource, AL_GAIN, 0.7f);
+
         alGenSources(1, &artExplosionSource);
         alSourcei(artExplosionSource, AL_BUFFER, artExplosionBuffer);
         alSourcef(artExplosionSource, AL_GAIN, 1.0f);
@@ -109,6 +124,10 @@ public:
         alGenSources(1, &artVolleySource);
         alSourcei(artVolleySource, AL_BUFFER, artVolleyBuffer);
         alSourcef(artVolleySource, AL_GAIN, 1.0f);
+
+        alGenSources(1, &smokeSource);
+        alSourcei(smokeSource, AL_BUFFER, smokeBuffer);
+        alSourcef(smokeSource, AL_GAIN, 1.0f);
 
         alGenSources(1, &mgunSource);
         alSourcei(mgunSource, AL_BUFFER, mgunBuffer);
@@ -137,5 +156,13 @@ public:
         alSourcef(tankSource, AL_REFERENCE_DISTANCE, 4.0f);
         alSourcef(tankSource, AL_MAX_DISTANCE, 80.0f);
         alSourcef(tankSource, AL_ROLLOFF_FACTOR, 2.0f);
+
+        alSourcef(collisionSource, AL_REFERENCE_DISTANCE, 4.0f);
+        alSourcef(collisionSource, AL_MAX_DISTANCE, 80.0f);
+        alSourcef(collisionSource, AL_ROLLOFF_FACTOR, 2.0f);
+
+        alSourcef(smokeSource, AL_REFERENCE_DISTANCE, 4.0f);
+        alSourcef(smokeSource, AL_MAX_DISTANCE, 80.0f);
+        alSourcef(smokeSource, AL_ROLLOFF_FACTOR, 2.0f);
     }
 };

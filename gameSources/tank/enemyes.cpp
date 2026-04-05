@@ -7,6 +7,11 @@
 #include "text.h"
 #include "tank.h"
 #include "enemyes.h"
+#include "bounds.h"
+#include "svbmath.h"
+#include "projectileSystem.h"
+#include "sounds.h"
+#include "Logger.h"
 
 std::vector<Entity> entities;
 
@@ -25,7 +30,25 @@ Entity CreateEntity() {
     entities.push_back(e);
     return e;
 }
+void drawSootEffect(float x, float y, float z, int segments, float radius) {
+    glPushMatrix();
+    glTranslatef(x, y, z);
+    glColor3f(0.0f, 0.0f, 0.0f);
 
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex3f(0.0f, 0.0f, 0.0f); 
+
+    for (int i = 0; i <= segments; i++) {
+        float angle = 2.0f * PI * i / segments;
+        float px = radius * cosf(angle);
+        float pz = radius * sinf(angle);
+
+        glVertex3f(px, 0.0f, pz);
+    }
+
+    glEnd();
+    glPopMatrix();
+}
 void drawTank(TankComponent& tank, float bodyH) {
     glPushMatrix();
     glRotatef(1, 0, 1, 0);
@@ -73,7 +96,7 @@ void drawTank(TankComponent& tank, float bodyH) {
     // ================= TURRET =================
     glPushMatrix();
     glTranslatef(0.0f, bodyH + 0.4f, 0.0f);
-    glRotatef(tank.turretAngle, 0, 1, 0);
+    glRotatef(tank.turretAngle * 180.0f / PI + 180.0f, 0, 1, 0);
 
     float t = 0.5f;
     glColor3f(0, 0.6f, 0.2f);
@@ -217,7 +240,7 @@ void drawDestroyedAppartament(ApartmentComponent& ap, float totalH) {
     // ================= FRONT =================
     glColor3f(0.55f, 0.55f, 0.55f);
 
-    // Левая часть
+    //Left
     glBegin(GL_QUADS);
     glVertex3f(-halfW, 0, halfD);
     glVertex3f(0.0f, 0, halfD);
@@ -225,7 +248,7 @@ void drawDestroyedAppartament(ApartmentComponent& ap, float totalH) {
     glVertex3f(-halfW, leftTop, halfD);
     glEnd();
 
-    // Правая разрушенная часть
+    // right
     glBegin(GL_QUADS);
     glVertex3f(0.0f, 0, halfD);
     glVertex3f(halfW, 0, halfD);
@@ -278,13 +301,13 @@ void drawDestroyedAppartament(ApartmentComponent& ap, float totalH) {
     glEnd();
 
 
-    // ================= WINDOWS (стабильные) =================
+    // ================= WINDOWS =================
     glColor3f(0.1f, 0.1f, 0.1f);
 
     for (int f = 0; f < ap.floors; f++)
     {
         float y = f * ap.floorHeight + 0.2f;
-        if (y > rightTop) break; // окна только на целой части
+        if (y > rightTop) break;
 
         for (int i = -2; i <= 0; i++)
         {
@@ -316,7 +339,7 @@ void drawDestroyedAppartament(ApartmentComponent& ap, float totalH) {
     glPopMatrix();
 
 
-    // ================= RUBBLE (стабильная позиция) =================
+    // ================= RUBBLE =================
     glColor3f(0.4f, 0.4f, 0.4f);
 
     for (int i = 0; i < 15; i++)
@@ -594,6 +617,7 @@ void RenderSystem(std::vector<SmokeEffect*>& smokes) {
 
             if (ap.destroyed) {
                 drawDestroyedAppartament(ap, totalH);
+                drawSootEffect(0.0f, 0.1f, 0.0f, 40.0f, 5.0f);
                 if (!ap.smokeEnabled) { smokes.push_back(new SmokeEffect(x, y, z, 2000, 3.0f)); ap.smokeEnabled = true; }
             }
             else drawAppartament(ap, totalH);
@@ -661,27 +685,78 @@ void HealthBarSystem() {
     }
 }
 void DeathSystem(Tank& tank) {
-    for (auto& [entity, hp] : healths) if (hp.current <= 0) {
+    std::vector<Entity> toDelete;
+
+    for (auto& [entity, hp] : healths) {
         if (hp.current <= 0 && !hp.destroyed) {
             hp.destroyed = true;
 
             if (apartments.contains(entity)) apartments[entity].destroyed = true;
+            else toDelete.push_back(entity);
+
+            LOG_INFO("+1 kill");
 
             tank.kills++;
         }
     }
+
+    for (auto& e : toDelete) {
+        healths.erase(e);
+        renders.erase(e);
+        tanks.erase(e);
+        radars.erase(e);
+        bounds.erase(e);
+        transforms.erase(e);
+        auto it = std::find(entities.begin(), entities.end(), e);
+        if (it != entities.end())
+            entities.erase(it);
+    }
 }
-void Update(float dt, Tank& tank) {
+void Update(float dt, Tank& tank, ProjectileSystem& projectile,Sound& sound) {
     RadarSystem(dt);
     BoundsSystem();
     DeathSystem(tank);
+
+    for (auto& [id, bot] : tanks) {
+        svbmath::Vec3 enemyPos = { transforms[id].x, transforms[id].y, transforms[id].z };
+        svbmath::Vec3 tankPos = { tank.x, tank.y, tank.z };
+
+        if (bot.finishReload > 0.0f) {
+            bot.finishReload -= dt;
+            if (bot.finishReload < 0.0f) bot.finishReload = 0.0f;
+        }
+            
+        if (playerInRadius(enemyPos,tankPos, bot.detectionRadius)) {
+            svbmath::Vec3 dir = svbmath::Normalize(tankPos - enemyPos);
+            
+            float targetYaw = atan2(dir.x, dir.z);
+            float delta = svbmath::NormalizeAngle(targetYaw - bot.turretAngle);
+            float newTarget = bot.turretAngle + delta;
+
+            bot.turretAngle = svbmath::RotateTowards(bot.turretAngle,newTarget,bot.turretSpeed,dt);
+
+            if (bot.finishReload <= 0.0f) {
+                projectile.spawnShell(enemyPos.x, enemyPos.y + 1.0f, enemyPos.z, bot.turretAngle * 180.0f / PI, bot.gunAngle,
+                    shellType::APFSDS, 100.0f, true);
+
+                sound.setSourcePosition(sound.shotSource, enemyPos.x, enemyPos.y, enemyPos.z);
+                alSourceStop(sound.shotSource);
+                alSourcePlay(sound.shotSource);
+
+                LOG_INFO("Bot shooted");
+
+                bot.finishReload = bot.reloadTime;
+            }
+        }
+    }
 }
 void Render(std::vector<SmokeEffect*>& smokes, bool healthBar) {
     RenderSystem(smokes);
     if (healthBar) HealthBarSystem();
 }
-
 void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count) {
+    LOG_INFO("Genarate enemies");
+
     for (int i = 0; i < count; i++) {
         Entity e = CreateEntity();
 
@@ -692,22 +767,34 @@ void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count) {
 
         transforms[e] = { x, 0.0f, z, (float)(rand() % 360) };
 
-        if (i < 10) { renders[e] = { RenderType::Vehicle }; healths[e] = { 100,100,false }; }
-        else if (i < 20) { renders[e] = { RenderType::Soldat }; healths[e] = { 50,50,false }; }
+        if (i < 10) { renders[e] = { RenderType::Vehicle }; healths[e] = { 100,100,50,false }; }
+        else if (i < 20) { renders[e] = { RenderType::Soldat }; healths[e] = { 50,50,20,false }; }
         else if (i < 25) {
             renders[e] = { RenderType::Tank };
-            healths[e] = { 200,200,false };
-            tanks[e] = { 0.0f, 0.0f };
+            healths[e] = { 200,200,100,false };
+            tanks[e] = { 6.5f, 0.0f, 0.0f,0.0f,35.0f,40.0f };
         }
         else if (i < 30) {
             renders[e] = { RenderType::Radar };
-            healths[e] = { 120,120,false };
+            healths[e] = { 120,120,40,false };
             radars[e] = { 90.0f };
         }
         else {
             renders[e] = { RenderType::Apartment };
-            healths[e] = { 1000,1000,false };
+            healths[e] = { 1000,1000,300,false };
             apartments[e] = { 5 + rand() % 10, 0.6f, 4.0f, 2.0f };
         }
     }
+}
+checkCol checkCollisionWithTank(float x, float y, float z) {
+    for (const auto& b : bounds) {
+        if (checkCollision(b.second, x, y, z)) {
+            return {true, b.first};
+        }
+    }
+    return { false, 0 };
+}
+bool playerInRadius(const svbmath::Vec3& enemyPos, const svbmath::Vec3& playerPos, float radius){
+    svbmath::Vec3 diff = playerPos - enemyPos;
+    return LengthSq(diff) <= radius * radius;
 }

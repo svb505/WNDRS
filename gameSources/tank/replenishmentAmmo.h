@@ -11,6 +11,7 @@ constexpr float myPI = 3.1415926f;
 class Replishment {
 private:
 	float replishTime = 5.0f;
+	float repairTime = 3.0f;
 public:
 	float x, z, radius;
 
@@ -22,7 +23,7 @@ public:
 		glBegin(GL_LINE_LOOP);
 
 		for (int i = 0; i < segments; i++) {
-			float angle = 2.0f + myPI * i / segments;
+			float angle = 2.0f * PI * i / segments;
 			float x = radius * cosf(angle);
 			float z = radius * sinf(angle);
 
@@ -31,7 +32,7 @@ public:
 		glPopMatrix();
 		glEnd();
 
-		RenderTextWorld(x,3.0f,z,1,1,1,"Replish ammo");
+		RenderTextWorld(x,4.0f, z, 1, 1, 1, "Replish ammo/Repair");
 	}
 	bool isInCircle(float tX, float tZ) {
 		float dx = tX - x;
@@ -44,6 +45,11 @@ public:
 			replishTime -= dt;
 			RenderTextHUD((float)wW / 2, (float)wH / 2, 1, 1, 1, std::format("Replish ammo: {:.1f} s", replishTime).c_str(),wW,wH);
 			if (replishTime <= 0) { tank.totalShells++; replishTime = 5.0f; }
+		}
+		if (tank.currentHP < tank.HP) {
+			repairTime -= dt;
+			RenderTextHUD((float)wW / 2, (float)wH / 2 + 50, 1, 1, 1, std::format("Repair: {:.1f} s", repairTime).c_str(), wW, wH);
+			if (repairTime <= 0) { tank.currentHP = tank.HP; repairTime = 3.0f; }
 		}
 	}
 };

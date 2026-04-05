@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 class Tank;
 class ProjectileSystem;
@@ -16,8 +17,8 @@ public:
     void setHeight(float h) { height = h; }
     float getHeight() { return height; }
     void draw(int ECRANW, int ECRANH, Tank& playerTank, ProjectileSystem& projectileSystem,
-        std::vector<ExplosionEffect*>& explosions, std::vector<SmokeEffect*>& smokes, Camera& cam,
-        float dt);
+        std::vector<ExplosionEffect*>& explosions, std::vector<SmokeEffect*>& smokes, Camera& cam, std::string weather,
+        bool badges,float dt);
 };
 
     

@@ -33,13 +33,16 @@
 #include "imgui_impl_opengl3.h"
 #include "GUI.h"
 #include "artillery.h"
+#include "Logger.h"
+#include "weather.h"
+#include "smokeGranade.h"
 
 #define COUNT 55
 #define ECRANW 1600
 #define ECRANH 1000
 
 Camera cam;
-Tank playerTank;
+Tank tank;
 Sound sound;
 HUD hud;
 Replishment repl;
@@ -47,63 +50,100 @@ MiniMap mnMap;
 Light light;
 GUI gui;
 Artillery art;
+Weather weat;
+SmokeGranade granades;
 
+bool firstMouse = true;
+bool cursorVisibility = false;
+bool fpsLimit = false;
+bool badges = false;
+
+double lastX = 800.0 / 2, lastY = 600.0 / 2;
+float sensitivity = 0.1f;
+
+std::string weather = "Clean";
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+    ImGuiIO& io = ImGui::GetIO();
+    io.AddMousePosEvent((float)xpos, (float)ypos); 
+
+    if (io.WantCaptureMouse || cursorVisibility) return;
+
+    if (firstMouse) {
+        lastX = xpos;
+        lastY = -ypos;
+        firstMouse = false;
+    }
+
+    double xoffset = xpos - lastX;
+    double yoffset = lastY - ypos; 
+    lastX = xpos;
+    lastY = ypos;
+
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+
+    cam.cameraYaw += static_cast<float>(xoffset);
+    cam.cameraPitch += static_cast<float>(yoffset);
+
+    tank.turretYaw += -static_cast<float>(xoffset);
+    tank.gunPitch += static_cast<float>(yoffset);
+
+    if (cam.cameraYaw > 360.0f) cam.cameraYaw -= 360.0f;
+    if (cam.cameraYaw < 0.0f)   cam.cameraYaw += 360.0f;
+    if (tank.turretYaw > 360.0f) tank.turretYaw -= 360.0f;
+    if (tank.turretYaw < 0.0f)   tank.turretYaw += 360.0f;
+    if (tank.gunPitch > 10.0f) tank.gunPitch = 10.0f;
+    if (tank.gunPitch < -10.0f)   tank.gunPitch = -10.0f;
+}
 void processTankInput(GLFWwindow* window, float dt,ProjectileSystem& projectileSystem){
-    float moveSpeed = 6.0f * dt;
-    float rotateSpeed = 60.0f * dt;
-    float turretSpeed = 60.0f * dt;
-    float gunSpeed = 30.0f * dt;
-    float bodyRad = (playerTank.bodyYaw + 90.0f) * 3.1415926f / 180.0f;
-    float dirX = -sin(bodyRad);
-    float dirZ = -cos(bodyRad);
     static bool lastShift = false;
     static bool lastFire = false;
-    bool fire = glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS;
+    static bool prevCtrl = false;
+    static bool prevAlt = false;
+    static bool prevG = false;
 
+    bool fire = glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS;
+    bool currCtrl = glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS;
+    bool currAlt = glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS;
     bool shift = glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS;
+    bool keyG = glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS;
 
     if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS){
-        playerTank.selectedShell = shellType::APFSDS;
-        playerTank.shellSpeed = 400;
-        playerTank.finishReload = playerTank.reloadTime;
+        tank.selectedShell = shellType::APFSDS;
+        tank.shellSpeed = 400;
+        tank.finishReload = tank.reloadTime;
     }
     if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS){
-        playerTank.selectedShell = shellType::HE;
-        playerTank.shellSpeed = 100;
-        playerTank.finishReload = playerTank.reloadTime;
+        tank.selectedShell = shellType::HE;
+        tank.shellSpeed = 100;
+        tank.finishReload = tank.reloadTime;
     }
     if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {
-        playerTank.selectedShell = shellType::SMOKE;
-        playerTank.shellSpeed = 100;
-        playerTank.finishReload = playerTank.reloadTime;
+        tank.selectedShell = shellType::ATGM;
+        tank.shellSpeed = 10;
+        tank.finishReload = tank.reloadTime;
+    }
+    if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS) {
+        tank.selectedShell = shellType::SMOKE;
+        tank.shellSpeed = 100;
+        tank.finishReload = tank.reloadTime;
     }
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-       playerTank.bodyYaw += rotateSpeed;
+       tank.bodyYaw += tank.rotateSpeed * dt;
+       tank.moveSpeed *= tank.REDUCTION_COEF;
     }
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-        playerTank.bodyYaw -= rotateSpeed;
+        tank.bodyYaw -= tank.rotateSpeed * dt;
+        tank.moveSpeed *= tank.REDUCTION_COEF;
     }
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-        playerTank.x += dirX * moveSpeed;
-        playerTank.z += dirZ * moveSpeed;
+        tank.oldX = tank.x; tank.oldY = tank.y; tank.oldZ = tank.z;
+        if (tank.moveSpeed <= tank.SPEED_LIMIT_FORWARD) tank.moveSpeed += tank.VELOCITY_COEF;
     }
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-        playerTank.x -= dirX * moveSpeed;
-        playerTank.z -= dirZ * moveSpeed;
-    }
-    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS){
-        playerTank.turretYaw += turretSpeed;
-        if (!playerTank.aimMode) cam.cameraYaw -= turretSpeed;
-    }
-    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS){
-        playerTank.turretYaw -= turretSpeed;
-        if (!playerTank.aimMode) cam.cameraYaw += turretSpeed;
-    }
-    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS && !glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-        playerTank.gunPitch = std::max(playerTank.gunPitch - gunSpeed, -10.0f);
-    }
-    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS && !glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-        playerTank.gunPitch = std::min(playerTank.gunPitch + gunSpeed, 10.0f);
+        tank.oldX = tank.x; tank.oldY = tank.y; tank.oldZ = tank.z;
+        if (tank.moveSpeed >= tank.SPEED_LIMIT_BACK) tank.moveSpeed -= tank.VELOCITY_COEF / 2;
     }
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
         mnMap.setHeight(mnMap.getHeight() + mnMap.step * dt * 60);
@@ -111,41 +151,52 @@ void processTankInput(GLFWwindow* window, float dt,ProjectileSystem& projectileS
     if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
         mnMap.setHeight(mnMap.getHeight() - mnMap.step * dt * 60);
     }
-    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
-        cam.cameraYaw += 45.0f * dt;
-    }
-    if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS){
-        cam.cameraYaw -= 45.0f * dt;
-    }
-        
-    if (shift && !lastShift) playerTank.aimMode = !playerTank.aimMode;
-    lastShift = shift;
-
-    if (fire && !lastFire && playerTank.finishReload <= 0.0f && playerTank.totalShells > 0) {
-        float yaw = playerTank.bodyYaw + playerTank.turretYaw;
-
-        projectileSystem.spawnShell(playerTank.x,playerTank.y + 1.6f,playerTank.z,yaw,playerTank.gunPitch,
-            playerTank.selectedShell,playerTank.shellSpeed);
-        
-        sound.setSourcePosition(sound.shotSource, playerTank.x, playerTank.y + 1.6f, playerTank.z);
-        alSourceStop(sound.shotSource);
-        alSourcePlay(sound.shotSource);
-
-        --playerTank.totalShells;
-
-        playerTank.finishReload = playerTank.reloadTime; 
-    }
-    lastFire = fire;
-
     if (glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS) {
-        float yaw = playerTank.bodyYaw + playerTank.turretYaw;
+        float yaw = tank.bodyYaw + tank.turretYaw;
 
-        projectileSystem.spawnBullet(playerTank.x,playerTank.y + 1.0f,playerTank.z,yaw);
+        projectileSystem.spawnBullet(tank.x, tank.y + 1.0f, tank.z, yaw);
 
-        sound.setSourcePosition(sound.mgunSource, playerTank.x, playerTank.y + 1.6f, playerTank.z);
+        sound.setSourcePosition(sound.mgunSource, tank.x, tank.y + 1.6f, tank.z);
         alSourceStop(sound.mgunSource);
         alSourcePlay(sound.mgunSource);
     }
+    
+    if (keyG && !prevG) granades.strike();
+    if (currAlt && !prevAlt) {
+        if (cursorVisibility) {
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+            cursorVisibility = false;
+        }
+        else {
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+            cursorVisibility = true;
+        }
+    }
+    if (shift && !lastShift) tank.aimMode = !tank.aimMode;
+    if (fire && !lastFire && tank.finishReload <= 0.0f && tank.totalShells > 0) {
+        float yaw = tank.bodyYaw + tank.turretYaw;
+
+        projectileSystem.spawnShell(tank.x,tank.y + 1.6f,tank.z,yaw,tank.gunPitch,
+            tank.selectedShell,tank.shellSpeed);
+        
+        sound.setSourcePosition(sound.shotSource, tank.x, tank.y + 1.6f, tank.z);
+        alSourceStop(sound.shotSource);
+        alSourcePlay(sound.shotSource);
+
+        --tank.totalShells;
+
+        tank.finishReload = tank.reloadTime; 
+    }
+    if (currCtrl && !prevCtrl) {
+        cam.zoomed = !cam.zoomed;
+        cam.fov = cam.zoomed ? 40.0f : 70.0f;
+    }
+
+    lastFire = fire;
+    prevCtrl = currCtrl;
+    lastShift = shift;
+    prevAlt = currAlt;
+    prevG = keyG;
 }
 void countFps(double& deltaTime,double& lastTime,double& currentTime,int& frames,float& fps,float& fpsTimer) {
     deltaTime = currentTime - lastTime;
@@ -161,6 +212,8 @@ void countFps(double& deltaTime,double& lastTime,double& currentTime,int& frames
     }
 }
 int main(){
+    Logger::initLogger();
+
     srand(time(NULL));
 
     sound.setupBuffers();
@@ -169,14 +222,15 @@ int main(){
     int width, height, channels;
     unsigned char* pixels = stbi_load("icon.png", &width, &height, &channels, 4);
 
-
     if (!glfwInit()){
+        LOG_ERROR("Failed to initialize GLFW");
         std::cout << "Failed to initialize GLFW\n";
         return -1;
     }
 
     GLFWwindow* window = glfwCreateWindow(ECRANW,ECRANH, "Tank", NULL, NULL);
     if (!window){
+        LOG_ERROR("Failed to create window");
         std::cout << "Failed to create window\n";
         glfwTerminate();
         return -1;
@@ -206,6 +260,11 @@ int main(){
     std::vector<SmokeEffect*> smokes;
     ProjectileSystem projectileSystem;
     
+    TrackBuffer leftTrack;
+    TrackBuffer rightTrack;
+
+    granades.spawn(tank);
+
     double lastTime = glfwGetTime();
     double deltaTime = 0.0;
     float fpsTimer = 0.0f;
@@ -226,16 +285,45 @@ int main(){
 
     ImGui::StyleColorsDark();
 
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetCursorPosCallback(window, mouse_callback);
+
     while (!glfwWindowShouldClose(window)){
         double currentTime = glfwGetTime();
 
+        if (fpsLimit) glfwSwapInterval(1);
+        else glfwSwapInterval(0);
+
+        if (weather == "Clean") { 
+            if (weat.particles.size() > 0) { 
+                alSourceStop(sound.rainSource); 
+                sound.rainPlayed = false;
+                weat.particles.clear(); 
+            } 
+            weat.snowPiles.clear();
+        }
+        else if (weather == "Rainly") { 
+            weat.snowPiles.clear();
+            if (!sound.rainPlayed) { 
+                alSourcePlay(sound.rainSource); 
+                sound.rainPlayed = true; 
+            } 
+            if (weat.particles.size() < weat.count) weat.generate(Type::rainly, cam); 
+        }
+        else if (weather == "Snowly") { 
+            alSourceStop(sound.rainSource); 
+            sound.rainPlayed = false;
+            if (weat.particles.size() < weat.count) weat.generate(Type::snowly, cam); 
+            if (weat.snowPiles.size() == 0) weat.generateSnowPiles(50, 100.0f);
+        }
+  
         countFps(deltaTime,lastTime,currentTime,frames,fps,fpsTimer);
 
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        gui.render(fps, playerTank,art,sound);
+        gui.render(fps, tank,art,sound,weather,granades,badges,fpsLimit);
 
         ImGui::Render();
 
@@ -247,37 +335,70 @@ int main(){
 
         sound.setListener(cam.cameraX, cam.cameraY, cam.cameraZ, fx, fy, fz);
 
-        if (playerTank.finishReload > 0.0f) playerTank.finishReload -= deltaTime;
+        if (tank.finishReload > 0.0f) tank.finishReload -= deltaTime;
+        if (tank.moveSpeed > 0.0f) tank.moveSpeed *= tank.REDUCTION_COEF;
 
         processTankInput(window, (float)deltaTime, projectileSystem);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         drawSky();
-        cam.setupCamera(playerTank, playerTank.aimMode);
-        drawGround(cam.cameraX, cam.cameraZ);
+        cam.setupCamera(tank, tank.aimMode);
+        drawGround(cam.cameraX, cam.cameraZ,weather);
 
-        playerTank.Draw();
-        repl.drawReplCircle(30);
+        tank.Draw();
+        tank.updatePosition(tank.x,tank.z,deltaTime);
 
-        Update(deltaTime,playerTank); // Update enemyes
+        repl.drawReplCircle(30);//replishement ammo
+
+        Update(deltaTime,tank,projectileSystem,sound); // Update enemyes
         Render(smokes); // Render enemyes
 
-        if (repl.isInCircle(playerTank.x, playerTank.z)) repl.startReplish(deltaTime,playerTank,ECRANH,ECRANW);
+        weat.update(cam,deltaTime); //Update rain/snow
+        weat.renderSnowPiles();
+        weat.draw();
+
+        showDestroyText(deltaTime);
+
+        if (repl.isInCircle(tank.x, tank.z)) repl.startReplish(deltaTime,tank,ECRANH,ECRANW);
+
+        svbmath::Vec3 forward = { tank.dirX, 0.0f, tank.dirZ };
+        svbmath::Vec3 up = { 0, 1, 0 };
+        svbmath::Vec3 tankRight = svbmath::Normalize(svbmath::Cross(forward, up));
+
+        tank.updateDirrections(tank.bodyRad,tank.bodyYaw);
+        tank.Update(deltaTime,{tank.x,tank.y,tank.z},tankRight,leftTrack,rightTrack);
+        tank.DrawTrack(leftTrack, 0.3f);
+        tank.DrawTrack(rightTrack, 0.3f);
 
         art.updateShells(deltaTime);
         art.drawAllShells();
         art.deleteIfAlived();
 
-        projectileSystem.update((float)deltaTime,sound,enemyes,healths, bounds,explosions,smokes,sound.explosionSource);
+        projectileSystem.update((float)deltaTime,sound,enemyes,healths, bounds,explosions,smokes,tank);
         projectileSystem.updateProjectiles(projectileSystem);
-        projectileSystem.updateArtillery(art.shells,sound,enemyes,explosions,smokes,sound.artExplosionSource);
+        projectileSystem.updateArtillery(art.shells,sound,enemyes,explosions,smokes);
         
         updateExplosions(explosions, deltaTime);
         updateSmokes(smokes, deltaTime);
         
-        hud.Draw3DAim(playerTank);
+        granades.update(deltaTime,smokes,tank,sound);
+        granades.drawAll(tank);
 
-        mnMap.draw(ECRANW, ECRANH, playerTank, projectileSystem, explosions, smokes, cam, deltaTime);
+        auto tankCollision = checkCollisionWithTank(tank.x, tank.y, tank.z);
+
+        //Collision with enemy
+        if (tankCollision.checked) { 
+            tank.x = tank.oldX; tank.y = tank.oldY; tank.z = tank.oldZ;
+
+            healths[tankCollision.id].current -= tank.returnImpactImpulse();
+
+            sound.setSourcePosition(sound.collisionSource, tank.x, tank.y, tank.z);
+            alSourcePlay(sound.collisionSource);
+        }
+
+        hud.Draw3DAim(tank);
+
+        mnMap.draw(ECRANW, ECRANH, tank, projectileSystem, explosions, smokes, cam, weather,badges,deltaTime);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);

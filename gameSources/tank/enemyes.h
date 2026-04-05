@@ -2,9 +2,13 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include "bounds.h"
+#include "svbmath.h"
 
 class SmokeEffect;
 class Tank;
+class ProjectileSystem;
+class Sound;
 
 using Entity = uint32_t;
 
@@ -15,6 +19,7 @@ struct Transform {
 struct Health {
     int current;
     int max;
+    float armor;
     bool destroyed = false;
 };
 enum class RenderType {
@@ -28,8 +33,12 @@ struct RenderComponent {
     RenderType type;
 };
 struct TankComponent {
-    float turretAngle;
-    float gunAngle;
+    float reloadTime = 6.5f, finishReload = 0.0f;
+
+    float turretAngle = 0.0f;
+    float gunAngle = 0.0f;
+    float detectionRadius = 35.0f;
+    float turretSpeed = 70.0f;
 };
 struct RadarComponent {
     float rotationSpeed;
@@ -43,10 +52,7 @@ struct ApartmentComponent {
     bool smokeEnabled = false;
     int LOD = 1;
 };
-struct Bounds {
-    float minX, minY, minZ;
-    float maxX, maxY, maxZ;
-};
+
 
 extern std::vector<Entity> entities;
 
@@ -68,6 +74,8 @@ void RenderSystem(std::vector<SmokeEffect*>& smokes);
 void BoundsSystem();
 void HealthBarSystem();
 void DeathSystem(Tank& tank);
-void Update(float dt, Tank& tank);
+void Update(float dt, Tank& tank,ProjectileSystem& projectile,Sound& sound);
 void Render(std::vector<SmokeEffect*>& smokes,bool healthBar = true);
 void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count);
+bool playerInRadius(const svbmath::Vec3& enemyPos, const svbmath::Vec3& playerPos, float radius);
+checkCol checkCollisionWithTank(float x,float y, float z);
