@@ -4,16 +4,16 @@
 #include <unordered_map>
 #include "bounds.h"
 #include "svbmath.h"
+#include <map>
 
 class SmokeEffect;
 class Tank;
-class ProjectileSystem;
 class Sound;
 
 using Entity = uint32_t;
 
 struct Transform {
-    float x, y, z;
+    svbmath::Vec3 pos;
     float angle;
 };
 struct Health {
@@ -22,6 +22,7 @@ struct Health {
     float armor;
     bool destroyed = false;
 };
+
 enum class RenderType {
     Soldat,
     Vehicle,
@@ -29,6 +30,10 @@ enum class RenderType {
     Radar,
     Apartment
 };
+
+extern std::map<RenderType, std::string> rendersMap;
+extern bool showBars;
+
 struct RenderComponent {
     RenderType type;
 };
@@ -39,6 +44,8 @@ struct TankComponent {
     float gunAngle = 0.0f;
     float detectionRadius = 35.0f;
     float turretSpeed = 70.0f;
+
+    bool destroyed = false;
 };
 struct RadarComponent {
     float rotationSpeed;
@@ -68,14 +75,16 @@ Entity CreateEntity();
 void drawTank(TankComponent& tank, float bodyH);
 void DrawCube(float w, float h, float d);
 void RadarSystem(float dt);
+void drawDestroyedTank(TankComponent& tank, float bodyH);
 void drawDestroyedAppartament(ApartmentComponent& ap, float totalH);
 void drawAppartament(ApartmentComponent& ap, float totalH);
 void RenderSystem(std::vector<SmokeEffect*>& smokes);
 void BoundsSystem();
 void HealthBarSystem();
 void DeathSystem(Tank& tank);
-void Update(float dt, Tank& tank,ProjectileSystem& projectile,Sound& sound);
+void Update(float dt, Tank& tank,Sound& sound);
 void Render(std::vector<SmokeEffect*>& smokes,bool healthBar = true);
 void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count);
+std::string getRenderTypeString(RenderType& type);
 bool playerInRadius(const svbmath::Vec3& enemyPos, const svbmath::Vec3& playerPos, float radius);
-checkCol checkCollisionWithTank(float x,float y, float z);
+checkCol checkCollisionWithTank(svbmath::Vec3& pos);

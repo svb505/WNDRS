@@ -7,8 +7,9 @@
 #include "projectile.h"
 #include "bounds.h"
 #include "svbmath.h"
+#include "json_parser.h"
 
-constexpr int MAX_TRACK_POINTS = 128;
+constexpr int MAX_TRACK_POINTS = 64;
 
 struct TrackPoint {
     svbmath::Vec3 pos;
@@ -61,23 +62,28 @@ public:
      {3, {30.0f, 0.0f, 0.0f}}
     };
 
+    bool turretLocked = true;
+
     const float SPEED_LIMIT_FORWARD = 15.0f;
     const float SPEED_LIMIT_BACK = -7.0f;
     const float REDUCTION_COEF = 0.995f;
     const float VELOCITY_COEF = 0.2f;
 
+    int death = 0;
     int selectedSpawn = 0;
     int HP = 200;
+    int score = 0;
+    int scoreToCount = 10;
     int currentHP = HP;
 
-    float baseX = 0.0f, baseY = 0.0f, baseZ = 0.0f;
-    float x = 0.0f, y = 0.0f, z = 0.0f;
-    float oldX = x, oldY = y, oldZ = z;
+    svbmath::Vec3 basePos = { 0.0f,0.0f,0.0f };
+    svbmath::Vec3 pos = { 0.0f,0.0f,0.0f };
+    svbmath::Vec3 oldPos = { 0.0f,0.0f,0.0f };
 
     float bodyYaw = -90.0f, turretYaw = -90.0f, gunPitch = 0.0f;  
 
     int maxShells = 26, totalShells = 26;
-    float reloadTime = 6.5f, finishReload = 0.0f;
+    float reloadTime = getFloatFromJson("tankReload"), finishReload = 0.0f;
 
     bool aimMode = false;
     int kills = 0;
@@ -85,20 +91,21 @@ public:
     shellType selectedShell;
     int shellSpeed = 400;
 
-    float moveSpeed = 0.0f, rotateSpeed = 60.0f, turretSpeed = 60.0f, gunSpeed = 30.0f;
+    float moveSpeed = 0.0f, rotateSpeed = 60.0f;
+    float turretSpeed = getFloatFromJson("tankTurretSpeed"), gunSpeed = getFloatFromJson("tankGunSpeed");
 
     float bodyRad = (bodyYaw + 90.0f) * 3.1415926f / 180.0f, dirX = -sin(bodyRad), dirZ = -cos(bodyRad);
 
     void UpdateTrack(TrackBuffer& track, const svbmath::Vec3& tankPos, float dt);
     void Draw();
     void updateDirrections(float bR, float bY);
-    void updatePosition(float x, float z, float dt);
+    void updatePosition(svbmath::Vec3& pos, float dt);
     float returnImpactImpulse();
     svbmath::Vec3 RotateY(const svbmath::Vec3& v, float angleDeg);
     svbmath::Vec3 LocalToWorldTurret(const svbmath::Vec3& local);
     Bounds GetHullMax() const;
-    void DrawTrack(const TrackBuffer& track, float width);
-    void Update(float dt, svbmath::Vec3 tankPos, svbmath::Vec3 tankRight, TrackBuffer& leftTrack, TrackBuffer& rightTrack);
+    void DrawTrack(const TrackBuffer& trackL, const TrackBuffer& trackR, float width);
+    void UpdateTrack(float dt, svbmath::Vec3 tankPos,TrackBuffer& leftTrack, TrackBuffer& rightTrack);
 private:
     void DrawBox(float w, float h, float d);
     void DrawCylinder(float r, float h, int seg = 16);

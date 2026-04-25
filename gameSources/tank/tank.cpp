@@ -24,9 +24,7 @@ void Tank::UpdateTrack(TrackBuffer& track, const svbmath::Vec3& pos, float dt) {
         track.lastPos = pos;
     }
 
-    for (int i = 0; i < track.count; i++) {
-        track.get(i).life -= dt * 0.2f;
-    }
+    for (int i = 0; i < track.count; i++) track.get(i).life -= dt * 0.2f;
 }
 TrackPoint& TrackBuffer::get(int i) {
     int idx = (head - count + i + MAX_TRACK_POINTS) % MAX_TRACK_POINTS;
@@ -42,11 +40,7 @@ svbmath::Vec3 Tank::RotateY(const svbmath::Vec3& v, float angleDeg) {
     float c = cos(a);
     float s = sin(a);
 
-    return {
-        v.x * c - v.z * s,
-        v.y,
-        v.x * s + v.z * c
-    };
+    return {v.x * c - v.z * s,v.y,v.x * s + v.z * c};
 }
 svbmath::Vec3 Tank::LocalToWorldTurret(const svbmath::Vec3& local) {
     svbmath::Vec3 p = local;
@@ -55,15 +49,15 @@ svbmath::Vec3 Tank::LocalToWorldTurret(const svbmath::Vec3& local) {
     p.y += params.turretY;
     p = RotateY(p, bodyYaw);
 
-    p.x += x;
-    p.y += y;
-    p.z += z;
+    p.x += pos.x;
+    p.y += pos.y;
+    p.z += pos.z;
 
     return p;
 }
 void Tank::Draw() {
     glPushMatrix();
-    glTranslatef(x, y, z);
+    glTranslatef(pos.x, pos.y, pos.z);
     glRotatef(bodyYaw, 0, 1, 0);
 
     DrawHull();
@@ -77,9 +71,9 @@ void Tank::updateDirrections(float bR, float bY) {
     dirX = -sin(bR);
     dirZ = -cos(bR);
 }
-void Tank::updatePosition(float x, float z, float dt) {
-    this->x += dirX * moveSpeed * dt;
-    this->z += dirZ * moveSpeed * dt;
+void Tank::updatePosition(svbmath::Vec3& pos, float dt) {
+    this->pos.x += dirX * moveSpeed * dt;
+    this->pos.z += dirZ * moveSpeed * dt;
 }
 float Tank::returnImpactImpulse() {
     float baseDmg = 100;
@@ -154,7 +148,8 @@ void Tank::DrawTracks() {
 void Tank::DrawTurret() {
     glPushMatrix();
     glTranslatef(0, params.turretY, 0);
-    glRotatef(turretYaw, 0, 1, 0);
+    if (turretLocked) glRotatef(turretYaw, 0, 1, 0);
+    else glRotatef(turretYaw - bodyYaw - 90.0f, 0, 1, 0);
 
     glColor3f(0.15f, 0.4f, 0.15f);
 
@@ -209,13 +204,13 @@ Bounds Tank::GetHullMax() const {
         float z = corners[i].x * sinYaw + corners[i].z * cosYaw;
         float y = corners[i].y;
 
-        min.x = std::min(min.x, x + this->x);
-        min.y = std::min(min.y, y + this->y);
-        min.z = std::min(min.z, z + this->z);
+        min.x = std::min(min.x, x + this->pos.x);
+        min.y = std::min(min.y, y + this->pos.y);
+        min.z = std::min(min.z, z + this->pos.z);
 
-        max.x = std::max(max.x, x + this->x);
-        max.y = std::max(max.y, y + this->y);
-        max.z = std::max(max.z, z + this->z);
+        max.x = std::max(max.x, x + this->pos.x);
+        max.y = std::max(max.y, y + this->pos.y);
+        max.z = std::max(max.z, z + this->pos.z);
     }
 
     result.minX = min.x;
@@ -228,7 +223,11 @@ Bounds Tank::GetHullMax() const {
 
     return result;
 }
-void Tank::Update(float dt, svbmath::Vec3 tankPos, svbmath::Vec3 tankRight, TrackBuffer& leftTrack, TrackBuffer& rightTrack) {
+void Tank::UpdateTrack(float dt, svbmath::Vec3 tankPos,TrackBuffer& leftTrack, TrackBuffer& rightTrack) {
+    svbmath::Vec3 forward = { dirX, 0.0f, dirZ };
+    svbmath::Vec3 up = { 0, 1, 0 };
+    svbmath::Vec3 tankRight = svbmath::Normalize(svbmath::Cross(forward, up));
+    
     float offset = 1.5f;
     float TRACK_Y_OFFSET = 0.02f;
 
@@ -241,37 +240,41 @@ void Tank::Update(float dt, svbmath::Vec3 tankPos, svbmath::Vec3 tankRight, Trac
     UpdateTrack(leftTrack, leftPos, dt);
     UpdateTrack(rightTrack, rightPos, dt);
 }
-void Tank::DrawTrack(const TrackBuffer& track, float width) {
-    if (track.count < 2) return;
+void Tank::DrawTrack(const TrackBuffer& trackL, const TrackBuffer& trackR, float width) {
+    if (trackL.count < 2 || trackR.count < 2) return;
+
+    TrackBuffer tracks[] = { trackL, trackR };
 
     svbmath::Vec3 up = { 0, 1, 0 };
 
     glDisable(GL_LIGHTING);
     glBegin(GL_QUADS);
 
-    for (int i = 0; i < track.count - 1; i++) {
-        const TrackPoint& p1 = track.points[
-            (track.head - track.count + i + MAX_TRACK_POINTS) % MAX_TRACK_POINTS
-        ];
-        const TrackPoint& p2 = track.points[
-            (track.head - track.count + i + 1 + MAX_TRACK_POINTS) % MAX_TRACK_POINTS
-        ];
+    for (auto& track : tracks) {
+        for (int i = 0; i < track.count - 1; i++) {
+            const TrackPoint& p1 = track.points[
+                (track.head - track.count + i + MAX_TRACK_POINTS) % MAX_TRACK_POINTS
+            ];
+            const TrackPoint& p2 = track.points[
+                (track.head - track.count + i + 1 + MAX_TRACK_POINTS) % MAX_TRACK_POINTS
+            ];
 
-        if (p1.life <= 0.0f || p2.life <= 0.0f) continue;
+            if (p1.life <= 0.0f || p2.life <= 0.0f) continue;
 
-        svbmath::Vec3 dir = svbmath::Normalize(p2.pos - p1.pos);
-        svbmath::Vec3 right = svbmath::Cross(dir, up) * width;
+            svbmath::Vec3 dir = svbmath::Normalize(p2.pos - p1.pos);
+            svbmath::Vec3 right = svbmath::Cross(dir, up) * width;
 
-        float alpha1 = p1.life;
-        float alpha2 = p2.life;
+            float alpha1 = p1.life;
+            float alpha2 = p2.life;
 
-        glColor4f(0.2f, 0.2f, 0.2f, alpha1);
-        glVertex3f(p1.pos.x - right.x, p1.pos.y, p1.pos.z - right.z);
-        glVertex3f(p1.pos.x + right.x, p1.pos.y, p1.pos.z + right.z);
+            glColor4f(0.2f, 0.2f, 0.2f, alpha1);
+            glVertex3f(p1.pos.x - right.x, p1.pos.y, p1.pos.z - right.z);
+            glVertex3f(p1.pos.x + right.x, p1.pos.y, p1.pos.z + right.z);
 
-        glColor4f(0.2f, 0.2f, 0.2f, alpha2);
-        glVertex3f(p2.pos.x + right.x, p2.pos.y, p2.pos.z + right.z);
-        glVertex3f(p2.pos.x - right.x, p2.pos.y, p2.pos.z - right.z);
+            glColor4f(0.2f, 0.2f, 0.2f, alpha2);
+            glVertex3f(p2.pos.x + right.x, p2.pos.y, p2.pos.z + right.z);
+            glVertex3f(p2.pos.x - right.x, p2.pos.y, p2.pos.z - right.z);
+        }
     }
 
     glEnd();

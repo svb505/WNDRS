@@ -2,6 +2,7 @@
 #include <GL/gl.h>
 #include "text.h"
 #include <string>
+#include "killchat.h"
 
 GLuint fontBase = 0;
 float timerText = 3.0f;
@@ -106,4 +107,49 @@ void showDestroyText(float dt) {
         timerText = 3.0f; 
     }
 }
+void RenderTextHUD_Colored(float x, float y,const std::vector<ColoredWord>& words,int screenW, int screenH){
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    glOrtho(0, screenW, screenH, 0, -1, 1);
 
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_LIGHTING);
+
+    float cursorX = x;
+    float cursorY = y;
+
+    const float charWidth = 13.0f;
+
+    for (const auto& w : words){
+        glColor3f(w.r, w.g, w.b);
+
+        const char* p = w.text.c_str();
+
+        while (*p){
+            glRasterPos2f(cursorX, cursorY);
+
+            glPushAttrib(GL_LIST_BIT);
+            glListBase(fontBase);
+            glCallLists(1, GL_UNSIGNED_BYTE, p);
+            glPopAttrib();
+
+            cursorX += charWidth;
+            p++;
+        }
+
+        cursorX += charWidth;
+    }
+
+    glEnable(GL_LIGHTING);
+    glEnable(GL_DEPTH_TEST);
+
+    glPopMatrix();
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
+}

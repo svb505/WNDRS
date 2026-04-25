@@ -4,21 +4,16 @@
 
 class Tank;
 class ProjectileSystem;
-class ExplosionEffect;
-class SmokeEffect;
+struct EffectsContex;
 class Camera;
 
-class MiniMap {
-private:
-    float height = 80.0f;
-public:
-    int step = 3;
+extern float height;
+extern int step;
+extern bool badges;
 
-    void setHeight(float h) { height = h; }
-    float getHeight() { return height; }
-    void draw(int ECRANW, int ECRANH, Tank& playerTank, ProjectileSystem& projectileSystem,
-        std::vector<ExplosionEffect*>& explosions, std::vector<SmokeEffect*>& smokes, Camera& cam, std::string weather,
-        bool badges,float dt);
-};
+void setHeight(float h);
+float getHeight();
+void drawMiniMap(int ECRANW, int ECRANH, Tank& playerTank, EffectsContext& context, Camera& cam, std::string weather, 
+    bool badges, float dt);
 
     

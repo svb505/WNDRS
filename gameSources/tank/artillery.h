@@ -12,7 +12,8 @@ public:
 	std::vector<Projectile> shells;
 
 	std::vector<float> returnRandomError();
-	void drawShell();
+
+	void init(int volley,float shellSpeed);
 	void spawnShells(float x,float z);
 	void updateShells(float dt);
 	void drawAllShells();

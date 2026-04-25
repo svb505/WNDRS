@@ -8,52 +8,38 @@
 #include "projectileSystem.h"
 #include "projectile.h"
 #include "Logger.h"
+#include "shells.h"
 
 std::vector<float> Artillery::returnRandomError() {
     std::random_device rd;
     static std::mt19937 gen(rd());
 
-    std::uniform_real_distribution<float> errX(0.0f,15.0f);
-    std::uniform_real_distribution<float> errZ(0.0f,15.0f);
+    std::uniform_real_distribution<float> errX(0.0f,25.0f);
+    std::uniform_real_distribution<float> errZ(0.0f,25.0f);
 
     return {errX(gen),errZ(gen)};
+}
+void Artillery::init(int volley, float shellSpeed) {
+    this->volley = volley; this->shellSpeed = shellSpeed;
 }
 float Artillery::returnSpeedError() {
     std::random_device rd;
     static std::mt19937 gen(rd());
 
-    std::uniform_real_distribution<float> errSpeed(0.5f,1.0f);
+    std::uniform_real_distribution<float> errSpeed(0.3f,1.0f);
 
     return errSpeed(gen);
-}
-void Artillery::drawShell() {
-    float s = 0.1f;
-
-    glColor3f(255.0f / 255.0f, 128.0f / 255.0f, 0.0f);
-    glBegin(GL_QUADS);
-    // front
-    glVertex3f(-s, -s, s); glVertex3f(s, -s, s); glVertex3f(s, s, s); glVertex3f(-s, s, s);
-    // back
-    glVertex3f(-s, -s, -s); glVertex3f(s, -s, -s); glVertex3f(s, s, -s); glVertex3f(-s, s, -s);
-    // left
-    glVertex3f(-s, -s, -s); glVertex3f(-s, -s, s); glVertex3f(-s, s, s); glVertex3f(-s, s, -s);
-    // right
-    glVertex3f(s, -s, -s); glVertex3f(s, -s, s); glVertex3f(s, s, s); glVertex3f(s, s, -s);
-    // top
-    glVertex3f(-s, s, -s); glVertex3f(-s, s, s); glVertex3f(s, s, s); glVertex3f(s, s, -s);
-    // bottom
-    glVertex3f(-s, -s, -s); glVertex3f(-s, -s, s); glVertex3f(s, -s, s); glVertex3f(s, -s, -s);
-    glEnd();
 }
 void Artillery::spawnShells(float x,float z) {
     LOG_INFO("Spawned artillery shell");
 
     for (int i = 0; i < volley; i++) {
         auto error = returnRandomError();
+
         Projectile s(shellType::HE);
-        s.x = x + error[0];
-        s.y = shellHeight;
-        s.z = z + error[1];
+        s.pos.x = x + error[0];
+        s.pos.y = shellHeight;
+        s.pos.z = z + error[1];
         s.delay = 5.0f;
         s.active = false;
         s.speed = shellSpeed * returnSpeedError();
@@ -70,14 +56,14 @@ void Artillery::updateShells(float dt) {
             continue;
         }
 
-        s.y -= s.speed * dt;
+        s.pos.y -= s.speed * dt;
     }
 }
 void Artillery::drawAllShells() {
     for (auto& s : shells) {
         if (!s.alive) continue;
         glPushMatrix();
-        glTranslatef(s.x, s.y, s.z);
+        glTranslatef(s.pos.x, s.pos.y, s.pos.z);
         drawShell();
         glPopMatrix();
     }
