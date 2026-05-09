@@ -4,40 +4,71 @@
 #include "stb_image.h"
 #include "Logger.h"
 #include <map>
+#include <unordered_map>
 
-std::map<std::string, GLuint> iconTextures;
+std::unordered_map<std::string, GLuint> loadedTextures;
+std::map<std::string, GLuint> allTextures;
 
 void LoadAllTextures() {
-    iconTextures["APFSDS"] = LoadTexture("icons/APFSDS.png");
-    iconTextures["HE"] = LoadTexture("icons/HE.png");
-    iconTextures["SMOKE"] = LoadTexture("icons/SMOKE.png");
-    iconTextures["ATGM"] = LoadTexture("icons/ATGM.png");
-    iconTextures["SMOKEGR"] = LoadTexture("icons/SMOKE_GRANADE.png");
-    iconTextures["MLRS"] = LoadTexture("icons/mlrs.png");
-    iconTextures["ARTILLERY"] = LoadTexture("icons/artillery.png");
+    allTextures["APFSDS"] = LoadTexture("textures/APFSDS.png");
+    allTextures["HE"] = LoadTexture("textures/HE.png");
+    allTextures["SMOKE"] = LoadTexture("textures/SMOKE.png");
+    allTextures["ATGM"] = LoadTexture("textures/ATGM.png");
+    allTextures["SMOKEGR"] = LoadTexture("textures/SMOKE_GRANADE.png");
+    allTextures["MLRS"] = LoadTexture("textures/mlrs.png");
+    allTextures["ARTILLERY"] = LoadTexture("textures/artillery.png");
+    allTextures["beton"] = LoadTexture("textures/beton.jpg");
+    allTextures["betonD"] = LoadTexture("textures/betonD.jpg");
+    allTextures["window"] = LoadTexture("textures/window.png");
+    allTextures["windowDestroyed"] = LoadTexture("textures/windowDestroyed.jpg");
+    allTextures["door"] = LoadTexture("textures/door.jpg");
+    allTextures["cloudy"] = LoadTexture("textures/cloudy.jpg");
+    allTextures["fire"] = LoadTexture("textures/fire.jpg");
+    allTextures["smoke"] = LoadTexture("textures/smoke.jpg");
 }
 GLuint LoadTexture(const char* filename){
-    int width, height, channels;
+    if (loadedTextures.contains(filename)) return loadedTextures[filename];
 
-    unsigned char* data = stbi_load(filename, &width, &height, &channels, 4);
+    int width = 0;
+    int height = 0;
+    int channels = 0;
+
+    unsigned char* data = stbi_load(filename, &width, &height, &channels, 0);
 
     if (!data){
         LOG_ERROR("Failed to load image");
         return 0;
     }
 
-    GLuint texture;
+    GLenum format = GL_RGB;
+
+    if (channels == 1) format = GL_RED;
+    else if (channels == 3) format = GL_RGB;
+    else if (channels == 4)format = GL_RGBA;
+    else{
+        LOG_ERROR("Unsupported image format");
+        stbi_image_free(data);
+        return 0;
+    }
+
+    GLuint texture = 0;
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
 
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,width,height,0,GL_RGBA,GL_UNSIGNED_BYTE,data);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexImage2D(GL_TEXTURE_2D,0,format,width,height,0,format,GL_UNSIGNED_BYTE,data);
 
     stbi_image_free(data);
+
+    loadedTextures[filename] = texture;
 
     return texture;
 }
