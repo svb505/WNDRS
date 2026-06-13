@@ -8,12 +8,13 @@
 #include "camera.h"
 #include <cmath>
 
-void DrawSpawnMarker2D(const svbmath::Vec3& pos, float size, float r, float g, float b) {
+void DrawSpawnMarker2D(const svbmath::Vec3& pos, bool selected, float size, float r, float g, float b) {
     glPushMatrix();
 
     glTranslatef(pos.x, pos.y + 0.05f, pos.z);
 
-    glColor3f(r, g, b);
+    if (!selected) glColor3f(r, g, b);
+    else glColor3f(0.0f, 0.0f, 1.0f);
 
     glBegin(GL_LINES);
     glVertex3f(-size * 0.5f, 0.0f, -size * 0.5f);
@@ -24,49 +25,6 @@ void DrawSpawnMarker2D(const svbmath::Vec3& pos, float size, float r, float g, f
     glEnd();
 
     glPopMatrix();
-}
-void drawSoldier(float x, float y, float size) {
-    // Head
-    glColor3f(0.8f, 0.8f, 0.6f);
-    glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(x, y);
-    for (int i = 0; i <= 20; i++) {
-        float angle = i * 2.0f * 3.14159f / 20;
-        glVertex2f(x + cos(angle) * size * 0.3f,
-            y + sin(angle) * size * 0.3f);
-    }
-    glEnd();
-
-    // Body
-    glColor3f(0.2f, 0.8f, 0.2f);
-    glBegin(GL_LINES);
-    glVertex2f(x, y - size * 0.3f);
-    glVertex2f(x, y - size);
-    glEnd();
-}
-void drawCar(float x, float y, float size) {
-    // Body
-    glColor3f(0.2f, 0.2f, 1.0f);
-    glBegin(GL_QUADS);
-    glVertex2f(x - size, y);
-    glVertex2f(x + size, y);
-    glVertex2f(x + size, y + size * 0.5f);
-    glVertex2f(x - size, y + size * 0.5f);
-    glEnd();
-
-    // Wheels
-    glColor3f(0.0f, 0.0f, 0.0f);
-    float r = size * 0.3f;
-    for (int w = -1; w <= 1; w += 2) {
-        glBegin(GL_TRIANGLE_FAN);
-        glVertex2f(x + w * size * 0.6f, y);
-        for (int i = 0; i <= 20; i++) {
-            float a = i * 2.0f * 3.14159f / 20;
-            glVertex2f(x + w * size * 0.6f + cos(a) * r,
-                y + sin(a) * r);
-        }
-        glEnd();
-    }
 }
 void drawRadar(float x, float y, float size, float angle) {
     // circle
@@ -191,14 +149,6 @@ void RenderBadges(int ww, int wh, float scale, Tank& tank,Camera cam) {
         WorldToScreen(t.pos.x, t.pos.z, tank.pos.x, tank.pos.z, cam.cameraYaw,cam,scale, ww, wh,sx, sy);
 
         switch (r.type) {
-        case RenderType::Soldat:
-            drawSoldier(sx, sy, 10);
-            break;
-
-        case RenderType::Vehicle:
-            drawCar(sx, sy, 6);
-            break;
-
         case RenderType::Tank:
             drawTank(sx, sy, 7, t.angle - cam.cameraYaw);
             break;

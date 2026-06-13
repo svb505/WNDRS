@@ -15,9 +15,7 @@ class GUI {
 private:
     Profiler p;
 
-	std::vector<std::string> weathers = { "Clean", "Rainly","Snowly"};
 	std::vector<std::string> spawns = { "1", "2","3" };
-	std::vector<const char*> cstrsW;
 	std::vector<const char*> cstrsS;
 
 	int idxW = 0;
@@ -37,7 +35,6 @@ private:
     bool statWindow = false;
 public:
 	GUI() {
-		for (auto& s : weathers) cstrsW.push_back(s.c_str());
 		for (auto& s : spawns) cstrsS.push_back(s.c_str());
 	}
     void setup(GLFWwindow* window) {
@@ -55,7 +52,7 @@ public:
         ImGui_ImplGlfw_Shutdown();
         ImGui::DestroyContext();
     }
-    void render(float& fps, Tank& tank, Artillery& art, Sound& sound,std::string& weather, SmokeGranade& g,bool& badges,
+    void render(float& fps, Tank& tank, Artillery& art, Sound& sound,Type& weather, SmokeGranade& g,bool& badges,
         std::unordered_map<int, Entity>& enemyes,bool& locked){
         std::string buf = std::format("{} / {}", tank.currentHP, tank.HP);
 
@@ -69,11 +66,11 @@ public:
         ImGui::SameLine();
         if (ImGui::Button("Show statistick")) statWindow = true;
 
-        if (ImGui::ImageButton("artillery",(ImTextureID)(intptr_t)iconTextures["ARTILLERY"], ImVec2(60, 60))) artWindow = true;
+        if (ImGui::ImageButton("artillery",(ImTextureID)(intptr_t)allTextures["ARTILLERY"], ImVec2(60, 60))) artWindow = true;
         
         ImGui::SameLine();
         ImGui::BeginDisabled(!canUseMlrs);
-        if (ImGui::ImageButton("mlrs",(ImTextureID)(intptr_t)iconTextures["MLRS"], ImVec2(60, 60))) mlrsWindow = true;
+        if (ImGui::ImageButton("mlrs",(ImTextureID)(intptr_t)allTextures["MLRS"], ImVec2(60, 60))) mlrsWindow = true;
         ImGui::EndDisabled();
 
         if (!canUseMlrs && ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)){
@@ -96,13 +93,15 @@ public:
         ImGui::Dummy(ImVec2(0.0f, 10.0f));
         
         ImGui::Text("%d / %d", (int)g.granades.size(), g.maxCount);
-        ImGui::Image((ImTextureID)(intptr_t)iconTextures["SMOKEGR"], ImVec2(60, 60));
+        ImGui::Image((ImTextureID)(intptr_t)allTextures["SMOKEGR"], ImVec2(60, 60));
 
         ImGui::Dummy(ImVec2(0.0f, 10.0f));
-        if (ImGui::Combo("Select weather", &idxW, cstrsW.data(), cstrsW.size())) weather = weathers[idxW];
+        if (ImGui::Combo("Select weather", &idxW, weathersStrings.data(), weathersStrings.size()))
+            weather = convertStringToType(weathersStrings[idxW]);
         
         ImGui::Dummy(ImVec2(0.0f, 10.0f));
-        if (ImGui::Combo("Select spawn", &idxS, cstrsS.data(), cstrsS.size())) tank.selectedSpawn = std::stoi(spawns[idxS]);
+        if (ImGui::Combo("Select spawn", &idxS, cstrsS.data(), cstrsS.size())) 
+            tank.selectedSpawn = std::stoi(spawns[idxS]);
 
         ImGui::Separator();
 
@@ -110,7 +109,7 @@ public:
         ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
         ImGui::Text("Total shells: %d", tank.totalShells);
-        ImGui::Image((ImTextureID)(intptr_t)iconTextures[selectedShell], ImVec2(70, 60));
+        ImGui::Image((ImTextureID)(intptr_t)allTextures[selectedShell], ImVec2(70, 60));
 
         ImGui::Text("Reload time: %.1f", tank.finishReload);
         ImGui::Dummy(ImVec2(0.0f, 10.0f));

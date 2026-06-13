@@ -90,13 +90,8 @@ void onHit(Projectile& p, int id, Health* health,EffectsContext& context,Sound& 
             int radius = (p.selectedShellType == shellType::APFSDS) ? 4 : 6;
             float height = (p.selectedShellType == shellType::APFSDS) ? 1.5f : 2.0f;
 
-            context.explosions.push_back(
-                new ExplosionEffect(p.pos, count, radius, height, 1.8f)
-            );
-
-            context.smokes.push_back(
-                new SmokeEffect(p.pos, 300, 3)
-            );
+            context.explosions.push_back(new ExplosionEffect(p.pos, count, radius, height, 1.8f));
+            context.smokes.push_back(new SmokeEffect(p.pos, 300, 3));
         }
     }
 

@@ -194,7 +194,7 @@ int main(){
   
         countFps(deltaTime,lastTime,currentTime,frames,fps,fpsTimer);
 
-        processTankInput(window, deltaTime, enemyes,tank,sound,cam,ray,granades,cursorVisibility);
+        processTankInput(window, deltaTime, enemyes,tank,sound,cam,ray,granades,cursorVisibility,ECRANW,ECRANH);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         drawSky();

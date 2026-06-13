@@ -15,8 +15,8 @@
 
 bool showBars = true;
 
-std::map<RenderType, std::string> rendersMap = { {RenderType::Soldat,"Soldat"}, {RenderType::Vehicle,"Vehicle"},
-        {RenderType::Tank,"Tank"}, {RenderType::Radar,"Radar"}, {RenderType::Apartment,"Apartment"} };
+std::map<RenderType, std::string> rendersMap = {{RenderType::Tank,"Tank"}, 
+    {RenderType::Radar,"Radar"}, {RenderType::Apartment,"Apartment"} };
 
 std::vector<Entity> entities;
 
@@ -35,7 +35,41 @@ Entity CreateEntity() {
     entities.push_back(e);
     return e;
 }
-
+void DrawCube(float w, float h, float d) { 
+    glBegin(GL_QUADS); 
+    
+    glVertex3f(-w, -h, d); 
+    glVertex3f(w, -h, d); 
+    glVertex3f(w, h, d); 
+    glVertex3f(-w, h, d); 
+    
+    glVertex3f(-w, -h, -d); 
+    glVertex3f(-w, h, -d); 
+    glVertex3f(w, h, -d); 
+    glVertex3f(w, -h, -d); 
+    
+    glVertex3f(-w, -h, -d); 
+    glVertex3f(-w, -h, d); 
+    glVertex3f(-w, h, d); 
+    glVertex3f(-w, h, -d); 
+    
+    glVertex3f(w, -h, -d); 
+    glVertex3f(w, h, -d); 
+    glVertex3f(w, h, d); 
+    glVertex3f(w, -h, d); 
+    
+    glVertex3f(-w, h, -d); 
+    glVertex3f(-w, h, d); 
+    glVertex3f(w, h, d); 
+    glVertex3f(w, h, -d); 
+    
+    glVertex3f(-w, -h, -d);
+    glVertex3f(w, -h, -d); 
+    glVertex3f(w, -h, d); 
+    glVertex3f(-w, -h, d); 
+    
+    glEnd(); 
+}
 void drawSootEffect(float x, float y, float z, int segments, float radius) {
     glPushMatrix();
     glTranslatef(x, y, z);
@@ -161,7 +195,6 @@ void drawDestroyedTank(TankComponent& tank, float bodyH) {
 }
 void drawTank(TankComponent& tank, float bodyH) {
     glPushMatrix();
-    glRotatef(1, 0, 1, 0);
     glColor3f(0, 0.8f, 0);
 
     glBegin(GL_QUADS);
@@ -296,41 +329,6 @@ void drawTank(TankComponent& tank, float bodyH) {
     glPopMatrix(); // gun
     glPopMatrix(); // turret
     glPopMatrix(); // tank
-}
-void DrawCube(float w, float h, float d) {
-    glBegin(GL_QUADS);
-
-    glVertex3f(-w, -h, d);
-    glVertex3f(w, -h, d);
-    glVertex3f(w, h, d);
-    glVertex3f(-w, h, d);
-
-    glVertex3f(-w, -h, -d);
-    glVertex3f(-w, h, -d);
-    glVertex3f(w, h, -d);
-    glVertex3f(w, -h, -d);
-
-    glVertex3f(-w, -h, -d);
-    glVertex3f(-w, -h, d);
-    glVertex3f(-w, h, d);
-    glVertex3f(-w, h, -d);
-
-    glVertex3f(w, -h, -d);
-    glVertex3f(w, h, -d);
-    glVertex3f(w, h, d);
-    glVertex3f(w, -h, d);
-
-    glVertex3f(-w, h, -d);
-    glVertex3f(-w, h, d);
-    glVertex3f(w, h, d);
-    glVertex3f(w, h, -d);
-
-    glVertex3f(-w, -h, -d);
-    glVertex3f(w, -h, -d);
-    glVertex3f(w, -h, d);
-    glVertex3f(-w, -h, d);
-
-    glEnd();
 }
 void RadarSystem(float dt) {
     for (auto& [entity, radar] : radars) {
@@ -559,7 +557,6 @@ void drawDestroyedAppartament(ApartmentComponent& ap, float totalH){
 void drawAppartament(ApartmentComponent& ap, float totalH) {
     if (ap.LOD == 1) {
         glPushMatrix();
-        glRotatef(1, 0, 1, 0);
 
         GLuint betonTexture = allTextures["beton"];
         GLuint windowTexture = allTextures["window"];
@@ -717,7 +714,6 @@ void drawAppartament(ApartmentComponent& ap, float totalH) {
     }
     if (ap.LOD == 2) {
         glPushMatrix();
-        glRotatef(1, 0, 1, 0);
 
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -924,7 +920,8 @@ void drawAppartament(ApartmentComponent& ap, float totalH) {
 }
 void RenderSystem(std::vector<SmokeEffect*>& smokes) {
     for (auto e : entities) {
-        if (healths[e].destroyed && renders[e].type != RenderType::Apartment && renders[e].type != RenderType::Tank) continue;
+        if (healths[e].destroyed && renders[e].type != RenderType::Apartment && 
+            renders[e].type != RenderType::Tank) continue;
 
         auto& t = transforms[e];
         auto& r = renders[e];
@@ -934,16 +931,6 @@ void RenderSystem(std::vector<SmokeEffect*>& smokes) {
         glRotatef(t.angle, 0, 1, 0);
 
         switch (r.type) {
-        case RenderType::Soldat:
-            glColor3f(0, 1, 0);
-            DrawCube(0.3f, 0.7f, 0.3f);
-            break;
-
-        case RenderType::Vehicle:
-            glColor3f(0, 0.8f, 0);
-            DrawCube(1.0f, 0.6f, 1.0f);
-            break;
-
         case RenderType::Tank: {
             auto& tank = tanks[e];
             float bodyH = 0.6f;
@@ -989,16 +976,6 @@ void BoundsSystem() {
         Bounds b{};
 
         switch (r.type) {
-        case RenderType::Soldat:
-            b = { t.pos.x - 0.5f, t.pos.y, t.pos.z - 0.5f,
-                  t.pos.x + 0.5f, t.pos.y + 1.5f, t.pos.z + 0.5f };
-            break;
-
-        case RenderType::Vehicle:
-            b = { t.pos.x - 1, t.pos.y - 0.6f, t.pos.z - 1,
-                  t.pos.x + 1, t.pos.y + 0.6f, t.pos.z + 1 };
-            break;
-
         case RenderType::Tank:
             b = { t.pos.x - 1, t.pos.y - 0.6f, t.pos.z - 1,
                   t.pos.x + 1, t.pos.y + 1.5f, t.pos.z + 2.8f };
@@ -1031,6 +1008,8 @@ void HealthBarSystem() {
                 apartments[entity].floors + 2.0f : 2.0f;
 
             std::string text = std::format("{}/{}", hp.current, hp.max);
+
+            float stepZ = 0.0f;
 
             RenderTextWorld(t.pos.x, t.pos.y + step * 1.3f, t.pos.z, 1, 1, 1, getRenderTypeString(renders[entity].type).c_str());
             RenderTextWorld(t.pos.x, t.pos.y + step, t.pos.z, 1, 0, 0, text.c_str());
@@ -1120,9 +1099,7 @@ void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count) {
 
         transforms[e] = { x, 0.0f, z, (float)(rand() % 360) };
 
-        if (i < 10) { renders[e] = { RenderType::Vehicle }; healths[e] = { 100,100,5,false }; }
-        else if (i < 20) { renders[e] = { RenderType::Soldat }; healths[e] = { 50,50,2,false }; }
-        else if (i < 25) {
+        if (i < 25) {
             renders[e] = { RenderType::Tank };
             healths[e] = { 200,200,15,false };
             tanks[e] = { 6.5f, 0.0f, 0.0f,0.0f,35.0f,40.0f };
