@@ -36,7 +36,7 @@ struct RayContext {
 };
 
 void processTankInput(GLFWwindow* window, float dt, std::unordered_map<int, Entity>& enemyes,Tank& tank,Sound& sound,
-    Camera& cam,RayContext& context,SmokeGranade& granades,bool& cursorVisibility,int EW,int EH) {
+    Camera& cam,RayContext& context,SmokeGranade& granades,CameraShake& shake) {
     static bool prevCtrl = false;
     static bool prevAlt = false;
     static bool prevShift = false;
@@ -53,45 +53,57 @@ void processTankInput(GLFWwindow* window, float dt, std::unordered_map<int, Enti
 
     for (auto& s : shellBinds) {
         if (isDown(window, s.key)) {
-            tank.selectedShell = s.type;
-            tank.shellSpeed = s.speed;
-            tank.finishReload = tank.reloadTime;
+            tank.getSelectedShell() = s.type;
+            tank.getBaseShellSpeed() = s.speed;
+            tank.getFinishReload() = tank.getReloadTime();
         }
     }
 
-    if (isDown(window, GLFW_KEY_A)) { tank.bodyYaw += tank.rotateSpeed * dt; tank.moveSpeed *= tank.REDUCTION_COEF; }
-    if (isDown(window, GLFW_KEY_D)) { tank.bodyYaw -= tank.rotateSpeed * dt; tank.moveSpeed *= tank.REDUCTION_COEF; }
+    if (isDown(window, GLFW_KEY_A)) { tank.getBodyYaw() += tank.getRotateSpeed() * dt;
+    tank.getMoveSpeed() *= tank.getReductionCoef(); }
+    if (isDown(window, GLFW_KEY_D)) { tank.getBodyYaw() -= tank.getRotateSpeed() * dt; 
+    tank.getMoveSpeed() *= tank.getReductionCoef(); }
     if (isDown(window, GLFW_KEY_W)) {
-        tank.oldPos = tank.pos;
+        tank.getOldPos() = tank.getCurrentPos();
 
-        if (tank.moveSpeed <= tank.SPEED_LIMIT_FORWARD) tank.moveSpeed += tank.VELOCITY_COEF;
+        if (tank.getMoveSpeed() <= tank.getSpeedLimitForward()) tank.getMoveSpeed() 
+            += tank.getVelocityCoef();
     }
     if (isDown(window, GLFW_KEY_S)) {
-        tank.oldPos = tank.pos;
+        tank.getOldPos() = tank.getCurrentPos();
 
-        if (tank.moveSpeed >= tank.SPEED_LIMIT_BACK) tank.moveSpeed -= tank.VELOCITY_COEF / 2;
+        if (tank.getMoveSpeed() >= tank.getSpeedLimitBack()) tank.getMoveSpeed() -= tank.getVelocityCoef() / 2;
     }
-
     if (isDown(window, GLFW_KEY_UP) && isDown(window, GLFW_KEY_LEFT_CONTROL)) setHeight(getHeight() + step * dt * 60);
     if (isDown(window, GLFW_KEY_DOWN) && isDown(window, GLFW_KEY_LEFT_CONTROL)) setHeight(getHeight() - step * dt * 60);
-
     if (isDown(window, GLFW_KEY_ENTER)) {
-        float yaw = tank.bodyYaw + tank.turretYaw;
-
-        spawnBullet({ tank.pos.x, tank.pos.y + 1.0f, tank.pos.z }, yaw);
-
+        float yaw = tank.getBodyYaw() + tank.getTurretYaw();
         auto& src = sound.sources["MGun"];
-        sound.setSourcePosition(src, tank.pos);
-        alSourceStop(src);
-        alSourcePlay(src);
-    }
+        svbmath::Vec3 pos = tank.getCurrentPos();
 
+        ALint state;
+
+        alGetSourcei(src, AL_SOURCE_STATE, &state);
+        spawnBullet({ pos.x, pos.y + 1.0f, pos.z }, yaw);
+
+        if (!sound.mgunPlayed) {
+            sound.setSourcePosition(src, tank.getCurrentPos());
+            alSourceStop(src);
+            alSourcePlay(src);
+
+            sound.mgunPlayed = true;
+        }
+
+        if (state == AL_STOPPED) sound.mgunPlayed = false;
+
+        
+    }
     if (isPressed(window, GLFW_KEY_R, prevR)) {
         Ray ray;
-        ray.origin = { tank.pos.x, tank.pos.y + 1.6f, tank.pos.z };
+        ray.origin = { tank.getCurrentPos().x, tank.getCurrentPos().y + 1.6f, tank.getCurrentPos().z };
 
-        float yawRad = (tank.bodyYaw + tank.turretYaw) * 3.14159265f / 180.0f;
-        float pitchRad = tank.gunPitch * 3.14159265f / 180.0f;
+        float yawRad = (tank.getBodyYaw() + tank.getTurretYaw()) * 3.14159265f / 180.0f;
+        float pitchRad = tank.getGunPitch() * 3.14159265f / 180.0f;
 
         ray.direction = { sin(yawRad) * cos(pitchRad), sin(pitchRad), cos(yawRad) * cos(pitchRad) };
 
@@ -106,30 +118,37 @@ void processTankInput(GLFWwindow* window, float dt, std::unordered_map<int, Enti
         if (hitID != -1) { context.lastHitID = hitID; context.lastHitDist = hitDistance; }
         else { context.lastHitID = -1; context.lastHitDist = 0.0f; }
     }
-
     if (isPressed(window, GLFW_KEY_G, prevG)) granades.strike();
     if (isPressed(window, GLFW_KEY_LEFT_ALT, prevAlt)) {
         cursorVisibility = !cursorVisibility;
 
         glfwSetInputMode(window, GLFW_CURSOR, cursorVisibility ? GLFW_CURSOR_NORMAL : GLFW_CURSOR_DISABLED);
     }
-    if (isPressed(window, GLFW_KEY_LEFT_SHIFT, prevShift)) tank.aimMode = !tank.aimMode;
+    if (isPressed(window, GLFW_KEY_LEFT_SHIFT, prevShift)) tank.getAimMode() = !tank.getAimMode();
+    if (isPressed(window, GLFW_KEY_SPACE, prevFire) && tank.getFinishReload() <= 0.0f && 
+        tank.getTotalShells() > 0) {
 
-    if (isPressed(window, GLFW_KEY_SPACE, prevFire) && tank.finishReload <= 0.0f && tank.totalShells > 0) {
-        float yaw = tank.turretLocked ? tank.bodyYaw + tank.turretYaw : tank.turretYaw - 90.0f;
+        TankParams params = tank.getParams();
+        svbmath::Vec3 pos = tank.getCurrentPos();
 
-        float posY = tank.pos.y + tank.params.hullH + tank.params.turretY - tank.params.gunOffsetY;
+        float yaw = tank.getTurretLocked() ? tank.getBodyYaw() + tank.getTurretYaw() : 
+            tank.getTurretYaw() - 90.0f;
+        
+        float posY = pos.y + params.hullH + params.turretY - params.gunOffsetY;
 
-        spawnShell({ tank.pos.x, posY, tank.pos.z }, yaw, tank.gunPitch, tank.selectedShell, tank.shellSpeed);
+        shake.Start(0.2f, 0.5f);
 
-   
-        sound.setSourcePosition(sound.sources["Shot"], tank.pos);
+        spawnShell({ pos.x, posY, pos.z }, yaw, tank.getGunPitch(), tank.getSelectedShell(), 
+            tank.getBaseShellSpeed());
+
+        sound.setSourcePosition(sound.sources["Shot"], tank.getCurrentPos());
         alSourceStop(sound.sources["Shot"]);
         alSourcePlay(sound.sources["Shot"]);
 
-        --tank.totalShells;
-        tank.finishReload = tank.reloadTime;
+        --tank.getTotalShells();
+        tank.getFinishReload() = tank.getReloadTime();
     }
 
-    if (isPressed(window, GLFW_KEY_LEFT_CONTROL, prevCtrl)) { cam.zoomed = !cam.zoomed; cam.fov = cam.zoomed ? 40.0f : 70.0f; }
+    if (isPressed(window, GLFW_KEY_LEFT_CONTROL, prevCtrl)) { cam.zoomed = !cam.zoomed; 
+                    cam.fov = cam.zoomed ? 40.0f : 70.0f; }
 }

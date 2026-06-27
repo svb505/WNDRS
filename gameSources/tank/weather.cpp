@@ -14,7 +14,6 @@
 std::vector<const char*> weathersStrings = { "Clean","Rainy","Snowy" };
 std::map<const char*, Type> weathersToConvert = { {"Clean",Type::clean},{"Rainy",Type::rainy},
 													{"Snowy",Type::snowy} };
-
 Type convertStringToType(const char* str) {
 	auto it = weathersToConvert.find(str);
 
@@ -22,7 +21,9 @@ Type convertStringToType(const char* str) {
 
 	throw std::runtime_error("Unknown weather type");
 }
-
+Type& Weather::getWeather() {
+	return weather;
+}
 void Weather::getWeather(Sound& sound,Camera& cam) {
 	if (weather == Type::clean) {
 		if (particles.size() > 0) {
@@ -128,9 +129,9 @@ void Weather::generate(const Type& type,Camera& cam) {
 
 		p.type = type;
 
-		p.x = cam.cameraX + (rand() % int(diapazone * 2)) - diapazone;
-		p.y = cam.cameraY + p.height;
-		p.z = cam.cameraZ + (rand() % int(diapazone * 2)) - diapazone;
+		p.x = cam.cameraPos.x + (rand() % int(diapazone * 2)) - diapazone;
+		p.y = cam.cameraPos.y + p.height;
+		p.z = cam.cameraPos.z + (rand() % int(diapazone * 2)) - diapazone;
 
 		p.vx = 0.0f; p.vz = 0.0f;
 		p.fallSpeed = (p.type == Type::rainy) ? 45.0f * svbmath::randFloat(0.5f,1.0f) : 20.0f * svbmath::randFloat(0.5f, 1.0f);
@@ -146,7 +147,7 @@ void Weather::update(Camera& cam,float dt) {
 		p.y += p.vy * dt;
 		
 		if (p.y <= 0.0f) {
-			p.y = cam.cameraY + p.height;
+			p.y = cam.cameraPos.y + p.height;
 			p.vy = -p.fallSpeed;
 		}
 	}

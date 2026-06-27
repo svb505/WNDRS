@@ -130,6 +130,7 @@
     <ClCompile Include="artillery.cpp" />
     <ClCompile Include="bounds.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="cameraShake.cpp" />
     <ClCompile Include="craters.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="effects.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="minimap.cpp" />
+    <ClCompile Include="modificationsSystem.cpp" />
     <ClCompile Include="profiler.cpp" />
     <ClCompile Include="projectile.cpp" />
     <ClCompile Include="projectileSystem.cpp" />
@@ -162,6 +164,7 @@
     <ClInclude Include="artillery.h" />
     <ClInclude Include="bounds.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="cameraShake.h" />
     <ClInclude Include="craters.h" />
     <ClInclude Include="database.h" />
     <ClInclude Include="effects.h" />
@@ -178,6 +181,7 @@
     <ClInclude Include="lightning.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="minimap.h" />
+    <ClInclude Include="modificationsSystem.h" />
     <ClInclude Include="profiler.h" />
     <ClInclude Include="projectile.h" />
     <ClInclude Include="projectileSystem.h" />

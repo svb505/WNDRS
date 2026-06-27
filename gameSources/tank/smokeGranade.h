@@ -16,11 +16,15 @@ struct Position {
 };
 
 class SmokeGranade {	
-public:
+private:
 	int maxCount = 6;
 	int currentGranade = 0;
 	std::vector<Position> granades;
+public:
+	int& getMaxCount();
+	std::vector<Position>& getGranades();
 
+	void reservePlace();
 	void drawAll(Tank& tank);
 	void draw(svbmath::Vec3& pos, float angle, float yaw);
 	void spawn(Tank& tank);

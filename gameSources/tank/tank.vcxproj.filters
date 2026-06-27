@@ -123,6 +123,12 @@
     <ClCompile Include="killchat.cpp">
       <Filter>Исходные файлы\game_hud</Filter>
     </ClCompile>
+    <ClCompile Include="cameraShake.cpp">
+      <Filter>Исходные файлы\visual</Filter>
+    </ClCompile>
+    <ClCompile Include="modificationsSystem.cpp">
+      <Filter>Исходные файлы\gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -226,6 +232,12 @@
     </ClInclude>
     <ClInclude Include="Logger.h">
       <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="cameraShake.h">
+      <Filter>Исходные файлы\visual</Filter>
+    </ClInclude>
+    <ClInclude Include="modificationsSystem.h">
+      <Filter>Исходные файлы\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
