@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="APSSystem.cpp" />
     <ClCompile Include="artillery.cpp" />
     <ClCompile Include="bounds.cpp" />
     <ClCompile Include="camera.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="effects.cpp" />
     <ClCompile Include="enemyes.cpp" />
     <ClCompile Include="environnement.cpp" />
+    <ClCompile Include="gameBorder.cpp" />
     <ClCompile Include="getheight.cpp" />
     <ClCompile Include="getnormal.cpp" />
     <ClCompile Include="HUD.cpp" />
@@ -161,6 +163,7 @@
     <ClCompile Include="weather.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="APSSystem.h" />
     <ClInclude Include="artillery.h" />
     <ClInclude Include="bounds.h" />
     <ClInclude Include="camera.h" />
@@ -170,6 +173,7 @@
     <ClInclude Include="effects.h" />
     <ClInclude Include="enemyes.h" />
     <ClInclude Include="environnement.h" />
+    <ClInclude Include="gameBorder.h" />
     <ClInclude Include="getheight.h" />
     <ClInclude Include="getnormal.h" />
     <ClInclude Include="glfw_oglSetup.h" />

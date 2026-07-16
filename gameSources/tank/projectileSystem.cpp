@@ -19,8 +19,13 @@
 #include "killchat.h"
 #include "texture.h"
 #include "CameraShake.h"
+#include "APSSystem.h"
 
 std::vector<Projectile> projectiles = {};
+std::map<shellType, int> shellSpeeds = { {shellType::APFSDS, 400},
+                                            {shellType::HE, 100 }, 
+                                            { shellType::ATGM, 10 },
+                                            { shellType::SMOKE, 200 } };
 
 std::map<shellType, std::string> shellTypes = { {shellType::APFSDS,"APFSDS"},{shellType::HE,"HE"},
         {shellType::SMOKE,"SMOKE"} ,{shellType::ATGM,"ATGM"} ,{shellType::BULLET,"BULLET"} };
@@ -36,9 +41,10 @@ float calculatePenetration(float vel) {
     const float k = 0.0005f;
     return k * vel * vel;
 }
-void onHit(Projectile& p, int id, Health* health,EffectsContext& context,Sound& sound, Tank& player,bool hitGround) {
+void onHit(Projectile& p, int id, Health* health,EffectsContext& context,
+    Sound& sound, Tank& player,bool hitGround) {
 
-    const char* snd = (p.type == ProjectileType::Shell) ? "Explosion" : "Explosion";
+    const char* snd = "Explosion";
     sound.setSourcePosition(sound.sources[snd], p.pos);
     alSourceStop(sound.sources[snd]);
     alSourcePlay(sound.sources[snd]);
@@ -104,14 +110,14 @@ void onHit(Projectile& p, int id, Health* health,EffectsContext& context,Sound& 
     p.alive = false;
 }
 void spawnShell(svbmath::Vec3 pos, float yawDeg, float pitchDeg, shellType _shellType,
-    int shellSpeed,bool isEnemy) {
+        bool isEnemy) {
     Projectile p(_shellType);
     p.type = ProjectileType::Shell;
 
     p.selectedShellType = _shellType;
 
-    p.pos.x = pos.x; p.pos.y = pos.y; p.pos.z = pos.z;
-    p.speed = shellSpeed;
+    p.pos = pos;
+    p.speed = shellSpeeds[_shellType];
 
     float yaw = yawDeg * 3.1415926f / 180.0f;
     float pitch = pitchDeg * 3.1415926f / 180.0f;
@@ -136,7 +142,7 @@ void spawnShell(svbmath::Vec3 pos, float yawDeg, float pitchDeg, shellType _shel
 void spawnBullet(svbmath::Vec3 pos, float yawDeg) {
     Projectile p(shellType::BULLET);
     p.type = ProjectileType::Bullet;
-    p.pos.x = pos.x; p.pos.y = pos.y; p.pos.z = pos.z;
+    p.pos = pos;
     p.speed = 120.0f;
     p.damage = 1;
     p.lifeTime = 4.0f;
@@ -147,13 +153,15 @@ void spawnBullet(svbmath::Vec3 pos, float yawDeg) {
 
     projectiles.push_back(p);
 }
-void update(float dt,Sound& sound,std::unordered_map<int, Entity>& enemies,std::unordered_map<Entity, Health>& healths,
-    std::unordered_map<Entity, Bounds>& bounds,EffectsContext& context,Tank& player,
-    CameraShake& shake) {
+void update(float dt,Sound& sound, std::vector<Projectile>& artilleryProjectiles, 
+    ECSCompenents& components,EffectsContext& context,Tank& player, CameraShake& shake) {
+
     for (auto& p : projectiles) {
         if (!p.alive) continue;
 
         p.update(dt, player);
+
+        startAPS(p, context, sound, player);
 
         if (checkCollision(player.GetHullMax(), p.pos) && p.isEnemy) {
             player.getCurretHp() -= p.damage;
@@ -167,21 +175,21 @@ void update(float dt,Sound& sound,std::unordered_map<int, Entity>& enemies,std::
 
                 player.getDeath()++;
                 player.getCurretHp() = player.getHp();
-                player.getCurrentPos() = player.getSpawns()[player.getSelectedSpawn()];
+                player.respawn(player.getSelectedSpawn());
             }
 
             continue;
         }
 
-        for (auto& [id, en] : enemies) {
+        for (auto& [id, en] : components.enemyes) {
 
-            if (!healths.contains(id)) continue;
-            if (!bounds.contains(id)) continue;
-            if (healths[id].destroyed && renders[id].type != RenderType::Apartment) continue;
+            if (!components.healths.contains(id)) continue;
+            if (!components.bounds.contains(id)) continue;
+            if (components.healths[id].destroyed && renders[id].type != RenderType::Apartment) continue;
 
-            if (checkCollision(bounds[id], p.pos) && !p.isEnemy) {
+            if (checkCollision(components.bounds[id], p.pos) && !p.isEnemy) {
 
-                onHit(p,id, &healths[id], context, sound, player, false);
+                onHit(p,id, &components.healths[id], context, sound, player, false);
                 break;
             }
         }
@@ -190,37 +198,17 @@ void update(float dt,Sound& sound,std::unordered_map<int, Entity>& enemies,std::
         }
     }
 
-    std::erase_if(projectiles, [](const Projectile& p) {
-        return !p.alive;
-        });
-}
-void updateProjectiles() {
-    for (auto& p : projectiles) {
-        if (!p.alive) continue;
-
-        glPushMatrix();
-        glTranslatef(p.pos.x, p.pos.y, p.pos.z);
-
-        if (p.type == ProjectileType::Shell) drawShell();
-        else drawBullet();
-
-        glPopMatrix();
-    }
-}
-void updateArtillery(std::vector<Projectile>& artilleryProjectiles, Sound& sound,
-    std::unordered_map<int, Entity>& enemies, EffectsContext& context,Tank& player) {
-    
     for (auto& p : artilleryProjectiles) {
         if (!p.alive) continue;
 
         bool exploded = false;
 
-        for (auto& [id, en] : enemies) {
-            if (!healths.contains(id) || healths[id].destroyed) continue;
-            if (!bounds.contains(id)) continue;
+        for (auto& [id, en] : components.enemyes) {
+            if (!components.healths.contains(id) || components.healths[id].destroyed) continue;
+            if (!components.bounds.contains(id)) continue;
 
-            if (checkCollision(bounds[id], p.pos) && calculatePenetration(p.speed)) {
-                onHit(p,id,&healths[id], context,sound,player,false);
+            if (checkCollision(components.bounds[id], p.pos) && calculatePenetration(p.speed)) {
+                onHit(p, id, &components.healths[id], context, sound, player, false);
                 exploded = true;
 
                 break;
@@ -234,5 +222,20 @@ void updateArtillery(std::vector<Projectile>& artilleryProjectiles, Sound& sound
             alSourcePlay(sound.sources["ArtExplosion"]);
             p.alive = false;
         }
+    }
+
+    std::erase_if(projectiles, [](const Projectile& p) { return !p.alive; });
+}
+void drawProjectiles() {
+    for (auto& p : projectiles) {
+        if (!p.alive) continue;
+
+        glPushMatrix();
+        glTranslatef(p.pos.x, p.pos.y, p.pos.z);
+
+        if (p.type == ProjectileType::Shell) drawShell();
+        else drawBullet();
+
+        glPopMatrix();
     }
 }

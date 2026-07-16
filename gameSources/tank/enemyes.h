@@ -40,7 +40,7 @@ struct TankComponent {
 
     float turretAngle = 0.0f;
     float gunAngle = 0.0f;
-    float detectionRadius = 35.0f;
+    float detectionRadius = 85.0f;
     float turretSpeed = 70.0f;
 
     bool destroyed = false;
@@ -58,6 +58,11 @@ struct ApartmentComponent {
     int LOD = 1;
 };
 
+struct ECSCompenents {
+    std::unordered_map<int, Entity>& enemyes;
+    std::unordered_map<Entity, Health>& healths;
+    std::unordered_map<Entity, Bounds>& bounds;
+};
 
 extern std::vector<Entity> entities;
 
@@ -72,8 +77,6 @@ extern std::unordered_map<Entity, Bounds> bounds;
 Entity CreateEntity();
 void drawTank(TankComponent& tank, float bodyH);
 void DrawCube(float w, float h, float d);
-void drawVehicle();
-void drawSoldier();
 void RadarSystem(float dt);
 void drawDestroyedTank(TankComponent& tank, float bodyH);
 void drawDestroyedAppartament(ApartmentComponent& ap, float totalH);

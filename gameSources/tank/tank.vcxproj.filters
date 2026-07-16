@@ -129,6 +129,12 @@
     <ClCompile Include="modificationsSystem.cpp">
       <Filter>Исходные файлы\gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="APSSystem.cpp">
+      <Filter>Исходные файлы\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameBorder.cpp">
+      <Filter>Исходные файлы\gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -237,6 +243,12 @@
       <Filter>Исходные файлы\visual</Filter>
     </ClInclude>
     <ClInclude Include="modificationsSystem.h">
+      <Filter>Исходные файлы\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="APSSystem.h">
+      <Filter>Исходные файлы\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameBorder.h">
       <Filter>Исходные файлы\gameplay</Filter>
     </ClInclude>
   </ItemGroup>

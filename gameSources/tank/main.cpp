@@ -1,4 +1,8 @@
-﻿#define NOMINMAX
+﻿#ifndef GL_MULTISAMPLE
+#define GL_MULTISAMPLE 0x809D
+#endif
+
+#define NOMINMAX
 #include <windows.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
@@ -39,6 +43,7 @@
 #include "glfw_oglSetup.h"
 #include "variables.h"
 #include "cameraShake.h"
+#include "gameBorder.h"
 
 #define COUNT 55
 
@@ -110,7 +115,7 @@ void countFps(double& deltaTime,double& lastTime,double& currentTime,int& frames
 int main(){
     Logger::initLogger();
 
-    srand(time(NULL));
+    srand((unsigned)time(nullptr));
 
     sound.setupBuffers();
     sound.createSources();
@@ -124,6 +129,7 @@ int main(){
         return -1;
     }
 
+    glfwWindowHint(GLFW_SAMPLES, 16);
     GLFWwindow* window = glfwCreateWindow(ECRANW,ECRANH, "Tank", NULL, NULL);
     if (!window){
         LOG_ERROR("Failed to create window");
@@ -136,11 +142,12 @@ int main(){
         glfwSetWindowIcon(window, 1, &icon);
         stbi_image_free(pixels);
     }
-    
+     
     glfwMakeContextCurrent(window);
     glClearColor(0.6f, 0.8f, 1.0f, 1.0f);;
     BuildFont();
 
+    glEnable(GL_MULTISAMPLE);
     glEnable(GL_DEPTH_TEST);
 
     setMatrix(cam.left, cam.right, cam.bottom, cam.top, cam.nearPlane, cam.farPlane);
@@ -152,6 +159,8 @@ int main(){
 
     EffectsContext context{ explosions, smokes };
     RayContext ray{ debugRay, drawDebugRay, lastHitID, lastHitDist };
+
+    ECSCompenents components{ enemyes,healths,bounds };
 
     TrackBuffer leftTrack;
     TrackBuffer rightTrack;
@@ -215,6 +224,8 @@ int main(){
         if (tank.getFinishReload() > 0.0f) tank.getFinishReload() -= deltaTime;
         if (tank.getMoveSpeed() > 0.0f) tank.getMoveSpeed() *= tank.getReductionCoef();
 
+        checkBorders(tank,deltaTime, ECRANW, ECRANH);
+
         repl.drawReplCircle(30);//replishement ammo
 
         Update(deltaTime,tank,sound); // Update enemyes
@@ -238,9 +249,8 @@ int main(){
         art.deleteIfAlived();
 
         //Update projectiles
-        update(deltaTime, sound, enemyes, healths, bounds, context, tank,camShake);
-        updateProjectiles();
-        updateArtillery(art.getShells(), sound, enemyes, context, tank);
+        update(deltaTime, sound, art.getShells(), components, context, tank, camShake);
+        drawProjectiles();
         
         updateExplosions(explosions, deltaTime);
         updateSmokes(smokes, deltaTime);
@@ -265,6 +275,8 @@ int main(){
         }
 
         Draw3DAim(tank);
+
+        drawBorders();
 
         drawMiniMap(ECRANW, ECRANH, tank, context, cam, weat.getWeather(), badges, deltaTime);
 
