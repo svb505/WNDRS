@@ -1,0 +1,78 @@
+#include "svbmath.h"
+#include <cmath>
+
+namespace svbmath {
+	Vec3 Normalize(const Vec3& v) {
+		float len = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+		return { v.x / len, v.y / len, v.z / len };
+	}
+	Vec3 DirectionToTarget(const Vec3& enemy, const Vec3& target) {
+		return Normalize({ target.x - enemy.x,target.y - enemy.y,target.z - enemy.z });
+	}
+	float NormalizeAngle(float angle) {
+		while (angle > PI)  angle -= 2.0f * PI;
+		while (angle < -PI) angle += 2.0f * PI;
+		return angle;
+	}
+	float GetYaw(const Vec3& dir) {
+		return atan2(dir.x, dir.z);
+	}
+	float Dot(const Vec3& a, const Vec3& b) {
+		return a.x * b.x + a.y * b.y + a.z * b.z;
+	}
+	bool InFOV(const Vec3& forward, const Vec3& dirToTarget, float fovDeg) {
+		float cosFov = cos(fovDeg * 0.5f * PI / 180.0f);
+		return Dot(forward, dirToTarget) > cosFov;
+	}
+	float RotateTowards(float current, float target, float speed, double dt) {
+		float diff = target - current;
+
+		while (diff > PI) diff -= 2 * PI;
+		while (diff < -PI) diff += 2 * PI;
+
+		float step = speed * dt;
+
+		if (fabs(diff) <= step) return target;
+		return current + (diff > 0 ? step : -step);
+	}
+	float LengthSq(const Vec3& v) {
+		return v.x * v.x + v.y * v.y + v.z * v.z;
+	}
+	float randFloat(float min, float max) {
+		return min + (max - min) * (float(rand()) / float(RAND_MAX));
+	}
+	Vec3 Cross(const Vec3& a, const Vec3& b) {
+		return { a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x };
+	}
+	float Length(const Vec3& v) { return sqrtf(v.x * v.x + v.y * v.y + v.z * v.z); }
+	Vec3 SteerTowards(const Vec3& currentDir, const Vec3& targetDir, float maxAngle) {
+		Vec3 cur = Normalize(currentDir);
+		Vec3 tgt = Normalize(targetDir);
+
+		float cosTheta = Dot(cur, tgt);
+		if (cosTheta > 0.9999f) return cur;
+
+		Vec3 axis = Cross(cur, tgt);
+		float axisLen = Length(axis);
+		if (axisLen < 1e-6f) return cur;
+
+		axis = axis / axisLen;
+
+		float angle = acosf(cosTheta);
+		float angleStep = angle < maxAngle ? angle : maxAngle;
+
+		Vec3 cross = Cross(axis, cur);
+		float dot = Dot(axis, cur);
+		Vec3 newDir = cur * cosf(angleStep) + cross * sinf(angleStep) + axis * dot * (1 - cosf(angleStep));
+
+		return Normalize(newDir);
+	}
+	bool InRadius(const svbmath::Vec3& childPos, const svbmath::Vec3 parentPos, float radius) {
+		svbmath::Vec3 diff = parentPos - childPos;
+		return LengthSq(diff) <= radius * radius;
+	}
+}
+
+
+
+
