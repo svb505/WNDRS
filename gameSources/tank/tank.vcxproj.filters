@@ -135,6 +135,12 @@
     <ClCompile Include="gameBorder.cpp">
       <Filter>Исходные файлы\gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Исходные файлы\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="models.cpp">
+      <Filter>Исходные файлы\tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -250,6 +256,9 @@
     </ClInclude>
     <ClInclude Include="gameBorder.h">
       <Filter>Исходные файлы\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="models.h">
+      <Filter>Исходные файлы\tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

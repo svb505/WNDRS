@@ -1,27 +1,18 @@
 #pragma once
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include "shells.h"
+#include "models.h"
 
-void drawShell() {
-    float s = 0.1f;
-    glColor3f(255.0f / 255.0f, 128.0f / 255.0f, 0.0f);
+OBJModel shellModel;
 
-    glBegin(GL_QUADS);
-    // front
-    glVertex3f(-s, -s, s); glVertex3f(s, -s, s); glVertex3f(s, s, s); glVertex3f(-s, s, s);
-    // back
-    glVertex3f(-s, -s, -s); glVertex3f(s, -s, -s); glVertex3f(s, s, -s); glVertex3f(-s, s, -s);
-    // left
-    glVertex3f(-s, -s, -s); glVertex3f(-s, -s, s); glVertex3f(-s, s, s); glVertex3f(-s, s, -s);
-    // right
-    glVertex3f(s, -s, -s); glVertex3f(s, -s, s); glVertex3f(s, s, s); glVertex3f(s, s, -s);
-    // top
-    glVertex3f(-s, s, -s); glVertex3f(-s, s, s); glVertex3f(s, s, s); glVertex3f(s, s, -s);
-    // bottom
-    glVertex3f(-s, -s, -s); glVertex3f(-s, -s, s); glVertex3f(s, -s, s); glVertex3f(s, -s, -s);
-    glEnd();
+void setupShellModel() {
+    shellModel.LoadOBJ("models/tank_shell.obj",3.0f);
+    shellModel.CreateVBO();
+}
+void drawShell(float yaw, float pitch) {
+    shellModel.Draw({0.0f,0.0f,0.0f},yaw,pitch);
 };
 void drawBullet() {
     glPointSize(1.0f); 

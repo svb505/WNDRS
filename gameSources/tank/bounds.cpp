@@ -3,9 +3,9 @@
 #include <algorithm>
 
 bool checkCollision(const Bounds& target, svbmath::Vec3& pos) {
-    return pos.x >= target.minX && pos.x <= target.maxX &&
-        pos.y >= target.minY && pos.y <= target.maxY &&
-        pos.z >= target.minZ && pos.z <= target.maxZ;
+    return pos.x >= target.min.x && pos.x <= target.max.x &&
+        pos.y >= target.min.y && pos.y <= target.max.y &&
+        pos.z >= target.min.z && pos.z <= target.max.z;
 }
 bool RayIntersectsAABB(const svbmath::Vec3& rayOrigin, const svbmath::Vec3& rayDir,
     const Bounds& b, float& tNear, float& tFar)
@@ -17,8 +17,8 @@ bool RayIntersectsAABB(const svbmath::Vec3& rayOrigin, const svbmath::Vec3& rayD
     for (int i = 0; i < 3; ++i) {
         float origin = (i == 0 ? rayOrigin.x : (i == 1 ? rayOrigin.y : rayOrigin.z));
         float dir = (i == 0 ? rayDir.x : (i == 1 ? rayDir.y : rayDir.z));
-        float minB = (i == 0 ? b.minX : (i == 1 ? b.minY : b.minZ));
-        float maxB = (i == 0 ? b.maxX : (i == 1 ? b.maxY : b.maxZ));
+        float minB = (i == 0 ? b.min.x : (i == 1 ? b.min.y : b.min.z));
+        float maxB = (i == 0 ? b.max.x : (i == 1 ? b.max.y : b.max.z));
 
         if (fabs(dir) < 1e-6f) { 
             if (origin < minB || origin > maxB)

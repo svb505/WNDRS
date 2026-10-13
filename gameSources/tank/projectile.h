@@ -28,6 +28,8 @@ struct Projectile {
     float speed;
     int damage = 100;
 
+    float yaw = 0.0f, pitch = 0.0f;
+
     float lifeTime = 7.0f; 
     bool alive = true;
 
@@ -42,5 +44,5 @@ struct Projectile {
     Projectile(shellType shell) : selectedShellType(shell) {
         damage = (selectedShellType == shellType::APFSDS) ? 100 : 40;
     }
-    void update(float dt, Tank& tank);
+    void update(double dt, Tank& tank);
 };

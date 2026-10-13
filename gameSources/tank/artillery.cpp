@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <random>
 #include <unordered_map>
@@ -51,10 +51,12 @@ void Artillery::spawnShells(float x,float z) {
         s.delay = 5.0f;
         s.active = false;
         s.speed = shellSpeed * returnSpeedError();
+        s.pitch = 180.0f;
+
         shells.push_back(s);
     }
 }
-void Artillery::updateShells(float dt) {
+void Artillery::updateShells(double dt) {
     for (auto& s : shells) {
         if (!s.alive) continue;
 
@@ -72,7 +74,9 @@ void Artillery::drawAllShells() {
         if (!s.alive) continue;
         glPushMatrix();
         glTranslatef(s.pos.x, s.pos.y, s.pos.z);
-        drawShell();
+
+        drawShell(s.yaw, s.pitch);
+
         glPopMatrix();
     }
 }

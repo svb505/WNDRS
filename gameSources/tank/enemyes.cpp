@@ -1,6 +1,6 @@
 #define NOMINMAX
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <unordered_map>
 #include "effects.h"
@@ -13,10 +13,11 @@
 #include "sounds.h"
 #include "Logger.h"
 #include "texture.h"
+#include "models.h"
 
 bool showBars = true;
 
-std::map<RenderType, std::string> rendersMap = {{RenderType::Tank,"Tank"}, 
+std::map<RenderType, std::string> rendersMap = { {RenderType::Tank,"Tank"},
     {RenderType::Radar,"Radar"}, {RenderType::Apartment,"Apartment"} };
 
 std::vector<Entity> entities;
@@ -36,48 +37,82 @@ Entity CreateEntity() {
     entities.push_back(e);
     return e;
 }
-void DrawCube(float w, float h, float d) { 
-    glBegin(GL_QUADS); 
-    
-    glVertex3f(-w, -h, d); 
-    glVertex3f(w, -h, d); 
-    glVertex3f(w, h, d); 
-    glVertex3f(-w, h, d); 
-    
-    glVertex3f(-w, -h, -d); 
-    glVertex3f(-w, h, -d); 
-    glVertex3f(w, h, -d); 
-    glVertex3f(w, -h, -d); 
-    
-    glVertex3f(-w, -h, -d); 
-    glVertex3f(-w, -h, d); 
-    glVertex3f(-w, h, d); 
-    glVertex3f(-w, h, -d); 
-    
-    glVertex3f(w, -h, -d); 
-    glVertex3f(w, h, -d); 
-    glVertex3f(w, h, d); 
-    glVertex3f(w, -h, d); 
-    
-    glVertex3f(-w, h, -d); 
-    glVertex3f(-w, h, d); 
-    glVertex3f(w, h, d); 
-    glVertex3f(w, h, -d); 
-    
+void DrawRadar(float angle) {
+    // body
+    glPushMatrix();
+    glScalef(1.2f, 0.25f, 1.2f);
+    DrawCube(0.5f, 0.5f, 0.5f);
+    glPopMatrix();
+
+    // Rack
+    glPushMatrix();
+    glTranslatef(0.0f, 0.75f, 0.0f);
+    glScalef(0.15f, 1.5f, 0.15f);
+    DrawCube(0.5f, 0.5f, 0.5f);
+    glPopMatrix();
+
+    // antenne
+    glPushMatrix();
+
+    glTranslatef(0.0f, 1.55f, 0.0f);
+
+    glRotatef(angle, 0, 1, 0);
+
+    glRotatef(90.0f, 1, 0, 0);
+    glRotatef(90.0f, 0, 1, 0);
+
+    glScalef(2.5f, 0.08f, 0.35f);
+    DrawCube(0.5f, 0.5f, 0.5f);
+
+    glPopMatrix();
+}
+void DrawCube(float w, float h, float d) {
+    glBegin(GL_QUADS);
+
+    glVertex3f(-w, -h, d);
+    glVertex3f(w, -h, d);
+    glVertex3f(w, h, d);
+    glVertex3f(-w, h, d);
+
     glVertex3f(-w, -h, -d);
-    glVertex3f(w, -h, -d); 
-    glVertex3f(w, -h, d); 
-    glVertex3f(-w, -h, d); 
-    
-    glEnd(); 
+    glVertex3f(-w, h, -d);
+    glVertex3f(w, h, -d);
+    glVertex3f(w, -h, -d);
+
+    glVertex3f(-w, -h, -d);
+    glVertex3f(-w, -h, d);
+    glVertex3f(-w, h, d);
+    glVertex3f(-w, h, -d);
+
+    glVertex3f(w, -h, -d);
+    glVertex3f(w, h, -d);
+    glVertex3f(w, h, d);
+    glVertex3f(w, -h, d);
+
+    glVertex3f(-w, h, -d);
+    glVertex3f(-w, h, d);
+    glVertex3f(w, h, d);
+    glVertex3f(w, h, -d);
+
+    glVertex3f(-w, -h, -d);
+    glVertex3f(w, -h, -d);
+    glVertex3f(w, -h, d);
+    glVertex3f(-w, -h, d);
+
+    glEnd();
 }
 void drawSootEffect(float x, float y, float z, int segments, float radius) {
+    // сохраняем цвет/текстуры/свет, чтобы чёрный цвет сажи не "протёк" на следующие здания
+    glPushAttrib(GL_CURRENT_BIT | GL_ENABLE_BIT);
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_LIGHTING);
+
     glPushMatrix();
     glTranslatef(x, y, z);
     glColor3f(0.0f, 0.0f, 0.0f);
 
     glBegin(GL_TRIANGLE_FAN);
-    glVertex3f(0.0f, 0.0f, 0.0f); 
+    glVertex3f(0.0f, 0.0f, 0.0f);
 
     for (int i = 0; i <= segments; i++) {
         float angle = 2.0f * PI * i / segments;
@@ -89,6 +124,7 @@ void drawSootEffect(float x, float y, float z, int segments, float radius) {
 
     glEnd();
     glPopMatrix();
+    glPopAttrib();
 }
 void drawDestroyedTank(TankComponent& tank, float bodyH) {
     glPushMatrix();
@@ -326,13 +362,13 @@ void drawTank(TankComponent& tank, float bodyH) {
     glPopMatrix(); // turret
     glPopMatrix(); // tank
 }
-void RadarSystem(float dt) {
+void RadarSystem(double dt) {
     for (auto& [entity, radar] : radars) {
         transforms[entity].angle += radar.rotationSpeed * dt;
         if (transforms[entity].angle >= 360.0f) transforms[entity].angle -= 360.0f;
     }
 }
-void drawDestroyedAppartament(ApartmentComponent& ap, float totalH){
+void drawDestroyedAppartament(ApartmentComponent& ap, float totalH) {
     GLuint wallTexture = allTextures["betonD"];
     GLuint windowTexture = allTextures["windowDestroyed"];
     GLuint doorTexture = allTextures["door"];
@@ -912,9 +948,11 @@ void drawAppartament(ApartmentComponent& ap, float totalH) {
         glPopMatrix();
     }
 }
-void RenderSystem(std::vector<SmokeEffect*>& smokes) {
+void RenderSystem(std::vector<SmokeEffect*>& smokes, OBJModel& build, OBJModel& ruins) {
+    glEnable(GL_TEXTURE_2D);
+
     for (auto e : entities) {
-        if (healths[e].destroyed && renders[e].type != RenderType::Apartment && 
+        if (healths[e].destroyed && renders[e].type != RenderType::Apartment &&
             renders[e].type != RenderType::Tank) continue;
 
         auto& t = transforms[e];
@@ -922,7 +960,7 @@ void RenderSystem(std::vector<SmokeEffect*>& smokes) {
 
         glPushMatrix();
         glTranslatef(t.pos.x, t.pos.y, t.pos.z);
-        glRotatef(t.angle, 0, 1, 0);
+        if (r.type != RenderType::Radar) glRotatef(t.angle, 0, 1, 0);
 
         switch (r.type) {
         case RenderType::Tank: {
@@ -935,20 +973,26 @@ void RenderSystem(std::vector<SmokeEffect*>& smokes) {
                              break;
 
         case RenderType::Radar:
-            glColor3f(0.4f, 0.4f, 0.4f);
-            DrawCube(0.8f, 0.3f, 0.8f);
+            DrawRadar(t.angle);
             break;
 
         case RenderType::Apartment: {
             auto& ap = apartments[e];
             float totalH = ap.floors * ap.floorHeight;
 
-            if (ap.destroyed) {
+            /*if (ap.destroyed) {
                 drawDestroyedAppartament(ap, totalH);
                 drawSootEffect(0.0f, 0.1f, 0.0f, 40.0f, 5.0f);
                 if (!ap.smokeEnabled) { smokes.push_back(new SmokeEffect(transforms[e].pos, 2000, 3.0f)); ap.smokeEnabled = true; }
             }
-            else drawAppartament(ap, totalH);
+            else drawAppartament(ap, totalH);*/
+
+            if (ap.destroyed) {
+                ruins.Draw({ 0.0f,0.0f,0.0f }, 0.0f, 0.0f);
+                drawSootEffect(0.0f, 0.1f, 0.0f, 40.0f, 5.0f);
+                if (!ap.smokeEnabled) { smokes.push_back(new SmokeEffect(transforms[e].pos, 2000, 3.0f)); ap.smokeEnabled = true; }
+            }
+            else build.Draw({ 0.0f,0.0f,0.0f }, 0.0f, 0.0f);
 
         }
                                   break;
@@ -960,7 +1004,7 @@ void RenderSystem(std::vector<SmokeEffect*>& smokes) {
 std::string getRenderTypeString(RenderType& type) {
     return rendersMap[type];
 }
-void BoundsSystem() {
+void BoundsSystem(OBJModel& build, OBJModel& ruins) {
     for (auto e : entities) {
         if (!transforms.contains(e) || !renders.contains(e)) continue;
 
@@ -971,20 +1015,33 @@ void BoundsSystem() {
 
         switch (r.type) {
         case RenderType::Tank:
-            b = { t.pos.x - 1, t.pos.y - 0.6f, t.pos.z - 1,
-                  t.pos.x + 1, t.pos.y + 1.5f, t.pos.z + 2.8f };
+            b = { {t.pos.x - 1, t.pos.y - 0.6f, t.pos.z - 1 },
+                {t.pos.x + 1, t.pos.y + 1.5f, t.pos.z + 2.8f
+                }
+            };
             break;
 
-        case RenderType::Radar:
-            b = { t.pos.x - 1, t.pos.y, t.pos.z - 1,
-                  t.pos.x + 1, t.pos.y + 2, t.pos.z + 1 };
+        case RenderType::Radar: {
+            constexpr float radius = 0.65f;
+
+
+            b = { {t.pos.x - radius, t.pos.y, t.pos.z - radius},
+                {t.pos.x + radius, t.pos.y + 2.0f, t.pos.z + radius }
+            };
             break;
+        }
 
         case RenderType::Apartment: {
             auto& ap = apartments[e];
             float h = ap.floors * ap.floorHeight;
-            b = { t.pos.x - ap.width, t.pos.y, t.pos.z - ap.depth,
-                  t.pos.x + ap.width, t.pos.y + h, t.pos.z + ap.depth };
+
+            // локальные границы модели -> мировые (масштаб + поворот + позиция)
+            OBJModel& model = ap.destroyed ? ruins : build;
+            b = model.WorldCollisionBounds(t.pos, t.angle);
+
+            /*b = {{t.pos.x - ap.width, t.pos.y, t.pos.z - ap.depth},
+                {t.pos.x + ap.width, t.pos.y + h, t.pos.z + ap.depth }
+                };*/
         }
                                   break;
         }
@@ -1040,9 +1097,9 @@ void DeathSystem(Tank& tank) {
         if (it != entities.end()) entities.erase(it);
     }
 }
-void Update(float dt, Tank& tank, Sound& sound) {
+void Update(double dt, Tank& tank, Sound& sound, OBJModel& build, OBJModel& ruins) {
     RadarSystem(dt);
-    BoundsSystem();
+    BoundsSystem(build, ruins);
     DeathSystem(tank);
 
     for (auto& [id, bot] : tanks) {
@@ -1053,10 +1110,10 @@ void Update(float dt, Tank& tank, Sound& sound) {
             bot.finishReload -= dt;
             if (bot.finishReload < 0.0f) bot.finishReload = 0.0f;
         }
-            
-        if (playerInRadius(enemyPos,tankPos, bot.detectionRadius) && !bot.destroyed) {
+
+        if (svbmath::InRadius(enemyPos, tankPos, bot.detectionRadius) && !bot.destroyed) {
             svbmath::Vec3 dir = svbmath::Normalize(tankPos - enemyPos);
-            
+
             float targetYaw = atan2(dir.x, dir.z);
             float delta = svbmath::NormalizeAngle(targetYaw - bot.turretAngle);
             float newTarget = bot.turretAngle + delta;
@@ -1077,9 +1134,7 @@ void Update(float dt, Tank& tank, Sound& sound) {
                 spawnShell({ enemyPos.x, enemyPos.y + 1.0f, enemyPos.z }, bot.turretAngle * 180.0f / PI, bot.gunAngle,
                     type, true);
 
-                sound.setSourcePosition(sound.sources["Shot"], enemyPos);
-                alSourceStop(sound.sources["Shot"]);
-                alSourcePlay(sound.sources["Shot"]);
+                sound.playSound(sound.sources["Shot"], transforms[id].pos);
 
                 LOG_INFO("Bot shooted");
 
@@ -1088,13 +1143,13 @@ void Update(float dt, Tank& tank, Sound& sound) {
         }
     }
 }
-void Render(std::vector<SmokeEffect*>& smokes, bool healthBar) {
-    RenderSystem(smokes);
+void Render(std::vector<SmokeEffect*>& smokes, OBJModel& build, OBJModel& ruins, bool healthBar) {
+    RenderSystem(smokes, build, ruins);
     if (healthBar) HealthBarSystem();
 }
 void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count) {
     entities.reserve(50);
-    
+
     LOG_INFO("Genarate enemies");
 
     for (int i = 0; i < count; i++) {
@@ -1104,8 +1159,19 @@ void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count) {
 
         float x = (float)(rand() % 200 - 100);
         float z = -(float)(rand() % 200);
+        float angle = (float)(rand() % 360);
 
-        transforms[e] = { x, 0.0f, z, (float)(rand() % 360) };
+        // Здания: только углы кратные 90°, иначе AABB-коллизия раздувается
+        // Не спавним объекты в зоне старта танка (вокруг 0,0,0)
+        if (i >= 30) {
+            angle = 90.0f * (rand() % 4);
+            while (std::fabs(x) < 30.0f && z > -40.0f) {
+                x = (float)(rand() % 200 - 100);
+                z = -(float)(rand() % 200);
+            }
+        }
+
+        transforms[e] = { {x, 0.0f, z,}, angle };
 
         if (i < 25) {
             renders[e] = { RenderType::Tank };
@@ -1127,12 +1193,8 @@ void generateEnemyes(std::unordered_map<int, Entity>& enemyes, int count) {
 checkCol checkCollisionWithTank(svbmath::Vec3& pos) {
     for (const auto& b : bounds) {
         if (checkCollision(b.second, pos)) {
-            return {true, b.first};
+            return { true, b.first };
         }
     }
     return { false, 0 };
-}
-bool playerInRadius(const svbmath::Vec3& enemyPos, const svbmath::Vec3& playerPos, float radius){
-    svbmath::Vec3 diff = playerPos - enemyPos;
-    return LengthSq(diff) <= radius * radius;
 }

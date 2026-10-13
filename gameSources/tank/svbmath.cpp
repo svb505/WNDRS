@@ -24,7 +24,7 @@ namespace svbmath{
 		float cosFov = cos(fovDeg * 0.5f * PI / 180.0f);
 		return Dot(forward, dirToTarget) > cosFov;
 	}
-	float RotateTowards(float current, float target, float speed, float dt) {
+	float RotateTowards(float current, float target, float speed, double dt) {
 		float diff = target - current;
 
 		while (diff > PI) diff -= 2 * PI;
@@ -67,5 +67,11 @@ namespace svbmath{
 
 		return Normalize(newDir);
 	}
+	bool InRadius(const svbmath::Vec3& childPos, const svbmath::Vec3 parentPos, float radius) {
+		svbmath::Vec3 diff = parentPos - childPos;
+		return LengthSq(diff) <= radius * radius;
+	}
 }
+
+
 

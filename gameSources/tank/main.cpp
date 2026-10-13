@@ -4,7 +4,8 @@
 
 #define NOMINMAX
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <vector>
 #include <cmath>
@@ -44,6 +45,8 @@
 #include "variables.h"
 #include "cameraShake.h"
 #include "gameBorder.h"
+#include "models.h"
+#include "shells.h"
 
 #define COUNT 55
 
@@ -57,6 +60,18 @@ Weather weat;
 SmokeGranade granades;
 CameraShake camShake;
 
+OBJModel building;
+OBJModel ruins;
+
+void keyCallback(GLFWwindow*, int key, int scancode, int action, int mods){
+    if (action == GLFW_PRESS && waitingForBind != -1){
+        binds[waitingForBind].key = key;
+
+        changeKeyBindConfig(binds[waitingForBind].action, key);
+
+        waitingForBind = -1;
+    }
+}
 void windowCloseCallback(GLFWwindow* window) {
     if (!dbIsExists) createDb(TypeDb::Player,"playerInfo.db");
     saveDataForPlayer(tank.getKills(), tank.getDeath(), tank.getScore(), "+");
@@ -64,6 +79,7 @@ void windowCloseCallback(GLFWwindow* window) {
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
     ImGuiIO& io = ImGui::GetIO();
     io.AddMousePosEvent((float)xpos, (float)ypos);
+    CameraParams& params = cam.getCamParams();
 
     if (io.WantCaptureMouse || cursorVisibility) return;
 
@@ -87,13 +103,13 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
-    cam.cameraYaw += (float)xoffset;
-    cam.cameraPitch -= (float)yoffset;
+    params.cameraYaw += (float)xoffset;
+    params.cameraPitch -= -(float)yoffset;
 
     tank.getTurretYaw() -= (float)xoffset;
     tank.getGunPitch() += (float)yoffset;
 
-    cam.cameraYaw = fmod(cam.cameraYaw + 360.0f, 360.0f);
+    params.cameraYaw = fmod(params.cameraYaw + 360.0f, 360.0f);
 
     tank.getTurretYaw() = fmod(tank.getTurretYaw() + 360.0f, 360.0f);
 
@@ -112,7 +128,10 @@ void countFps(double& deltaTime,double& lastTime,double& currentTime,int& frames
         fpsTimer = 0.0f;
     }
 }
+
 int main(){
+    CameraParams& params = cam.getCamParams();
+
     Logger::initLogger();
 
     srand((unsigned)time(nullptr));
@@ -131,6 +150,7 @@ int main(){
 
     glfwWindowHint(GLFW_SAMPLES, 16);
     GLFWwindow* window = glfwCreateWindow(ECRANW,ECRANH, "Tank", NULL, NULL);
+
     if (!window){
         LOG_ERROR("Failed to create window");
         std::cout << "Failed to create window\n";
@@ -143,15 +163,28 @@ int main(){
         stbi_image_free(pixels);
     }
      
+    glfwSetWindowUserPointer(window, &cam);
     glfwMakeContextCurrent(window);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        LOG_ERROR("Failed to initialize GLAD");
+
+        glfwDestroyWindow(window);
+        glfwTerminate();
+
+        return -1;
+    }
+
+
     glClearColor(0.6f, 0.8f, 1.0f, 1.0f);;
     BuildFont();
 
     glEnable(GL_MULTISAMPLE);
     glEnable(GL_DEPTH_TEST);
 
-    setMatrix(cam.left, cam.right, cam.bottom, cam.top, cam.nearPlane, cam.farPlane);
-
+    setMatrix(params.left, params.right, params.bottom, params.top, params.nearPlane, 
+        params.farPlane);
+  
     std::unordered_map<int, Entity> enemyes;
 
     std::vector<ExplosionEffect*> explosions;
@@ -164,6 +197,14 @@ int main(){
 
     TrackBuffer leftTrack;
     TrackBuffer rightTrack;
+
+    building.LoadOBJ("models/house_intact.obj", 0.6f);
+    building.CreateVBO();
+
+    ruins.LoadOBJ("models/house_ruin.obj", 0.6f);
+    ruins.CreateVBO();
+
+    setupShellModel();
 
     double lastTime = glfwGetTime();
     double deltaTime = 0.0;
@@ -182,7 +223,9 @@ int main(){
     repl.setCoordinates(10.0f, static_cast<float>(rand() % 30),static_cast<float>((rand() % 50) - 50));
 
     gui.setup(window);
+    setupBinds(); //Setup key binds(Importing from JSON)
 
+    glfwSetKeyCallback(window, keyCallback);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetWindowCloseCallback(window, windowCloseCallback);
@@ -201,19 +244,19 @@ int main(){
 
         ImGui::Render();
 
-        sound.setListener(cam.cameraPos, cam.returnForwardVector());
+        sound.setListener(cam.getCamPos(), cam.returnForwardVector());
 
         weat.getWeather(sound, cam);
   
         countFps(deltaTime,lastTime,currentTime,frames,fps,fpsTimer);
 
-        processTankInput(window, deltaTime, enemyes,tank,sound,cam,ray,granades,camShake);
+        processTankInput(window, deltaTime, enemyes,tank,sound,cam.getCamParams(), ray, granades, camShake);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         cam.setupCamera(tank, camShake,tank.getAimMode());
 
         drawSky();
-        drawGround(cam.cameraPos.x, cam.cameraPos.z,weat.getWeather());
+        drawGround(cam.getCamPos().x, cam.getCamPos().z, weat.getWeather());
 
         tank.Draw();
         tank.updatePosition(tank.getCurrentPos(), deltaTime);
@@ -228,8 +271,8 @@ int main(){
 
         repl.drawReplCircle(30);//replishement ammo
 
-        Update(deltaTime,tank,sound); // Update enemyes
-        Render(smokes); // Render enemyes
+        Update(deltaTime,tank,sound,building,ruins); // Update enemyes
+        Render(smokes,building,ruins); // Render enemyes
 
         weat.update(cam,deltaTime); //Update rain/snow
         weat.renderSnowPiles();
@@ -270,15 +313,15 @@ int main(){
                 healths[tankCollision.id].current -= tank.returnImpactImpulse();
             }
 
-            sound.setSourcePosition(sound.sources["Collision"], tank.getCurrentPos());
-            alSourcePlay(sound.sources["Collision"]);
+            sound.playSound(sound.sources["Collision"], tank.getCurrentPos());
         }
 
-        Draw3DAim(tank);
+        Draw2DAim(tank,cam.getCamParams());
 
         drawBorders();
 
-        drawMiniMap(ECRANW, ECRANH, tank, context, cam, weat.getWeather(), badges, deltaTime);
+        drawMiniMap(ECRANW, ECRANH, tank, context, cam, weat.getWeather(), badges, deltaTime,
+            building,ruins);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);

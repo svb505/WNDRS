@@ -44,10 +44,7 @@ float calculatePenetration(float vel) {
 void onHit(Projectile& p, int id, Health* health,EffectsContext& context,
     Sound& sound, Tank& player,bool hitGround) {
 
-    const char* snd = "Explosion";
-    sound.setSourcePosition(sound.sources[snd], p.pos);
-    alSourceStop(sound.sources[snd]);
-    alSourcePlay(sound.sources[snd]);
+    sound.playSound(sound.sources["Explosion"], p.pos);
 
     if (!hitGround && health) {
         bool wasAlive = health->current > 0.0f;
@@ -66,8 +63,7 @@ void onHit(Projectile& p, int id, Health* health,EffectsContext& context,
 
                 addToKillChat("Player",getRenderTypeString(renders[id].type),getShellType(p.selectedShellType),0,id);
 
-                sound.setSourcePosition(sound.sources["Kill"], player.getCurrentPos());
-                alSourcePlay(sound.sources["Kill"]);
+                sound.playSound(sound.sources["Kill"], player.getCurrentPos());
             }
             else if (health->current > 0.0f) {
                 g_destroyText = "Target hit";
@@ -119,6 +115,9 @@ void spawnShell(svbmath::Vec3 pos, float yawDeg, float pitchDeg, shellType _shel
     p.pos = pos;
     p.speed = shellSpeeds[_shellType];
 
+    p.yaw = yawDeg;
+    p.pitch = 90.0f;
+
     float yaw = yawDeg * 3.1415926f / 180.0f;
     float pitch = pitchDeg * 3.1415926f / 180.0f;
 
@@ -153,7 +152,7 @@ void spawnBullet(svbmath::Vec3 pos, float yawDeg) {
 
     projectiles.push_back(p);
 }
-void update(float dt,Sound& sound, std::vector<Projectile>& artilleryProjectiles, 
+void update(double dt,Sound& sound, std::vector<Projectile>& artilleryProjectiles, 
     ECSCompenents& components,EffectsContext& context,Tank& player, CameraShake& shake) {
 
     for (auto& p : projectiles) {
@@ -218,8 +217,9 @@ void update(float dt,Sound& sound, std::vector<Projectile>& artilleryProjectiles
             addCrater(p.pos.x, p.pos.z);
 
             context.explosions.push_back(new ExplosionEffect(p.pos, 200));
-            sound.setSourcePosition(sound.sources["ArtExplosion"], p.pos);
-            alSourcePlay(sound.sources["ArtExplosion"]);
+
+            sound.playSound(sound.sources["ArtExplosion"], p.pos);
+
             p.alive = false;
         }
     }
@@ -233,7 +233,7 @@ void drawProjectiles() {
         glPushMatrix();
         glTranslatef(p.pos.x, p.pos.y, p.pos.z);
 
-        if (p.type == ProjectileType::Shell) drawShell();
+        if (p.type == ProjectileType::Shell) drawShell(p.yaw, p.pitch);
         else drawBullet();
 
         glPopMatrix();

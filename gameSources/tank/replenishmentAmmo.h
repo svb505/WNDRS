@@ -1,12 +1,11 @@
 #pragma once
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
-#include <cmath>
+#include <cmath> 
 #include "text.h"
 #include "tank.h"
-
-constexpr float myPI = 3.1415926f;
+#include "svbmath.h" // PI
 
 class Replishment {
 private:
@@ -40,7 +39,7 @@ public:
 
 		return (dx * dx + dz * dz) <= (radius * radius);
 	}
-	void startReplish(float dt,Tank& tank,int wH,int wW) {
+	void startReplish(double dt,Tank& tank,int wH,int wW) {
 		glDisable(GL_LIGHTING);
 
 		if (tank.getTotalShells() < tank.getMaxShells()) {

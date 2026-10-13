@@ -1,4 +1,8 @@
 #pragma once
+#include "models.h"
 
-void drawShell();
+extern OBJModel shellModel;
+
+void drawShell(float yaw, float pitch);
 void drawBullet();
+void setupShellModel();

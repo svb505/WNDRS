@@ -3,8 +3,8 @@
 #include "svbmath.h"
 
 struct Bounds {
-    float minX, minY, minZ;
-    float maxX, maxY, maxZ;
+    svbmath::Vec3 min;
+    svbmath::Vec3 max;
 };
 struct checkCol {
     bool checked;

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include <chrono>
@@ -18,10 +18,12 @@ private:
     };
 
     std::vector<Particle> particles;
+
     float duration;
-    float elapsedTime;
+    double elapsedTime;
     bool finished;
-    float centerX, centerY, centerZ;
+
+    svbmath::Vec3 centers;
 
     float radiusScale;
     float heightScale;
@@ -30,7 +32,7 @@ public:
     ExplosionEffect(svbmath::Vec3 pos, int count = 400, float durationSec = 6.0f,
         float radius = 2.0f, float height = 1.8f);
 
-    void Update(float dt);
+    void Update(double dt);
     void Draw();
     bool IsFinished() const;
     void SetRadius(float r);
@@ -40,19 +42,22 @@ class SmokeEffect {
 private:
     struct Particle {
         svbmath::Vec3 pos;
+
         float size;
         float riseSpeed;
     };
 
     std::vector<Particle> particles;
 
-
     int maxParticles;
-    float centerX, centerY, centerZ;
+
+    svbmath::Vec3 centers;
+
     float radius;
     float size;
     float speed;
     float heightRadius;
+
     std::vector<float> colors = { 0.2f, 0.2f, 0.2f, 0.2f };
 
 public:
@@ -60,12 +65,12 @@ public:
         const std::vector<float>& _colors = { 0.2f, 0.2f, 0.2f, 0.5f }, float _size = 1.0f, float _speed = 0.5f,
         float hRadius = 0.5f);
     std::vector<Particle> getCoordinates() const;
-    void Update(float dt);
+    void Update(double dt);
     void Draw();
 };
 
-void updateExplosions(std::vector<ExplosionEffect*>& explosions, float dt);
-void updateSmokes(std::vector<SmokeEffect*>& smokes, float dt);
+void updateExplosions(std::vector<ExplosionEffect*>& explosions, double dt);
+void updateSmokes(std::vector<SmokeEffect*>& smokes, double dt);
 
 struct EffectsContext {
     std::vector<ExplosionEffect*>& explosions;

@@ -1,7 +1,7 @@
 #pragma once
 #define NOMINMAX
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include <cfloat>   
@@ -113,7 +113,7 @@ int& Tank::getCurretHp() {
 int& Tank::getSelectedSpawn() {
     return selectedSpawn;
 }
-void Tank::UpdateTrack(TrackBuffer& track, const svbmath::Vec3& pos, float dt) {
+void Tank::UpdateTrack(TrackBuffer& track, const svbmath::Vec3& pos, double dt) {
     float minDist = 0.3f;
 
     if (!track.hasLast) {
@@ -173,7 +173,7 @@ void Tank::updateDirrections(float bR, float bY) {
     dirX = -sin(bR);
     dirZ = -cos(bR);
 }
-void Tank::updatePosition(svbmath::Vec3& pos, float dt) {
+void Tank::updatePosition(svbmath::Vec3& pos, double dt) {
     this->pos.x += dirX * moveSpeed * dt;
     this->pos.z += dirZ * moveSpeed * dt;
 }
@@ -315,17 +315,13 @@ Bounds Tank::GetHullMax() const {
         max.z = std::max(max.z, z + this->pos.z);
     }
 
-    result.minX = min.x;
-    result.minY = min.y;
-    result.minZ = min.z;
-    result.maxX = max.x;
-    result.maxY = max.y;
-    result.maxZ = max.z;
+    result.min = { min.x,min.y, min.z };
+    result.max = { max.x,max.y, max.z };
 
 
     return result;
 }
-void Tank::UpdateTrack(float dt, svbmath::Vec3 tankPos,TrackBuffer& leftTrack, TrackBuffer& rightTrack) {
+void Tank::UpdateTrack(double dt, svbmath::Vec3 tankPos,TrackBuffer& leftTrack, TrackBuffer& rightTrack) {
     svbmath::Vec3 forward = { dirX, 0.0f, dirZ };
     svbmath::Vec3 up = { 0, 1, 0 };
     svbmath::Vec3 tankRight = svbmath::Normalize(svbmath::Cross(forward, up));

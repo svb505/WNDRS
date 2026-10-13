@@ -1,6 +1,6 @@
 #pragma once
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include <string>
 #include <map>
 #include <unordered_map>

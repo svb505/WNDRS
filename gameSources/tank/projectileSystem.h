@@ -14,6 +14,22 @@
 #include "svbmath.h"
 #include "cameraShake.h"
 
+/*
+* ------ All functions for shells,damage and deaths ------
+* 
+* ¤ reserveProjectiles() - Reserve place in vector for projectiles
+
+ ¤ update(double dt, Sound& sound, std::vector<Projectile>& artilleryProjectiles, 
+ECSCompenents& components, EffectsContext& context, Tank& player,
+CameraShake& shake); - Update all projectiles(position,bounds....)
+
+ ¤ std::string getShellType(shellType& shellType); Get string from enumerate value
+
+ ¤ onHit(Projectile& p, int id, Health* health, EffectsContext& context,
+Sound& sound, Tank& player, bool hitGround); - A function that is called when hitting an enemy.
+
+*/
+
 struct EffectsContext;
 
 extern std::map<shellType,std::string> shellTypes;
@@ -26,7 +42,7 @@ void spawnShell(svbmath::Vec3 pos, float yawDeg, float pitchDeg, shellType _shel
 
 void spawnBullet(svbmath::Vec3 pos, float yawDeg);
 
-void update(float dt, Sound& sound, std::vector<Projectile>& artilleryProjectiles, 
+void update(double dt, Sound& sound, std::vector<Projectile>& artilleryProjectiles, 
     ECSCompenents& components, EffectsContext& context, Tank& player,CameraShake& shake);
 
 void drawProjectiles();

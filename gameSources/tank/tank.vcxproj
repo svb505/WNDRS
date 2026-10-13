@@ -141,12 +141,14 @@
     <ClCompile Include="getheight.cpp" />
     <ClCompile Include="getnormal.cpp" />
     <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="input.cpp" />
     <ClCompile Include="json_parser.cpp" />
     <ClCompile Include="killchat.cpp" />
     <ClCompile Include="lightning.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="minimap.cpp" />
+    <ClCompile Include="models.cpp" />
     <ClCompile Include="modificationsSystem.cpp" />
     <ClCompile Include="profiler.cpp" />
     <ClCompile Include="projectile.cpp" />
@@ -185,6 +187,7 @@
     <ClInclude Include="lightning.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="minimap.h" />
+    <ClInclude Include="models.h" />
     <ClInclude Include="modificationsSystem.h" />
     <ClInclude Include="profiler.h" />
     <ClInclude Include="projectile.h" />

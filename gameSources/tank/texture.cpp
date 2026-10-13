@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <GL/gl.h>
+#include "glad/glad.h"
 #include "texture.h"
 #include "stb_image.h"
 #include "Logger.h"

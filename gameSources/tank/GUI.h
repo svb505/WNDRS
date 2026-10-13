@@ -12,10 +12,12 @@
 #include "texture.h"
 #include "modificationsSystem.h"
 #include <format>
+#include "input.h"
+#include <memory.h>
 
 class GUI {
 private:
-    Profiler p;
+    std::unique_ptr<Profiler> p = nullptr;
 
 	std::vector<const char*> spawns = { "1", "2","3" };
     std::vector<const char*> days = { "Day","Night"};
@@ -37,6 +39,7 @@ private:
     bool devWindow = false;
     bool statWindow = false;
     bool modWindow = false;
+    bool controlWindow = false;
 public:
     void setup(GLFWwindow* window) {
         IMGUI_CHECKVERSION();
@@ -53,18 +56,46 @@ public:
         ImGui_ImplGlfw_Shutdown();
         ImGui::DestroyContext();
     }
+    void renderBindsWindow() {
+        ImGui::Begin("Control Settings");
+
+        for (int i = 0; i < binds.size(); i++){
+            ImGui::PushID(i);
+
+            ImGui::Text("%s", binds[i].action.c_str());
+
+            ImGui::SameLine(150);
+
+            if (waitingForBind == i) 
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "Click any key...");
+            else ImGui::Text("%s", getKeyName(binds[i].key));
+
+            ImGui::SameLine(350);
+
+            if (ImGui::Button("Change")) waitingForBind = i;
+
+            ImGui::PopID();
+        }
+
+        ImGui::End();
+    }
     void renderMainWin(float& fps,Type& weather, Tank& tank, SmokeGranade& g,bool& locked) {
         std::string buf = std::format("{} / {}", tank.getCurretHp(), tank.getHp());
         selectedShell = shellTypes[tank.getSelectedShell()];
 
         bool canUseMlrs = (tank.getKills() > 0 && tank.getKills() % 5 == 0);
 
+        ImGui::SetNextWindowSize(ImVec2(350.0f, 550.0f));
+
         ImGui::Begin("Settings & Info");
 
         if (ImGui::Button("Developper window")) devWindow = true;
         ImGui::SameLine();
         if (ImGui::Button("Show statistick")) statWindow = true;
+
         if (ImGui::Button("Modifications")) modWindow = true;
+        ImGui::SameLine();
+        if (ImGui::Button("Control settings")) controlWindow = true;
 
         if (ImGui::ImageButton("artillery", (ImTextureID)(intptr_t)allTextures["ARTILLERY"], 
             ImVec2(60, 60))) artWindow = true;
@@ -118,17 +149,9 @@ public:
         ImGui::Text("Speed: %.1f", tank.getMoveSpeed());
         ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
-        ImGui::Text("Total shells: %d", tank.getTotalShells());
-        ImGui::Image((ImTextureID)(intptr_t)allTextures[selectedShell], ImVec2(70, 60));
-
-        ImGui::Text("Reload time: %.1f", tank.getFinishReload());
-        ImGui::Dummy(ImVec2(0.0f, 10.0f));
-
         ImGui::Text("Kills: %d", tank.getKills());
         ImGui::Text("Score: %d", tank.getScore());
         ImGui::Dummy(ImVec2(0.0f, 10.0f));
-
-        ImGui::Text("Control: %s", controlString.c_str());
 
         ImGui::End();
     }
@@ -141,9 +164,7 @@ public:
         if (ImGui::Button("Start artillery strike")) {
             art.init(8, 25.0f);
 
-            sound.setSourcePosition(sound.sources["ArtVolley"], tank.getCurrentPos());
-            alSourceStop(sound.sources["ArtVolley"]);
-            alSourcePlay(sound.sources["ArtVolley"]);
+            sound.playSound(sound.sources["ArtVolley"], tank.getCurrentPos());
 
             art.spawnShells(artX, artZ);
         }
@@ -159,9 +180,7 @@ public:
         if (ImGui::Button("Start MLRS strike")) {
             art.init(25, 125.0f);
 
-            sound.setSourcePosition(sound.sources["ArtVolley"], tank.getCurrentPos());
-            alSourceStop(sound.sources["ArtVolley"]);
-            alSourcePlay(sound.sources["ArtVolley"]);
+            sound.playSound(sound.sources["ArtVolley"], tank.getCurrentPos());
 
             art.spawnShells(artX, artZ);
         }
@@ -171,9 +190,11 @@ public:
         ImGui::End();
     }
     void renderDevWin(Sound& sound,std::unordered_map<int, Entity>& enemyes) {
+        if (!p) p = std::make_unique<Profiler>();
+        
         ImGui::Begin("Dev. Window", &devWindow);
 
-        ImGui::Text("%s\n%s", p.getMemoryUsage()[0].c_str(), p.getMemoryUsage()[1].c_str());
+        ImGui::Text("%s\n%s", p->getMemoryUsage()[0].c_str(), p->getMemoryUsage()[1].c_str());
         ImGui::Text("Enemyes count: %d", enemyes.size());
         ImGui::Text("Sound buffers: %d", sound.buffers.size());
         ImGui::Text("Sound sources: %d", sound.sources.size());
@@ -221,7 +242,7 @@ public:
                 ImGui::TextColored(ImVec4(0.0f,0.5f,1.0f,1.0f),name.c_str());
                 
                 if (m.second.active) {
-                    ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "Modification buyed");
+                    ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "Modification bought");
                     ImGui::Dummy({ 0.0f,10.0f });
                 }
                 else {
@@ -238,16 +259,40 @@ public:
 
         ImGui::End();
     }
+    void renderShellsWindow(Tank& tank) {
+        ImGuiIO& io = ImGui::GetIO();
+
+        ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x / 2, io.DisplaySize.y - 170.0f),
+            ImGuiCond_Always);
+
+        ImGui::SetNextWindowSize(ImVec2(400.0f, 200.0f));
+
+        ImGui::Begin("Shells", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize);
+
+        ImGui::Text("Total shells: %d", tank.getTotalShells());
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
+        ImGui::Text("Reload time: %.1f", tank.getFinishReload());
+
+        ImGui::SameLine();
+
+        ImGui::Image((ImTextureID)(intptr_t)allTextures[selectedShell], ImVec2(70, 60));        
+
+        ImGui::End();
+    }
     void render(float& fps, Tank& tank, Artillery& art, Sound& sound,Type& weather, 
         SmokeGranade& g,bool& badges,std::unordered_map<int, Entity>& enemyes,
         bool& locked) {
         
+
+
         renderMainWin(fps,weather,tank,g,locked);
+        renderShellsWindow(tank);
 
         if (modWindow) renderModificationWin(tank);
         if (statWindow) renderStatWin();
         if (devWindow) renderDevWin(sound, enemyes);
         if (artWindow) renderArtilleryWin(art,sound,tank);
         if (mlrsWindow) renderMlrsWin(art,sound,tank);
+        if (controlWindow) renderBindsWindow();
     }
 };
