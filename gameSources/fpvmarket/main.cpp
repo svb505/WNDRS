@@ -36,15 +36,30 @@
 #include "logger.h"
 #include "stb_image.h"
 #include "localization.h"
+#include "days.h"
+#include "LoadingWin.h"
+#include <nlohmann//json.hpp>
+#include <fstream>
+
+using json = nlohmann::json;
+
+json mapJson;
 
 Camera cam;
 Building build;
 OBJModel base;
 Decorations decor;
-FPVDrone drone;
 Sound sound;
 Bot bot;
 
+void loadMap(const std::string& path){
+    std::ifstream file(path);
+
+    if (!file.is_open()) return;
+
+    file >> mapJson;
+    file.close();
+}
 void updateCursorMode(GLFWwindow* window){
     if (hideCursor)  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     else glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
@@ -109,13 +124,18 @@ int main() {
     Logger::initLogger();
 
     GUI gui;
+    FPVDrone drone;
 
     CameraParams& params = cam.getCamParams();
 
     if (!dbIsExists()) createDb();
 
+
     for (auto& p : getDataForPlayer().players) {
         myBalance = p.balance;
+        day = p.day;
+        level = p.level;
+        purchasesForAllTime = p.purchases;
     }
 
     int width, height, channels;
@@ -128,8 +148,8 @@ int main() {
     }
 
     glfwWindowHint(GLFW_SAMPLES, 16);
-    GLFWwindow* window = glfwCreateWindow(ECRAN_W, ECRAN_H, "FPV Market - V1.1.2", NULL, NULL);
-    
+    GLFWwindow* window = glfwCreateWindow(ECRAN_W, ECRAN_H, "FPV Market - V2.2.3", NULL, NULL);
+
     if (!window) {
         LOG_ERROR("Failed to create window");
         glfwTerminate();
@@ -146,7 +166,7 @@ int main() {
     glfwSetWindowUserPointer(window, &cam);
     glfwMakeContextCurrent(window);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         LOG_ERROR("Failed to initialize GLAD");
 
         glfwDestroyWindow(window);
@@ -169,23 +189,33 @@ int main() {
 
     initLighting();
     LoadAllTextures();
+    loadMap("maps/map.json");
 
     sound.setupBuffers();
     sound.createSources();
 
+    LoadingScreen::Show(window, "Loading fpv drone...");
     base.LoadOBJ("res/models/fpv/base.obj", 1.0f);
     base.LoadTexture("res/models/fpv/texture_diffuse.png");
     base.CreateVBO();
 
-    build.CreateBuilding();
+    build.CreateBuilding(window);
 
-    decor.initDecoration("res/models/builds/rue_2_cotes_complete.obj", DecType::STREET,"");
+    LoadingScreen::Show(window, "Loading buildings...");
+    decor.initDecoration("res/models/builds/rue_2_cotes_complete.obj", DecType::STREET, "");
+    
+    LoadingScreen::Show(window, "Loading fences...");
+    decor.initDecoration("res/models/fence/city_fence.obj", DecType::FENCE, "");
+
+    LoadingScreen::Show(window, "Loading trees...");
     decor.initDecoration("res/models/trees/tree.obj", DecType::TREE,
         "res/models/trees/tex.jpg");
+
+    LoadingScreen::Show(window, "Loading street lamps...");
     decor.initDecoration("res/models/streetlamp/streetlamp.obj", DecType::LAMP,
         "res/models/streetlamp/texture.png");
-    
-    decor.initPositions();
+
+    decor.initPositions("maps/map.json");
 
     glfwSetCursorPosCallback(window, mouse_callback);
 
@@ -193,8 +223,12 @@ int main() {
 
     svbmath::Vec3 point;
 
-    drone.init();
+    drone.init(window);
     drone.initCoordinatesForShelves(build);
+
+    bot.init(window);
+
+    for (auto& p : getDataForPlayer().players) ratings.push_back(p.rating);
 
     while (!glfwWindowShouldClose(window)) {
         updateCursorMode(window);
@@ -203,13 +237,11 @@ int main() {
 
         countFps(fpsVars, lastTime, currentTime);
 
-        if (!bot.isActive()) {
-            bot.spawn(drone, build);
-        }
+        if (!bot.isActive()) bot.spawn(drone, build);
 
-        bot.update(fpsVars.deltaTime, drone, build);
+        bot.update(fpsVars.deltaTime, cam, drone, build, sound, true);
 
-        processInput(window, cam, drone,fpsVars.deltaTime, point, sound);
+        processInput(window, cam, drone, fpsVars.deltaTime, point, sound);
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -217,7 +249,7 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        gui.renderAll(fpsVars, drone, build.getBuildSettings());
+        gui.renderAll(fpsVars, drone, build.getBuildSettings(),build);
 
         ImGui::Render();
 
@@ -225,7 +257,7 @@ int main() {
 
         drawSky();
         drawGround();
-        drawRoad(0.01,-130.0f,12.0f,22);
+        drawRoadsFromJson(mapJson);
 
         glEnable(GL_POLYGON_OFFSET_FILL);
         glPolygonOffset(-2.0f, -2.0f);
@@ -244,12 +276,18 @@ int main() {
         build.DrawBuilding();
         if (build.checkCollision(cam)) cam.getCamPos() = cam.getOldCamPos();
 
+        if (build.isInsideBuilding(cam.getCamPos())) setLighting(indoorLight);
+        else {
+            if (heure > 4 && heure < 20) setLighting(outdoorDayLight);
+            else setLighting(outdoorNightLight);
+        }
+
         placeObj = false;
 
         if (canDrawEquipModel && !objName.empty()) {
             svbmath::Vec3 lookPoint;
 
-            if (getCashRegisterLookPoint(cam.getCamPos(), cam.getCamForward(),build.getCashRegister(),lookPoint)){                
+            if (getCashRegisterLookPoint(cam.getCamPos(), cam.getCamForward(), build.getCashRegister(), lookPoint)) {
                 float size = 64.0f;
                 float x = ECRAN_W / 2.0f;
                 float y = ECRAN_H / 2.0f;
@@ -257,32 +295,42 @@ int main() {
                 render2DIcon("HAND", { x, y }, size);
 
                 RenderTextHUD(x - 30.0f, y - 30.0f, 1.0f, 1.0f, 1.0f, "E", ECRAN_W, ECRAN_H);
-                
+
                 point = lookPoint;
-                placeObj = true;   
+                placeObj = true;
             }
         }
-        
-       
+
+
         drone.checkBoxesIntersection(cam);
         drone.checkIfCanCreateDrone(cam, build.getCashRegister());
 
         decor.drawAllDecorations(DecType::STREET);
         decor.drawAllDecorations(DecType::TREE);
         decor.drawAllDecorations(DecType::LAMP);
+        decor.drawAllDecorations(DecType::FENCE);
+
         if (decor.checkCollision(cam, DecType::STREET)) cam.getCamPos() = cam.getOldCamPos();
         if (decor.checkCollision(cam, DecType::TREE)) cam.getCamPos() = cam.getOldCamPos();
         if (decor.checkCollision(cam, DecType::LAMP)) cam.getCamPos() = cam.getOldCamPos();
-       
+        if (decor.checkCollision(cam, DecType::FENCE)) cam.getCamPos() = cam.getOldCamPos();
+
         if (drone.getShowText()) {
             RenderTextHUD(ECRAN_W / 2, ECRAN_H / 2, 1.0f, 0.0f, 0.0f,
                 "Your package has arrived", ECRAN_W, ECRAN_H);
         }
-        
+
+        countDays(fpsVars.deltaTime);
+
+        drawPointInCenter();
+
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+
+    saveDayToDb(day);
+    saveLevelAndPurchasesToDb(level,purchasesForSession);
 
     Logger::shutDown();
 

@@ -13,144 +13,177 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Engine">
+      <UniqueIdentifier>{d111699b-1537-4391-9c1d-ba26c0f7f5c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Gameplay">
+      <UniqueIdentifier>{0eec04e7-e8e8-483b-838c-d8aea8911cd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Units">
+      <UniqueIdentifier>{a9bd6804-1b2e-4a1f-8e4e-d6e0d51c5799}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="svbmath.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="GUI.h">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="text.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="building.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="environnement.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="bounds.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="lighting.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="lighting.h">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="variables.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="input.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="model.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="decorations.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="drone.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="renders.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="svbRandom.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="actions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="database.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="bot.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="jsonParcer.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="logger.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="localization.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="avgRating.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingWin.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="drone.cpp">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="environnement.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="days.cpp">
+      <Filter>Исходные файлы\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="building.cpp">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="bot.cpp">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="decorations.cpp">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="lighting.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="lighting.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="renders.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="svbmath.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="svbRandom.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="profiler.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="database.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="svbmath.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="texture.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="text.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="building.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="environnement.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="sound.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="bounds.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="variables.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="input.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="model.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="decorations.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="drone.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="renders.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="svbRandom.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="actions.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="database.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="bot.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="jsonParcer.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="logger.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="localization.h">
       <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="avgRating.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingWin.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="drone.h">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="environnement.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="days.h">
+      <Filter>Исходные файлы\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="building.h">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="bot.h">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="decorations.h">
+      <Filter>Исходные файлы\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="renders.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="sound.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="svbmath.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="svbRandom.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <Filter>Исходные файлы\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,3 +1,5 @@
 {
-    "CURR_LANG": "FR"
+    "CURR_LANG": "FR",
+    "DEVMODE": true,
+    "SECSYS": true
 }

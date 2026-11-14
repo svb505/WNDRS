@@ -18,7 +18,7 @@
 
 namespace {
     constexpr uint32_t CACHE_MAGIC = 0x4D424A4F; // "OBJM"
-    constexpr uint32_t CACHE_VERSION = 2;          // увеличивайте при смене формата
+    constexpr uint32_t CACHE_VERSION = 3;          // увеличивайте при смене формата
 
     template<class T>
     void WritePod(std::ofstream& f, const T& v) {
@@ -118,6 +118,8 @@ bool OBJModel::SaveCache(const std::string& objPath, const std::string& cachePat
         WriteString(f, p.name);
         WritePod(f, p.bounds.min);
         WritePod(f, p.bounds.max);
+        WritePod(f, static_cast<uint64_t>(p.startVertex));   // NEW
+        WritePod(f, static_cast<uint64_t>(p.vertexCount));   // NEW
     }
 
     f.close();
@@ -219,10 +221,14 @@ bool OBJModel::LoadFromCache(const std::string& objPath, const std::string& cach
     parts.reserve(partCount);
     for (uint32_t i = 0; i < partCount; i++) {
         ObjPart part;
+        uint64_t ps = 0, pc = 0;
         if (!ReadString(f, part.name) ||
             !ReadPod(f, part.bounds.min) ||
-            !ReadPod(f, part.bounds.max))
+            !ReadPod(f, part.bounds.max) ||
+            !ReadPod(f, ps) || !ReadPod(f, pc))
             return fail();
+        part.startVertex = static_cast<size_t>(ps);
+        part.vertexCount = static_cast<size_t>(pc);
         parts.push_back(std::move(part));
     }
 
@@ -236,6 +242,8 @@ bool OBJModel::LoadFromCache(const std::string& objPath, const std::string& cach
             if (m.name == g.material.name) { g.material.textureID = m.textureID; break; }
         }
     }
+
+    BuildLegRig();
 
     return true;
 }
@@ -454,7 +462,7 @@ bool OBJModel::LoadOBJ(const std::string& filename, float scale) {
             normals.push_back(z);
         }
         // OBJECT
-        else if (type == "o") {
+        else if (type == "o" || type == "g") {
             std::string objName;
             std::getline(ss >> std::ws, objName);
 
@@ -623,6 +631,8 @@ bool OBJModel::LoadOBJ(const std::string& filename, float scale) {
         part.name = partStarts[i].first;
         part.bounds.min = { vertices[begin].x, vertices[begin].y, vertices[begin].z };
         part.bounds.max = part.bounds.min;
+        part.startVertex = begin;
+        part.vertexCount = end - begin;
 
         for (size_t k = begin; k < end; k++) {
             const Vertex& v = vertices[k];
@@ -671,98 +681,132 @@ void OBJModel::CreateVBO() {
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
+void OBJModel::BuildLegRig() {
+    legRig.clear();
+
+    auto find = [&](const std::string& n) -> const ObjPart* {
+        for (const auto& p : parts) if (p.name == n) return &p;
+        return nullptr;
+        };
+
+    for (const char* side : { "_l", "_r" }) {
+        const ObjPart* leg = find(std::string("pants_leg") + side);
+        if (!leg) continue;
+
+        const float px = (leg->bounds.min.x + leg->bounds.max.x) * 0.5f;
+        const float py = leg->bounds.max.y;                       // уровень бедра
+        const float pz = (leg->bounds.min.z + leg->bounds.max.z) * 0.5f;
+        const float dir = (side[1] == 'l') ? 1.0f : -1.0f;
+
+        for (const char* base : { "pants_leg", "shoe", "sole" }) {
+            if (const ObjPart* p = find(std::string(base) + side)) {
+                LimbRig r;
+                r.start = p->startVertex; r.count = p->vertexCount;
+                r.px = px; r.py = py; r.pz = pz; r.side = dir;
+                legRig.push_back(r);
+            }
+        }
+    }
+    std::sort(legRig.begin(), legRig.end(),
+        [](const LimbRig& a, const LimbRig& b) { return a.start < b.start; });
+}
+
+void OBJModel::SetupArrays() {
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, sizeof(Vertex), (void*)0);
+    glEnableClientState(GL_NORMAL_ARRAY);
+    glNormalPointer(GL_FLOAT, sizeof(Vertex), (void*)(3 * sizeof(float)));
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), (void*)(6 * sizeof(float)));
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+}
+
+void OBJModel::TeardownArrays() {
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_NORMAL_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void OBJModel::ApplyMaterial(const MaterialGroup& g) {
+    GLuint tex = g.material.textureID;
+    if (tex == 0) tex = texture;
+    glBindTexture(GL_TEXTURE_2D, tex);
+
+    GLfloat ambient[] = { g.material.Ka[0], g.material.Ka[1], g.material.Ka[2], 1.0f };
+    GLfloat diffuse[] = { g.material.Kd[0], g.material.Kd[1], g.material.Kd[2], g.material.d };
+    GLfloat specular[] = { g.material.Ks[0], g.material.Ks[1], g.material.Ks[2], 1.0f };
+
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuse);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, specular);
+    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, g.material.Ns);
+}
+
+// рисует вершины [begin, end) с правильными материалами
+void OBJModel::DrawRange(size_t begin, size_t end) {
+    for (const auto& g : materialGroups) {
+        const size_t b = std::max(begin, g.startVertex);
+        const size_t e = std::min(end, g.startVertex + g.vertexCount);
+        if (b >= e) continue;
+        ApplyMaterial(g);
+        glDrawArrays(GL_TRIANGLES, static_cast<GLint>(b), static_cast<GLsizei>(e - b));
+    }
+}
+
 void OBJModel::Draw(svbmath::Vec3 pos, float yaw, float pitch) {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_TEXTURE_2D);
-
     glPushMatrix();
-
     glTranslatef(pos.x, pos.y, pos.z);
     glRotatef(yaw, 0, 1, 0);
     glRotatef(pitch, 1, 0, 0);
     glScalef(scale, scale, scale);
 
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-
-    // POSITION
-    glEnableClientState(GL_VERTEX_ARRAY);
-
-    glVertexPointer(3, GL_FLOAT, sizeof(Vertex), (void*)0);
-
-    // NORMAL
-    glEnableClientState(GL_NORMAL_ARRAY);
-    glNormalPointer(GL_FLOAT, sizeof(Vertex), (void*)(3 * sizeof(float)));
-
-    // UV
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-
-    glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), (void*)(6 * sizeof(float)));
-
-
-    // DRAW
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-
-    for (const auto& group : materialGroups) {
-        GLuint textureID = group.material.textureID;
-
-        // Если у материала нет собственной текстуры,
-        // используем общую текстуру модели.
-        if (textureID == 0)
-            textureID = texture;
-
-        glBindTexture(GL_TEXTURE_2D, textureID);
-
-        GLfloat ambient[] = {
-            group.material.Ka[0],
-            group.material.Ka[1],
-            group.material.Ka[2],
-            1.0f
-        };
-
-        GLfloat diffuse[] = {
-            group.material.Kd[0],
-            group.material.Kd[1],
-            group.material.Kd[2],
-            group.material.d
-        };
-
-        GLfloat specular[] = {
-            group.material.Ks[0],
-            group.material.Ks[1],
-            group.material.Ks[2],
-            1.0f
-        };
-
-        glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
-        glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuse);
-        glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, specular);
-
-        glMaterialf(
-            GL_FRONT_AND_BACK,
-            GL_SHININESS,
-            group.material.Ns
-        );
-
-        glDrawArrays(
-            GL_TRIANGLES,
-            group.startVertex,
-            group.vertexCount
-        );
-    }
-
-    // DISABLE
-
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_NORMAL_ARRAY);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindTexture(GL_TEXTURE_2D, 0);
+    SetupArrays();
+    DrawRange(0, vertices.size());
+    TeardownArrays();
 
     glPopMatrix();
-};
+}
+
+void OBJModel::DrawWalking(svbmath::Vec3 pos, float yaw, float pitch,
+    float walkPhase, float intensity, float swingDeg) {
+    if (legRig.empty()) { Draw(pos, yaw, pitch); return; }   // нет частей ног – рисуем статично
+
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_TEXTURE_2D);
+    glPushMatrix();
+    glTranslatef(pos.x, pos.y, pos.z);
+    glRotatef(yaw, 0, 1, 0);
+    glRotatef(pitch, 1, 0, 0);
+    glScalef(scale, scale, scale);
+
+    SetupArrays();
+
+    const float swing = std::sin(walkPhase) * swingDeg * intensity;
+    size_t cursor = 0;
+
+    for (const auto& leg : legRig) {
+        DrawRange(cursor, leg.start);               // тело и всё, что не нога
+
+        glPushMatrix();
+        glTranslatef(leg.px, leg.py, leg.pz);
+        glRotatef(-leg.side * swing, 1, 0, 0);      // ноги качаются в противофазе
+        glTranslatef(-leg.px, -leg.py, -leg.pz);
+        DrawRange(leg.start, leg.start + leg.count);
+        glPopMatrix();
+
+        cursor = leg.start + leg.count;
+    }
+    DrawRange(cursor, vertices.size());
+
+    TeardownArrays();
+    glPopMatrix();
+}
 OBJModel::~OBJModel() {
     if (vbo)
         glDeleteBuffers(1, &vbo);

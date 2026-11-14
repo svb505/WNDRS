@@ -4,6 +4,47 @@
 #include "svbmath.h"
 #include "variables.h"
 
+void drawPointInCenter() {
+    glPushAttrib(GL_ALL_ATTRIB_BITS);
+
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+
+    glOrtho(0, ECRAN_W, ECRAN_H, 0, -1, 1);
+
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_LIGHTING);
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    float centerX = ECRAN_W / 2.0f;
+    float centerY = ECRAN_H / 2.0f;
+    float pointSize = 10.0f;
+
+    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+    glBegin(GL_QUADS);
+    glVertex2f(centerX - pointSize / 2.0f, centerY - pointSize / 2.0f);
+    glVertex2f(centerX + pointSize / 2.0f, centerY - pointSize / 2.0f);
+    glVertex2f(centerX + pointSize / 2.0f, centerY + pointSize / 2.0f);
+    glVertex2f(centerX - pointSize / 2.0f, centerY + pointSize / 2.0f);
+    glEnd();
+
+    glMatrixMode(GL_MODELVIEW);
+    glPopMatrix();
+
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+
+    glPopAttrib();
+}
 void render2DIcon(std::string iconName, svbmath::Vec2 pos, float size) {
     glDisable(GL_DEPTH_TEST);
 

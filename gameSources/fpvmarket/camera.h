@@ -16,7 +16,7 @@ struct CameraParams {
     float angle = 0.0f;
 
     float camDistance = 6.0f;
-    float camHeight = 2.5f;
+    float camHeight = 3.5f;
 
     float cameraYaw = -190.0f;
     float cameraPitch = 0.0f;
@@ -28,7 +28,7 @@ class Camera {
 private:
     CameraParams camParams;
 
-    svbmath::Vec3 cameraPos = { 0.0f,1.6f, 5.0f };
+    svbmath::Vec3 cameraPos = { 0.0f, 1.6f, 5.0f };
     svbmath::Vec3 oldCameraPos = { 0.0f,1.0f,10.0f };
     svbmath::Vec3 cameraForward = {};
 public:

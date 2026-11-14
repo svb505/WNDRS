@@ -8,7 +8,37 @@
 #include "renders.h"
 #include <format>
 #include "logger.h"
+#include "sound.h"
+#include "avgRating.h"
+#include "LoadingWin.h"
 
+void Bot::init(GLFWwindow* win) {
+    LoadingScreen::Show(win, "Loading human...");
+    model.LoadOBJ("res/models/human/man.obj", 1.0f);
+    model.CreateVBO();
+}
+float Bot::calculateRating(const std::vector<PurchasedItem>& items) {
+    if (items.empty()) return 5.0f;
+
+    float totalMarkup = 0.0f;
+
+    for (const auto& item : items) {
+        if (item.basePrice <= 0.0f) continue;
+
+        float markup =  (item.sellPrice - item.basePrice) / item.basePrice;
+
+        // Учитываем только наценку
+        totalMarkup += std::max(0.0f, markup);
+    }
+
+    float averageMarkup = totalMarkup / items.size();
+
+    constexpr float K = 2.0f;
+
+    float rating = 5.0f - averageMarkup * K;
+
+    return std::clamp(rating, 0.0f, 5.0f);
+}
 static bool CircleIntersectsAABB(const svbmath::Vec3& pos,float radius,float minX,float maxX,float minZ,float maxZ){
     float closestX =
         std::max(minX, std::min(pos.x, maxX));
@@ -108,25 +138,39 @@ bool Bot::checkCollision( const svbmath::Vec3& newPos, Building& building){
 bool Bot::isActive() const{
     return active;
 }
-bool Bot::findDrone(FPVDrone& drone){
+bool Bot::findDrone(FPVDrone& drone) {
     auto& objects = drone.getPlacedEquip();
 
+    bool found = false;
+    float bestPrice = 0.0f;
+
     for (const auto& obj : objects) {
-        if (obj.name != getStringFromJson("DRONE_Achetee") && obj.name != getStringFromJson("DRONE_Assemblee") 
-            && obj.name != drone.getBaseEquip()[5] && obj.name != drone.getBaseEquip()[15] &&
-            obj.name != drone.getBaseEquip()[14] && obj.name !=drone.getBaseEquip()[6]){
+        if (obj.name != getStringFromJson("DRONE_Achetee") && obj.name != getStringFromJson("DRONE_Assemblee") &&
+            obj.name != drone.getBaseEquip()[5] && obj.name != drone.getBaseEquip()[15] &&
+            obj.name != drone.getBaseEquip()[14] && obj.name != drone.getBaseEquip()[6]) {
             continue;
         }
 
 
-        targetShelf = obj.pos;
+        float price = 0.0f;
 
-        droneModel = obj.name;
+        if (obj.name == getStringFromJson("DRONE_Achetee")) price = priceForT1;
+        else if (obj.name == getStringFromJson("DRONE_Assemblee")) price = priceForT2;
+        else if (obj.name == drone.getBaseEquip()[5]) price = priceForController1;
+        else if (obj.name == drone.getBaseEquip()[6]) price = priceForGoggles1;
+        else if (obj.name == drone.getBaseEquip()[14]) price = priceForController2;
+        else if (obj.name == drone.getBaseEquip()[15]) price = priceForGoggles2;
 
-        return true;
+        if (!found || price < bestPrice) {
+            found = true;
+            bestPrice = price;
+
+            targetShelf = obj.pos;
+            droneModel = obj.name;
+        }
     }
 
-    return false;
+    return found;
 }
 void Bot::spawn(FPVDrone& drone,Building& building){
     if (active || !isOpen) return;
@@ -168,6 +212,7 @@ void Bot::moveTo( const svbmath::Vec3& target,float dt,  Building& building){
     direction.x /= distance;
     direction.z /= distance;
 
+    yaw = atan2(direction.x, direction.z) * (180.0f / 3.14159265f);
 
     float moveDistance = speed * dt;
 
@@ -315,9 +360,13 @@ bool Bot::takeDrone( FPVDrone& drone){
 
     return false;
 }
-void Bot::update(float dt,FPVDrone& drone,Building& building){
+void Bot::update(float dt,Camera& cam, FPVDrone& drone,Building& building,Sound& sound, bool moving){
     if (!active || !isOpen) return;
 
+    float target = moving ? 1.0f : 0.0f;
+    walkBlend += (target - walkBlend) * std::min(1.0f, dt * 10.0f);
+
+    if (moving)  walkPhase += dt * 8.0f;
 
     switch (state){
     case BotState::GoingToShelf:{
@@ -334,7 +383,6 @@ void Bot::update(float dt,FPVDrone& drone,Building& building){
 
         break;
     }
-
     case BotState::GoingToCash:{
         moveTo(cashTarget,dt, building);
 
@@ -350,23 +398,81 @@ void Bot::update(float dt,FPVDrone& drone,Building& building){
             else if (droneModel == drone.getBaseEquip()[14]) price = priceForController2;
             else if (droneModel == drone.getBaseEquip()[15]) price = priceForGoggles2;
 
+            float probability = svbmath::randFloat(0.0f, 1.0f);
 
-            myBalance += price;
+            if (probability >= 0.05) { 
+                myBalance += price; 
+                saveDataForPlayer(price, averageRating(), "+");
+            }
+            else {
+                globalPrice = price;
+                if (building.isSecuritySystem()) state = BotState::CaughtStealing;
+            }
 
+            float basePrice = (droneModel != getStringFromJson("DRONE_Assemblee")) ? 
+                drone.getEquipPrice().at(droneModel) : 0.0f;
 
-            saveDataForPlayer(price,"+");
+            std::vector<PurchasedItem> basket = {{basePrice, price}};
 
+            ratings.push_back(calculateRating(basket));
+
+            sallesForDay++;
+            purchasesForAllTime++;
+            purchasesForSession++;
+
+            if (purchasesForAllTime == lvlTwoRequiredPurchases) level = 2;
+            if (purchasesForAllTime >= lvlThreeRequiredPurchases) level = 3;
+
+            auto& src = sound.sources["Purchase"];
+            sound.playSound(src,building.getCashRegister().position);
 
             LOG_INFO(std::format("SOLD: {} for {}", droneModel, price));
             LOG_INFO(std::format("Balance: {}", myBalance));
+            LOG_INFO(std::format("Rating: {}", averageRating()));
 
-
-            state = BotState::Leaving;
+            if (state != BotState::CaughtStealing) state = BotState::Leaving;
         }
 
         break;
     }
+    case BotState::CaughtStealing: {
+        if (!sirenPlaying) {
+            sound.playSound(sound.sources["Siren"], { 0.0,0.0f,4.0f });
 
+            sirenPlaying = true;
+        }
+
+        float totalSum = globalPrice + (globalPrice / 100) * 20;
+
+        if (svbmath::InRadius(cam.getCamPos(), position, 3.0f)) {
+            myBalance += totalSum;
+            saveDataForPlayer(totalSum, averageRating(), "+");
+
+            float basePrice = (droneModel != getStringFromJson("DRONE_Assemblee")) ?
+                drone.getEquipPrice().at(droneModel) : 0.0f;
+
+            std::vector<PurchasedItem> basket = { { basePrice, totalSum } };
+
+            ratings.push_back(calculateRating(basket));
+
+            sallesForDay++;
+            purchasesForAllTime++;
+            purchasesForSession++;
+
+            auto& src = sound.sources["Purchase"];
+            sound.playSound(src, building.getCashRegister().position);
+
+            if (purchasesForAllTime == lvlTwoRequiredPurchases) level = 2;
+            if (purchasesForAllTime >= lvlThreeRequiredPurchases) level = 3;
+
+            sound.stopSound(sound.sources["Siren"]);
+
+            sirenPlaying = false;
+
+            state = BotState::Leaving;
+        }
+        break;
+    }
     case BotState::Leaving:{
         active = false;
 
@@ -380,58 +486,5 @@ void Bot::update(float dt,FPVDrone& drone,Building& building){
 void Bot::draw(){
     if (!active || !isOpen) return;
 
-    glPushMatrix();
-
-    glTranslatef( position.x, position.y + 0.8f,position.z);
-
-    glColor3f(0.2f,0.4f,0.8f);
-
-    glBegin(GL_QUADS);
-
-
-    // FRONT
-    glVertex3f( -0.3f,-0.8f,0.2f);
-    glVertex3f( 0.3f, -0.8f, 0.2f );
-    glVertex3f( 0.3f,0.8f, 0.2f);
-    glVertex3f( -0.3f, 0.8f,0.2f);
-
-    // BACK
-    glVertex3f( 0.3f,  -0.8f, -0.2f);
-    glVertex3f(-0.3f,-0.8f, -0.2f);
-    glVertex3f(-0.3f, 0.8f, -0.2f);
-    glVertex3f(0.3f, 0.8f,-0.2f );
-
-    // LEFT
-    glVertex3f( -0.3f,-0.8f,-0.2f);
-    glVertex3f( -0.3f, -0.8f, 0.2f);
-    glVertex3f(-0.3f,0.8f, 0.2f);
-    glVertex3f(-0.3f, 0.8f, -0.2f);
-
-
-    // RIGHT
-    glVertex3f(0.3f,-0.8f,0.2f);
-    glVertex3f(0.3f,-0.8f, -0.2f);
-    glVertex3f( 0.3f,0.8f,-0.2f);
-    glVertex3f( 0.3f, 0.8f, 0.2f);
-
-
-    // TOP
-
-    glVertex3f( -0.3f, 0.8f,0.2f);
-    glVertex3f(0.3f, 0.8f,0.2f);
-    glVertex3f(0.3f, 0.8f, -0.2f);
-    glVertex3f( -0.3f,0.8f,-0.2f);
-
-    // BOTTOM
-
-    glVertex3f( -0.3f, -0.8f, -0.2f);
-    glVertex3f(0.3f, -0.8f,-0.2f);
-    glVertex3f( 0.3f,-0.8f, 0.2f);
-    glVertex3f( -0.3f,-0.8f, 0.2f );
-
-
-    glEnd();
-
-
-    glPopMatrix();
+    model.DrawWalking(position, yaw, 0.0f, walkPhase, walkBlend);
 }

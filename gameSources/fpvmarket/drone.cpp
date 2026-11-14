@@ -12,14 +12,228 @@
 #include "text.h"
 #include <memory>
 #include <utility>
+#include "logger.h"
+#include "LoadingWin.h"
+#include <future>
 
+GLuint FPVDrone::returnCompPreview(const std::string& key) {
+    static const std::unordered_map<std::string, std::string> compTextures = {
+        {"FRAME1", "FRM1"},
+        {"FRAME2", "FRM2"},
+        {"CAM1", "CAM1"},
+        {"CAM2", "CAM2"},
+        {"CAM3", "CAM3"},
+        {"BAT450", "BAT1"},
+        {"BAT550", "BAT2"},
+        {"BAT500", "BAT3"},
+        {"MTR1", "MOT1"},
+        {"MTR2", "MOT2"},
+        {"MTR3", "MOT3"},
+        {"PROP1", "PRP1"},
+        {"PROP2", "PRP2"},
+        {"PROP3", "PRP3"},
+        {"CNTRL1", "CTRL1"},
+        {"CNTRL2", "CTRL2"},
+        {"GGLS1", "GGLS1"},
+        {"GGLS2", "GGLS2"},
+        {"FC1", "FC1"},
+        {"FC2", "FC2"}
+    };
+
+    std::string componentKey;
+
+    for (auto it = lang[currLang].begin(); it != lang[currLang].end(); ++it) {
+        if (it.value().is_string() &&
+            it.value().get<std::string>() == key) {
+            componentKey = it.key();
+            break;
+        }
+    }
+
+    if (componentKey.empty()) componentKey = key;
+
+    auto it = compTextures.find(componentKey);
+    if (it == compTextures.end()) {
+        LOG_ERROR(std::format("Preview not found for component: {}", key));
+        return 0;
+    }
+
+    auto textureIt = texturesNamesAndPaths.find(it->second);
+    if (textureIt == texturesNamesAndPaths.end()) {
+        LOG_ERROR(std::format("Texture path not found: {}", it->second));
+        return 0;
+    }
+
+    return LoadTexture(textureIt->second.c_str());
+}
+std::map<CompType, std::vector<std::string>>& FPVDrone::getEquipTypes() {
+    return equipTypes;
+}
+
+void FPVDrone::reloadCompModels() {
+    allCompModels.clear();
+
+    for (const auto& [objName, paths] : allCompPaths) {
+        auto model = std::make_unique<OBJModel>();
+
+        model->LoadOBJ(paths.model, paths.scale);
+        model->LoadTexture(paths.texture);
+        model->CreateVBO();
+
+        allCompModels.emplace(objName, std::move(model));
+    }
+}
+
+void FPVDrone::reInitListes() {
+    baseEquipment = { lang[currLang]["FRAME1"].get<std::string>(),
+        lang[currLang]["CAM1"].get<std::string>(),
+        lang[currLang]["BAT450"].get<std::string>(), lang[currLang]["MTR1"].get<std::string>(),
+        lang[currLang]["PROP1"].get<std::string>(),lang[currLang]["CNTRL1"].get<std::string>(), lang[currLang]["GGLS1"].get<std::string>(),
+        name,
+        lang[currLang]["BAT550"].get<std::string>(),
+        lang[currLang]["BAT500"].get<std::string>(),
+        lang[currLang]["PROP2"].get<std::string>(), lang[currLang]["PROP3"].get<std::string>(),lang[currLang]["FC1"].get<std::string>(),
+        lang[currLang]["FC2"].get<std::string>(),
+        lang[currLang]["CNTRL2"].get<std::string>(),lang[currLang]["GGLS2"].get<std::string>(),
+        lang[currLang]["FRAME2"].get<std::string>(),
+        lang[currLang]["MTR2"].get<std::string>(), lang[currLang]["MTR3"].get<std::string>(),
+        lang[currLang]["CAM2"].get<std::string>(), lang[currLang]["CAM3"].get<std::string>() };
+
+    equipmentPrice = { {baseEquipment[0],100.0f},{baseEquipment[1],300.0f},
+        {baseEquipment[2],250.0f} ,{baseEquipment[3],350.0f} ,{baseEquipment[4],150.0f},
+        {baseEquipment[5],100.0f},
+        {baseEquipment[6],250.0f},{name,1000.0f} ,{baseEquipment[10],120.0f},{baseEquipment[11],120.0f},
+        {baseEquipment[8],450.0f} ,{baseEquipment[9],350.0f} ,{baseEquipment[12],150.0f}, {baseEquipment[13],100.0f},
+        {baseEquipment[15],270.0f},{baseEquipment[14],90.0f},{baseEquipment[16],130.0f},{baseEquipment[17],400.0f},
+        {baseEquipment[18],320.0f},{baseEquipment[19],270.0f},{baseEquipment[20],330.0f} };
+
+    allCompPaths = {
+     {baseEquipment[0], {
+         "res/models/fpv_frame/fpv_frame.obj",
+         "res/models/fpv_frame/fpv_frame_carbon.png",
+         5.0f
+     }},
+    {baseEquipment[1], {
+         "res/models/fpv_cam/fpv_camera.obj",
+         "res/models/fpv_cam/fpv_camera_texture.png",
+         5.0f
+     }},
+        {baseEquipment[19], {
+         "res/models/fpv_cam2/fpv_camera.obj",
+         "res/models/fpv_cam2/tex.jpg",
+         0.004f
+     }},
+        {baseEquipment[20], {
+         "res/models/fpv_cam3/fpv_camera.obj",
+         "res/models/fpv_cam3/tex.jpg",
+         0.004f
+     }},
+        {baseEquipment[10], {
+         "res/models/fpv_propeller2/prop_bi_5048.obj",
+         "res/models/fpv_propeller2/tex.jpg",
+         5.0f
+     }},
+        {baseEquipment[11], {
+         "res/models/fpv_propeller3/prop_tri_5143.obj",
+         "res/models/fpv_propeller3/tex.jpg",
+         5.0f
+     }},
+        {baseEquipment[8], {
+         "res/models/fpv_bat2/fpv_battery.obj",
+         "res/models/fpv_bat2/tex.jpg",
+         5.0f
+     }},
+     {baseEquipment[9], {
+         "res/models/fpv_bat3/fpv_battery.obj",
+         "res/models/fpv_bat3/tex.jpg",
+         5.0f
+     }},
+        {baseEquipment[12], {
+         "res/models/fpv_FC1/fc_20x20_mini.obj",
+         "res/models/fpv_FC1/tex.jpg",
+         0.004f
+     }},
+     {baseEquipment[13], {
+         "res/models/fpv_FC2/fc_30x30_f4.obj",
+         "res/models/fpv_FC2/tex.jpg",
+          0.004f
+     }},
+        {baseEquipment[14], {
+         "res/models/fpv_controller2/fpv_radio.obj",
+         "res/models/fpv_controller2/tex.jpg",
+        0.005f
+     }},
+     {baseEquipment[15], {
+         "res/models/fpv_goggles2/fpv_goggles.obj",
+         "res/models/fpv_goggles2/tex.jpg",
+         5.0f
+     }},
+     {baseEquipment[2], {
+         "res/models/fpv_bat/battery.obj",
+         "res/models/fpv_bat/battery_texture.png",
+         5.0f
+     }},
+     {baseEquipment[16], {
+         "res/models/fpv_frame2/fpv_frame.obj",
+         "res/models/fpv_frame2/tex.jpg",
+         6.0f
+     }},
+     {baseEquipment[3], {
+         "res/models/fpv_motor/fpv_motor.obj",
+         "res/models/fpv_motor/fpv_atlas.png",
+         0.07f
+     }},
+        {baseEquipment[17], {
+         "res/models/fpv_motor2/fpv_motor.obj",
+         "res/models/fpv_motor2/tex.jpg",
+         0.007f
+     }},
+        {baseEquipment[18], {
+         "res/models/fpv_motor3/fpv_motor.obj",
+         "res/models/fpv_motor3/tex.jpg",
+         0.007f
+     }},
+     {baseEquipment[4], {
+         "res/models/fpv_propeller/fpv_propeller.obj",
+         "res/models/fpv_propeller/fpv_atlas.png",
+         0.04f
+     }},
+     {baseEquipment[5], {
+         "res/models/fpv_controller/controller.obj",
+         "res/models/fpv_controller/controller_texture.png",
+         4.0f
+     }},
+     {baseEquipment[6], {
+         "res/models/fpv_goggles/fpv_goggles.obj",
+         "res/models/fpv_goggles/fpv_goggles_texture.png",
+         5.0f
+     }}
+    };
+
+    equipTypes = { {CompType::TYPE1,
+        {name,lang[currLang]["FRAME1"].get<std::string>(),
+        lang[currLang]["CAM1"].get<std::string>(),
+        lang[currLang]["BAT450"].get<std::string>(), lang[currLang]["MTR1"].get<std::string>(),
+        lang[currLang]["PROP1"].get<std::string>(),lang[currLang]["CNTRL1"].get<std::string>(),
+        lang[currLang]["GGLS1"].get<std::string>(),lang[currLang]["FC1"].get<std::string>()}},
+        { CompType::TYPE2,{lang[currLang]["BAT550"].get<std::string>(),lang[currLang]["PROP2"].get<std::string>(),
+        lang[currLang]["FC2"].get<std::string>(),lang[currLang]["CNTRL2"].get<std::string>(),
+        lang[currLang]["GGLS2"].get<std::string>(),lang[currLang]["FRAME2"].get<std::string>(),
+        lang[currLang]["MTR2"].get<std::string>(),lang[currLang]["CAM2"].get<std::string>()}},
+        { CompType::TYPE3,{lang[currLang]["BAT500"].get<std::string>(),
+         lang[currLang]["PROP3"].get<std::string>(),lang[currLang]["MTR3"].get<std::string>(),
+        lang[currLang]["CAM3"].get<std::string>()}
+    } };
+
+    reloadCompModels();
+}
 void FPVDrone::consumeComponents() {
     struct Need { std::vector<int> idx; int count; };
     const std::vector<Need> needs = {
         {{0, 16}, 1},      // frame
-        {{1}, 1},          // camera
+        {{1,19,20}, 1},          // camera
         {{2, 8, 9}, 1},    // battery
-        {{3}, 4},          // motors
+        {{3,17,18}, 4},          // motors
         {{4, 10, 11}, 4},  // propellers
         {{12, 13}, 1}      // fc
     };
@@ -45,16 +259,37 @@ void FPVDrone::consumeComponents() {
         }
     }
 }
-void FPVDrone::init() {
+void FPVDrone::init(GLFWwindow* win) {
+    LoadingScreen::Show(win, "Loading assets...");
+
+    markerModel.LoadOBJ("res/models/marker/free_slot_marker.obj", 0.08f);
+    markerModel.CreateVBO();
+
     fpv.LoadOBJ("res/models/fpv_assemblee/fpv_drone.obj", 6.0f);
     fpv.LoadTexture("res/models/fpv_assemblee/fpv_drone_texture.png");
     fpv.CreateVBO();
 
-    for (const auto& [objName, paths] : allCompPaths) {
-        auto model = std::make_unique<OBJModel>();
+    LoadingScreen::Show(win, "Loading components...");
 
-        model->LoadOBJ(paths.model, paths.scale);
-        model->LoadTexture(paths.texture);
+    using ModelFuture = std::future<std::pair<std::string, std::unique_ptr<OBJModel>>>;
+
+    std::vector<ModelFuture> futures;
+
+    for (const auto& [objName, paths] : allCompPaths) {
+        futures.push_back(std::async(std::launch::async, [objName, paths]() {
+                auto model = std::make_unique<OBJModel>();
+
+                model->LoadOBJ(paths.model, paths.scale);
+
+                return std::make_pair(objName, std::move(model));
+            }
+        ));
+    }
+
+    for (auto& future : futures) {
+        auto [objName, model] = future.get();
+
+        model->LoadTexture(allCompPaths[objName].texture);
         model->CreateVBO();
 
         allCompModels.emplace(objName, std::move(model));
@@ -121,8 +356,10 @@ void FPVDrone::drawAvaibleShelfPos() {
             }
         }
 
-        if (!shelf.busy && !occupied)
-            drawQuad(0.4f, 0.4f, 0.4f, shelf.pos);
+
+        float shelfYaw = (shelf.pos.x == 4.8f) ? 90.0f : 0.0f;
+
+        if (!shelf.busy && !occupied) markerModel.Draw(shelf.pos, shelfYaw, 0.0f);
     }
 }
 void FPVDrone::initCoordinatesForShelves(Building& build) {
@@ -360,565 +597,4 @@ void FPVDrone::delivery(float dt) {
 }
 void FPVDrone::addPlacedObj(std::string name, svbmath::Vec3 pos) {
     placedObjects.push_back({ name, pos });
-}
-void FPVDrone::drawCube(float sx, float sy, float sz) {
-    sx /= 2.0f;
-    sy /= 2.0f;
-    sz /= 2.0f;
-
-    glBegin(GL_QUADS);
-
-    // Front (+Z)
-    glNormal3f(0, 0, 1);
-    glVertex3f(-sx, -sy, sz);
-    glVertex3f(sx, -sy, sz);
-    glVertex3f(sx, sy, sz);
-    glVertex3f(-sx, sy, sz);
-
-    // Back (-Z)
-    glNormal3f(0, 0, -1);
-    glVertex3f(sx, -sy, -sz);
-    glVertex3f(-sx, -sy, -sz);
-    glVertex3f(-sx, sy, -sz);
-    glVertex3f(sx, sy, -sz);
-
-    // Left (-X)
-    glNormal3f(-1, 0, 0);
-    glVertex3f(-sx, -sy, -sz);
-    glVertex3f(-sx, -sy, sz);
-    glVertex3f(-sx, sy, sz);
-    glVertex3f(-sx, sy, -sz);
-
-    // Right (+X)
-    glNormal3f(1, 0, 0);
-    glVertex3f(sx, -sy, sz);
-    glVertex3f(sx, -sy, -sz);
-    glVertex3f(sx, sy, -sz);
-    glVertex3f(sx, sy, sz);
-
-    // Top
-    glNormal3f(0, 1, 0);
-    glVertex3f(-sx, sy, sz);
-    glVertex3f(sx, sy, sz);
-    glVertex3f(sx, sy, -sz);
-    glVertex3f(-sx, sy, -sz);
-
-    // Bottom
-    glNormal3f(0, -1, 0);
-    glVertex3f(-sx, -sy, -sz);
-    glVertex3f(sx, -sy, -sz);
-    glVertex3f(sx, -sy, sz);
-    glVertex3f(-sx, -sy, sz);
-
-    glEnd();
-}
-void FPVDrone::drawCylinder(float radius, float height, int segments) {
-    float half = height / 2.0f;
-
-    // Боковая поверхность
-    glBegin(GL_QUAD_STRIP);
-
-    for (int i = 0; i <= segments; i++)
-    {
-        float a = 2.0f * 3.14159265f * i / segments;
-        float x = cosf(a) * radius;
-        float z = sinf(a) * radius;
-
-        glNormal3f(x, 0, z);
-
-        glVertex3f(x, -half, z);
-        glVertex3f(x, half, z);
-    }
-
-    glEnd();
-
-    // Верх
-    glBegin(GL_TRIANGLE_FAN);
-    glNormal3f(0, 1, 0);
-    glVertex3f(0, half, 0);
-
-    for (int i = 0; i <= segments; i++)
-    {
-        float a = 2.0f * 3.14159265f * i / segments;
-        glVertex3f(
-            cosf(a) * radius,
-            half,
-            sinf(a) * radius
-        );
-    }
-
-    glEnd();
-
-    // Низ
-    glBegin(GL_TRIANGLE_FAN);
-    glNormal3f(0, -1, 0);
-    glVertex3f(0, -half, 0);
-
-    for (int i = 0; i <= segments; i++)
-    {
-        float a = -2.0f * 3.14159265f * i / segments;
-
-        glVertex3f(
-            cosf(a) * radius,
-            -half,
-            sinf(a) * radius
-        );
-    }
-
-    glEnd();
-}
-void FPVDrone::drawDroneFrame(const svbmath::Vec3& pos) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    glColor3f(0.08f, 0.08f, 0.08f);
-
-    drawCube(1.8f, 0.12f, 2.1f);
-
-    glTranslatef(0.0f, 0.22f, 0.0f);
-    drawCube(1.6f, 0.10f, 1.8f);
-
-    // Четыре луча
-    glColor3f(0.12f, 0.12f, 0.12f);
-
-    glPushMatrix();
-    glTranslatef(-0.9f, 0.0f, 0.95f);
-    glRotatef(-45.0f, 0, 1, 0);
-    drawCube(1.8f, 0.14f, 0.18f);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(0.9f, 0.0f, 0.95f);
-    glRotatef(45.0f, 0, 1, 0);
-    drawCube(1.8f, 0.14f, 0.18f);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(-0.9f, 0.0f, -0.95f);
-    glRotatef(45.0f, 0, 1, 0);
-    drawCube(1.8f, 0.14f, 0.18f);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(0.9f, 0.0f, -0.95f);
-    glRotatef(-45.0f, 0, 1, 0);
-    drawCube(1.8f, 0.14f, 0.18f);
-    glPopMatrix();
-
-    glPopMatrix();
-}
-void FPVDrone::drawDroneCamera(const svbmath::Vec3& pos) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    // Камера спереди
-    glTranslatef(0.0f, 0.28f, 1.12f);
-
-    glColor3f(0.06f, 0.06f, 0.06f);
-    drawCube(0.65f, 0.45f, 0.55f);
-
-    glTranslatef(0.0f, -0.02f, 0.28f);
-
-    glColor3f(0.02f, 0.02f, 0.02f);
-
-    glRotatef(90.0f, 1, 0, 0);
-    drawCylinder(0.17f, 0.18f);
-
-    glTranslatef(0.0f, 0.0f, 0.1f);
-
-    glColor3f(0.02f, 0.08f, 0.12f);
-    drawCylinder(0.13f, 0.05f);
-
-    glPopMatrix();
-}
-void FPVDrone::drawDroneBattery(const svbmath::Vec3& pos) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    glTranslatef(0.0f, 0.42f, -0.05f);
-
-    glColor3f(0.03f, 0.03f, 0.03f);
-
-    drawCube(0.95f, 0.42f, 1.5f);
-
-    glColor3f(0.15f, 0.15f, 0.15f);
-
-    glPushMatrix();
-    glTranslatef(0.0f, 0.23f, 0.0f);
-    drawCube(1.05f, 0.05f, 0.12f);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(0.0f, 0.23f, 0.5f);
-    drawCube(1.05f, 0.05f, 0.12f);
-    glPopMatrix();
-
-    glColor3f(0.08f, 0.08f, 0.08f);
-
-    glPushMatrix();
-    glTranslatef(0.25f, 0.55f, -0.78f);
-    glRotatef(90.0f, 1, 0, 0);
-    drawCylinder(0.025f, 0.4f);
-    glPopMatrix();
-
-    glPopMatrix();
-}
-void FPVDrone::drawMotor(const svbmath::Vec3& pos) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    glColor3f(0.16f, 0.16f, 0.16f);
-
-    drawCylinder(0.20f, 0.20f);
-
-    glTranslatef(0.0f, 0.14f, 0.0f);
-
-    glColor3f(0.25f, 0.25f, 0.25f);
-
-    drawCylinder(0.14f, 0.08f);
-
-    glPopMatrix();
-}
-void FPVDrone::drawPropeller(const svbmath::Vec3& pos, bool reversed) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    glColor3f(0.02f, 0.02f, 0.02f);
-
-    // Центральная втулка
-    drawCylinder(0.06f, 0.05f);
-
-    glTranslatef(0.0f, 0.04f, 0.0f);
-
-    // Первый лепесток
-    glPushMatrix();
-
-    if (reversed)
-        glRotatef(180.0f, 0, 1, 0);
-
-    glBegin(GL_QUADS);
-
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.75f, 0.0f, 0.08f);
-    glVertex3f(0.95f, 0.0f, 0.02f);
-    glVertex3f(0.25f, 0.0f, -0.08f);
-
-    glEnd();
-
-    glPopMatrix();
-
-    // Второй лепесток
-    glPushMatrix();
-
-    glRotatef(180.0f, 0, 1, 0);
-
-    glBegin(GL_QUADS);
-
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.75f, 0.0f, 0.08f);
-    glVertex3f(0.95f, 0.0f, 0.02f);
-    glVertex3f(0.25f, 0.0f, -0.08f);
-
-    glEnd();
-
-    glPopMatrix();
-
-    glPopMatrix();
-}
-void FPVDrone::drawFPVDrone(const svbmath::Vec3& pos) {
-
-    // Рама
-    drawDroneFrame(pos);
-
-    // Камера
-    drawDroneCamera(pos);
-
-    // Аккумулятор
-    drawDroneBattery(pos);
-
-
-    // -------------------------
-    // Моторы + пропеллеры
-    // -------------------------
-
-    // Front Left
-    glPushMatrix();
-
-    glTranslatef(pos.x - 1.30f,
-        pos.y + 0.05f,
-        pos.z + 1.30f);
-
-    drawMotor(pos);
-
-    glTranslatef(0.0f, 0.20f, 0.0f);
-    drawPropeller(pos,false);
-
-    glPopMatrix();
-
-
-    // Front Right
-    glPushMatrix();
-
-    glTranslatef(pos.x + 1.30f,
-        pos.y + 0.05f,
-        pos.z + 1.30f);
-
-    drawMotor(pos);
-
-    glTranslatef(0.0f, 0.20f, 0.0f);
-    glRotatef(30.0f, 0, 1, 0);
-    drawPropeller(pos,true);
-
-    glPopMatrix();
-
-
-    // Rear Left
-    glPushMatrix();
-
-    glTranslatef(pos.x - 1.30f,
-        pos.y + 0.05f,
-        pos.z - 1.30f);
-
-    drawMotor(pos);
-
-    glTranslatef(0.0f, 0.20f, 0.0f);
-    glRotatef(30.0f, 0, 1, 0);
-    drawPropeller(pos,true);
-
-    glPopMatrix();
-
-
-    // Rear Right
-    glPushMatrix();
-
-    glTranslatef(pos.x + 1.30f,
-        pos.y + 0.05f,
-        pos.z - 1.30f);
-
-    drawMotor(pos);
-
-    glTranslatef(0.0f, 0.20f, 0.0f);
-    drawPropeller(pos,false);
-
-    glPopMatrix();
-
-
-    // -------------------------
-    // Радиоантенны
-    // -------------------------
-
-    glColor3f(0.05f, 0.05f, 0.05f);
-
-    float antennaX[] = { -0.3f, 0.3f };
-
-    for (float x : antennaX) {
-
-        glPushMatrix();
-
-        glTranslatef(pos.x + x,
-            pos.y + 0.35f,
-            pos.z - 1.0f);
-
-        glRotatef(-20.0f, 1, 0, 0);
-
-        drawCylinder(0.025f, 0.7f);
-
-        glPopMatrix();
-    }
-
-
-    // -------------------------
-    // Радиоприёмник
-    // -------------------------
-
-    glPushMatrix();
-
-    glTranslatef(pos.x,
-        pos.y + 0.4f,
-        pos.z - 0.8f);
-
-    glColor3f(0.05f, 0.08f, 0.05f);
-
-    drawCube(0.40f, 0.15f, 0.55f);
-
-    glPopMatrix();
-}
-void FPVDrone::drawRemoteController(const svbmath::Vec3& pos) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    glColor3f(0.08f, 0.08f, 0.08f);
-
-    drawCube(2.2f, 0.35f, 1.3f);
-
-    glPushMatrix();
-
-    glTranslatef(-0.55f, 0.25f, 0.1f);
-
-    glColor3f(0.15f, 0.15f, 0.15f);
-    drawCylinder(0.13f, 0.12f);
-
-    glTranslatef(0.0f, 0.12f, 0.0f);
-
-    glColor3f(0.25f, 0.25f, 0.25f);
-    drawCylinder(0.05f, 0.25f);
-
-    glPopMatrix();
-
-
-    glPushMatrix();
-
-    glTranslatef(0.55f, 0.25f, 0.1f);
-
-    glColor3f(0.15f, 0.15f, 0.15f);
-    drawCylinder(0.13f, 0.12f);
-
-    glTranslatef(0.0f, 0.12f, 0.0f);
-
-    glColor3f(0.25f, 0.25f, 0.25f);
-    drawCylinder(0.05f, 0.25f);
-
-    glPopMatrix();
-
-
-    glPushMatrix();
-
-    glTranslatef(0.0f, 0.23f, -0.30f);
-
-    glColor3f(0.02f, 0.07f, 0.08f);
-
-    drawCube(0.65f, 0.08f, 0.35f);
-
-    glPopMatrix();
-
-
-    glColor3f(0.12f, 0.12f, 0.12f);
-
-    float antenaX[] = { -0.45f, 0.45f };
-
-    for (float x : antenaX) {
-
-        glPushMatrix();
-
-        glTranslatef(x, 0.45f, -0.45f);
-
-        glRotatef(-20.0f, 1, 0, 0);
-
-        drawCylinder(0.035f, 0.8f);
-
-        glPopMatrix();
-    }
-
-    glPopMatrix();
-}
-void FPVDrone::drawFPVGoggles(const svbmath::Vec3& pos) {
-    glPushMatrix();
-
-    glTranslatef(pos.x, pos.y, pos.z);
-
-    // Левая часть
-    glPushMatrix();
-
-    glTranslatef(-0.48f, 0.0f, 0.0f);
-
-    glColor3f(0.06f, 0.06f, 0.06f);
-
-    drawCube(0.9f, 0.55f, 0.55f);
-
-    glTranslatef(0.0f, 0.0f, 0.30f);
-
-    glColor3f(0.03f, 0.10f, 0.14f);
-
-    drawCube(0.6f, 0.32f, 0.03f);
-
-    glPopMatrix();
-
-
-    // Правая часть
-    glPushMatrix();
-
-    glTranslatef(0.48f, 0.0f, 0.0f);
-
-    glColor3f(0.06f, 0.06f, 0.06f);
-
-    drawCube(0.9f, 0.55f, 0.55f);
-
-    glTranslatef(0.0f, 0.0f, 0.30f);
-
-    glColor3f(0.03f, 0.10f, 0.14f);
-
-    drawCube(0.6f, 0.32f, 0.03f);
-
-    glPopMatrix();
-
-
-    // Перемычка
-    glColor3f(0.08f, 0.08f, 0.08f);
-
-    glPushMatrix();
-
-    glTranslatef(0.0f, 0.0f, -0.05f);
-
-    drawCube(0.45f, 0.25f, 0.5f);
-
-    glPopMatrix();
-
-
-    // Ремень
-    glColor3f(0.03f, 0.03f, 0.03f);
-
-    glPushMatrix();
-
-    glTranslatef(0.0f, 0.0f, -0.45f);
-
-    glRotatef(90.0f, 1, 0, 0);
-
-    drawCube(1.8f, 0.1f, 0.15f);
-
-    glPopMatrix();
-
-    glPopMatrix();
-}
-void FPVDrone::drawFPVEquipment() {
-    glDisable(GL_TEXTURE_2D);
-
-    // Дрон
-    glPushMatrix();
-
-    glTranslatef(0.0f, 0.5f, 7.0f);
-    glScalef(0.4f, 0.4f, 0.4f);
-
-    drawFPVDrone({ 0.0f, 0.0f, 0.0f });
-
-    glPopMatrix();
-
-
-    // Пульт
-    glPushMatrix();
-
-    glTranslatef(5.0f, 0.5f, 7.0f);
-    glRotatef(25.0f, 0, 1, 0);
-
-    drawRemoteController({ 0.0f, 0.0f, 0.0f });
-
-    glPopMatrix();
-
-
-    // Очки
-    glPushMatrix();
-
-    glTranslatef(-5.0f, 0.5f, 7.0f);
-    glRotatef(-20.0f, 0, 1, 0);
-
-    drawFPVGoggles({ 0.0f, 0.0f, 0.0f });
-
-    glPopMatrix();
-
-    glEnable(GL_TEXTURE_2D);
 }

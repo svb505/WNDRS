@@ -3,6 +3,24 @@
 #include <GLFW/glfw3.h>
 #include "lighting.h"
 
+LightingSettings indoorLight = {
+	{ 0.80f, 0.80f, 0.80f, 1.0f },
+	{ 0.80f, 0.80f, 0.80f, 1.0f },
+	{ 1.0f, 1.0f, 1.0f, 1.0f }
+};
+
+LightingSettings outdoorDayLight = {
+	{ 0.35f, 0.40f, 0.50f, 1.0f },
+	{ 1.00f, 0.95f, 0.85f, 1.0f },
+	{ 0.80f, 0.80f, 0.80f, 1.0f }
+};
+
+LightingSettings outdoorNightLight = {
+	{ 0.15f, 0.15f, 0.15f, 1.0f },
+	{ 0.15f, 0.15f, 0.15f, 1.0f },
+	{ 1.0f, 1.0f, 1.0f, 1.0f }
+};
+
 void initLighting() {
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
@@ -20,4 +38,13 @@ void initLighting() {
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDiffuse);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, lightSpec);
 	glEnable(GL_DEPTH_TEST);
+}
+
+void setLighting(const LightingSettings& light){
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+
+	glLightfv(GL_LIGHT0, GL_AMBIENT, light.ambient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, light.diffuse);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, light.specular);
 }

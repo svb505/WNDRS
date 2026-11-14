@@ -11,33 +11,56 @@
 
 const float size = 50.0f;
 
-void drawRoad(float y, float startX, float startZ, int parts){
+void drawRoadsFromJson(const nlohmann::json& levelJson) {
+    if (!levelJson.contains("roads") || !levelJson["roads"].is_array())  return;
+
+    for (const auto& road : levelJson["roads"]) {
+        auto start = road["start"];
+        auto end = road["end"];
+
+        float startX = start[0].get<float>();
+        float startY = start[1].get<float>() + 0.01f;
+        float startZ = start[2].get<float>();
+
+        float endX = end[0].get<float>();
+        float endY = end[1].get<float>();
+        float endZ = end[2].get<float>();
+
+        float width = road.value("width", 6.0f);
+
+        drawRoad(startX, startZ, endX, endZ, startY, width);
+    }
+}
+void drawRoad(float startX, float startZ,float endX, float endZ,float y, float width) {
     GLuint roadTex = allTextures["ROAD"];
+
+    float dx = endX - startX;
+    float dz = endZ - startZ;
+
+    float length = sqrt(dx * dx + dz * dz);
+
+    if (length <= 0.001f)
+        return;
+
+    float offsetX = -dz / length * (width / 2.0f);
+    float offsetZ = dx / length * (width / 2.0f);
 
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, roadTex);
 
-    float width = 6.0f;
-    float partLength = 10.0f;
-
     glBegin(GL_QUADS);
 
-    for (int i = 0; i < parts; i++){
-        float x0 = startX + i * partLength;
-        float x1 = x0 + partLength;
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f(startX + offsetX, y, startZ + offsetZ);
 
-        glTexCoord2f(1.0f, 0.0f);
-        glVertex3f(x0, y, startZ - width / 2);
+    glTexCoord2f(1.0f, length / 10.0f);
+    glVertex3f(endX + offsetX, y, endZ + offsetZ);
 
-        glTexCoord2f(1.0f, 1.0f);
-        glVertex3f(x1, y, startZ - width / 2);
+    glTexCoord2f(0.0f, length / 10.0f);
+    glVertex3f(endX - offsetX, y, endZ - offsetZ);
 
-        glTexCoord2f(0.0f, 1.0f);
-        glVertex3f(x1, y, startZ + width / 2);
-
-        glTexCoord2f(0.0f, 0.0f);
-        glVertex3f(x0, y, startZ + width / 2);
-    }
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f(startX - offsetX, y, startZ - offsetZ);
 
     glEnd();
 

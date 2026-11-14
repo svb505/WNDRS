@@ -19,7 +19,6 @@ void Camera::setupCamera() {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    // Ограничение pitch
     if (camParams.cameraPitch > 89.0f) camParams.cameraPitch = 89.0f;
     if (camParams.cameraPitch < -89.0f) camParams.cameraPitch = -10.0f;
     if (cameraPos.y < 0.0f) cameraPos.y = 0.0f;

@@ -26,11 +26,15 @@ public:
 
     std::map<std::string, ALuint> buffers = {
         {"City", 0},
-        {"Steps", 0}
+        {"Steps", 0},
+        {"Purchase", 0},
+        { "Siren", 0 }
     };
     std::map<std::string, ALuint> sources = {
         {"City", 0},
-        {"Steps", 0}
+        {"Steps", 0},
+        {"Purchase",0},
+        { "Siren", 0 }
     };
 
     void setSourcePosition(ALuint source, svbmath::Vec3 posit) {
@@ -88,6 +92,10 @@ public:
 
         alSourcePlay(source);
     }
+    void stopSound(ALuint source) {
+        alSourceStop(source);
+    }
+
     void setupBuffers() {
         audioDevice = alcOpenDevice(nullptr);
         audioContext = alcCreateContext(audioDevice, nullptr);
@@ -95,6 +103,8 @@ public:
 
         buffers["City"] = LoadWav("res/sound/city.wav");
         buffers["Steps"] = LoadWav("res/sound/steps.wav");
+        buffers["Purchase"] = LoadWav("res/sound/purchase.wav");
+        buffers["Siren"] = LoadWav("res/sound/siren.wav");
     }
     void createSources() {
         alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
@@ -102,6 +112,8 @@ public:
         std::vector<SourceConfig> configs = {
             {"City", 0.5f, true, 4.0f, 80.0f, 2.0f},
             {"Steps", 1.0f, false, 15.0f, 600.0f, 0.6f},
+            {"Purchase", 1.0f, false, 15.0f, 600.0f, 0.6f},
+            { "Siren", 1.0f, false, 15.0f, 600.0f, 0.6f }
         };
 
         for (const auto& cfg : configs) {

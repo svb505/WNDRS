@@ -140,11 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="actions.cpp" />
+    <ClCompile Include="avgRating.cpp" />
     <ClCompile Include="bot.cpp" />
     <ClCompile Include="bounds.cpp" />
     <ClCompile Include="building.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="database.cpp" />
+    <ClCompile Include="days.cpp" />
     <ClCompile Include="decorations.cpp" />
     <ClCompile Include="drone.cpp" />
     <ClCompile Include="environnement.cpp" />
@@ -153,10 +155,12 @@
     <ClCompile Include="jsonParcer.cpp" />
     <ClCompile Include="lighting.h" />
     <ClCompile Include="lighting.cpp" />
+    <ClCompile Include="LoadingWin.cpp" />
     <ClCompile Include="localization.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="model.cpp" />
+    <ClCompile Include="profiler.cpp" />
     <ClCompile Include="renders.cpp" />
     <ClCompile Include="svbmath.cpp" />
     <ClCompile Include="svbRandom.cpp" />
@@ -166,19 +170,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actions.h" />
+    <ClInclude Include="avgRating.h" />
     <ClInclude Include="bot.h" />
     <ClInclude Include="bounds.h" />
     <ClInclude Include="building.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="database.h" />
+    <ClInclude Include="days.h" />
     <ClInclude Include="decorations.h" />
     <ClInclude Include="drone.h" />
     <ClInclude Include="environnement.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="jsonParcer.h" />
+    <ClInclude Include="LoadingWin.h" />
     <ClInclude Include="localization.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="model.h" />
+    <ClInclude Include="profiler.h" />
     <ClInclude Include="renders.h" />
     <ClInclude Include="sound.h" />
     <ClInclude Include="svbmath.h" />

@@ -10,15 +10,37 @@
 #include <map>
 #include "logger.h"
 #include <format>
+#include <iostream>
+
+#include <fstream>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 std::map<DecType, float> scales = {
     { DecType::BUILD1, 1.0f },
     { DecType::BUILD2, 1.0f },
-    { DecType::TREE,  0.25f },
+    { DecType::TREE,  1.25f },
     { DecType::LAMP,  1.25f },
-    { DecType::STREET,  0.7f }
+    { DecType::STREET,  0.7f },
+    { DecType::FENCE,  1.0f }
 };
 
+DecType Decorations::stringToDecType(const std::string& type) {
+    static const std::map<std::string, DecType> types = {
+        { "street", DecType::STREET },
+        { "tree", DecType::TREE },
+        { "lamp", DecType::LAMP },
+        { "street", DecType::STREET },
+        { "fence", DecType::FENCE }
+    };
+
+    auto it = types.find(type);
+
+    if (it == types.end()) throw std::runtime_error("Unknown decoration type: " + type);
+
+    return it->second;
+}
 
 static float getModelScale(DecType type) {
     auto it = scales.find(type);
@@ -27,7 +49,7 @@ static float getModelScale(DecType type) {
 
     return it->second;
 }
-void Decorations::addDecoration(DecType type, svbmath::Vec3 pos, float rotationY) {
+void Decorations::addDecoration(DecType type,svbmath::Vec3 pos, float rotationY) {
     DecorationInstance decoration;
 
     decoration.type = type;
@@ -36,60 +58,73 @@ void Decorations::addDecoration(DecType type, svbmath::Vec3 pos, float rotationY
 
     decorations.push_back(decoration);
 }
-void Decorations::initPositions() {
+void Decorations::initPositions(const std::string& jsonPath) {
+
     decorations.clear();
 
-    //addBuildings();
-    //addEndBuildings();
-    addDecoration(DecType::STREET, { 18.0f, 0.001f, 5.0f }, 0.0f);
-    addDecoration(DecType::STREET, { -120.0f, 0.001f, 5.0f }, 0.0f);
-    addTrees();
-    addLamps();
-}
-void Decorations::addBuildings() {
-    for (int i = 0; i < buildsCount; ++i) {
-        float x;
+    std::ifstream file(jsonPath);
 
-        if (i < 3) x = buildBasePos.x + buildXStep * (i + 1);
-        else x = buildBasePos.x - buildXStep * (i - 2);
-
-        addDecoration(DecType::BUILD2, { x, buildBasePos.y + 2.5f, buildBasePos.z }, 0.0f);
+    if (!file.is_open()) {
+        LOG_ERROR(std::format("Failed to open decorations JSON : {}", jsonPath));
+        return;
     }
 
-    for (int i = 0; i < buildsCount; ++i) {
-        float x;
+    json data;
 
-        if (i < 3) x = buildBasePos.x + buildXStep * (i + 1);
-        else if (i == 3)  x = -10.0f;
-        else x = buildBasePos.x - buildXStep * (i - 2);
+    try {
+        file >> data;
 
-        addDecoration(DecType::BUILD2, { x, buildBasePos.y + 2.5f,35.0f }, 0.0f);
+        if (!data.contains("objects") || !data["objects"].is_array()) {
+            LOG_ERROR("Invalid decorations JSON: objects array missing");
+            return;
+        }
+
+        for (const auto& object : data["objects"]) {
+
+            int id = object.at("id").get<int>();
+
+            std::string typeName = object.at("type").get<std::string>();
+
+            const auto& pos = object.at("position");
+
+            if (!pos.is_array() || pos.size() != 3) {
+                LOG_ERROR(std::format("Invalid position for decoration ID: {}", id));
+                continue;
+            }
+
+            svbmath::Vec3 position = {pos[0].get<float>(), pos[1].get<float>(), pos[2].get<float>() };
+
+            float yaw = object.value("yaw", 0.0f);
+
+            try {
+                DecType type;
+
+                if (typeName == "street") type = DecType::STREET;
+                else type = stringToDecType(typeName);
+
+                DecorationInstance decoration;
+
+                decoration.id = id;
+                decoration.type = type;
+                decoration.position = position;
+                decoration.rotationY = yaw;
+
+                decorations.push_back(decoration);
+
+            }
+            catch (const std::exception& e) {
+                LOG_ERROR(std::format("Decoration ID {} skipped: {}",id,e.what()));
+            }
+        }
+
+        LOG_INFO(std::format("Loaded {} decorations from JSON",decorations.size()));
+
+    }
+    catch (const std::exception& e) {
+        LOG_ERROR(std::format( "Failed to parse decorations JSON: {}", e.what()));
     }
 }
-void Decorations::addEndBuildings() {
-    addDecoration(DecType::BUILD2, { -35.0f, buildBasePos.y + 2.5f,10.0f }, 0.0f);
-    addDecoration(DecType::BUILD2, { 80.0f, buildBasePos.y + 2.5f,10.0f }, 0.0f);
-}
-void Decorations::addTrees() {
-    for (int i = 0; i < treesCount; ++i) {
-        float x;
 
-        if (i < 3) x = buildBasePos.x + buildXStep * (i + 1);
-        else x = buildBasePos.x - buildXStep * (i - 2);
-
-        addDecoration(DecType::TREE, { x,buildBasePos.y, 16.0f }, 0.0f);
-    }
-}
-void Decorations::addLamps() {
-    for (int i = 0; i < lampsCount; ++i) {
-        float x;
-
-        if (i < 3) x = buildBasePos.x + buildXStep * (i + 1);
-        else x = buildBasePos.x - buildXStep * (i - 2);
-
-        addDecoration(DecType::LAMP, { x,buildBasePos.y,6.5f }, 0.0f);
-    }
-}
 void Decorations::initDecoration(const std::string& modelPath, DecType decType,
     const std::string& texturePath) {
 
@@ -103,7 +138,7 @@ void Decorations::initDecoration(const std::string& modelPath, DecType decType,
         return;
     }
 
-    if (!texturePath.empty())  model->LoadTexture(texturePath);
+    if (!texturePath.empty()) model->LoadTexture(texturePath);
 
     model->CreateVBO();
 
@@ -133,32 +168,54 @@ void Decorations::drawAllDecorations(DecType decType) {
     glDisable(GL_CULL_FACE);
 }
 
-static Bounds transformBounds(const Bounds& local, float scale,
-    const DecorationInstance& decoration) {
-    Bounds worldBounds = local;
+static Bounds transformBounds(
+    const Bounds& local,
+    float scale,
+    const DecorationInstance& decoration)
+{
+    Bounds worldBounds{};
 
     const svbmath::Vec3& position = decoration.position;
-    float rotation = decoration.rotationY;
 
-    while (rotation < 0.0f) rotation += 360.0f;
-    while (rotation >= 360.0f) rotation -= 360.0f;
+    constexpr float PI = 3.14159265358979323846f;
 
+    // Convert degrees to radians
+    const float rotation = decoration.rotationY * (PI / 180.0f);
 
-    if (rotation == 90.0f) {
-        worldBounds.min.x = -local.max.z * scale + position.x;
-        worldBounds.max.x = -local.min.z * scale + position.x;
+    const float cosY = std::cos(rotation);
+    const float sinY = std::sin(rotation);
 
-        worldBounds.min.z = local.min.x * scale + position.z;
-        worldBounds.max.z = local.max.x * scale + position.z;
+    // Local XZ corners
+    const float corners[4][2] = {
+        { local.min.x, local.min.z },
+        { local.min.x, local.max.z },
+        { local.max.x, local.min.z },
+        { local.max.x, local.max.z }
+    };
+
+    // Initialize bounds
+    worldBounds.min.x = worldBounds.min.z =
+        std::numeric_limits<float>::max();
+
+    worldBounds.max.x = worldBounds.max.z =
+        std::numeric_limits<float>::lowest();
+
+    // Transform all four corners
+    for (const auto& corner : corners){
+        const float x = corner[0] * scale;
+        const float z = corner[1] * scale;
+
+        const float worldX = x * cosY + z * sinY + position.x;
+        const float worldZ = -x * sinY + z * cosY + position.z;
+
+        worldBounds.min.x = std::min(worldBounds.min.x, worldX);
+        worldBounds.max.x = std::max(worldBounds.max.x, worldX);
+
+        worldBounds.min.z = std::min(worldBounds.min.z, worldZ);
+        worldBounds.max.z = std::max(worldBounds.max.z, worldZ);
     }
-    else {
-        worldBounds.min.x = local.min.x * scale + position.x;
-        worldBounds.max.x = local.max.x * scale + position.x;
 
-        worldBounds.min.z = local.min.z * scale + position.z;
-        worldBounds.max.z = local.max.z * scale + position.z;
-    }
-
+    // Transform Y bounds
     worldBounds.min.y = local.min.y * scale + position.y;
     worldBounds.max.y = local.max.y * scale + position.y;
 
@@ -190,7 +247,7 @@ bool Decorations::checkCollision(Camera& cam, DecType decType) {
     if (!model) return false;
 
     for (const DecorationInstance& decoration : decorations) {
-        if (decoration.type != decType)continue;
+        if (decoration.type != decType) continue;
 
         // Модель без объектов ("o") - как раньше, одна общая коробка.
         if (model->parts.empty()) {

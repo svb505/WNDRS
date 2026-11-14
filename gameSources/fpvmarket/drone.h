@@ -11,6 +11,7 @@
 #include "model.h"
 #include "jsonParcer.h"
 #include <memory>
+#include "variables.h"
 
 struct ShelfSetting {
     svbmath::Vec3 pos;
@@ -38,6 +39,12 @@ struct ModelPaths {
     float scale;
 };
 
+enum class CompType{
+    TYPE1,
+    TYPE2,
+    TYPE3
+};
+
 class FPVDrone {
 private:
     Components comp;
@@ -45,126 +52,152 @@ private:
 
     OBJModel fpv;
 
-    std::vector<std::string> baseEquipment = {"Cadre t1","Camera CM1","Batterie 450W", "Moteur MTR1",
-        "Hélice Type 1","Controlleur" ,"Lunettes",name, "Batterie 550W", "Batterie 500W",
-        "Hélice Type 2", "Hélice Type 3","FC1","FC2","Controlleur  CTR1","Lunettes2","Cadre t2",
-    "Moteur MTR2","Moteur MTR3","Camera CM2","Camera CM3"};
+    std::vector<std::string> baseEquipment = { lang[currLang]["FRAME1"].get<std::string>(),
+        lang[currLang]["CAM1"].get<std::string>(),
+        lang[currLang]["BAT450"].get<std::string>(), lang[currLang]["MTR1"].get<std::string>(),
+        lang[currLang]["PROP1"].get<std::string>(),lang[currLang]["CNTRL1"].get<std::string>(), lang[currLang]["GGLS1"].get<std::string>(),
+        name,
+        lang[currLang]["BAT550"].get<std::string>(),
+        lang[currLang]["BAT500"].get<std::string>(),
+        lang[currLang]["PROP2"].get<std::string>(), lang[currLang]["PROP3"].get<std::string>(),lang[currLang]["FC1"].get<std::string>(),
+        lang[currLang]["FC2"].get<std::string>(),
+        lang[currLang]["CNTRL2"].get<std::string>(),lang[currLang]["GGLS2"].get<std::string>(),
+        lang[currLang]["FRAME2"].get<std::string>(),
+        lang[currLang]["MTR2"].get<std::string>(), lang[currLang]["MTR3"].get<std::string>(),
+        lang[currLang]["CAM2"].get<std::string>(), lang[currLang]["CAM3"].get<std::string>() };
 
-    std::map<std::string, float> equipmentPrice = { {"Cadre t1",100.0f},{"Camera CM1",300.0f},
-        {"Batterie 450W",250.0f} ,{"Moteur MTR1",350.0f} ,{"Hélice Type 1",150.0f}, {"Controlleur",100.0f},
-        {"Lunettes",250.0f},{name,1000.0f} ,{"Hélice Type 2",120.0f},{"Hélice Type 3",120.0f},
-        {"Batterie 550W",450.0f} ,{"Batterie 500W",350.0f} ,{"FC1",150.0f}, {"FC2",100.0f},
-        {"Lunettes2",270.0f},{"Controlleur  CTR1",90.0f},{"Cadre t2",130.0f},{"Moteur MTR2",400.0f},
-        {"Moteur MTR3",320.0f},{"Camera CM2",270.0f},{"Camera CM3",330.0f} };
+    std::map<std::string, float> equipmentPrice = { {baseEquipment[0],100.0f},{baseEquipment[1],300.0f},
+        {baseEquipment[2],250.0f} ,{baseEquipment[3],350.0f} ,{baseEquipment[4],150.0f},
+        {baseEquipment[5],100.0f},
+        {baseEquipment[6],250.0f},{name,1000.0f} ,{baseEquipment[10],120.0f},{baseEquipment[11],120.0f},
+        {baseEquipment[8],450.0f} ,{baseEquipment[9],350.0f} ,{baseEquipment[12],150.0f}, {baseEquipment[13],100.0f},
+        {baseEquipment[15],270.0f},{baseEquipment[14],90.0f},{baseEquipment[16],130.0f},{baseEquipment[17],400.0f},
+        {baseEquipment[18],320.0f},{baseEquipment[19],270.0f},{baseEquipment[20],330.0f} };
 
     std::map<std::string, std::unique_ptr<OBJModel>> allCompModels;
     std::map<std::string, ModelPaths> allCompPaths = {
-     {"Cadre t1", {
+     {baseEquipment[0], {
          "res/models/fpv_frame/fpv_frame.obj",
          "res/models/fpv_frame/fpv_frame_carbon.png",
          5.0f
      }},
-    {"Camera CM1", {
+    {baseEquipment[1], {
          "res/models/fpv_cam/fpv_camera.obj",
          "res/models/fpv_cam/fpv_camera_texture.png",
          5.0f
      }},
-        {"Camera CM2", {
+        {baseEquipment[19], {
          "res/models/fpv_cam2/fpv_camera.obj",
          "res/models/fpv_cam2/tex.jpg",
          0.004f
      }},
-        {"Camera CM3", {
+        {baseEquipment[20], {
          "res/models/fpv_cam3/fpv_camera.obj",
          "res/models/fpv_cam3/tex.jpg",
          0.004f
      }},
-        {"Hélice Type 2", {
+        {baseEquipment[10], {
          "res/models/fpv_propeller2/prop_bi_5048.obj",
          "res/models/fpv_propeller2/tex.jpg",
          5.0f
      }},
-        {"Hélice Type 3", {
+        {baseEquipment[11], {
          "res/models/fpv_propeller3/prop_tri_5143.obj",
          "res/models/fpv_propeller3/tex.jpg",
          5.0f
      }},
-        {"Batterie 550W", {
+        {baseEquipment[8], {
          "res/models/fpv_bat2/fpv_battery.obj",
          "res/models/fpv_bat2/tex.jpg",
          5.0f
      }},
-     {"Batterie 500W", {
+     {baseEquipment[9], {
          "res/models/fpv_bat3/fpv_battery.obj",
          "res/models/fpv_bat3/tex.jpg",
          5.0f
      }},
-        {"FC1", {
+        {baseEquipment[12], {
          "res/models/fpv_FC1/fc_20x20_mini.obj",
          "res/models/fpv_FC1/tex.jpg",
          0.004f
      }},
-     {"FC2", {
+     {baseEquipment[13], {
          "res/models/fpv_FC2/fc_30x30_f4.obj",
          "res/models/fpv_FC2/tex.jpg",
           0.004f
      }},
-        {"Controlleur  CTR1", {
+        {baseEquipment[14], {
          "res/models/fpv_controller2/fpv_radio.obj",
          "res/models/fpv_controller2/tex.jpg",
         0.005f
      }},
-     {"Lunettes2", {
+     {baseEquipment[15], {
          "res/models/fpv_goggles2/fpv_goggles.obj",
          "res/models/fpv_goggles2/tex.jpg",
          5.0f
      }},
-     {"Batterie 450W", {
+     {baseEquipment[2], {
          "res/models/fpv_bat/battery.obj",
          "res/models/fpv_bat/battery_texture.png",
          5.0f
      }},
-     {"Cadre t2", {
+     {baseEquipment[16], {
          "res/models/fpv_frame2/fpv_frame.obj",
          "res/models/fpv_frame2/tex.jpg",
          6.0f
      }},
-     {"Moteur MTR1", {
+     {baseEquipment[3], {
          "res/models/fpv_motor/fpv_motor.obj",
          "res/models/fpv_motor/fpv_atlas.png",
          0.07f
      }},
-        {"Moteur MTR2", {
+        {baseEquipment[17], {
          "res/models/fpv_motor2/fpv_motor.obj",
          "res/models/fpv_motor2/tex.jpg",
          0.007f
      }},
-        {"Moteur MTR3", {
+        {baseEquipment[18], {
          "res/models/fpv_motor3/fpv_motor.obj",
          "res/models/fpv_motor3/tex.jpg",
          0.007f
      }},
-     {"Hélice Type 1", {
+     {baseEquipment[4], {
          "res/models/fpv_propeller/fpv_propeller.obj",
          "res/models/fpv_propeller/fpv_atlas.png",
          0.04f
      }},
-     {"Controlleur", {
+     {baseEquipment[5], {
          "res/models/fpv_controller/controller.obj",
          "res/models/fpv_controller/controller_texture.png",
          4.0f
      }},
-     {"Lunettes", {
+     {baseEquipment[6], {
          "res/models/fpv_goggles/fpv_goggles.obj",
          "res/models/fpv_goggles/fpv_goggles_texture.png",
          5.0f
      }}
     };
-
+    std::map<CompType, std::vector<std::string>> equipTypes = { {CompType::TYPE1,
+        {name,lang[currLang]["FRAME1"].get<std::string>(),
+        lang[currLang]["CAM1"].get<std::string>(),
+        lang[currLang]["BAT450"].get<std::string>(), lang[currLang]["MTR1"].get<std::string>(),
+        lang[currLang]["PROP1"].get<std::string>(),lang[currLang]["CNTRL1"].get<std::string>(),
+        lang[currLang]["GGLS1"].get<std::string>(),lang[currLang]["FC1"].get<std::string>()}},
+        { CompType::TYPE2,{lang[currLang]["BAT550"].get<std::string>(),lang[currLang]["PROP2"].get<std::string>(),
+        lang[currLang]["FC2"].get<std::string>(),lang[currLang]["CNTRL2"].get<std::string>(),
+        lang[currLang]["GGLS2"].get<std::string>(),lang[currLang]["FRAME2"].get<std::string>(),
+        lang[currLang]["MTR2"].get<std::string>(),lang[currLang]["CAM2"].get<std::string>()}},
+        { CompType::TYPE3,{lang[currLang]["BAT500"].get<std::string>(),
+         lang[currLang]["PROP3"].get<std::string>(),lang[currLang]["MTR3"].get<std::string>(),
+        lang[currLang]["CAM3"].get<std::string>()}
+    } };
+    
 
     std::vector<Package> boxesWithEquip = {};
     std::vector<PlacedObject> placedObjects;
     std::vector<ShelfSetting> positionsOnShelves;
+
+    OBJModel markerModel;
 
     float deliveryTime = 10.0; //sec
     float textTime = 3.0f;
@@ -172,9 +205,11 @@ private:
     bool showText = false;
     bool inDelivery = false;
 public:
-    void init();
+    void init(GLFWwindow* win);
     void consumeComponents();
+    void reloadCompModels();
 
+    GLuint returnCompPreview(const std::string& key);
     Components& getComp();
     bool getShowText();
     std::vector<Package>& getOrderEquip();
@@ -184,7 +219,9 @@ public:
     bool isPlaced(const std::string& name) const;
     std::vector<svbmath::Vec3> generateShelfPoints(const Shelf& shelf);
     std::vector<ShelfSetting>& getShelfPositions();
+    std::map<CompType, std::vector<std::string>>& getEquipTypes();
 
+    void reInitListes();
     void drawAvaibleShelfPos();
     void checkIfCanPlaceInShelf(Camera& cam);
     void drawAllPlacedObjects(OBJModel& objmodel);
@@ -196,16 +233,4 @@ public:
     void drawEquipModel(std::string model, Camera& cam, bool placed, OBJModel& objmodel);
     void checkIfCanCreateDrone(Camera& cam, CashRegister& build);
     void initCoordinatesForShelves(Building& build);
-
-    void drawCube(float sx, float sy, float sz);
-    void drawCylinder(float radius, float height, int segments = 16);
-    void drawDroneFrame(const svbmath::Vec3& pos);
-    void drawDroneCamera(const svbmath::Vec3& pos);
-    void drawDroneBattery(const svbmath::Vec3& pos);
-    void drawMotor(const svbmath::Vec3& pos);
-    void drawPropeller(const svbmath::Vec3& pos,bool reversed);
-    void drawFPVDrone(const svbmath::Vec3& pos);
-    void drawRemoteController(const svbmath::Vec3& pos);
-    void drawFPVGoggles(const svbmath::Vec3& pos);
-    void drawFPVEquipment();
 };

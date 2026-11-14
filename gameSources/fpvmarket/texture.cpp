@@ -5,9 +5,12 @@
 #include "texture.h"
 #include <map>
 #include <unordered_map>
+#include <format>
+#include "logger.h"
 
 std::string texturePath = "res/textures/";
 std::string iconPath = "res/icons/";
+std::string prevPath = "res/previews/";
 
 std::unordered_map<std::string, GLuint> loadedTextures;
 std::map<std::string, GLuint> allTextures;
@@ -26,7 +29,29 @@ std::unordered_map<std::string, std::string> texturesNamesAndPaths = {
     {"ASPHALT", texturePath + "asphalt.png"},
     {"BOX1", texturePath + "box1.jpg"},
     {"BOX2", texturePath + "box2.jpg"},
-    {"HAND", iconPath + "hand.png"}
+    {"HAND", iconPath + "hand.png"},
+    {"CARD", iconPath + "card.png"},
+    {"FRM1", prevPath + "fr1.jpg"},
+    {"FRM2", prevPath + "fr2.jpg"},
+    {"CAM1", prevPath + "cam1.jpg"},
+    {"CAM2", prevPath + "cam2.jpg"},
+    {"CAM3", prevPath + "cam3.jpg"},
+    {"BAT1", prevPath + "bat1.jpg"},
+    {"BAT2", prevPath + "bat2.jpg"},
+    {"BAT3", prevPath + "bat3.jpg"},
+    {"MOT1", prevPath + "mot1.jpg"},
+    {"MOT2", prevPath + "mot2.jpg"},
+    {"MOT3", prevPath + "mot3.jpg"},
+    {"PRP1", prevPath + "prop1.jpg"},
+    {"PRP2", prevPath + "prop2.jpg"},
+    {"PRP3", prevPath + "prop3.jpg"},
+    {"CTRL1",prevPath + "cntrlr1.jpg"},
+    {"CTRL2",prevPath + "cntrlr2.jpg"},
+     {"GGLS1",prevPath + "g1.jpg"},
+    {"GGLS2",prevPath + "g2.jpg"},
+     {"FC1",prevPath + "fc1.jpg"},
+    {"FC2",prevPath + "fc2.jpg"},
+
 };
 
 void LoadAllTextures() {
@@ -44,6 +69,7 @@ GLuint LoadTexture(const char* filename) {
     unsigned char* data = stbi_load(filename, &width, &height, &channels, 3);
 
     if (!data) {
+        LOG_ERROR(std::format("Cannot load texture: {}",filename));
         return 0;
     }
 
